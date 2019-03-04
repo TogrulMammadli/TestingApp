@@ -10,7 +10,7 @@ namespace TestingApp.Data
 {
    public class TestingAppContext : DbContext
     {
-        public TestingAppContext() : base()
+        public TestingAppContext() : base("TestingAppDB")
         {
 
         }

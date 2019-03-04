@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace TestingApp.Models
 {
-    public class АccessLevel /// student mentor admin,
+    public class AccessLevel /// student mentor admin,
     {
-        public АccessLevel()
+        public AccessLevel()
         {
         }
-
         public int Id { get; set; }
         public string Name { get; set; }
 

@@ -29,20 +29,20 @@ namespace TestApplicationWPF
             {
                 var stud = new User()
                 {
-                    Name = "Murad",
-                    Surname = "Gehbedi",
+                    Name = "Togrul",
+                    Surname = "Mammadli",
                     DateOfBirth = DateTime.Now,
-                    Email = "petux@hotmail.com",
-                    PhoneNumber = "99999999",
+                    Email = "mamedlitogrul99@gmail.com",
+                    PhoneNumber = "0503907667",
                     Gender = Gender.Male,
                     AccessLevels = new List<AccessLevel>()
-                        { new AccessLevel() {Id=1,Name="Mentor"} },
-                    Login = "muradsoset",
+                        { new AccessLevel() {Id=1,Name="Admin"} },
+                    Login = "TogrulLogin",
                     Password = "12345"
                 };
-                ctx.Users.Add(stud);
+              //  ctx.Users.Add(stud);
                 ctx.SaveChanges();
-                Console.WriteLine("vse");
+              //  Console.WriteLine("vse");
             }
 
         }

@@ -10,6 +10,7 @@ namespace TestApplicationWPF.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            ContextKey = "TestApplicationWPF.DataModel.TestContext";
         }
 
         protected override void Seed(TestApplicationWPF.DataModel.TestContext context)

@@ -29,8 +29,8 @@ namespace TestApplicationWPF
             {
                 var stud = new User()
                 {
-                    Name = "Togrul",
-                    Surname = "Mammadli",
+                    Name = "Natig",
+                    Surname = "Aliyev",
                     DateOfBirth = DateTime.Now,
                     Email = "mamedlitogrul99@gmail.com",
                     PhoneNumber = "0503907667",
@@ -40,7 +40,7 @@ namespace TestApplicationWPF
                     Login = "TogrulLogin",
                     Password = "12345"
                 };
-              //  ctx.Users.Add(stud);
+               ctx.Users.Add(stud);
                 ctx.SaveChanges();
               //  Console.WriteLine("vse");
             }

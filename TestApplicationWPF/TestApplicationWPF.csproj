@@ -68,9 +68,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Migrations\201903050643186_1stMigration.cs" />
-    <Compile Include="Migrations\201903050643186_1stMigration.Designer.cs">
-      <DependentUpon>201903050643186_1stMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201903051543244_InitialCreate.cs" />
+    <Compile Include="Migrations\201903051543244_InitialCreate.Designer.cs">
+      <DependentUpon>201903051543244_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Services\IStudentService.cs" />
@@ -114,8 +114,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201903050643186_1stMigration.resx">
-      <DependentUpon>201903050643186_1stMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903051543244_InitialCreate.resx">
+      <DependentUpon>201903051543244_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

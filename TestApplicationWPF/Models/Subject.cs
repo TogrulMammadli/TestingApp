@@ -4,22 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestingApp.Models
+namespace TestApplicationWPF.Models
 {
-    public class Category//kategoriya voprosa aciq, test fromasinda, i druqie,sootvetstvie 
+  public  class Subject
     {
-        public Category()
+        public Subject()
         {
         }
 
-        public Category(int id, int name)
+        public Subject(int ıd, int name)
         {
-            Id = id;
+            Id = ıd;
             Name = name;
         }
 
         public int Id { get; set; }
         public int Name { get; set; }
-
     }
 }

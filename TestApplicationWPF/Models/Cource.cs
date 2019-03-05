@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestingApp.Models
+namespace TestApplicationWPF.Models
 {
     public class Cource// web stacionar polustac zirt pirt ....
     {

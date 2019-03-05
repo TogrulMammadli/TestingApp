@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestingApp.Models
+namespace TestApplicationWPF.Models
 {
     // pri takoy arxitekture kak sdelat ctobi u odnogo usera bilo neskolo roley
     public enum Gender

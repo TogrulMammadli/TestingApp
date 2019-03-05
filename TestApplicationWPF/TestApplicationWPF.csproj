@@ -68,6 +68,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Migrations\201903050633371_1stMigration.cs" />
+    <Compile Include="Migrations\201903050633371_1stMigration.Designer.cs">
+      <DependentUpon>201903050633371_1stMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Services\IStudentService.cs" />
+    <Compile Include="Services\ITestService.cs" />
+    <Compile Include="Services\StudentServices.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,12 +84,23 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DataModel\TestContext.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AccessLevel.cs" />
+    <Compile Include="Models\Answer.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Cource.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\PassedTests.cs" />
+    <Compile Include="Models\Question.cs" />
+    <Compile Include="Models\Subject.cs" />
+    <Compile Include="Models\TestBlank.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -95,6 +114,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201903050633371_1stMigration.resx">
+      <DependentUpon>201903050633371_1stMigration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestApplicationWPF.DataModel;
+using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF
 {
@@ -23,6 +25,26 @@ namespace TestApplicationWPF
         public MainWindow()
         {
             InitializeComponent();
+            using (var ctx = new TestContext())
+            {
+                var stud = new User()
+                {
+                    Name = "Murad",
+                    Surname = "Gehbedi",
+                    DateOfBirth = DateTime.Now,
+                    Email = "petux@hotmail.com",
+                    PhoneNumber = "99999999",
+                    Gender = Gender.Male,
+                    AccessLevels = new List<AccessLevel>()
+                        { new AccessLevel() {Id=1,Name="Mentor"} },
+                    Login = "muradsoset",
+                    Password = "12345"
+                };
+                ctx.Users.Add(stud);
+                ctx.SaveChanges();
+                Console.WriteLine("vse");
+            }
+
         }
     }
 }

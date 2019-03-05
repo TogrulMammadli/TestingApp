@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestingApp.Models
+namespace TestApplicationWPF.Models
 {
-    public class AccessLevel /// student mentor admin,
+    public class AccessLevel //student mentor admin,
     {
         public AccessLevel()
         {

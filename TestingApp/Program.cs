@@ -16,15 +16,15 @@ namespace TestingApp
                 {
                     var stud = new User()
                     {
-                        Name = "Natig",
+                        Name = "Sabir",
                         Surname = "Aliyev",
                         DateOfBirth = DateTime.Now,
-                        Email = "sosamba@hotmail.com",
+                        Email = "gotvaran@hotmail.com",
                         PhoneNumber = "99999999",
                         Gender = Gender.Male,
                         AccessLevels = new List<AccessLevel>()
-                        { new AccessLevel() {Id=1,Name="Mentor"} },
-                        Login = "natigaliyev",
+                        { new AccessLevel() {Id=1,Name="Student"} },
+                        Login = "sabiraliyev",
                         Password = "12345"
                     };
                     ctx.Users.Add(stud);

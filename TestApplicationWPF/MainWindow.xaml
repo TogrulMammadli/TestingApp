@@ -95,7 +95,8 @@
             HorizontalAlignment="Right"
             VerticalAlignment="Top"
             BorderBrush="{x:Null}"
-            BorderThickness="0">
+            BorderThickness="0"
+            Click="Button_Click">
 
             <Button.Background>
                 <ImageBrush ImageSource="Icons/close6.png" />

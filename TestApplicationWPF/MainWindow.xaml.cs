@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
+using System.Threading;
 
 namespace TestApplicationWPF
 {
@@ -50,6 +51,12 @@ namespace TestApplicationWPF
         private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

@@ -40,11 +40,16 @@ namespace TestApplicationWPF
                     Login = "TogrulLogin",
                     Password = "12345"
                 };
-               ctx.Users.Add(stud);
-                ctx.SaveChanges();
+              // ctx.Users.Add(stud);
+                //ctx.SaveChanges();
               //  Console.WriteLine("vse");
             }
 
+        }
+
+        private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }

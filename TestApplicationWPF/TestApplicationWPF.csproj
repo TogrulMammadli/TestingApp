@@ -130,9 +130,29 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icons\close.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\close1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\close2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\close3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\close4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\close5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\close6.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

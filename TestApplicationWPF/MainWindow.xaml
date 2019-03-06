@@ -15,7 +15,10 @@
     WindowStyle="None"
     mc:Ignorable="d">
     <Grid>
-        <Rectangle Height="280" VerticalAlignment="Top">
+        <Rectangle
+            Height="280"
+            VerticalAlignment="Top"
+            MouseLeftButtonDown="Rectangle_MouseLeftButtonDown">
             <Rectangle.Fill>
                 <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
                     <GradientStop Color="#FF00AEFF" />
@@ -56,12 +59,18 @@
                 Margin="5"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Top"
-                FontSize="18"
+                FontSize="22"
                 Foreground="Gray"
                 Text="LOGIN" />
             <StackPanel Margin="20" VerticalAlignment="Center">
-                <TextBox Margin="0,10" materialDesign:HintAssist.Hint="User name" />
-                <PasswordBox Margin="0,10" materialDesign:HintAssist.Hint="Password" />
+                <TextBox
+                    Margin="0,10"
+                    materialDesign:HintAssist.Hint="User name"
+                    FontSize="18" />
+                <PasswordBox
+                    Margin="0,10"
+                    materialDesign:HintAssist.Hint="Password"
+                    FontSize="18" />
             </StackPanel>
         </Grid>
         <Button
@@ -69,12 +78,30 @@
             Margin="0,85"
             VerticalAlignment="Bottom"
             Content="LOGIN" />
-        <TextBlock
+        <Button
+            Height="20"
             Margin="50"
+            Padding="0"
             HorizontalAlignment="Center"
             VerticalAlignment="Bottom"
-            Foreground="gray"
-            Text="Forgot password?" />
+            Background="{x:Null}"
+            BorderBrush="{x:Null}"
+            Content="Forgot password?"
+            Foreground="gray" />
+        <Button
+            Width="25"
+            Height="25"
+            Margin="265,5,5,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            BorderBrush="{x:Null}"
+            BorderThickness="0">
+
+            <Button.Background>
+                <ImageBrush ImageSource="Icons/close6.png" />
+            </Button.Background>
+
+        </Button>
 
     </Grid>
 </Window>

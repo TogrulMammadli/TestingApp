@@ -73,9 +73,29 @@
       <DependentUpon>201903051543244_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Services\IStudentService.cs" />
-    <Compile Include="Services\ITestService.cs" />
-    <Compile Include="Services\StudentServices.cs" />
+    <Compile Include="Repository\AccessLevelRepository\AccessLevelRepository.cs" />
+    <Compile Include="Repository\AccessLevelRepository\IAccessLevelRepository.cs" />
+    <Compile Include="Repository\AnswerRepository\AnswerRepository.cs" />
+    <Compile Include="Repository\AnswerRepository\IAnswerRepository.cs" />
+    <Compile Include="Repository\CategoryRepository\CategoryRepository.cs" />
+    <Compile Include="Repository\CategoryRepository\ICategoryRepository.cs" />
+    <Compile Include="Repository\CourceRepository\CourceRepository.cs" />
+    <Compile Include="Repository\CourceRepository\ICourceRepository.cs" />
+    <Compile Include="Repository\GroupsRepository\GroupRepository.cs" />
+    <Compile Include="Repository\GroupsRepository\IGroupRepository.cs" />
+    <Compile Include="Repository\PassedTestRepository\IPassedTestRepository.cs" />
+    <Compile Include="Repository\PassedTestRepository\PassedTestRepository.cs" />
+    <Compile Include="Repository\QuestionsRepository\IQuestionRepository.cs" />
+    <Compile Include="Repository\QuestionsRepository\QuestionRepository.cs" />
+    <Compile Include="Repository\SubjectRepository\ISubjectRepository.cs" />
+    <Compile Include="Repository\SubjectRepository\SubjectRepository.cs" />
+    <Compile Include="Repository\TestBlanksRepository\ITestBlankRepository.cs" />
+    <Compile Include="Repository\TestBlanksRepository\TestBlankRepository.cs" />
+    <Compile Include="Repository\UserRepository\IUserRepository.cs" />
+    <Compile Include="Repository\UserRepository\UserRepository.cs" />
+    <Compile Include="Services\UserServices\LoginServices\ILoginService.cs" />
+    <Compile Include="Services\UserServices\LoginServices\LoginService.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -154,5 +174,6 @@
   <ItemGroup>
     <Resource Include="Icons\close6.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

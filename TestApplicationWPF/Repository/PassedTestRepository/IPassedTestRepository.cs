@@ -10,7 +10,7 @@ namespace TestApplicationWPF.Repository.PassedTestRepository
     interface IPassedTestRepository
     {
         IEnumerable<PassedTests> GetAllPassedTests();
-        PassedTests RemovePassedTestById(int Id);
+        bool RemovePassedTestById(int Id);
         bool AddPassedTest(PassedTests passedTests);
     }
 }

@@ -10,7 +10,7 @@ namespace TestApplicationWPF.Repository.TestBlanksRepository
     interface ITestBlankRepository
     {
         IEnumerable<TestBlank> GetAllTestBlanks();
-        TestBlank RemoveTestBlankById(int Id);
+        bool RemoveTestBlankById(int Id);
         bool AddTestBlank(TestBlank testBlank);
     }
 }

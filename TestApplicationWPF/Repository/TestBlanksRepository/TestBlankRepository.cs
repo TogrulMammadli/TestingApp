@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.TestBlanksRepository
@@ -11,17 +12,42 @@ namespace TestApplicationWPF.Repository.TestBlanksRepository
     {
         public bool AddTestBlank(TestBlank testBlank)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                try
+                {
+                    c.TestBlanks.Add(testBlank);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
         }
 
         public IEnumerable<TestBlank> GetAllTestBlanks()
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                return c.TestBlanks;
+            }
         }
 
-        public TestBlank RemoveTestBlankById(int Id)
+        public bool RemoveTestBlankById(int Id)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                foreach (var test in c.TestBlanks)
+                {
+                    if (test.Id == Id)
+                    {
+                        c.TestBlanks.Remove(test);
+                        return true;
+                    }
+                }
+                return false;
+            }
         }
     }
 }

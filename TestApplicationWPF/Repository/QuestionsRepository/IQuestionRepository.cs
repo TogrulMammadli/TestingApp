@@ -10,7 +10,7 @@ namespace TestApplicationWPF.Repository.QuestionsRepository
     interface IQuestionRepository
     {
         IEnumerable<Question> GetAllQuestions();
-        Question RemoveQuestionById(int Id);
+        bool RemoveQuestionById(int Id);
         bool AddQuestion(Question question);
     }
 }

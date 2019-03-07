@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.QuestionsRepository
@@ -11,17 +12,42 @@ namespace TestApplicationWPF.Repository.QuestionsRepository
     {
         public bool AddQuestion(Question question)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                try
+                {
+                    c.Questions.Add(question);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
         }
 
         public IEnumerable<Question> GetAllQuestions()
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                return c.Questions;
+            }
         }
 
-        public Question RemoveQuestionById(int Id)
+        public bool RemoveQuestionById(int Id)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                foreach (var test in c.Questions)
+                {
+                    if (test.Id == Id)
+                    {
+                        c.Questions.Remove(test);
+                        return true;
+                    }
+                }
+                return false;
+            }
         }
     }
 }

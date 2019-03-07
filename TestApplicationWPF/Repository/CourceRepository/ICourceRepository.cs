@@ -10,7 +10,7 @@ namespace TestApplicationWPF.Repository.CourceRepository
     interface ICourceRepository
     {
         IEnumerable<Cource> GetAllCources();
-        Cource RemoveCourceById(int Id);
+        bool RemoveCourceById(int Id);
         bool AddCource(Cource cource);
     }
 }

@@ -8,8 +8,10 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.AccessLevelRepository
 {
+    
     public class AccessLevelRepository : IAccessLevelRepository
     {
+        int a = 5;
         public bool AddAccessLevel(AccessLevel accessLevel)
         {
             try

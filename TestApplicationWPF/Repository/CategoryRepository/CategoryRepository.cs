@@ -8,7 +8,7 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.CategoryRepository
 {
-    class CategoryRepository : ICategoryRepository
+   public  class CategoryRepository : ICategoryRepository
     {
         public bool AddCategory(Category category)
         {
@@ -32,6 +32,11 @@ namespace TestApplicationWPF.Repository.CategoryRepository
             {
                 return c.Categories;
             }
+        }
+
+        public Category GetCategoryGetCategoryByName(string categoryName)
+        {
+            throw new NotImplementedException();
         }
 
         public bool RemoveCategoryById(int Id)

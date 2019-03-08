@@ -27,38 +27,28 @@ namespace TestApplicationWPF
         public MainWindow()
         {
             InitializeComponent();
-            using (var ctx = new TestContext())
-            {
-                var stud = new User()
-                {
-                    Name = "proverka",
-                    Surname = "2",
-                    DateOfBirth = DateTime.Now,
-                    Email = "",
-                    PhoneNumber = "5",
-                    Gender = Gender.Female,
-                    AccessLevels = new List<AccessLevel>()
-                        { new AccessLevel() {Id=1,Name="Soset"} },
-                    Login = "TogrulLogin",
-                    Password = "12345"
-                };
-                // ctx.Users.Add(stud);
-                //ctx.SaveChanges();
-                //  Console.WriteLine("vse");
-                try
-                {
-                    UserRepository userRepository = new UserRepository();
-                    userRepository.AddUser(new User() { Name = "prov ", Surname = "3", Id = 50 });
+            //using (var ctx = new TestContext())
+            //{
+            //    var stud = new User()
+            //    {
+            //        Name = "proverka",
+            //        Surname = "2",
+            //        DateOfBirth = DateTime.Now,
+            //        Email = "",
+            //        PhoneNumber = "5",
+            //        Gender = Gender.Female,
+            //        AccessLevels = new List<AccessLevel>()
+            //            { new AccessLevel() {Id=1,Name="Soset"} },
+            //        Login = "TogrulLogin",
+            //        Password = "12345"
+            //    };
+            //    // ctx.Users.Add(stud);
+            //    //ctx.SaveChanges();
+            //    //  Console.WriteLine("vse");
+               
+            //// userRepository.AddUser(stud);
 
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-            // userRepository.AddUser(stud);
-
-            }
+            //}
 
         }
 

@@ -11,7 +11,6 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
     
     public class AccessLevelRepository : IAccessLevelRepository
     {
-        int a = 5;
         public bool AddAccessLevel(AccessLevel accessLevel)
         {
             try
@@ -27,6 +26,11 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
                 return false;
             }
 
+        }
+
+        public AccessLevel GetAccessLevelByName(string accessName)
+        {
+            throw new NotImplementedException();
         }
 
         public IEnumerable<AccessLevel> GetAllAccessLevels()

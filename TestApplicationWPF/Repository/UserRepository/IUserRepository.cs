@@ -12,5 +12,6 @@ namespace TestApplicationWPF.Repository.UserRepository
         IEnumerable<User> GetAllUsers();
         bool RemoveUserById(int Id);
         bool AddUser(User user);
+        bool GetUserByLogin();
     }
 }

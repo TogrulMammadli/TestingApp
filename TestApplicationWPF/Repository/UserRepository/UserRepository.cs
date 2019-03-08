@@ -41,6 +41,11 @@ namespace TestApplicationWPF.Repository.UserRepository
             }
         }
 
+        public bool GetUserByLogin()
+        {
+            throw new NotImplementedException();
+        }
+
         public bool RemoveUserById(int Id)
         {
             using (var c = new TestContext())

@@ -10,7 +10,7 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
     public interface IAccessLevelRepository
     {
         IEnumerable<AccessLevel> GetAllAccessLevels();
-        AccessLevel RemoveAccessLevelById(int Id);
+        bool RemoveAccessLevelById(int Id);
         bool AddAccessLevel(AccessLevel accessLevel);
     }
 }

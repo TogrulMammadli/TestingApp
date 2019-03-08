@@ -10,7 +10,7 @@ namespace TestApplicationWPF.Repository.CategoryRepository
     interface ICategoryRepository
     {
         IEnumerable<Category> GetAllCategories();
-        Category RemoveCategoryById(int Id);
+        bool RemoveCategoryById(int Id);
         bool AddCategory(Category category);
     }
 }

@@ -10,7 +10,7 @@ namespace TestApplicationWPF.Repository.AnswerRepository
     interface IAnswerRepository
     {
         IEnumerable<Answer> GetAllAnswers();
-        Answer RemoveAnsweryById(int Id);
+        bool RemoveAnsweryById(int Id);
         bool AddAnswer(Answer answer);
     }
 }

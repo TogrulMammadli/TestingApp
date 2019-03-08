@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.CourceRepository
@@ -11,17 +12,42 @@ namespace TestApplicationWPF.Repository.CourceRepository
     {
         public bool AddCource(Cource cource)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                try
+                {
+                    c.Cources.Add(cource);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
         }
 
         public IEnumerable<Cource> GetAllCources()
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                return c.Cources;
+            }
         }
 
-        public Cource RemoveCourceById(int Id)
+        public bool RemoveCourceById(int Id)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                foreach (var test in c.Cources)
+                {
+                    if (test.Id == Id)
+                    {
+                        c.Cources.Remove(test);
+                        return true;
+                    }
+                }
+                return false;
+            }
         }
     }
 }

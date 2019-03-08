@@ -10,7 +10,7 @@ namespace TestApplicationWPF.Repository.UserRepository
     interface IUserRepository
     {
         IEnumerable<User> GetAllUsers();
-        User RemoveUserById(int Id);
+        bool RemoveUserById(int Id);
         bool AddUser(User user);
     }
 }

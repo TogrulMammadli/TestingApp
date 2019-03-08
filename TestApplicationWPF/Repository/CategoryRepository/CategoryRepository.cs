@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.CategoryRepository
@@ -11,17 +12,42 @@ namespace TestApplicationWPF.Repository.CategoryRepository
     {
         public bool AddCategory(Category category)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                try
+                {
+                    c.Categories.Add(category);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
         }
 
         public IEnumerable<Category> GetAllCategories()
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                return c.Categories;
+            }
         }
 
-        public Category RemoveCategoryById(int Id)
+        public bool RemoveCategoryById(int Id)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                foreach (var test in c.Categories)
+                {
+                    if (test.Id == Id)
+                    {
+                        c.Categories.Remove(test);
+                        return true;
+                    }
+                }
+                return false;
+            }
         }
     }
 }

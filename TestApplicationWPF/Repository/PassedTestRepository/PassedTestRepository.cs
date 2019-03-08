@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.PassedTestRepository
@@ -11,17 +12,42 @@ namespace TestApplicationWPF.Repository.PassedTestRepository
     {
         public bool AddPassedTest(PassedTests question)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                try
+                {
+                    c.PassedTests.Add(question);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
         }
 
         public IEnumerable<PassedTests> GetAllPassedTests()
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                return c.PassedTests;
+            }
         }
 
-        public PassedTests RemovePassedTestById(int Id)
+        public bool RemovePassedTestById(int Id)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                foreach (var test in c.PassedTests)
+                {
+                    if (test.Id == Id)
+                    {
+                        c.PassedTests.Remove(test);
+                        return true;
+                    }
+                }
+                return false;
+            }
         }
     }
 }

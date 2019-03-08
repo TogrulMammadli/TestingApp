@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.SubjectRepository
@@ -11,17 +12,42 @@ namespace TestApplicationWPF.Repository.SubjectRepository
     {
         public bool AddSubject(Subject subject)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                try
+                {
+                    c.Subjects.Add(subject);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
         }
 
         public IEnumerable<Subject> GetAllSubjects()
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                return c.Subjects;
+            }
         }
 
-        public Subject RemoveSubjectById(int Id)
+        public bool RemoveSubjectById(int Id)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                foreach (var test in c.Subjects)
+                {
+                    if (test.Id == Id)
+                    {
+                        c.Subjects.Remove(test);
+                        return true;
+                    }
+                }
+                return false;
+            }
         }
     }
 }

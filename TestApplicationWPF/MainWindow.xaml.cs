@@ -53,10 +53,16 @@ namespace TestApplicationWPF
             DragMove();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
 
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            HeadWindow headWindow = new HeadWindow();
+            headWindow.Show();
+            this.Close();
         }
     }
 }

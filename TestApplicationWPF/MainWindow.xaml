@@ -10,6 +10,7 @@
     Title="Login"
     Width="350"
     Height="500"
+    Icon="Icons/mainicon.png"
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
@@ -74,11 +75,15 @@
             </StackPanel>
         </Grid>
         <Button
+            Name="ButtonLogin"
             Width="150"
             Margin="0,85"
             VerticalAlignment="Bottom"
-            Content="LOGIN" />
+            Click="ButtonLogin_Click"
+            Content="LOGIN"
+            Cursor="Hand" />
         <Button
+            Name="ButtonForgotPassword"
             Height="20"
             Margin="50"
             Padding="0"
@@ -96,7 +101,7 @@
             VerticalAlignment="Top"
             BorderBrush="{x:Null}"
             BorderThickness="0"
-            Click="Button_Click">
+            Click="ButtonExit_Click">
 
             <Button.Background>
                 <ImageBrush ImageSource="Icons/close6.png" />

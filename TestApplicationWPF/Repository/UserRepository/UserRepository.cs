@@ -25,8 +25,6 @@ namespace TestApplicationWPF.Repository.UserRepository
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-                    //-InnerException  { "The conversion of a datetime2 data type to a datetime data type resulted in an out-of-range value.\r\nThe statement has been terminated."}
-                    //System.Exception { System.Data.SqlClient.SqlException}
 
                     return false;
                 }

@@ -14,7 +14,7 @@ namespace TestApplicationWPF.Models
         {
         }
 
-        public Category(int id, int name)
+        public Category(int id, string name)
         {
             Id = id;
             Name = name;
@@ -22,8 +22,8 @@ namespace TestApplicationWPF.Models
         [Key]
         public int Id { get; set; }
         [MaxLength(30)]
-        [Index(IsUnique = true)]
-        public int Name { get; set; }
+        [Index(IsUnique = true);
+        public string Name { get; set; }
 
     }
 }

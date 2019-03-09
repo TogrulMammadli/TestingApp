@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 
@@ -17,10 +18,12 @@ namespace TestApplicationWPF.Repository.CategoryRepository
                 try
                 {
                     c.Categories.Add(category);
+                    c.SaveChanges();
                     return true;
                 }
                 catch (Exception ex)
                 {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
             }
@@ -36,7 +39,18 @@ namespace TestApplicationWPF.Repository.CategoryRepository
 
         public Category GetCategoryGetCategoryByName(string categoryName)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.Categories)
+                {
+                    if(temp.Name == categoryName)
+                    {
+                        return temp;
+                    }
+                }
+                MessageBox.Show("Не было найдено данного имени!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return null;
+            }
         }
 
         public bool RemoveCategoryById(int Id)
@@ -51,6 +65,7 @@ namespace TestApplicationWPF.Repository.CategoryRepository
                         return true;
                     }
                 }
+                MessageBox.Show("Не было найдено данного id!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
         }

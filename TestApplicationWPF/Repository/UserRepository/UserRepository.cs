@@ -24,8 +24,7 @@ namespace TestApplicationWPF.Repository.UserRepository
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
-
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     return false;
                 }
             }
@@ -39,9 +38,20 @@ namespace TestApplicationWPF.Repository.UserRepository
             }
         }
 
-        public bool GetUserByLogin()
+        public User GetUserByLogin(string login)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.Users)
+                {
+                    if(temp.Login == login)
+                    {
+                        return temp;
+                    }
+                }
+                MessageBox.Show("Пользователя с таким логином не существует!", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                return null;
+            }
         }
 
         public bool RemoveUserById(int Id)
@@ -56,6 +66,7 @@ namespace TestApplicationWPF.Repository.UserRepository
                         return true;
                     }
                 }
+                MessageBox.Show("Не было найдено данного id!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
         }

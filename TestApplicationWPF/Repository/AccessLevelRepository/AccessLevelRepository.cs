@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 
@@ -18,11 +19,13 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
                 using (var c= new TestContext())
                 {
                     c.AccessLevels.Add(accessLevel);
+                    c.SaveChanges();
                     return true;
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                MessageBox.Show(e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
 
@@ -30,7 +33,18 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
 
         public AccessLevel GetAccessLevelByName(string accessName)
         {
-            throw new NotImplementedException();
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.AccessLevels)
+                {
+                    if(temp.Name == accessName)
+                    {
+                        return temp;
+                    }
+                }
+                MessageBox.Show("Не было найдено данного имени!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return null;
+            }
         }
 
         public IEnumerable<AccessLevel> GetAllAccessLevels()
@@ -53,6 +67,7 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
                         return true;
                     }
                 }
+                MessageBox.Show("Не было найдено данного id!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
         }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,15 +35,27 @@ namespace TestApplicationWPF.Models
             İmage = image ?? throw new ArgumentNullException(nameof(image));
             AccessLevels = аccessLevels ?? throw new ArgumentNullException(nameof(аccessLevels));
         }
-
+        [Key]
         public int Id { get; set; }
+        [Required]
+        [MaxLength(20)]
         public string Name { get; set; }
+        [Required]
+        [MaxLength(20)]
         public string Surname { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        [Required]
+        [MaxLength(20)]
+        public string Patronymic { get; set; }
+        public DateTime? DateOfBirth { get; set; }
+        [Required]
         public Gender Gender { get; set; }
         public string PhoneNumber { get; set; }
+        [MaxLength(40)]
+        [Index(IsUnique = true)]
         public string Email { get; set; }
         public string Password { get; set; }
+        [MaxLength(40)]
+        [Index(IsUnique = true)]
         public string Login { get; set; }
         public string İmage { get; set; }
         public List<AccessLevel> AccessLevels { get; set; }

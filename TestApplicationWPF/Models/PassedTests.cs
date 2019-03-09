@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,7 @@ namespace TestApplicationWPF.Models
             User = user ?? throw new ArgumentNullException(nameof(user));
             Blank = blank ?? throw new ArgumentNullException(nameof(blank));
         }
+        [Key]
         public int Id { get; set; }
         public User User { get; set; }
         public TestBlank Blank { get; set; }

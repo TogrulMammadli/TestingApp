@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TestApplicationWPF.Services
+namespace TestApplicationWPF.ViewModels
 {
-    interface IStudentService
+    public class LoginViewModel :BaseViewModel
     {
-
     }
 }

@@ -71,13 +71,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-
     <Compile Include="HeadWindow.xaml.cs">
       <DependentUpon>HeadWindow.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="Command\RelayCommand.cs" />
-
     <Compile Include="Migrations\201903051543244_InitialCreate.cs" />
     <Compile Include="Migrations\201903051543244_InitialCreate.Designer.cs">
       <DependentUpon>201903051543244_InitialCreate.cs</DependentUpon>
@@ -91,9 +88,8 @@
       <DependentUpon>201903082114569_AddedUserAttributes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Services\IStudentService.cs" />
-    <Compile Include="Services\ITestService.cs" />
-    <Compile Include="Services\StudentServices.cs" />
+    <Compile Include="Services\UserServices\IUserService.cs" />
+    <Compile Include="Services\UserServices\UserService.cs" />
     <Compile Include="TestsWindow.xaml.cs">
       <DependentUpon>TestsWindow.xaml</DependentUpon>
     </Compile>
@@ -101,7 +97,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-
     <Compile Include="Repository\AccessLevelRepository\AccessLevelRepository.cs" />
     <Compile Include="Repository\AccessLevelRepository\IAccessLevelRepository.cs" />
     <Compile Include="Repository\AnswerRepository\AnswerRepository.cs" />
@@ -122,8 +117,6 @@
     <Compile Include="Repository\TestBlanksRepository\TestBlankRepository.cs" />
     <Compile Include="Repository\UserRepository\IUserRepository.cs" />
     <Compile Include="Repository\UserRepository\UserRepository.cs" />
-    <Compile Include="Services\UserServices\LoginServices\ILoginService.cs" />
-    <Compile Include="Services\UserServices\LoginServices\LoginService.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Page Include="MainWindow.xaml">

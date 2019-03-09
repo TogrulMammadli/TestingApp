@@ -22,7 +22,7 @@ namespace TestApplicationWPF.Models
         [Key]
         public int Id { get; set; }
         [MaxLength(30)]
-        [Index(IsUnique = true);
+        [Index(IsUnique = true)]
         public string Name { get; set; }
 
     }

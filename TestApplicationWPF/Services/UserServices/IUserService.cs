@@ -5,13 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using TestApplicationWPF.Models;
 
-namespace TestApplicationWPF.Repository.UserRepository
+namespace TestApplicationWPF.Services.UserServices
 {
-    public interface IUserRepository
+   public interface IUserService
     {
         IEnumerable<User> GetAllUsers();
-        bool RemoveUserById(int Id);
-        bool AddUser(User user);
-        User GetUserByLogin(string login);
     }
 }

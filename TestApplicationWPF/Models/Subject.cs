@@ -14,7 +14,7 @@ namespace TestApplicationWPF.Models
         {
         }
 
-        public Subject(int ıd, int name)
+        public Subject(int ıd, string name)
         {
             Id = ıd;
             Name = name;
@@ -23,6 +23,6 @@ namespace TestApplicationWPF.Models
         public int Id { get; set; }
         [MaxLength(50)]
         [Index(IsUnique = true)]
-        public int Name { get; set; }
+        public string Name { get; set; }
     }
 }

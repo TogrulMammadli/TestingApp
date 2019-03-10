@@ -46,6 +46,7 @@ namespace TestApplicationWPF.Repository.CourceRepository
                     if (test.Id == Id)
                     {
                         c.Cources.Remove(test);
+                    c.SaveChanges();
                         return true;
                     }
                 }

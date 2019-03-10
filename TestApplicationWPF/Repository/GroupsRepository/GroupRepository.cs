@@ -46,6 +46,7 @@ namespace TestApplicationWPF.Repository.GroupsRepository
                     if (test.Id == Id)
                     {
                         c.Groups.Remove(test);
+                    c.SaveChanges();
                         return true;
                     }
                 }

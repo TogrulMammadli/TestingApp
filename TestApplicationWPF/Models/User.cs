@@ -21,7 +21,7 @@ namespace TestApplicationWPF.Models
         {
         }
 
-        public User(int ıd, string name, string surname, DateTime dateOfBirth, Gender gender, string phoneNumber, string email, string password, string login, string image, List<AccessLevel> аccessLevels)
+        public User(int ıd, string name, string surname, DateTime dateOfBirth, Gender gender, string phoneNumber, string email, string password, string login, byte[] image, List<AccessLevel> аccessLevels)
         {
             Id = ıd;
             Name = name ?? throw new ArgumentNullException(nameof(name));
@@ -57,7 +57,8 @@ namespace TestApplicationWPF.Models
         [MaxLength(40)]
         [Index(IsUnique = true)]
         public string Login { get; set; }
-        public string İmage { get; set; }
+        [MaxLength]
+        public byte[] İmage { get; set; }
         public List<AccessLevel> AccessLevels { get; set; }
     }
 }

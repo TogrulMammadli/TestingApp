@@ -64,6 +64,7 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
                     if(test.Id == Id)
                     {
                         c.AccessLevels.Remove(test);
+                        c.SaveChanges();
                         return true;
                     }
                 }

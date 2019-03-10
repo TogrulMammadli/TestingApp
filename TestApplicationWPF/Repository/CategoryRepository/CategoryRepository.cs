@@ -62,6 +62,7 @@ namespace TestApplicationWPF.Repository.CategoryRepository
                     if (test.Id == Id)
                     {
                         c.Categories.Remove(test);
+                    c.SaveChanges();
                         return true;
                     }
                 }

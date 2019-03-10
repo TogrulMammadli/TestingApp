@@ -13,7 +13,7 @@ namespace TestApplicationWPF.Models
         {
         }
 
-        public Answer(int id, string text, string image)
+        public Answer(int id, string text, byte[] image)
         {
             Id = id;
             Text = text ?? throw new ArgumentNullException(nameof(text));
@@ -22,6 +22,8 @@ namespace TestApplicationWPF.Models
         [Key]
         public int Id { get; set; }
         public string Text { get; set; }
-        public string Image { get; set; }
+        [MaxLength]
+
+        public byte[] Image { get; set; }
     }
 }

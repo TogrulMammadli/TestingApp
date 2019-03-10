@@ -63,6 +63,7 @@ namespace TestApplicationWPF.Repository.UserRepository
                     if (test.Id == Id)
                     {
                         c.Users.Remove(test);
+                    c.SaveChanges();
                         return true;
                     }
                 }

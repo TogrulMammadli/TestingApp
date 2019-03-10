@@ -46,6 +46,7 @@ namespace TestApplicationWPF.Repository.PassedTestRepository
                     if (test.Id == Id)
                     {
                         c.PassedTests.Remove(test);
+                    c.SaveChanges();
                         return true;
                     }
                 }

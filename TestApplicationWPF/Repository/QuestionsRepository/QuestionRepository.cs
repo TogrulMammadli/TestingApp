@@ -46,6 +46,7 @@ namespace TestApplicationWPF.Repository.QuestionsRepository
                     if (test.Id == Id)
                     {
                         c.Questions.Remove(test);
+                    c.SaveChanges();
                         return true;
                     }
                 }

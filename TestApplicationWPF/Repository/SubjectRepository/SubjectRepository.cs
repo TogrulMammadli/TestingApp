@@ -46,6 +46,7 @@ namespace TestApplicationWPF.Repository.SubjectRepository
                     if (test.Id == Id)
                     {
                         c.Subjects.Remove(test);
+                    c.SaveChanges();
                         return true;
                     }
                 }

@@ -15,7 +15,7 @@ namespace TestApplicationWPF.Models
     }
     public class Question
     {
-        public Question(int ıd, string text, List<Answer> answers, List<Answer> correctAnswer, string ımage, Subject subject)
+        public Question(int ıd, string text, List<Answer> answers, List<Answer> correctAnswer, byte[] ımage, Subject subject)
         {
             Id = ıd;
             Text = text ?? throw new ArgumentNullException(nameof(text));
@@ -29,7 +29,9 @@ namespace TestApplicationWPF.Models
         public string Text { get; set; }
         public List<Answer> Answers { get; set; }
         public List<Answer> correctAnswer { get; set; }
-        public string Image { get; set; }
+        [MaxLength]
+
+        public byte[] Image { get; set; }
         public Subject subject { get; set; }
     }
 

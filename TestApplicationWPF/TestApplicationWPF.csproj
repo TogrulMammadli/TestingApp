@@ -75,17 +75,9 @@
       <DependentUpon>HeadWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Command\RelayCommand.cs" />
-    <Compile Include="Migrations\201903051543244_InitialCreate.cs" />
-    <Compile Include="Migrations\201903051543244_InitialCreate.Designer.cs">
-      <DependentUpon>201903051543244_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903070752085_datetime_problem.cs" />
-    <Compile Include="Migrations\201903070752085_datetime_problem.Designer.cs">
-      <DependentUpon>201903070752085_datetime_problem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903082114569_AddedUserAttributes.cs" />
-    <Compile Include="Migrations\201903082114569_AddedUserAttributes.Designer.cs">
-      <DependentUpon>201903082114569_AddedUserAttributes.cs</DependentUpon>
+    <Compile Include="Migrations\201903101553319_CreateDB.cs" />
+    <Compile Include="Migrations\201903101553319_CreateDB.Designer.cs">
+      <DependentUpon>201903101553319_CreateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Services\UserServices\IUserService.cs" />
@@ -161,14 +153,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201903051543244_InitialCreate.resx">
-      <DependentUpon>201903051543244_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903070752085_datetime_problem.resx">
-      <DependentUpon>201903070752085_datetime_problem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903082114569_AddedUserAttributes.resx">
-      <DependentUpon>201903082114569_AddedUserAttributes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903101553319_CreateDB.resx">
+      <DependentUpon>201903101553319_CreateDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

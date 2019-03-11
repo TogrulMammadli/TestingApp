@@ -43,6 +43,7 @@ namespace TestApplicationWPF.Repository.TestBlanksRepository
                     if (test.Id == Id)
                     {
                         c.TestBlanks.Remove(test);
+                    c.SaveChanges();
                         return true;
                     }
                 }

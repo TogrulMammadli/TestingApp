@@ -1,19 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TestApplicationWPF.Models
 {
-    enum Complexity {
-        Low=1,
-        Medium=2,
-        Hight=3
-    }
-   public class Question
+    enum Complexity
     {
-        public Question(int ıd, string text, List<Answer> answers, List<Answer> correctAnswer, string ımage, Subject subject)
+        Low = 1,
+        Medium = 2,
+        Hight = 3
+    }
+    public class Question
+    {
+        public Question(int ıd, string text, List<Answer> answers, List<Answer> correctAnswer, byte[] ımage, Subject subject)
         {
             Id = ıd;
             Text = text ?? throw new ArgumentNullException(nameof(text));
@@ -22,14 +24,16 @@ namespace TestApplicationWPF.Models
             Image = ımage ?? throw new ArgumentNullException(nameof(ımage));
             this.subject = subject ?? throw new ArgumentNullException(nameof(subject));
         }
-
+        [Key]
         public int Id { get; set; }
         public string Text { get; set; }
         public List<Answer> Answers { get; set; }
         public List<Answer> correctAnswer { get; set; }
-        public string  Image { get; set; }
+        [MaxLength]
+
+        public byte[] Image { get; set; }
         public Subject subject { get; set; }
     }
 
-    
+
 }

@@ -12,5 +12,6 @@ namespace TestApplicationWPF.Repository.CategoryRepository
         IEnumerable<Category> GetAllCategories();
         bool RemoveCategoryById(int Id);
         bool AddCategory(Category category);
+        Category GetCategoryGetCategoryByName(string categoryName);
     }
 }

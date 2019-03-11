@@ -1,0 +1,19 @@
+﻿<Window x:Class="TestApplicationWPF.HeadWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestApplicationWPF"
+        mc:Ignorable="d"
+        Title="HeadWindow" Height="600" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Icons/mainicon.png" WindowStyle="None">
+    <Grid>
+        <Grid Width="200" HorizontalAlignment="Left">
+            <StackPanel>
+                <Button Content="1st"></Button>
+                <Button Content="2st"></Button>
+                <Button Content="3st"></Button>
+            </StackPanel>
+        </Grid>
+        
+    </Grid>
+</Window>

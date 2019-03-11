@@ -27,38 +27,28 @@ namespace TestApplicationWPF
         public MainWindow()
         {
             InitializeComponent();
-            using (var ctx = new TestContext())
-            {
-                var stud = new User()
-                {
-                    Name = "proverka",
-                    Surname = "2",
-                    DateOfBirth = DateTime.Now,
-                    Email = "",
-                    PhoneNumber = "5",
-                    Gender = Gender.Female,
-                    AccessLevels = new List<AccessLevel>()
-                        { new AccessLevel() {Id=1,Name="Soset"} },
-                    Login = "TogrulLogin",
-                    Password = "12345"
-                };
-                // ctx.Users.Add(stud);
-                //ctx.SaveChanges();
-                //  Console.WriteLine("vse");
-                try
-                {
-                    UserRepository userRepository = new UserRepository();
-                    userRepository.AddUser(new User() { Name = "prov ", Surname = "3", Id = 50 });
+            //using (var ctx = new TestContext())
+            //{
+            //    var stud = new User()
+            //    {
+            //        Name = "proverka",
+            //        Surname = "2",
+            //        DateOfBirth = DateTime.Now,
+            //        Email = "",
+            //        PhoneNumber = "5",
+            //        Gender = Gender.Female,
+            //        AccessLevels = new List<AccessLevel>()
+            //            { new AccessLevel() {Id=1,Name="Soset"} },
+            //        Login = "TogrulLogin",
+            //        Password = "12345"
+            //    };
+            //    // ctx.Users.Add(stud);
+            //    //ctx.SaveChanges();
+            //    //  Console.WriteLine("vse");
+               
+            //// userRepository.AddUser(stud);
 
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-
-            // userRepository.AddUser(stud);
-
-            }
+            //}
 
         }
 
@@ -67,10 +57,16 @@ namespace TestApplicationWPF
             DragMove();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ButtonExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
 
+        private void ButtonLogin_Click(object sender, RoutedEventArgs e)
+        {
+            HeadWindow headWindow = new HeadWindow();
+            headWindow.Show();
+            this.Close();
         }
     }
 }

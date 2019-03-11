@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dragablz, Version=0.0.3.203, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dragablz.0.0.3.203\lib\net45\Dragablz.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -68,15 +71,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Migrations\201903051543244_InitialCreate.cs" />
-    <Compile Include="Migrations\201903051543244_InitialCreate.Designer.cs">
-      <DependentUpon>201903051543244_InitialCreate.cs</DependentUpon>
+    <Compile Include="HeadWindow.xaml.cs">
+      <DependentUpon>HeadWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903070752085_datetime_problem.cs" />
-    <Compile Include="Migrations\201903070752085_datetime_problem.Designer.cs">
-      <DependentUpon>201903070752085_datetime_problem.cs</DependentUpon>
+    <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Migrations\201903101553319_CreateDB.cs" />
+    <Compile Include="Migrations\201903101553319_CreateDB.Designer.cs">
+      <DependentUpon>201903101553319_CreateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Services\UserServices\IUserService.cs" />
+    <Compile Include="Services\UserServices\UserService.cs" />
+    <Compile Include="TestsWindow.xaml.cs">
+      <DependentUpon>TestsWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="HeadWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Compile Include="Repository\AccessLevelRepository\AccessLevelRepository.cs" />
     <Compile Include="Repository\AccessLevelRepository\IAccessLevelRepository.cs" />
     <Compile Include="Repository\AnswerRepository\AnswerRepository.cs" />
@@ -97,9 +109,8 @@
     <Compile Include="Repository\TestBlanksRepository\TestBlankRepository.cs" />
     <Compile Include="Repository\UserRepository\IUserRepository.cs" />
     <Compile Include="Repository\UserRepository\UserRepository.cs" />
-    <Compile Include="Services\UserServices\LoginServices\ILoginService.cs" />
-    <Compile Include="Services\UserServices\LoginServices\LoginService.cs" />
-    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -113,6 +124,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="TestsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\AccessLevel.cs" />
@@ -138,11 +153,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201903051543244_InitialCreate.resx">
-      <DependentUpon>201903051543244_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903070752085_datetime_problem.resx">
-      <DependentUpon>201903070752085_datetime_problem.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903101553319_CreateDB.resx">
+      <DependentUpon>201903101553319_CreateDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -180,6 +192,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\close6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\mainicon.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

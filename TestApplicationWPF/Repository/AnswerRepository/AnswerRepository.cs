@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
@@ -29,6 +26,22 @@ namespace TestApplicationWPF.Repository.AnswerRepository
             }
         }
 
+        public Answer GetAccessLevelByID(int ID)
+        {
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.Answers)
+                {
+                    if(temp.Id == ID)
+                    {
+                        return temp;
+                    }
+                }
+                MessageBox.Show("Ответа с данным ID не было найдено!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return null;
+            }
+        }
+
         public IEnumerable<Answer> GetAllAnswers()
         {
             using (var c = new TestContext())
@@ -51,7 +64,7 @@ namespace TestApplicationWPF.Repository.AnswerRepository
                         return true;
                     }
                 }
-                MessageBox.Show("Не было найдено данного id!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Ответа с данным ID не было найдено!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
         }

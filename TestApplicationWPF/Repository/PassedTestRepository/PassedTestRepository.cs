@@ -37,6 +37,43 @@ namespace TestApplicationWPF.Repository.PassedTestRepository
             }
         }
 
+        public PassedTests GetPassedTestByID(int ID)
+        {
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.PassedTests)
+                {
+                    if(temp.Id == ID)
+                    {
+                        return temp;
+                    }
+                }
+                MessageBox.Show("Не было найдено сданного экзамена с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return null;
+            }
+        }
+
+        public ICollection<PassedTests> GetPassedTestsByUser(User user)
+        {
+            using (var c = new TestContext())
+            {
+                List<PassedTests> passedTests = new List<PassedTests>();
+                foreach(var temp in c.PassedTests)
+                {
+                    if(temp.User == user)
+                    {
+                        passedTests.Add(temp);
+                    }
+                }
+                if(passedTests.Count != 0)
+                {
+                    return passedTests;
+                }
+                MessageBox.Show("Не было найдено сданных экзаменов с данным пользователем!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return null;
+            }
+        }
+
         public bool RemovePassedTestById(int Id)
         {
             using (var c = new TestContext())
@@ -50,7 +87,7 @@ namespace TestApplicationWPF.Repository.PassedTestRepository
                         return true;
                     }
                 }
-                MessageBox.Show("Не было найдено данного id!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Не было найдено сданного экзамена с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
         }

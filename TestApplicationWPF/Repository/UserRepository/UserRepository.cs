@@ -38,6 +38,38 @@ namespace TestApplicationWPF.Repository.UserRepository
             }
         }
 
+        public User GetUserByEmail(string email)
+        {
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.Users)
+                {
+                    if(temp.Email == email)
+                    {
+                        return temp;
+                    }
+                }
+                MessageBox.Show("Не было найдено пользователя с данной почтой!", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                return null;
+            }
+        }
+
+        public User GetUserByID(int ID)
+        {
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.Users)
+                {
+                    if(temp.Id == ID)
+                    {
+                        return temp;
+                    }
+                }
+                MessageBox.Show("Не было найдено пользователя с данным ID!", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                return null;
+            }
+        }
+
         public User GetUserByLogin(string login)
         {
             using (var c = new TestContext())
@@ -49,7 +81,7 @@ namespace TestApplicationWPF.Repository.UserRepository
                         return temp;
                     }
                 }
-                MessageBox.Show("Пользователя с таким логином не существует!", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Не было найдено пользователя с данным логином!", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
                 return null;
             }
         }
@@ -67,7 +99,7 @@ namespace TestApplicationWPF.Repository.UserRepository
                         return true;
                     }
                 }
-                MessageBox.Show("Не было найдено данного id!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Не было пользователя с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
         }

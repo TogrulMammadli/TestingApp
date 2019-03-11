@@ -37,6 +37,70 @@ namespace TestApplicationWPF.Repository.GroupsRepository
             }
         }
 
+        public Group GetGroupByID(int ID)
+        {
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.Groups)
+                {
+                    if(temp.Id == ID)
+                    {
+                        return temp;
+                    }
+                }
+                MessageBox.Show("Не было найдено групп с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return null;
+            }
+        }
+
+        public ICollection<Group> GetGroupsByCource(Cource cource)
+        {
+            List<Group> groups = new List<Group>();
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.Groups)
+                {
+                    if(temp.cource == cource)
+                    {
+                        groups.Add(temp);
+                    }
+                }
+                if(groups.Count != 0)
+                {
+                    return groups;
+                }
+                else
+                {
+                    MessageBox.Show("Не было найдено групп с данным курсом!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return null;
+                }
+            }
+        }
+
+        public ICollection<Group> GetGroupsByName(string name)
+        {
+            List<Group> groups = new List<Group>();
+            using (var c = new TestContext())
+            {
+                foreach(var temp in groups)
+                {
+                    if(temp.Name == name)
+                    {
+                        groups.Add(temp);
+                    }
+                }
+                if(groups.Count != 0)
+                {
+                    return groups;
+                }
+                else
+                {
+                    MessageBox.Show("Не было найдено группы с данным именем!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return null;
+                }
+            }
+        }
+
         public bool RemoveGroupById(int Id)
         {
             using (var c = new TestContext())
@@ -50,7 +114,7 @@ namespace TestApplicationWPF.Repository.GroupsRepository
                         return true;
                     }
                 }
-                MessageBox.Show("Не было найдено данного id!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Не было найдено группы с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
         }

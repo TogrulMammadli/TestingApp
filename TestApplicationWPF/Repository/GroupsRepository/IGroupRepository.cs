@@ -12,5 +12,8 @@ namespace TestApplicationWPF.Repository.GroupsRepository
         IEnumerable<Group> GetAllGroups();
         bool RemoveGroupById(int Id);
         bool AddGroup(Group group);
+        Group GetGroupByID(int ID);
+        ICollection<Group> GetGroupsByName(string name);
+        ICollection<Group> GetGroupsByCource(Cource cource);
     }
 }

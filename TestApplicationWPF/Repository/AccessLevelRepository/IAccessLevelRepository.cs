@@ -13,5 +13,6 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
         bool RemoveAccessLevelById(int Id);
         bool AddAccessLevel(AccessLevel accessLevel);
         AccessLevel GetAccessLevelByName(string accessName);
+        AccessLevel GetAccessLevelByID(int ID);
     }
 }

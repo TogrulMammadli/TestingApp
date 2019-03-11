@@ -12,5 +12,6 @@ namespace TestApplicationWPF.Repository.AnswerRepository
         IEnumerable<Answer> GetAllAnswers();
         bool RemoveAnsweryById(int Id);
         bool AddAnswer(Answer answer);
+        Answer GetAccessLevelByID(int ID);
     }
 }

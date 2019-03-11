@@ -16,6 +16,8 @@ namespace TestApplicationWPF.Models
         [MaxLength(50)]
         [Index(IsUnique =true)]
         public string Name { get; set; }
+        public string About { get; set; }
+        public string Autor { get; set; }
         public TimeSpan DurationMin  { get; set; }
         public List<Question> Questions { get; set; }
         bool Used=false;

@@ -79,6 +79,10 @@
     <Compile Include="Migrations\201903101553319_CreateDB.Designer.cs">
       <DependentUpon>201903101553319_CreateDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903110719462_SomeMig.cs" />
+    <Compile Include="Migrations\201903110719462_SomeMig.Designer.cs">
+      <DependentUpon>201903110719462_SomeMig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Services\UserServices\IUserService.cs" />
     <Compile Include="Services\UserServices\UserService.cs" />
@@ -156,6 +160,9 @@
     <EmbeddedResource Include="Migrations\201903101553319_CreateDB.resx">
       <DependentUpon>201903101553319_CreateDB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903110719462_SomeMig.resx">
+      <DependentUpon>201903110719462_SomeMig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -196,6 +203,8 @@
   <ItemGroup>
     <Resource Include="Icons\mainicon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Services\TestServices\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,5 +12,7 @@ namespace TestApplicationWPF.Repository.SubjectRepository
         IEnumerable<Subject> GetAllSubjects();
         bool RemoveSubjectById(int Id);
         bool AddSubject(Subject subject);
+        Subject GetSubjectByID(int ID);
+        Subject GetSubjectByName(string name);
     }
 }

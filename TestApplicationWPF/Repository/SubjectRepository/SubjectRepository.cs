@@ -37,6 +37,38 @@ namespace TestApplicationWPF.Repository.SubjectRepository
             }
         }
 
+        public Subject GetSubjectByID(int ID)
+        {
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.Subjects)
+                {
+                    if(temp.Id == ID)
+                    {
+                        return temp;
+                    }
+                }
+                MessageBox.Show("Не было найдено предмета с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return null;
+            }
+        }
+
+        public Subject GetSubjectByName(string name)
+        {
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.Subjects)
+                {
+                    if(temp.Name ==name)
+                    {
+                        return temp;
+                    }
+                }
+                MessageBox.Show("Не было найдено предмета с данным именем!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return null;
+            }
+        }
+
         public bool RemoveSubjectById(int Id)
         {
             using (var c = new TestContext())
@@ -50,7 +82,7 @@ namespace TestApplicationWPF.Repository.SubjectRepository
                         return true;
                     }
                 }
-                MessageBox.Show("Не было найдено данного id!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Не было найдено предмета с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
         }

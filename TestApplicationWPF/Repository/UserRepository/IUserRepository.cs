@@ -13,5 +13,7 @@ namespace TestApplicationWPF.Repository.UserRepository
         bool RemoveUserById(int Id);
         bool AddUser(User user);
         User GetUserByLogin(string login);
+        User GetUserByID(int ID);
+        User GetUserByEmail(string email);
     }
 }

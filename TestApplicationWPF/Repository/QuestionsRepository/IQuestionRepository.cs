@@ -12,5 +12,6 @@ namespace TestApplicationWPF.Repository.QuestionsRepository
         IEnumerable<Question> GetAllQuestions();
         bool RemoveQuestionById(int Id);
         bool AddQuestion(Question question);
+        Question GetQuestionByID(int ID);
     }
 }

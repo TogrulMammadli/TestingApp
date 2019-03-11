@@ -37,7 +37,23 @@ namespace TestApplicationWPF.Repository.CategoryRepository
             }
         }
 
-        public Category GetCategoryGetCategoryByName(string categoryName)
+        public Category GetCategoryByID(int ID)
+        {
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.Categories)
+                {
+                    if(temp.Id == ID)
+                    {
+                        return temp;
+                    }
+                }
+                MessageBox.Show("Категории с данным ID не было найдено!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return null;
+            }
+        }
+
+        public Category GetCategoryByName(string categoryName)
         {
             using (var c = new TestContext())
             {
@@ -48,7 +64,7 @@ namespace TestApplicationWPF.Repository.CategoryRepository
                         return temp;
                     }
                 }
-                MessageBox.Show("Не было найдено данного имени!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Категории с данным именем не было найдено!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return null;
             }
         }
@@ -62,11 +78,11 @@ namespace TestApplicationWPF.Repository.CategoryRepository
                     if (test.Id == Id)
                     {
                         c.Categories.Remove(test);
-                    c.SaveChanges();
+                        c.SaveChanges();
                         return true;
                     }
                 }
-                MessageBox.Show("Не было найдено данного id!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Категории с данным ID не было найдено!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
         }

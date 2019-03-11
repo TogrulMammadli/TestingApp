@@ -37,6 +37,46 @@ namespace TestApplicationWPF.Repository.CourceRepository
             }
         }
 
+        public Cource GetCourceByID(int ID)
+        {
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.Cources)
+                {
+                    if(temp.Id == ID)
+                    {
+                        return temp;
+                    }
+                }
+                MessageBox.Show("Не было найдено курса с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return null;
+            }
+        }
+
+        public ICollection<Cource> GetCourcesByName(string name)
+        {
+            List<Cource> cources = new List<Cource>();
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.Cources)
+                {
+                    if(temp.Name == name)
+                    {
+                        cources.Add(temp);
+                    }
+                }
+                if(cources.Count != 0)
+                {
+                    return cources;
+                }
+                else
+                {
+                    MessageBox.Show("Не было найдено курса с данным именем!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                    return null;
+                }
+            }
+        }
+
         public bool RemoveCourceById(int Id)
         {
             using (var c = new TestContext())
@@ -50,7 +90,7 @@ namespace TestApplicationWPF.Repository.CourceRepository
                         return true;
                     }
                 }
-                MessageBox.Show("Не было найдено данного id!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Не было найдено курса с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
         }

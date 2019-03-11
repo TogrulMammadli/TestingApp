@@ -14,7 +14,6 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
     {
         public bool AddAccessLevel(AccessLevel accessLevel)
         {
-            int a;
             try
             {
                 using (var c= new TestContext())
@@ -32,6 +31,22 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
 
         }
 
+        public AccessLevel GetAccessLevelByID(int ID)
+        {
+            using (var c = new TestContext())
+            {
+                foreach(var temp in c.AccessLevels)
+                {
+                    if(temp.Id == ID)
+                    {
+                        return temp;
+                    }
+                }
+                MessageBox.Show("Доступа с данным ID не было найдено!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return null;
+            }
+        }
+
         public AccessLevel GetAccessLevelByName(string accessName)
         {
             using (var c = new TestContext())
@@ -43,7 +58,7 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
                         return temp;
                     }
                 }
-                MessageBox.Show("Не было найдено данного имени!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Доступа с данным именем не было найдено!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return null;
             }
         }
@@ -69,7 +84,7 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
                         return true;
                     }
                 }
-                MessageBox.Show("Не было найдено данного id!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Доступа с данным ID не было найдено!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
         }

@@ -14,6 +14,7 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
     {
         public bool AddAccessLevel(AccessLevel accessLevel)
         {
+            int a;
             try
             {
                 using (var c= new TestContext())

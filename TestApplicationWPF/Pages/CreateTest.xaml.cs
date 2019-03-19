@@ -10,27 +10,27 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TestApplicationWPF
 {
     /// <summary>
-    /// Interaction logic for HeadWindow.xaml
+    /// Interaction logic for PageCreateTest.xaml
     /// </summary>
-    public partial class HeadWindow : Window
+    public partial class PageCreateTest : Page
     {
-        public HeadWindow()
+        public PageCreateTest()
         {
             InitializeComponent();
-            //frame.NavigationService.Navigate(new PageCreateTest());
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void TabablzControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            frame.Content = new PageCreateTest();
+
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void TabablzControl_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
 
         }

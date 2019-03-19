@@ -3,16 +3,43 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:TestApplicationWPF"
         mc:Ignorable="d"
-        Title="HeadWindow" Height="600" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Icons/mainicon.png" WindowStyle="None">
+        Title="HeadWindow" Height="600" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Icons/mainicon.png" WindowStyle="None">
     <Grid>
-        <Grid Width="200" HorizontalAlignment="Left">
-            <StackPanel>
-                <Button Content="1st"></Button>
-                <Button Content="2st"></Button>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="BlueViolet">
+            <Button
+                Margin="10"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                <materialDesign:PackIcon
+                    Width="20"
+                    Height="20"
+                    Background="{x:Null}"
+                    Kind="Close" />
+            </Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Button Content="1st" Click="Button_Click"></Button>
+                <Button Content="2st" Click="Button_Click_1"></Button>
                 <Button Content="3st"></Button>
             </StackPanel>
+
+            <Frame Grid.Column="1" x:Name="frame" Content="frame" NavigationUIVisibility="Hidden"/>
         </Grid>
         
     </Grid>

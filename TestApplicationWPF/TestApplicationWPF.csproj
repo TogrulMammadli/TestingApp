@@ -71,6 +71,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Pages\CreateTest.xaml.cs">
+      <DependentUpon>CreateTest.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="HeadWindow.xaml.cs">
       <DependentUpon>HeadWindow.xaml</DependentUpon>
     </Compile>
@@ -86,9 +90,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Services\UserServices\IUserService.cs" />
     <Compile Include="Services\UserServices\UserService.cs" />
-    <Compile Include="TestsWindow.xaml.cs">
-      <DependentUpon>TestsWindow.xaml</DependentUpon>
-    </Compile>
+    <Page Include="Pages\CreateTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
     <Page Include="HeadWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,10 +133,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TestsWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\AccessLevel.cs" />
@@ -159,9 +160,11 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201903101553319_CreateDB.resx">
       <DependentUpon>201903101553319_CreateDB.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903110719462_SomeMig.resx">
       <DependentUpon>201903110719462_SomeMig.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

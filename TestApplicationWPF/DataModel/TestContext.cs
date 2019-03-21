@@ -21,6 +21,7 @@ namespace TestApplicationWPF.DataModel
         public DbSet<Question> Questions { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<TestBlank> TestBlanks { get; set; }
+        public DbSet<BestTimeForStudy> bestTimeForStudies { get; set; }
 
     }
 }

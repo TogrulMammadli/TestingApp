@@ -23,7 +23,6 @@ namespace TestApplicationWPF.Models
         public int Id { get; set; }
         public string Text { get; set; }
         [MaxLength]
-
         public byte[] Image { get; set; }
     }
 }

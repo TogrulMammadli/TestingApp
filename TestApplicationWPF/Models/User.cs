@@ -21,20 +21,22 @@ namespace TestApplicationWPF.Models
         {
         }
 
-        public User(int ıd, string name, string surname, DateTime dateOfBirth, Gender gender, string phoneNumber, string email, string password, string login, byte[] image, List<AccessLevel> аccessLevels)
+        public User(int id, string name, string surname, string patronymic, DateTime? dateOfBirth, Gender gender, string phoneNumber, string email, string password, string login, byte[] image, List<AccessLevel> accessLevels)
         {
-            Id = ıd;
+            Id = id;
             Name = name ?? throw new ArgumentNullException(nameof(name));
             Surname = surname ?? throw new ArgumentNullException(nameof(surname));
-            DateOfBirth = dateOfBirth;
+            Patronymic = patronymic ?? throw new ArgumentNullException(nameof(patronymic));
+            DateOfBirth = dateOfBirth ?? throw new ArgumentNullException(nameof(dateOfBirth));
             Gender = gender;
             PhoneNumber = phoneNumber ?? throw new ArgumentNullException(nameof(phoneNumber));
             Email = email ?? throw new ArgumentNullException(nameof(email));
             Password = password ?? throw new ArgumentNullException(nameof(password));
             Login = login ?? throw new ArgumentNullException(nameof(login));
             İmage = image ?? throw new ArgumentNullException(nameof(image));
-            AccessLevels = аccessLevels ?? throw new ArgumentNullException(nameof(аccessLevels));
+            AccessLevels = accessLevels ?? throw new ArgumentNullException(nameof(accessLevels));
         }
+
         [Key]
         public int Id { get; set; }
         [Required]

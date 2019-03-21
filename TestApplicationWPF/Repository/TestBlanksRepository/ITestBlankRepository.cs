@@ -7,7 +7,7 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.TestBlanksRepository
 {
-    interface ITestBlankRepository
+   public interface ITestBlankRepository
     {
         IEnumerable<TestBlank> GetAllTestBlanks();
         bool RemoveTestBlankById(int Id);

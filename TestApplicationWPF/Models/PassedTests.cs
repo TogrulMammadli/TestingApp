@@ -8,7 +8,7 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Models
 {
-  public  class PassedTests
+  public  class PassedTests//soderjit blank vremanacala vrema konce
     {
         public PassedTests()
         {
@@ -23,8 +23,8 @@ namespace TestApplicationWPF.Models
         public int Id { get; set; }
         public User User { get; set; }
         public TestBlank Blank { get; set; }
-        public DateTime BeginDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateTime? BeginDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
     }
 }

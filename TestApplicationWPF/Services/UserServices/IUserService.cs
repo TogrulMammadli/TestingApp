@@ -12,6 +12,7 @@ namespace TestApplicationWPF.Services.UserServices
         IEnumerable<User> GetAllUsers();
         void SentNotfications();
         void SentEmail(List<User> toUsers, string Message);
+        void AddUser(User user);
 
         bool ChangeName(string name);
         bool ChangeSurname(string surname);
@@ -21,7 +22,7 @@ namespace TestApplicationWPF.Services.UserServices
         bool ChangePassword(string password);
         bool ChangeLogin(string Login);
         bool ChangeImage(byte[] İmage);
-        bool AddNewAccessLevelToStudent(AccessLevel accessLevel);
-        bool RemoveAccessLevelfromStudent(AccessLevel accessLevel);
+        bool AddNewAccessLevelTouser(AccessLevel accessLevel);
+        bool RemoveAccessLevelfromUser(AccessLevel accessLevel);
     }
 }

@@ -7,13 +7,13 @@ namespace TestApplicationWPF.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CreateDB : IMigrationMetadata
+    public sealed partial class Createdatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Createdatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903101553319_CreateDB"; }
+            get { return "201903222133174_Create database"; }
         }
         
         string IMigrationMetadata.Source

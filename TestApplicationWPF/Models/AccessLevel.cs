@@ -13,11 +13,20 @@ namespace TestApplicationWPF.Models
         public AccessLevel()
         {
         }
+
+        public AccessLevel(int id, string name)
+        {
+            Id = id;
+            Name = name ?? throw new ArgumentNullException(nameof(name));
+        }
+
         [Key]
         public int Id { get; set; }
         [MaxLength(30)]
         [Index(IsUnique = true)]
         public string Name { get; set; }
+
+        public virtual ICollection<User> users { get; set; }
 
     }
 }

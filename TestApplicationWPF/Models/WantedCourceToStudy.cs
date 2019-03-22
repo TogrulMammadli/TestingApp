@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,13 +13,14 @@ namespace TestApplicationWPF.Models
         {
         }
 
-        public WantedCourceToStudy(int studetnId, User user)
+        public WantedCourceToStudy(int studetnId, Cource cource)
         {
             StudetnId = studetnId;
-            this.user = user ?? throw new ArgumentNullException(nameof(user));
+            Cource = cource ?? throw new ArgumentNullException(nameof(cource));
         }
 
+        [Key]
         public int StudetnId { get; set; }
-        public User user { get; set; }
+        public Cource Cource { get; set; }
     }
 }

@@ -16,6 +16,7 @@ using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 using System.Threading;
 using TestApplicationWPF.Repository.UserRepository;
+using TestApplicationWPF.Services.UserServices;
 
 namespace TestApplicationWPF
 {
@@ -24,31 +25,39 @@ namespace TestApplicationWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        UserService userService = new UserService(new UserRepository());
         public MainWindow()
         {
-            InitializeComponent();
-            //using (var ctx = new TestContext())
-            //{
-            //    var stud = new User()
-            //    {
-            //        Name = "proverka",
-            //        Surname = "2",
-            //        DateOfBirth = DateTime.Now,
-            //        Email = "",
-            //        PhoneNumber = "5",
-            //        Gender = Gender.Female,
-            //        AccessLevels = new List<AccessLevel>()
-            //            { new AccessLevel() {Id=1,Name="Soset"} },
-            //        Login = "TogrulLogin",
-            //        Password = "12345"
-            //    };
-            //    // ctx.Users.Add(stud);
-            //    //ctx.SaveChanges();
-            //    //  Console.WriteLine("vse");
-               
-            //// userRepository.AddUser(stud);
+                InitializeComponent();
+                using (var ctx = new TestContext())
+                {
+                var user = new User()
+                {
+                    Name = "Togrul",
+                    Surname = "Mamadli",
+                    DateOfBirth = DateTime.Now,
+                    Email = "mamedlitogrul99@gmail.com",
+                    PhoneNumber = "0503907667",
+                    Gender = Gender.Male,
+                    //AccessLevels = new List<AccessLevel> { new AccessLevel() {Name="Admin" } },
+                        Login = "TogrulLogin",
+                        Password = "12345"
+                    };
+                try
+                {
+                    ctx.Users.Add(user);
+                    ctx.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+              
+                ////  Console.WriteLine("vse");
 
-            //}
+                //userService.AddUser(user);
+
+            }
 
         }
 

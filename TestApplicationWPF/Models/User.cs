@@ -34,7 +34,6 @@ namespace TestApplicationWPF.Models
             Password = password ?? throw new ArgumentNullException(nameof(password));
             Login = login ?? throw new ArgumentNullException(nameof(login));
             İmage = image ?? throw new ArgumentNullException(nameof(image));
-            AccessLevels = accessLevels ?? throw new ArgumentNullException(nameof(accessLevels));
         }
 
         [Key]
@@ -61,6 +60,6 @@ namespace TestApplicationWPF.Models
         public string Login { get; set; }
         [MaxLength]
         public byte[] İmage { get; set; }
-        public List<AccessLevel> AccessLevels { get; set; }
+        public virtual ICollection<AccessLevel> AccessLevels { get; set; }
     }
 }

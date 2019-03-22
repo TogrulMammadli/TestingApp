@@ -75,11 +75,7 @@ namespace TestApplicationWPF.Services.UserServices
             throw new NotImplementedException();                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
         }                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
                                                                           //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        public bool AddNewAccessLevelToStudent(AccessLevel accessLevel)   //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        {                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-            throw new NotImplementedException();                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        }                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-                                                                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
         public bool ChangeEmail(string email)                             //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
         {                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
             throw new NotImplementedException();                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
@@ -122,10 +118,19 @@ namespace TestApplicationWPF.Services.UserServices
             throw new NotImplementedException();                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
         }                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
 
-
-        public bool RemoveAccessLevelfromStudent(AccessLevel accessLevel)
+        public bool RemoveAccessLevelfromUser(AccessLevel accessLevel)
         {
             throw new NotImplementedException();
+        }
+
+        public bool AddNewAccessLevelTouser(AccessLevel accessLevel)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddUser(User user)
+        {
+            userRepository.AddUser(user);
         }
     }
 }

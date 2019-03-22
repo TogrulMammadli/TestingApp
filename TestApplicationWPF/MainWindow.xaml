@@ -14,6 +14,7 @@
     ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen"
     WindowStyle="None"
+    BorderBrush="#FF00AEFF" BorderThickness="1" 
     mc:Ignorable="d">
     <Grid>
         <Rectangle
@@ -92,8 +93,8 @@
             Background="{x:Null}"
             BorderBrush="{x:Null}"
             Content="Forgot password?"
-            Foreground="gray" />
-        <Button
+            Foreground="gray" Click="ButtonForgotPassword_Click" />
+        <!--<Button
             Width="25"
             Height="25"
             Margin="265,5,5,0"
@@ -107,6 +108,20 @@
                 <ImageBrush ImageSource="Icons/close6.png" />
             </Button.Background>
 
+        </Button>-->
+        <Button
+                Margin="0,0,0,460"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+            Click="ButtonExit_Click"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+            <materialDesign:PackIcon
+                    Width="20"
+                    Height="20"
+                    Background="{x:Null}"
+                    Kind="Close" RenderTransformOrigin="0.547,-8.284" />
         </Button>
 
     </Grid>

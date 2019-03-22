@@ -68,5 +68,11 @@ namespace TestApplicationWPF
             headWindow.Show();
             this.Close();
         }
+
+        private void ButtonForgotPassword_Click(object sender, RoutedEventArgs e)
+        {
+            ForgotPassWindow forgotPassWindow = new ForgotPassWindow();
+            forgotPassWindow.ShowDialog();
+        }
     }
 }

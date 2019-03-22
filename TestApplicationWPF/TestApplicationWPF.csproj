@@ -71,6 +71,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ForgotPassWindow.xaml.cs">
+      <DependentUpon>ForgotPassWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201903212219199_AddedBestTimeForStudy.cs" />
     <Compile Include="Migrations\201903212219199_AddedBestTimeForStudy.Designer.cs">
       <DependentUpon>201903212219199_AddedBestTimeForStudy.cs</DependentUpon>
@@ -100,6 +103,10 @@
     <Compile Include="Services\TestServices\ITestService.cs" />
     <Compile Include="Services\UserServices\IUserService.cs" />
     <Compile Include="Services\UserServices\UserService.cs" />
+    <Page Include="ForgotPassWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CreateTest.xaml">
       <SubType>Designer</SubType>
       <Generator>XamlIntelliSenseFileGenerator</Generator>

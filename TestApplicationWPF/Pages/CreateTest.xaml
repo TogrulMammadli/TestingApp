@@ -8,7 +8,7 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="PageCreateTest"
-    d:DesignHeight="600"
+    d:DesignHeight="560"
     d:DesignWidth="1000"
     mc:Ignorable="d">
 
@@ -40,57 +40,132 @@
                 <dragablz:TabablzControl.InterTabController>
                     <dragablz:InterTabController />
                 </dragablz:TabablzControl.InterTabController>
+                <!--TAB 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->
                 <TabItem Header="ABOUT">
                     <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="30" />
-                            <RowDefinition Height="80" />
-                            <RowDefinition Height="30" />
-                            <RowDefinition />
-                            <RowDefinition Height="30" />
-                            <RowDefinition Height="80" />
-                            <RowDefinition Height="20" />
-                        </Grid.RowDefinitions>
-                        <TextBlock
-                            Grid.Row="1"
-                            Margin="35,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Bottom"
-                            Text="Test name: " />
-                        <TextBox
-                            Grid.Row="1"
-                            Width="800"
-                            Margin="100,0,0,0"
-                            HorizontalAlignment="Left"
-                            TextWrapping="Wrap"
-                            VerticalScrollBarVisibility="Auto" />
-                        <TextBlock
-                            Grid.Row="3"
-                            Margin="35,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Bottom"
-                            Text="About test: " />
-                        <TextBox
-                            Grid.Row="3"
-                            Width="800"
-                            Margin="100,0,0,0"
-                            HorizontalAlignment="Left"
-                            TextWrapping="Wrap"
-                            VerticalScrollBarVisibility="Auto" />
-                        <TextBlock
-                            Grid.Row="5"
-                            Margin="35,0,0,0"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Bottom"
-                            Text="Author: " />
-                        <TextBox
-                            Grid.Row="5"
-                            Width="800"
-                            Margin="100,0,0,0"
-                            HorizontalAlignment="Left"
-                            TextWrapping="Wrap"
-                            VerticalScrollBarVisibility="Auto" />
+                        <Grid >
+                            <!--<Rectangle 
+                   
+                              Height="110"
+                              Margin="55,0,55,380"
+                              VerticalAlignment="Bottom"
+                              Fill="White"
+                              RadiusX="21.333"
+                              RadiusY="21.333">
+                                <Rectangle.Effect>
+                                    <DropShadowEffect
+                                     BlurRadius="15"
+                                     Direction="0"
+                                     RenderingBias="Quality"
+                                     ShadowDepth="1"
+                                     Color="#FFBBBBBB" />
+                                </Rectangle.Effect>
+                            </Rectangle>-->
+
+                        </Grid>
+                        <Grid >
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="5" />
+                                <RowDefinition Height="150" />
+                                <RowDefinition Height="220"/>
+                                <RowDefinition Height="130" />
+                            </Grid.RowDefinitions>
+                            <Rectangle Grid.Row="1"
+                              Height="110"
+                              Margin="35,0,35,0"
+                              VerticalAlignment="Center"
+                              Fill="White"
+                              RadiusX="21.333"
+                              RadiusY="21.333">
+                                <Rectangle.Effect>
+                                    <DropShadowEffect
+                                     BlurRadius="15"
+                                     Direction="0"
+                                     RenderingBias="Quality"
+                                     ShadowDepth="1"
+                                     Color="#FFBBBBBB" />
+                                </Rectangle.Effect>
+                            </Rectangle>
+                            <!--<TextBlock
+                                Grid.Row="1"
+                                Margin="70,40,70,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                Text="Test name: " />-->
+                            <TextBox
+                                Grid.Row="1"
+                                Width="850"
+                                 Margin="80,23,80,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto"
+                                materialDesign:HintAssist.Hint="Test name"
+                                FontSize="18"/>
+                            <!--<TextBlock
+                                Grid.Row="2"
+                                Margin="35,0,0,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Bottom"
+                                Text="About test: " />-->
+                            <Rectangle Grid.Row="2"
+                              Height="180"
+                              Margin="35,0,35,0"
+                              VerticalAlignment="Center"
+                              Fill="White"
+                              RadiusX="21.333"
+                              RadiusY="21.333">
+                                <Rectangle.Effect>
+                                    <DropShadowEffect
+                                     BlurRadius="15"
+                                     Direction="0"
+                                     RenderingBias="Quality"
+                                     ShadowDepth="1"
+                                     Color="#FFBBBBBB" />
+                                </Rectangle.Effect>
+                            </Rectangle>
+                            <TextBox
+                                Grid.Row="2"
+                                 Width="850"
+                                 Margin="80,90,80,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto"
+                                materialDesign:HintAssist.Hint="About test..."
+                                FontSize="18" />
+                            <Rectangle Grid.Row="3"
+                              Height="100"
+                              Margin="35,0,35,0"
+                              VerticalAlignment="Center"
+                              Fill="White"
+                              RadiusX="21.333"
+                              RadiusY="21.333">
+                                <Rectangle.Effect>
+                                    <DropShadowEffect
+                                     BlurRadius="15"
+                                     Direction="0"
+                                     RenderingBias="Quality"
+                                     ShadowDepth="1"
+                                     Color="#FFBBBBBB" />
+                                </Rectangle.Effect>
+                            </Rectangle>
+                            
+                            <TextBox
+                                Grid.Row="3"
+                                Width="850"
+                                 Margin="80,16,80,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto"
+                                materialDesign:HintAssist.Hint="Author"
+                                FontSize="18"/>
+                        </Grid>
+                        
                     </Grid>
+
+                    <!--TAB 222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222-->
                 </TabItem>
                 <TabItem Header="QUESTIONS">
 
@@ -107,8 +182,7 @@
                                 <ColumnDefinition Width="300" />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
-                            <Grid
-                                Grid.Column="1"
+                            <Grid Grid.Column="1"
                                 Width="600"
                                 ShowGridLines="True">
                                 <Grid.RowDefinitions>
@@ -198,11 +272,11 @@
                             </Grid>
                             <Grid Grid.Column="0">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition />
+                                    <RowDefinition Height="440" />
                                     <RowDefinition Height="50" />
 
                                 </Grid.RowDefinitions>
-                                <ListBox Grid.Row="0" Background="Coral">
+                                <ListBox Grid.Row="0" Background="Coral" Height="400" Width="260" >
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <DockPanel LastChildFill="False">
@@ -227,6 +301,22 @@
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
+                                <Rectangle Grid.Row="3"
+                                     Height="100"
+                                     Margin="9,0,9,0"
+                                     VerticalAlignment="Center"
+                                     Fill="White"
+                                     RadiusX="21.333"
+                                     RadiusY="21.333">
+                                       <Rectangle.Effect>
+                                           <DropShadowEffect
+                                                BlurRadius="15"
+                                                Direction="0"
+                                                RenderingBias="Quality"
+                                                ShadowDepth="1"
+                                                Color="#FFBBBBBB" />
+                                       </Rectangle.Effect>
+                                </Rectangle>
                                 <!--  zdes  -->
 
                                 <Button
@@ -250,6 +340,7 @@
                         </Grid>
 
                     </Grid>
+                    <!--TAB 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333-->
                 </TabItem>
                 <TabItem Header="SETTINGS">
                     <Grid ShowGridLines="True">

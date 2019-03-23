@@ -52,9 +52,27 @@ namespace TestApplicationWPF
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            HeadWindow headWindow = new HeadWindow();
-            headWindow.Show();
-            this.Close();
+            if (TextBoxUserName.Text=="admin" && PassBoxPassword.Password.ToString()=="admin")
+            {
+                HeadWindow headWindow = new HeadWindow();
+                headWindow.Show();
+                this.Close();
+            }
+            else if (TextBoxUserName.Text == "student" && PassBoxPassword.Password.ToString() == "student")
+            {
+                StudentWindow studentWindow = new StudentWindow();
+                studentWindow.Show();
+                this.Close();
+            }
+            else if (TextBoxUserName.Text == string.Empty && PassBoxPassword.Password.ToString() == string.Empty)
+            {
+                TextBlockWarning.Text = "You have put wrong password or user name!";
+            }
+            else
+            {
+                TextBlockWarning.Text = "You have put wrong password or user name!";
+            }
+            
         }
 
         private void ButtonForgotPassword_Click(object sender, RoutedEventArgs e)

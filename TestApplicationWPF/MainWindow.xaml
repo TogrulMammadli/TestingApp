@@ -65,14 +65,22 @@
                 Foreground="Gray"
                 Text="LOGIN" />
             <StackPanel Margin="20" VerticalAlignment="Center">
-                <TextBox
+               
+                    <TextBox
+                    x:Name="TextBoxUserName"
                     Margin="0,10"
                     materialDesign:HintAssist.Hint="User name"
                     FontSize="18" />
+                   
+             
+                
+               
                 <PasswordBox
+                    x:Name="PassBoxPassword"
                     Margin="0,10"
                     materialDesign:HintAssist.Hint="Password"
                     FontSize="18" />
+                <TextBlock x:Name="TextBlockWarning" Text="" Foreground="Red"></TextBlock>
             </StackPanel>
         </Grid>
         <Button
@@ -82,7 +90,8 @@
             VerticalAlignment="Bottom"
             Click="ButtonLogin_Click"
             Content="LOGIN"
-            Cursor="Hand" />
+            Cursor="Hand"
+            IsDefault="True"/>
         <Button
             Name="ButtonForgotPassword"
             Height="20"

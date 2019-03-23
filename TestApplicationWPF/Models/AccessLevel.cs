@@ -15,10 +15,11 @@ namespace TestApplicationWPF.Models
             this.users = new HashSet<User>();
         }
 
-        public AccessLevel(int id, string name)
+        public AccessLevel(int ıd, string name, ICollection<User> users)
         {
-            Id = id;
+            Id = ıd;
             Name = name ?? throw new ArgumentNullException(nameof(name));
+            this.users = users ?? throw new ArgumentNullException(nameof(users));
         }
 
         [Key]

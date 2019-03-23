@@ -49,7 +49,7 @@ namespace TestApplicationWPF.Repository.UserRepository
                         return temp;
                     }
                 }
-                //MessageBox.Show("Не было найдено пользователя с данной почтой!", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Не было найдено пользователя с данной почтой!", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
                 return null;
             }
         }
@@ -65,7 +65,7 @@ namespace TestApplicationWPF.Repository.UserRepository
                         return temp;
                     }
                 }
-              //  MessageBox.Show("Не было найдено пользователя с данным ID!", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Не было найдено пользователя с данным ID!", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
                 return null;
             }
         }
@@ -81,7 +81,7 @@ namespace TestApplicationWPF.Repository.UserRepository
                         return temp;
                     }
                 }
-                //MessageBox.Show("Не было найдено пользователя с данным логином!", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Не было найдено пользователя с данным логином!", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
                 return null;
             }
         }
@@ -99,7 +99,7 @@ namespace TestApplicationWPF.Repository.UserRepository
                         return true;
                     }
                 }
-                //MessageBox.Show("Не было пользователя с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Не было пользователя с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
         }

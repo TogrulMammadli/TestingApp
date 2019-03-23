@@ -74,6 +74,11 @@
     <Compile Include="ForgotPassWindow.xaml.cs">
       <DependentUpon>ForgotPassWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903230807271_CreateDb.cs" />
+    <Compile Include="Migrations\201903230807271_CreateDb.Designer.cs">
+      <DependentUpon>201903230807271_CreateDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BestTimeForStudy.cs" />
     <Compile Include="Models\WantedCourceToStudy.cs" />
     <Compile Include="Pages\CreateTest.xaml.cs">
@@ -170,6 +175,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201903230807271_CreateDb.resx">
+      <DependentUpon>201903230807271_CreateDb.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

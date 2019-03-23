@@ -20,12 +20,11 @@ namespace TestApplicationWPF.Models
         public User()
         {
             this.AccessLevels = new HashSet<AccessLevel>();
-
         }
 
-        public User(int id, string name, string surname, string patronymic, DateTime? dateOfBirth, Gender gender, string phoneNumber, string email, string password, string login, byte[] image, List<AccessLevel> accessLevels)
+        public User(int ıd, string name, string surname, string patronymic, DateTime? dateOfBirth, Gender gender, string phoneNumber, string email, string password, string login, byte[] image, ICollection<AccessLevel> accessLevels)
         {
-            Id = id;
+            Id = ıd;
             Name = name ?? throw new ArgumentNullException(nameof(name));
             Surname = surname ?? throw new ArgumentNullException(nameof(surname));
             Patronymic = patronymic ?? throw new ArgumentNullException(nameof(patronymic));
@@ -36,6 +35,7 @@ namespace TestApplicationWPF.Models
             Password = password ?? throw new ArgumentNullException(nameof(password));
             Login = login ?? throw new ArgumentNullException(nameof(login));
             İmage = image ?? throw new ArgumentNullException(nameof(image));
+            AccessLevels = accessLevels ?? throw new ArgumentNullException(nameof(accessLevels));
         }
 
         [Key]

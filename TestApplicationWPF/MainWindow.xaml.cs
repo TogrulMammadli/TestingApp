@@ -30,7 +30,7 @@ namespace TestApplicationWPF
     {
         public MainWindow()
         {
-                InitializeComponent();
+            InitializeComponent();
             //var category = new Category() { Name = "TogrulCategory" };
             //CategoryRepository categoryRepository = new CategoryRepository();
             //categoryRepository.AddCategory(category);
@@ -38,6 +38,10 @@ namespace TestApplicationWPF
             //var question = new Question(){Text="somethekst",subject=new Subject() {Name="testSubject" },Answers=new List<Answer>() { new   Answer() { Text = "dawwag" }, new Answer() { Text = "memew" } } };
             //QuestionRepository questionsss= new QuestionRepository();
             //questionsss.AddQuestion(question);
+
+            //var user = new User() { Name = "Togrul", Surname="Mammadli",Patronymic="Vuqar",PhoneNumber="0503907667",Login="TogrulLogin",AccessLevels=new List<AccessLevel> { new AccessLevel() {Name="Admin"} },DateOfBirth=DateTime.Now,Email="mamedlitogrul99@gmail.com",Password="a",Gender=Gender.Male };
+            //UserRepository userRepository = new UserRepository();
+            //userRepository.AddUser(user);
         }
 
         private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

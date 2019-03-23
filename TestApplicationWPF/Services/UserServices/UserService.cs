@@ -132,5 +132,17 @@ namespace TestApplicationWPF.Services.UserServices
         {
             userRepository.AddUser(user);
         }
+
+        public List<string> GetUserAccessLevels(User user)
+        {
+            List<string> names = new List<string>();
+            foreach (var temp in user.AccessLevels)
+            {
+
+                names.Add(temp.Name);
+
+            }
+            return names;
+        }
     }
 }

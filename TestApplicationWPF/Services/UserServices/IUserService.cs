@@ -13,7 +13,7 @@ namespace TestApplicationWPF.Services.UserServices
         void SentNotfications();
         void SentEmail(List<User> toUsers, string Message);
         void AddUser(User user);
-
+        List<string> GetUserAccessLevels(User user);
         bool ChangeName(string name);
         bool ChangeSurname(string surname);
         bool ChangePatronomyic(string patronomyic);

@@ -28,6 +28,7 @@ namespace TestApplicationWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        public UserService userService = new UserService(new UserRepository());
         public MainWindow()
         {
             InitializeComponent();
@@ -56,13 +57,16 @@ namespace TestApplicationWPF
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (TextBoxUserName.Text=="admin" && PassBoxPassword.Password.ToString()=="admin")
+            User user = userService.Login(TextBoxUserName.Text, PassBoxPassword.Password.ToString());
+
+
+            if ((TextBoxUserName.Text == user.Login || TextBoxUserName.Text == user.Email) && PassBoxPassword.Password.ToString() == user.Password && userService.GetUserAccessLevels(user).Contains("Admin") == true)
             {
                 HeadWindow headWindow = new HeadWindow();
                 headWindow.Show();
                 this.Close();
             }
-            else if (TextBoxUserName.Text == "student" && PassBoxPassword.Password.ToString() == "student")
+            else if ((TextBoxUserName.Text == user.Login || TextBoxUserName.Text == user.Email) && PassBoxPassword.Password.ToString() == user.Password && userService.GetUserAccessLevels(user).Contains("Student") == true)
             {
                 StudentWindow studentWindow = new StudentWindow();
                 studentWindow.Show();

@@ -15,12 +15,18 @@ namespace TestApplicationWPF.Models
     }
     public class Question
     {
-        public Question(int ıd, string text, List<Answer> answers, List<Answer> correctAnswer, Complexity complexity, byte[] ımage, Subject subject)
+       
+
+        public Question()
+        {
+        }
+
+        public Question(int ıd, string text, List<WrongAnswer> wrongAnswers, List<CorrectAnswer> correctAnswers, Complexity complexity, byte[] ımage, Subject subject)
         {
             Id = ıd;
             Text = text ?? throw new ArgumentNullException(nameof(text));
-            Answers = answers ?? throw new ArgumentNullException(nameof(answers));
-            CorrectAnswer = correctAnswer ?? throw new ArgumentNullException(nameof(correctAnswer));
+            WrongAnswers = wrongAnswers ?? throw new ArgumentNullException(nameof(wrongAnswers));
+            CorrectAnswers = correctAnswers ?? throw new ArgumentNullException(nameof(correctAnswers));
             Complexity = complexity;
             Image = ımage ?? throw new ArgumentNullException(nameof(ımage));
             this.subject = subject ?? throw new ArgumentNullException(nameof(subject));
@@ -29,8 +35,8 @@ namespace TestApplicationWPF.Models
         [Key]
         public int Id { get; set; }
         public string Text { get; set; }
-        public List<Answer> Answers { get; set; }
-        public List<Answer> CorrectAnswer { get; set; }
+        public virtual List<WrongAnswer> WrongAnswers { get; set; }
+        public virtual List<CorrectAnswer> CorrectAnswers { get; set; }
         Complexity Complexity { get; set; }
         [MaxLength]
         public byte[] Image { get; set; }

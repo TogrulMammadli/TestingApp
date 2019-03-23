@@ -74,11 +74,6 @@
     <Compile Include="ForgotPassWindow.xaml.cs">
       <DependentUpon>ForgotPassWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903222133174_Create database.cs" />
-    <Compile Include="Migrations\201903222133174_Create database.Designer.cs">
-      <DependentUpon>201903222133174_Create database.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BestTimeForStudy.cs" />
     <Compile Include="Models\WantedCourceToStudy.cs" />
     <Compile Include="Pages\CreateTest.xaml.cs">
@@ -89,6 +84,7 @@
       <DependentUpon>HeadWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Repository\AnswerRepository\IWrongAnswerRepository.cs" />
     <Compile Include="Services\GroupServices\GroupService.cs" />
     <Compile Include="Services\GroupServices\IGroupService.cs" />
     <Compile Include="Services\TestServices\TestService.cs" />
@@ -167,9 +163,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201903222133174_Create database.resx">
-      <DependentUpon>201903222133174_Create database.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

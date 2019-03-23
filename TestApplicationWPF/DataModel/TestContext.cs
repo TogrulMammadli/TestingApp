@@ -13,7 +13,8 @@ namespace TestApplicationWPF.DataModel
         }
         public DbSet<User> Users { get; set; }
         public DbSet<AccessLevel> AccessLevels { get; set; }
-        public DbSet<Answer> Answers { get; set; }
+        public DbSet<CorrectAnswer> correctAnswers { get; set; }
+        public DbSet<WrongAnswer> wrongAnswers { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Cource> Cources { get; set; }
         public DbSet<Group> Groups { get; set; }

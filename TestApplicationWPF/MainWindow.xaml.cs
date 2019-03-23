@@ -17,6 +17,9 @@ using TestApplicationWPF.Models;
 using System.Threading;
 using TestApplicationWPF.Repository.UserRepository;
 using TestApplicationWPF.Services.UserServices;
+using TestApplicationWPF.Repository.GroupsRepository;
+using TestApplicationWPF.Repository.CategoryRepository;
+using TestApplicationWPF.Repository.QuestionsRepository;
 
 namespace TestApplicationWPF
 {
@@ -25,40 +28,16 @@ namespace TestApplicationWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        UserService userService = new UserService(new UserRepository());
         public MainWindow()
         {
                 InitializeComponent();
-                using (var ctx = new TestContext())
-                {
-                var user = new User()
-                {
-                    Name = "Togrul",
-                    Surname = "Mamadli",
-                    DateOfBirth = DateTime.Now,
-                    Email = "mamedlitogrul99@gmail.com",
-                    PhoneNumber = "0503907667",
-                    Gender = Gender.Male,
-                    //AccessLevels = new List<AccessLevel> { new AccessLevel() {Name="Admin" } },
-                        Login = "TogrulLogin",
-                        Password = "12345"
-                    };
-                try
-                {
-                    ctx.Users.Add(user);
-                    ctx.SaveChanges();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-              
-                ////  Console.WriteLine("vse");
+            //var category = new Category() { Name = "TogrulCategory" };
+            //CategoryRepository categoryRepository = new CategoryRepository();
+            //categoryRepository.AddCategory(category);
 
-                //userService.AddUser(user);
-
-            }
-
+            //var question = new Question(){Text="somethekst",subject=new Subject() {Name="testSubject" },Answers=new List<Answer>() { new   Answer() { Text = "dawwag" }, new Answer() { Text = "memew" } } };
+            //QuestionRepository questionsss= new QuestionRepository();
+            //questionsss.AddQuestion(question);
         }
 
         private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

@@ -12,6 +12,7 @@ namespace TestApplicationWPF.Models
     {
         public AccessLevel()
         {
+            this.users = new HashSet<User>();
         }
 
         public AccessLevel(int id, string name)

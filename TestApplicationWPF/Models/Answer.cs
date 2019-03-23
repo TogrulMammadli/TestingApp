@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TestApplicationWPF.Models
 {
-   public class Answer
+    abstract public class Answer
     {
         public Answer()
         {
@@ -24,5 +24,19 @@ namespace TestApplicationWPF.Models
         public string Text { get; set; }
         [MaxLength]
         public byte[] Image { get; set; }
+    }
+
+    public class CorrectAnswer : Answer
+    {
+        public CorrectAnswer(int id, string text, byte[] image) : base(id, text, image)
+        {
+        }
+    }
+
+    public class WrongAnswer : Answer
+    {
+        public WrongAnswer(int id, string text, byte[] image) : base(id, text, image)
+        {
+        }
     }
 }

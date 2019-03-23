@@ -7,11 +7,11 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.AnswerRepository
 {
-    interface IAnswerRepository
+    interface IAnswerCorrectRepository
     {
-        IEnumerable<Answer> GetAllAnswers();
+        IEnumerable<CorrectAnswer> GetAllAnswers();
         bool RemoveAnsweryById(int Id);
-        bool AddAnswer(Answer answer);
-        Answer GetAccessLevelByID(int ID);
+        bool AddAnswer(CorrectAnswer answer);
+        CorrectAnswer GetAccessLevelByID(int ID);
     }
 }

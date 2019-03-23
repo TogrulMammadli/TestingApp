@@ -81,6 +81,9 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BestTimeForStudy.cs" />
     <Compile Include="Models\WantedCourceToStudy.cs" />
+    <Compile Include="PagesStudent\TestNamesPage.xaml.cs">
+      <DependentUpon>TestNamesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CreateTest.xaml.cs">
       <DependentUpon>CreateTest.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -97,6 +100,10 @@
     <Compile Include="Services\UserServices\IUserService.cs" />
     <Compile Include="Services\UserServices\UserService.cs" />
     <Page Include="ForgotPassWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PagesStudent\TestNamesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

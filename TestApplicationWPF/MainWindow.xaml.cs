@@ -47,20 +47,20 @@ namespace TestApplicationWPF
             //userRepository.AddUser(user);
             #region UpdateImageInDbTesting
 
-            try
-            {
-                string path = userService.OpenFileGetPath();
-                if (path != "Error")
-                {
-                    userService.UpdateAvatarImage(1, path);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                throw;
-            }
-            MessageBox.Show("Good Job");
+            //try
+            //{
+            //    string path = userService.OpenFileGetPath();
+            //    if (path != "Error")
+            //    {
+            //        userService.UpdateAvatarImage(1, path);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //    throw;
+            //}
+            //MessageBox.Show("Good Job");
             #endregion
 
 

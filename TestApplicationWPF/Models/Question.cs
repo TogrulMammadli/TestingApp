@@ -15,7 +15,6 @@ namespace TestApplicationWPF.Models
     }
     public class Question
     {
-       
 
         public Question()
         {

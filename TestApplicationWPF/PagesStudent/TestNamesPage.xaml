@@ -5,10 +5,64 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TestApplicationWPF.PagesStudent"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="TestNamesPage">
+      d:DesignHeight="560" d:DesignWidth="1000"
+      Title="TestNamesPage" Background="Wheat">
 
-    <Grid>
+    <Grid ShowGridLines="True">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="120"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0"
+            Width="960"
+            Height="425"
+            Margin="0"
+            VerticalAlignment="Bottom"
+            Fill="White" RadiusY="12" RadiusX="12">
+            <Rectangle.Effect>
+                <DropShadowEffect
+                    BlurRadius="15"
+                    Direction="0"
+                    RenderingBias="Quality"
+                    ShadowDepth="1"
+                    Color="#FFBBBBBB" />
+            </Rectangle.Effect>
+        </Rectangle>
+        <StackPanel Grid.Row="0" Height="400" Width="920" VerticalAlignment="Center" Margin="0" Background="Aqua" >
+            
+            <TextBlock  Height="200" Width="920" VerticalAlignment="Top" Margin="5" Background="Coral"></TextBlock>
+
+            <StackPanel Orientation="Horizontal" Height="25" Background="AliceBlue" Width="900" Margin="5 10 5 0" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <CheckBox Background="Yellow" ></CheckBox>
+                <TextBlock Width="880" VerticalAlignment="Center"  Background="Green"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="25" Background="AliceBlue" Width="900" Margin="5 10 5 0" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <CheckBox Background="Yellow" ></CheckBox>
+                <TextBlock Width="880" VerticalAlignment="Center"  Background="Green"></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="25" Background="AliceBlue" Width="900" Margin="5 10 5 0" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <CheckBox Background="Yellow" ></CheckBox>
+                <TextBlock Width="880" VerticalAlignment="Center"  Background="Green"></TextBlock>
+            </StackPanel>
+        </StackPanel>
         
+        <Grid Grid.Row="1">
+            <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Button Content="1" Margin="15"></Button>
+                <Button Content="2" Margin="15"></Button>
+                <Button Content="3" Margin="15"></Button>
+                <Button Content="4" Margin="15"></Button>
+                <Button Content="5" Margin="15"></Button>
+                <Button Content="6" Margin="15"></Button>
+                <Button Content="7" Margin="15"></Button>
+                <Button Content="8" Margin="15"></Button>
+                <Button Content="9" Margin="15"></Button>
+                <Button Content="10" Margin="15"></Button>
+                <Button Content="11" Margin="15"></Button>
+                <Button Content="12" Margin="15"></Button>
+
+            </WrapPanel>
+        </Grid>
+
     </Grid>
 </Page>

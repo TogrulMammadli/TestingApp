@@ -48,7 +48,6 @@ namespace TestApplicationWPF
             if (Pass1Box.Password.ToString() == Pass2Box.Password.ToString())
             {
                 Task change = new Task(Change);
-
                 change.Start();
                 {
                     change.ContinueWith((x) =>

@@ -31,7 +31,7 @@ namespace TestApplicationWPF
             User=user;
             //frame.NavigationService.Navigate(new PageCreateTest());
          
-            //AvatarImage.Source = new BitmapImage(new Uri(userService.GetAvatarImageFromDb(user.Id)));
+            AvatarImage.Source = new BitmapImage(new Uri(userService.GetAvatarImageFromDb(user.Id)));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -102,6 +102,8 @@
     <Compile Include="Repository\AnswerRepository\IWrongAnswerRepository.cs" />
     <Compile Include="Services\GroupServices\GroupService.cs" />
     <Compile Include="Services\GroupServices\IGroupService.cs" />
+    <Compile Include="Services\QuestionService\IQuestionService.cs" />
+    <Compile Include="Services\QuestionService\QuestionService.cs" />
     <Compile Include="Services\TestServices\TestService.cs" />
     <Compile Include="Services\TestServices\ITestService.cs" />
     <Compile Include="Services\UserServices\IUserService.cs" />

@@ -30,16 +30,33 @@
         </Rectangle>
         <StackPanel Grid.Row="0" Height="400" Width="920" VerticalAlignment="Center" Margin="0" Background="Aqua" >
             
-            <TextBlock  Height="200" Width="920" VerticalAlignment="Top" Margin="5" Background="Coral"></TextBlock>
+            <TextBlock  Height="180" Width="0" VerticalAlignment="Top" Margin="5" Background="Coral"></TextBlock>
 
-            <StackPanel Orientation="Horizontal" Height="25" Background="AliceBlue" Width="900" Margin="5 10 5 0" HorizontalAlignment="Left" VerticalAlignment="Center" >
-                <CheckBox Background="Yellow" ></CheckBox>
-                <TextBlock Width="880" VerticalAlignment="Center"  Background="Green"></TextBlock>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Height="25" Background="AliceBlue" Width="900" Margin="5 10 5 0" HorizontalAlignment="Left" VerticalAlignment="Center" >
-                <CheckBox Background="Yellow" ></CheckBox>
-                <TextBlock Width="880" VerticalAlignment="Center"  Background="Green"></TextBlock>
-            </StackPanel>
+            <ListBox Height="180" Background="AliceBlue"> <!--Ne gotovo ewe-->
+                <ListBox.ItemTemplate >
+                    <DataTemplate>
+                        <DockPanel LastChildFill="False" HorizontalAlignment="Right">
+                            <TextBlock 
+                                                    Margin="10,0"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Center"
+                                                    DockPanel.Dock="Left"
+                                                    FontSize="28" />
+                            <CheckBox VerticalAlignment="Center" DockPanel.Dock="Right" />
+                            <!--<Button
+                                                    HorizontalAlignment="Right"
+                                                    Content="Del"
+                                                    DockPanel.Dock="Right" />
+                                                <Button
+                                                    HorizontalAlignment="Right"
+                                                    Content="Edit"
+                                                    DockPanel.Dock="Right" />-->
+
+
+                        </DockPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
             <StackPanel Orientation="Horizontal" Height="25" Background="AliceBlue" Width="900" Margin="5 10 5 0" HorizontalAlignment="Left" VerticalAlignment="Center" >
                 <CheckBox Background="Yellow" ></CheckBox>
                 <TextBlock Width="880" VerticalAlignment="Center"  Background="Green"></TextBlock>

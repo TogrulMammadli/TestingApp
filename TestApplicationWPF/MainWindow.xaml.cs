@@ -75,8 +75,7 @@ namespace TestApplicationWPF
                 return;
             }
 
-            //Task.Factory.StartNew(() =>
-            //{
+           
             Task Log = new Task(Login);
 
             Log.Start();
@@ -103,40 +102,13 @@ namespace TestApplicationWPF
                         });
 
 
-                        //if (user != null)
-                        //{
-
-                        //}
-                        //else
-                        //{
-                        //    this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Hidden);
-                        //    this.Dispatcher.InvokeAsync(() => this.PrgrssBar.IsEnabled = false);
-                        //}
+                    
                     }
 
                 });
             }
 
-            //if ((TextBoxUserName.Text == user.Login || TextBoxUserName.Text == user.Email) && PassBoxPassword.Password.ToString() == user.Password)
-            //{
-            //    HeadWindow headWindow = new HeadWindow();
-            //    headWindow.Show();
-            //    this.Close();
-            //}
-            //else if ((TextBoxUserName.Text == user.Login || TextBoxUserName.Text == user.Email) && PassBoxPassword.Password.ToString() == user.Password)
-            //{
-            //    StudentWindow studentWindow = new StudentWindow();
-            //    studentWindow.Show();
-            //    this.Close();
-            //}
-            //else 
-            //else
-            //{
-            //    TextBlockWarning.Text = "You have put wrong password or user name!";
-            //}
-            //      this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Hidden);
-
-            //});
+          
         }
 
         private void ButtonForgotPassword_Click(object sender, RoutedEventArgs e)

@@ -9,14 +9,27 @@
         Title="HeadWindow" Height="600" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Icons/mainicon.png" WindowStyle="None"
         BorderBrush="#FF00AEFF" BorderThickness="1">
     <Grid>
-        
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="60"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Background="#FF00AEFF" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
-            <Button
+            <StackPanel  Width="310" HorizontalAlignment="Right" Height="60" Orientation="Horizontal" >
+                <Image Width="60">
+                    
+                </Image>
+                <Button
+                x:Name="UserInfoButton"
+                HorizontalAlignment="Right"
+                    Width="190"
+                   
+                Background="{x:Null}"
+                BorderBrush="{x:Null}">
+                    <TextBlock Name="LoginTxtBox">Login</TextBlock>
+                </Button>
+                <Button
                 x:Name="HeadWndButtonClose"
                 Margin="10"
                 HorizontalAlignment="Right"
@@ -24,12 +37,13 @@
                 Background="{x:Null}"
                 BorderBrush="{x:Null}"
                 Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="HeadWndButtonClose_Click">
-                <materialDesign:PackIcon
+                    <materialDesign:PackIcon
                     Width="20"
                     Height="20"
                     Background="{x:Null}"
                     Kind="Close" />
-            </Button>
+                </Button>
+            </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
@@ -56,6 +70,6 @@
 
             <Frame Grid.Column="1" x:Name="frame" Content="frame" NavigationUIVisibility="Hidden"/>
         </Grid>
-        
+
     </Grid>
 </Window>

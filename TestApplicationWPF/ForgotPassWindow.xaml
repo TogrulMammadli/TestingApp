@@ -14,19 +14,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Background="#FF00AEFF" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <!--<Button
-                Margin="10"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Center"
-                Background="{x:Null}"
-                BorderBrush="{x:Null}"
-                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="Button_Click">
-                    <materialDesign:PackIcon
-                    Width="20"
-                    Height="20"
-                    Background="{x:Null}"
-                    Kind="Close" />
-                </Button>-->
+           
             </StackPanel>
         </Grid>
 
@@ -81,7 +69,7 @@
 
         </Grid>
         <Button x:Name="ButtonOK" Content="Send" HorizontalAlignment="Right" Margin="0,221,143,0" Grid.Row="1" VerticalAlignment="Top" Width="70" Click="ButtonOK_Click"/>
-        <Button x:Name="ButtonCancel" Content="Concel" HorizontalAlignment="Right" Margin="0,221,23,0" Grid.Row="1" VerticalAlignment="Top" Width="95" Click="ButtonCancel_Click" />
+        <Button x:Name="ButtonCancel" Content="Cancel" HorizontalAlignment="Right" Margin="0,221,23,0" Grid.Row="1" VerticalAlignment="Top" Width="95" Click="ButtonCancel_Click" />
 
 
 

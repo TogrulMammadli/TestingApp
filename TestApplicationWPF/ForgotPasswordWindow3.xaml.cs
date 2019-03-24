@@ -33,19 +33,19 @@ namespace TestApplicationWPF
 
         private void ButtonOK_Click(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(Pass1Box.Password.ToString()) || string.IsNullOrWhiteSpace(Pass1Box.Password.ToString()))
+            if (string.IsNullOrWhiteSpace(Pass1Box.Password.ToString()) || string.IsNullOrWhiteSpace(Pass2Box.Password.ToString()))
             {
                 this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Hidden);
                 TextBlockWarning.Text = "Please fill all the fields";
                 return;
             }
-            if (Pass1Box.Password.ToString() != Pass1Box.Password.ToString())
+            if (Pass1Box.Password.ToString() != Pass2Box.Password.ToString())
             {
                 this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Hidden);
                 TextBlockWarning.Text = "Passwords don't match";
                 return;
             }
-            if (Pass1Box.Password.ToString() == Pass1Box.Password.ToString())
+            if (Pass1Box.Password.ToString() == Pass2Box.Password.ToString())
             {
                 Task change = new Task(Change);
 

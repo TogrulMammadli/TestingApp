@@ -53,6 +53,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -98,9 +99,14 @@
       <DependentUpon>HeadWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Command\RelayCommand.cs" />
+    <Compile Include="Pages\SettingPage.xaml.cs">
+      <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Repository\AnswerRepository\IWrongAnswerRepository.cs" />
     <Compile Include="Services\GroupServices\GroupService.cs" />
     <Compile Include="Services\GroupServices\IGroupService.cs" />
+    <Compile Include="Services\QuestionService\IQuestionService.cs" />
+    <Compile Include="Services\QuestionService\QuestionService.cs" />
     <Compile Include="Services\TestServices\TestService.cs" />
     <Compile Include="Services\TestServices\ITestService.cs" />
     <Compile Include="Services\UserServices\IUserService.cs" />
@@ -167,6 +173,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\SettingPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="StudentWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

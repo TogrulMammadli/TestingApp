@@ -20,6 +20,7 @@ using TestApplicationWPF.Services.UserServices;
 using TestApplicationWPF.Repository.GroupsRepository;
 using TestApplicationWPF.Repository.CategoryRepository;
 using TestApplicationWPF.Repository.QuestionsRepository;
+using System.IO;
 
 namespace TestApplicationWPF
 {
@@ -44,8 +45,25 @@ namespace TestApplicationWPF
             //var user = new User() { Name = "Togrul", Surname="Mammadli",Patronymic="Vuqar",PhoneNumber="0503907667",Login="admin",AccessLevels=new List<AccessLevel> { new AccessLevel() {Name="Admin"} },DateOfBirth=DateTime.Now,Email="mamedlitogrul99@gmail.com",Password="admin",Gender=Gender.Male };
             UserRepository userRepository = new UserRepository();
             //userRepository.AddUser(user);
+            #region UpdateImageInDbTesting
 
-            //var userr = userRepository.GetUserByID(1);
+            //try
+            //{
+            //    string path = userService.OpenFileGetPath();
+            //    if (path != "Error")
+            //    {
+            //        userService.UpdateAvatarImage(1, path);
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //    throw;
+            //}
+            //MessageBox.Show("Good Job");
+            #endregion
+
+
         }
 
         private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -56,6 +74,7 @@ namespace TestApplicationWPF
         private void ButtonExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            Environment.Exit(0);
         }
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
@@ -75,7 +94,7 @@ namespace TestApplicationWPF
                 return;
             }
 
-           
+
             Task Log = new Task(Login);
 
             Log.Start();
@@ -86,7 +105,7 @@ namespace TestApplicationWPF
                     {
                         this.Dispatcher.Invoke(() =>
                         {
-                            if (user!=null)
+                            if (user != null)
                             {
                                 HeadWindow headWindow = new HeadWindow(user);
                                 headWindow.Show();
@@ -102,13 +121,13 @@ namespace TestApplicationWPF
                         });
 
 
-                    
+
                     }
 
                 });
             }
 
-          
+
         }
 
         private void ButtonForgotPassword_Click(object sender, RoutedEventArgs e)
@@ -120,7 +139,7 @@ namespace TestApplicationWPF
         public void Login()
         {
             this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Visible);
-            this.Dispatcher.InvokeAsync(() => this.TextBoxUserName.BorderBrush=Brushes.Gray);
+            this.Dispatcher.InvokeAsync(() => this.TextBoxUserName.BorderBrush = Brushes.Gray);
             this.Dispatcher.InvokeAsync(() => this.PassBoxPassword.BorderBrush = Brushes.Gray);
 
             try

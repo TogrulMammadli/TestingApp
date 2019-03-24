@@ -38,19 +38,18 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Background="Gray">
-                
-                <Image Width="60" Height="50">
 
+                <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" >
                 </Image>
-                <Button
-                x:Name="UserInfoButton"
-                HorizontalAlignment="Right"
-                    Width="190"
-                   
-                Background="{x:Null}"
-                BorderBrush="{x:Null}">
-                   
-                </Button>
+                <TextBlock Name="UserNameSurnameTextBox" HorizontalAlignment="Center"  Margin="5"
+                VerticalAlignment="Top"
+                FontSize="12"
+                Foreground="White"></TextBlock>
+                <TextBlock Name="UserEmailTextBox" HorizontalAlignment="Center"  Margin="5"
+                VerticalAlignment="Top"
+                FontSize="10"
+                Foreground="White"></TextBlock>
+
                 <Button
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
@@ -65,7 +64,7 @@
                 </Button>
                 <Button Content="1st" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click"></Button>
                 <Button Content="2st" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_1"></Button>
-                <Button Content="3st" Background="{x:Null}" BorderBrush="{x:Null}"></Button>
+                <Button Content="3st" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_2"></Button>
             </StackPanel>
 
             <Frame Grid.Column="1" x:Name="frame" Content="frame" NavigationUIVisibility="Hidden"/>

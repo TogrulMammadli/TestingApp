@@ -84,7 +84,7 @@ namespace TestApplicationWPF
                             }
                             else
                             {
-                                TextBlockWarning.Text = "Havent user with this Email";
+                                TextBlockWarning.Text = "Haven't user with this Email";
                                 this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Hidden);
                             }
                         });

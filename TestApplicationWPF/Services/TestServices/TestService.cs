@@ -10,7 +10,8 @@ namespace TestApplicationWPF.Services.TestServices
 {
     public class TestService : ITestService
     {
-        ITestBlankRepository TestBlankRepository = new TestBlankRepository();
+        public ITestBlankRepository TestBlankRepository = new TestBlankRepository();
+
         public TestService(ITestBlankRepository testRepository)
         {
             this.TestBlankRepository = testRepository ?? throw new ArgumentNullException(nameof(TestBlankRepository));
@@ -25,6 +26,9 @@ namespace TestApplicationWPF.Services.TestServices
             Questions=questions});
         }
 
-        
+        public IEnumerable<TestBlank> GetAllTestBlanks()
+        {
+            return TestBlankRepository.GetAllTestBlanks();
+        }
     }
 }

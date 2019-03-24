@@ -31,8 +31,12 @@ namespace TestApplicationWPF
             InitializeComponent();
             User=user;
             //frame.NavigationService.Navigate(new PageCreateTest());
-         
+            if (user.İmage!=null)
+            {
             AvatarImage.Source = new BitmapImage(new Uri(userService.GetAvatarImageFromDb(user.Id)));
+            }
+            UserNameSurnameTextBox.Text = user.Name + "  " + user.Surname;
+            UserEmailTextBox.Text = user.Email;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

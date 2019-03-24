@@ -41,13 +41,15 @@
 
                 <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" >
                 </Image>
-                <Button
-                x:Name="UserInfoButton"
-                HorizontalAlignment="Right"
-                    Width="190"
-                Background="{x:Null}"
-                BorderBrush="{x:Null}">
-                </Button>
+                <TextBlock Name="UserNameSurnameTextBox" HorizontalAlignment="Center"  Margin="5"
+                VerticalAlignment="Top"
+                FontSize="12"
+                Foreground="White"></TextBlock>
+                <TextBlock Name="UserEmailTextBox" HorizontalAlignment="Center"  Margin="5"
+                VerticalAlignment="Top"
+                FontSize="10"
+                Foreground="White"></TextBlock>
+
                 <Button
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"

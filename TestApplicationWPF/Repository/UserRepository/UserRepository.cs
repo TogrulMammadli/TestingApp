@@ -59,7 +59,7 @@ namespace TestApplicationWPF.Repository.UserRepository
         {
             using (var c = new TestContext())
             {
-                foreach (var temp in c.Users)
+                foreach (var temp in c.Users.Include("AccessLevels"))
                 {
                     if (temp.Id == ID)
                     {

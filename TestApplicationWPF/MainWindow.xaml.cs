@@ -62,8 +62,8 @@ namespace TestApplicationWPF
             //}
             //MessageBox.Show("Good Job");
             #endregion
-
-
+            var b = userRepository.GetUserByID(1);
+            var a = 5;
         }
 
         private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

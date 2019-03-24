@@ -1,11 +1,15 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
 using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Imaging;
 using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 using TestApplicationWPF.Repository.PassedTestRepository;
@@ -132,8 +136,8 @@ namespace TestApplicationWPF.Services.UserServices
         }                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
                                                                                               //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
         public bool ChangePassword(string password)                                           //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        {                                                                                     
-              //est rabotayuwiy method update password,prosto vizovi ego                                                                                  //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        {
+            //est rabotayuwiy method update password,prosto vizovi ego                                                                                  //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
             throw new NotImplementedException();                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
         }                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
                                                                                               //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
@@ -183,10 +187,61 @@ namespace TestApplicationWPF.Services.UserServices
         {
             using (var context = new TestContext())
             {
-                var std = context.Users.First(x=>x.Id==ID);
+                var std = context.Users.First(x => x.Id == ID);
                 std.Password = password;
                 context.SaveChanges();
             }
         }
+        public string GetAvatarImageFromDb(int UID)
+        {
+            byte[] b;
+            using (var context = new TestContext())
+            {
+                b = context.Users.First(x => x.Id == UID).İmage;
+                if (b == null)
+                {
+                    return null;
+                }
+            }
+            Image image1;
+            using (var ms = new MemoryStream(b))
+            {
+                image1 = Image.FromStream(ms);
+            }
+           
+
+            image1.Save(Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\Icons\\"+"UserAva", System.Drawing.Imaging.ImageFormat.Bmp);
+            return Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\Icons\\" + "UserAva";
+
+
+        }
+
+        public void UpdateAvatarImage(int userId, string Path)
+        {
+            Image image = Image.FromFile(Path);
+            System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
+            image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+            byte[] b = memoryStream.ToArray();
+            using (var context = new TestContext())
+            {
+                var std = context.Users.First(x => x.Id == userId);
+                std.İmage = b;
+                context.SaveChanges();
+            }
+        }
+
+        public string OpenFileGetPath()
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog()
+            {
+                Filter = "Images(*.BMP; *.JPG; *.GIF,*.PNG,*.TIFF)| *.BMP; *.JPG; *.GIF; *.PNG; *.TIFF | All files (*.*)|*.*"
+            };
+            if (openFileDialog.ShowDialog() == true)
+            {
+                return openFileDialog.FileName.ToString();
+            }
+            else return "Error";
+        }
+      
     }
 }

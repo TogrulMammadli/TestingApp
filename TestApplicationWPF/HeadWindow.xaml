@@ -38,9 +38,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" Background="Gray">
-                
-                <Image Width="60" Height="50">
 
+                <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" >
                 </Image>
                 <Button
                 x:Name="UserInfoButton"

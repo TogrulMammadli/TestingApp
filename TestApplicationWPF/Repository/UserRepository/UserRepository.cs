@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media.Imaging;
 using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 
@@ -101,5 +103,6 @@ namespace TestApplicationWPF.Repository.UserRepository
                 return false;
             }
         }
+       
     }
 }

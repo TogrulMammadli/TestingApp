@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TestApplicationWPF.Models;
+using TestApplicationWPF.Repository.UserRepository;
+using TestApplicationWPF.Services.UserServices;
 
 namespace TestApplicationWPF
 {
@@ -20,11 +23,15 @@ namespace TestApplicationWPF
     /// </summary>
     public partial class HeadWindow : Window
     {
+        User User = new User();
+        UserService userService = new UserService(new UserRepository());
         public HeadWindow(User user)
         {
             InitializeComponent();
+            User=user;
             //frame.NavigationService.Navigate(new PageCreateTest());
-            MessageBox.Show(user.Email);
+         
+            //AvatarImage.Source = new BitmapImage(new Uri(userService.GetAvatarImageFromDb(user.Id)));
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -46,5 +53,7 @@ namespace TestApplicationWPF
         {
             this.Close();
         }
+
+        
     }
 }

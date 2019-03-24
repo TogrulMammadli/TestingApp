@@ -10,6 +10,7 @@ namespace TestApplicationWPF.DataModel
         public TestContext()
             : base("name=TestContext")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
         public DbSet<User> Users { get; set; }
         public DbSet<AccessLevel> AccessLevels { get; set; }

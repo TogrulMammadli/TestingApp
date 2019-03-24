@@ -29,6 +29,7 @@ namespace TestApplicationWPF
     public partial class MainWindow : Window
     {
         public UserService userService = new UserService(new UserRepository());
+        User user = new User();
         public MainWindow()
         {
             InitializeComponent();
@@ -40,9 +41,11 @@ namespace TestApplicationWPF
             //QuestionRepository questionsss= new QuestionRepository();
             //questionsss.AddQuestion(question);
 
-            //var user = new User() { Name = "Togrul", Surname="Mammadli",Patronymic="Vuqar",PhoneNumber="0503907667",Login="TogrulLogin",AccessLevels=new List<AccessLevel> { new AccessLevel() {Name="Admin"} },DateOfBirth=DateTime.Now,Email="mamedlitogrul99@gmail.com",Password="a",Gender=Gender.Male };
-            //UserRepository userRepository = new UserRepository();
+            //var user = new User() { Name = "Togrul", Surname="Mammadli",Patronymic="Vuqar",PhoneNumber="0503907667",Login="admin",AccessLevels=new List<AccessLevel> { new AccessLevel() {Name="Admin"} },DateOfBirth=DateTime.Now,Email="mamedlitogrul99@gmail.com",Password="admin",Gender=Gender.Male };
+            UserRepository userRepository = new UserRepository();
             //userRepository.AddUser(user);
+
+            //var userr = userRepository.GetUserByID(1);
         }
 
         private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -57,36 +60,106 @@ namespace TestApplicationWPF
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            User user = userService.Login(TextBoxUserName.Text, PassBoxPassword.Password.ToString());
+            if (TextBoxUserName.Text == string.Empty || PassBoxPassword.Password.ToString() == string.Empty)
+            {
+                if (string.IsNullOrWhiteSpace(TextBoxUserName.Text))
+                {
+                    TextBoxUserName.BorderBrush = Brushes.Red;
+                }
+                if (string.IsNullOrWhiteSpace(PassBoxPassword.Password))
+                {
+                    PassBoxPassword.BorderBrush = Brushes.Red;
+                }
+                this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Hidden);
+                TextBlockWarning.Text = "Please fill all fields";
+                return;
+            }
+
+            //Task.Factory.StartNew(() =>
+            //{
+            Task Log = new Task(Login);
+
+            Log.Start();
+            {
+                Log.ContinueWith((x) =>
+                {
+                    if (Log.IsCompleted)
+                    {
+                        this.Dispatcher.Invoke(() =>
+                        {
+                            if (user!=null)
+                            {
+                                HeadWindow headWindow = new HeadWindow(user);
+                                headWindow.Show();
+                                this.Close();
+                            }
+                            else
+                            {
+                                TextBlockWarning.Text = "Wrong login or password";
+                                this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Hidden);
+
+                            }
+
+                        });
 
 
-            if ((TextBoxUserName.Text == user.Login || TextBoxUserName.Text == user.Email) && PassBoxPassword.Password.ToString() == user.Password && userService.GetUserAccessLevels(user).Contains("Admin") == true)
-            {
-                HeadWindow headWindow = new HeadWindow();
-                headWindow.Show();
-                this.Close();
+                        //if (user != null)
+                        //{
+
+                        //}
+                        //else
+                        //{
+                        //    this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Hidden);
+                        //    this.Dispatcher.InvokeAsync(() => this.PrgrssBar.IsEnabled = false);
+                        //}
+                    }
+
+                });
             }
-            else if ((TextBoxUserName.Text == user.Login || TextBoxUserName.Text == user.Email) && PassBoxPassword.Password.ToString() == user.Password && userService.GetUserAccessLevels(user).Contains("Student") == true)
-            {
-                StudentWindow studentWindow = new StudentWindow();
-                studentWindow.Show();
-                this.Close();
-            }
-            else if (TextBoxUserName.Text == string.Empty && PassBoxPassword.Password.ToString() == string.Empty)
-            {
-                TextBlockWarning.Text = "You have put wrong password or user name!";
-            }
-            else
-            {
-                TextBlockWarning.Text = "You have put wrong password or user name!";
-            }
-            
+
+            //if ((TextBoxUserName.Text == user.Login || TextBoxUserName.Text == user.Email) && PassBoxPassword.Password.ToString() == user.Password)
+            //{
+            //    HeadWindow headWindow = new HeadWindow();
+            //    headWindow.Show();
+            //    this.Close();
+            //}
+            //else if ((TextBoxUserName.Text == user.Login || TextBoxUserName.Text == user.Email) && PassBoxPassword.Password.ToString() == user.Password)
+            //{
+            //    StudentWindow studentWindow = new StudentWindow();
+            //    studentWindow.Show();
+            //    this.Close();
+            //}
+            //else 
+            //else
+            //{
+            //    TextBlockWarning.Text = "You have put wrong password or user name!";
+            //}
+            //      this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Hidden);
+
+            //});
         }
 
         private void ButtonForgotPassword_Click(object sender, RoutedEventArgs e)
         {
             ForgotPassWindow forgotPassWindow = new ForgotPassWindow();
             forgotPassWindow.ShowDialog();
+        }
+
+        public void Login()
+        {
+            this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Visible);
+            this.Dispatcher.InvokeAsync(() => this.TextBoxUserName.BorderBrush=Brushes.Gray);
+            this.Dispatcher.InvokeAsync(() => this.PassBoxPassword.BorderBrush = Brushes.Gray);
+
+            try
+            {
+                user = userService.Login(this.Dispatcher.Invoke(() => TextBoxUserName.Text), this.Dispatcher.Invoke(() => PassBoxPassword.Password.ToString()));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

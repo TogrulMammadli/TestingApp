@@ -74,9 +74,15 @@
     <Compile Include="ForgotPassWindow.xaml.cs">
       <DependentUpon>ForgotPassWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903230807271_CreateDb.cs" />
-    <Compile Include="Migrations\201903230807271_CreateDb.Designer.cs">
-      <DependentUpon>201903230807271_CreateDb.cs</DependentUpon>
+    <Compile Include="ForgotPassword2.xaml.cs">
+      <DependentUpon>ForgotPassword2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPasswordWindow3.xaml.cs">
+      <DependentUpon>ForgotPasswordWindow3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903232200049_Create_Tables.cs" />
+    <Compile Include="Migrations\201903232200049_Create_Tables.Designer.cs">
+      <DependentUpon>201903232200049_Create_Tables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BestTimeForStudy.cs" />
@@ -100,6 +106,14 @@
     <Compile Include="Services\UserServices\IUserService.cs" />
     <Compile Include="Services\UserServices\UserService.cs" />
     <Page Include="ForgotPassWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ForgotPassword2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ForgotPasswordWindow3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,8 +196,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201903230807271_CreateDb.resx">
-      <DependentUpon>201903230807271_CreateDb.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903232200049_Create_Tables.resx">
+      <DependentUpon>201903232200049_Create_Tables.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

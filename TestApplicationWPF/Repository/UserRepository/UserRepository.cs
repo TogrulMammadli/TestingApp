@@ -42,14 +42,13 @@ namespace TestApplicationWPF.Repository.UserRepository
         {
             using (var c = new TestContext())
             {
-                foreach(var temp in c.Users)
+                foreach (var temp in c.Users)
                 {
-                    if(temp.Email == email)
+                    if (temp.Email == email)
                     {
                         return temp;
                     }
                 }
-                MessageBox.Show("Не было найдено пользователя с данной почтой!", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
                 return null;
             }
         }
@@ -58,9 +57,9 @@ namespace TestApplicationWPF.Repository.UserRepository
         {
             using (var c = new TestContext())
             {
-                foreach(var temp in c.Users)
+                foreach (var temp in c.Users)
                 {
-                    if(temp.Id == ID)
+                    if (temp.Id == ID)
                     {
                         return temp;
                     }
@@ -74,14 +73,13 @@ namespace TestApplicationWPF.Repository.UserRepository
         {
             using (var c = new TestContext())
             {
-                foreach(var temp in c.Users)
+                foreach (var temp in c.Users)
                 {
-                    if(temp.Login == login)
+                    if (temp.Login == login)
                     {
                         return temp;
                     }
                 }
-                MessageBox.Show("Не было найдено пользователя с данным логином!", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
                 return null;
             }
         }
@@ -95,7 +93,7 @@ namespace TestApplicationWPF.Repository.UserRepository
                     if (test.Id == Id)
                     {
                         c.Users.Remove(test);
-                    c.SaveChanges();
+                        c.SaveChanges();
                         return true;
                     }
                 }

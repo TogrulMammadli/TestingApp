@@ -5,6 +5,8 @@ using System.Net.Mail;
 using System.Net.Mime;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 using TestApplicationWPF.Repository.PassedTestRepository;
 using TestApplicationWPF.Repository.UserRepository;
@@ -40,28 +42,59 @@ namespace TestApplicationWPF.Services.UserServices
             return null;
         }
 
+        public User EmailValidation(string email)
+        {
 
-        public void  SentEmail (List<User> toUsers, string Message )//type1=invitation,type2=deleted event
+            var user = userRepository.GetUserByEmail(email);
+            if (user != null)
+            {
+                return user;
+            }
+            return null;
+        }
+
+        public void SendMail(MailMessage mail, string sendemail)
+        {
+
+            try
+            {
+                SmtpClient SmtpServer = new SmtpClient("smtp.mail.ru");
+                mail.From = new MailAddress("step.testing@mail.ru");
+                mail.To.Add(sendemail);
+                SmtpServer.Port = 587;
+                SmtpServer.Credentials = new System.Net.NetworkCredential("step.testing@mail.ru", "app123*");
+                SmtpServer.EnableSsl = true;
+                SmtpServer.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
+        }
+
+        public void SentEmailToUsers(List<User> toUsers, string Message)//type1=invitation,type2=deleted event
         {
             try
             {
                 PassedTestRepository passedTestRepository = new PassedTestRepository();
                 foreach (var item in toUsers)
                 {
-                MailMessage message = new MailMessage();
-                SmtpClient client = new SmtpClient();
-                message.From = new MailAddress("app.test.mail@mail.ru");
-                message.To.Add(new MailAddress(item.Email.ToString()));
-                message.Subject = "TestingNotifications";
-                message.Body = "Dear " + item.Name.ToString() + "You Have Exam tomorrow at" + passedTestRepository.GetPassedTestsByUser(item).ElementAt(0).BeginDate.Value.ToString()
-                        +"\nPlease dont late!";
-                client.Host = "smtp.mail.ru";
-                client.Port = 587;
-                client.EnableSsl = true;
-                client.UseDefaultCredentials = false;
-                client.DeliveryMethod = SmtpDeliveryMethod.Network;
-                client.Credentials = new System.Net.NetworkCredential("app.test.mail@mail.ru", "21101999toga");
-                client.Send(message);
+                    MailMessage message = new MailMessage();
+                    SmtpClient client = new SmtpClient();
+                    message.From = new MailAddress("app.test.mail@mail.ru");
+                    message.To.Add(new MailAddress(item.Email.ToString()));
+                    message.Subject = "TestingNotifications";
+                    message.Body = "Dear " + item.Name.ToString() + "You Have Exam tomorrow at" + passedTestRepository.GetPassedTestsByUser(item).ElementAt(0).BeginDate.Value.ToString()
+                            + "\nPlease dont late!";
+                    client.Host = "smtp.mail.ru";
+                    client.Port = 587;
+                    client.EnableSsl = true;
+                    client.UseDefaultCredentials = false;
+                    client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    client.Credentials = new System.Net.NetworkCredential("app.test.mail@mail.ru", "21101999toga");
+                    client.Send(message);
                 }
             }
             catch
@@ -69,54 +102,55 @@ namespace TestApplicationWPF.Services.UserServices
             }
         }
 
-      
+
         public void SentNotfications()
-        {                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-            throw new NotImplementedException();                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        }                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-                                                                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        public bool ChangeEmail(string email)                             //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        {                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-            throw new NotImplementedException();                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        }                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-                                                                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        public bool ChangeImage(byte[] image)                             //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        {                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-            throw new NotImplementedException();                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-                                                                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        }                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-                                                                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        public bool ChangeLogin(string Login)                             //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        {                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-            throw new NotImplementedException();                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-                                                                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        }                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-                                                                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        public bool ChangeName(string name)                               //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        {                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-            throw new NotImplementedException();                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        }                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-                                                                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        public bool ChangePassword(string password)                       //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        {                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-            throw new NotImplementedException();                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        }                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-                                                                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        public bool ChangePatronomyic(string patronomyic)                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        {                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-            throw new NotImplementedException();                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        }                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-                                                                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        public bool ChangePhoneNumber(string phonenumber)                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        {                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-            throw new NotImplementedException();                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        }                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-                                                                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        public bool ChangeSurname(string surname)                         //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        {                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-            throw new NotImplementedException();                          //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
-        }                                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        {                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+            throw new NotImplementedException();                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        }                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+                                                                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+                                                                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        public bool ChangeEmail(string email)                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        {                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+            throw new NotImplementedException();                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        }                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+                                                                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        public bool ChangeImage(byte[] image)                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        {                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+            throw new NotImplementedException();                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+                                                                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        }                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+                                                                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        public bool ChangeLogin(string Login)                                                 //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        {                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+            throw new NotImplementedException();                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+                                                                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        }                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+                                                                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        public bool ChangeName(string name)                                                   //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        {                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+            throw new NotImplementedException();                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        }                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+                                                                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        public bool ChangePassword(string password)                                           //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        {                                                                                     
+              //est rabotayuwiy method update password,prosto vizovi ego                                                                                  //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+            throw new NotImplementedException();                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        }                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+                                                                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        public bool ChangePatronomyic(string patronomyic)                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        {                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+            throw new NotImplementedException();                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        }                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+                                                                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        public bool ChangePhoneNumber(string phonenumber)                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        {                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+            throw new NotImplementedException();                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        }                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+                                                                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        public bool ChangeSurname(string surname)                                             //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        {                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+            throw new NotImplementedException();                                              //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
+        }                                                                                     //vse proverit ctobi unikalnie vewi ne zadavalis 2y raz t.e esli est login ctobi takoyje login 2y raz ne mogli dobavit
 
         public bool RemoveAccessLevelfromUser(AccessLevel accessLevel)
         {
@@ -143,6 +177,16 @@ namespace TestApplicationWPF.Services.UserServices
 
             }
             return names;
+        }
+
+        public void UpdatePassword(int ID, string password)
+        {
+            using (var context = new TestContext())
+            {
+                var std = context.Users.First(x=>x.Id==ID);
+                std.Password = password;
+                context.SaveChanges();
+            }
         }
     }
 }

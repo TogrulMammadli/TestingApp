@@ -132,7 +132,7 @@
                     Background="{x:Null}"
                     Kind="Close" RenderTransformOrigin="0.547,-8.284" />
         </Button>
-
+        <ProgressBar HorizontalAlignment="Stretch" Visibility="Hidden" IsIndeterminate="True" VerticalAlignment="Bottom" Name="PrgrssBar" Minimum="0" Height="25" Margin="10" Value="0" ></ProgressBar>
     </Grid>
 </Window>
 

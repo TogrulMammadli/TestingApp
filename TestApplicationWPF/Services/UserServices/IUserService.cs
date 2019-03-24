@@ -11,7 +11,7 @@ namespace TestApplicationWPF.Services.UserServices
     {
         IEnumerable<User> GetAllUsers();
         void SentNotfications();
-        void SentEmail(List<User> toUsers, string Message);
+        void SentEmailToUsers(List<User> toUsers, string Message);
         void AddUser(User user);
         List<string> GetUserAccessLevels(User user);
         bool ChangeName(string name);

@@ -42,28 +42,29 @@ namespace TestApplicationWPF
             //QuestionRepository questionsss= new QuestionRepository();
             //questionsss.AddQuestion(question);
 
-            //var user = new User() { Name = "Togrul", Surname="Mammadli",Patronymic="Vuqar",PhoneNumber="0503907667",Login="admin",AccessLevels=new List<AccessLevel> { new AccessLevel() {Name="Admin"} },DateOfBirth=DateTime.Now,Email="mamedlitogrul99@gmail.com",Password="admin",Gender=Gender.Male };
-            UserRepository userRepository = new UserRepository();
-            //userRepository.AddUser(user);
-            #region UpdateImageInDbTesting
+            //var user = new User() { Name = "Togrul", Surname = "Mammadli", Patronymic = "Vuqar", PhoneNumber = "0503907667", Login = "admin", AccessLevels = new List<AccessLevel> { new AccessLevel() { Name = "Admin" } }, DateOfBirth = DateTime.Now, Email = "mamedlitogrul99@gmail.com", Password = "admin", Gender = Gender.Male };
+            //UserRepository userRepository = new UserRepository();
+            ////userRepository.AddUser(user);
+            //#region UpdateImageInDbTesting
 
-            //try
-            //{
-            //    string path = userService.OpenFileGetPath();
-            //    if (path != "Error")
-            //    {
-            //        userService.UpdateAvatarImage(1, path);
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //    throw;
-            //}
-            //MessageBox.Show("Good Job");
-            #endregion
-            var b = userRepository.GetUserByID(1);
-            var a = 5;
+            ////try
+            ////{
+            ////    string path = userService.OpenFileGetPath();
+            ////    if (path != "Error")
+            ////    {
+            ////        userService.UpdateAvatarImage(1, path);
+            ////    }
+            ////}
+            ////catch (Exception ex)
+            ////{
+            ////    MessageBox.Show(ex.Message);
+            ////    throw;
+            ////}
+            ////MessageBox.Show("Good Job");
+            //#endregion
+            //var b = userRepository.GetUserByID(1);
+            //var a = 5;
+
         }
 
         private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

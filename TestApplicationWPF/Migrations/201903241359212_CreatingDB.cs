@@ -3,7 +3,7 @@ namespace TestApplicationWPF.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Create_Tables : DbMigration
+    public partial class CreatingDB : DbMigration
     {
         public override void Up()
         {
@@ -96,35 +96,6 @@ namespace TestApplicationWPF.Migrations
                 .Index(t => t.cource_Id);
             
             CreateTable(
-                "dbo.PassedTests",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        BeginDate = c.DateTime(),
-                        EndDate = c.DateTime(),
-                        Blank_Id = c.Int(),
-                        User_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.TestBlanks", t => t.Blank_Id)
-                .ForeignKey("dbo.Users", t => t.User_Id)
-                .Index(t => t.Blank_Id)
-                .Index(t => t.User_Id);
-            
-            CreateTable(
-                "dbo.TestBlanks",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(maxLength: 50),
-                        About = c.String(),
-                        Autor = c.String(),
-                        DurationMin = c.Time(nullable: false, precision: 7),
-                    })
-                .PrimaryKey(t => t.Id)
-                .Index(t => t.Name, unique: true);
-            
-            CreateTable(
                 "dbo.Questions",
                 c => new
                     {
@@ -162,6 +133,35 @@ namespace TestApplicationWPF.Migrations
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Questions", t => t.Question_Id)
                 .Index(t => t.Question_Id);
+            
+            CreateTable(
+                "dbo.PassedTests",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        BeginDate = c.DateTime(),
+                        EndDate = c.DateTime(),
+                        Blank_Id = c.Int(),
+                        User_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.TestBlanks", t => t.Blank_Id)
+                .ForeignKey("dbo.Users", t => t.User_Id)
+                .Index(t => t.Blank_Id)
+                .Index(t => t.User_Id);
+            
+            CreateTable(
+                "dbo.TestBlanks",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(maxLength: 50),
+                        About = c.String(),
+                        Autor = c.String(),
+                        DurationMin = c.Time(nullable: false, precision: 7),
+                    })
+                .PrimaryKey(t => t.Id)
+                .Index(t => t.Name, unique: true);
             
             CreateTable(
                 "dbo.WantedCourceToStudies",
@@ -205,13 +205,13 @@ namespace TestApplicationWPF.Migrations
             DropIndex("dbo.UserAccessLevels", new[] { "AccessLevel_Id" });
             DropIndex("dbo.UserAccessLevels", new[] { "User_Id" });
             DropIndex("dbo.WantedCourceToStudies", new[] { "Cource_Id" });
+            DropIndex("dbo.TestBlanks", new[] { "Name" });
+            DropIndex("dbo.PassedTests", new[] { "User_Id" });
+            DropIndex("dbo.PassedTests", new[] { "Blank_Id" });
             DropIndex("dbo.WrongAnswers", new[] { "Question_Id" });
             DropIndex("dbo.Subjects", new[] { "Name" });
             DropIndex("dbo.Questions", new[] { "TestBlank_Id" });
             DropIndex("dbo.Questions", new[] { "subject_Id" });
-            DropIndex("dbo.TestBlanks", new[] { "Name" });
-            DropIndex("dbo.PassedTests", new[] { "User_Id" });
-            DropIndex("dbo.PassedTests", new[] { "Blank_Id" });
             DropIndex("dbo.Groups", new[] { "cource_Id" });
             DropIndex("dbo.CorrectAnswers", new[] { "Question_Id" });
             DropIndex("dbo.Categories", new[] { "Name" });
@@ -221,11 +221,11 @@ namespace TestApplicationWPF.Migrations
             DropIndex("dbo.AccessLevels", new[] { "Name" });
             DropTable("dbo.UserAccessLevels");
             DropTable("dbo.WantedCourceToStudies");
+            DropTable("dbo.TestBlanks");
+            DropTable("dbo.PassedTests");
             DropTable("dbo.WrongAnswers");
             DropTable("dbo.Subjects");
             DropTable("dbo.Questions");
-            DropTable("dbo.TestBlanks");
-            DropTable("dbo.PassedTests");
             DropTable("dbo.Groups");
             DropTable("dbo.Cources");
             DropTable("dbo.CorrectAnswers");

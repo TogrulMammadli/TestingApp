@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TestApplicationWPF.Models;
+using TestApplicationWPF.Pages;
 using TestApplicationWPF.Repository.UserRepository;
 using TestApplicationWPF.Services.UserServices;
 
@@ -52,8 +53,12 @@ namespace TestApplicationWPF
         private void HeadWndButtonClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            
         }
 
-        
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new SettingPage();
+        }
     }
 }

@@ -6,8 +6,84 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:TestApplicationWPF"
         mc:Ignorable="d"
-        Title="HeadWindow" Height="600" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Icons/mainicon.png" WindowStyle="None"
+        Title="HeadWindow" Height="600" Width="1030" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Icons/mainicon.png" WindowStyle="None"
         BorderBrush="#FF00AEFF" BorderThickness="1">
+    <Window.Resources>
+        <Style x:Key="BigPannel">
+            <!--Panel Style-->
+            <Style.Setters>
+                <Setter Property="Control.Width" Value="30" />
+                <Setter Property="Control.Background" Value="DarkTurquoise"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Duration="0:0:0.1"
+                                    Storyboard.TargetProperty="Width"
+                                    To="180"  />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Duration="0:0:0:0.1"
+                                    Storyboard.TargetProperty="Width" To="30"  />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="BigButton">
+            <!--Button Style-->
+            <Style.Setters>
+                <Setter Property="Control.Width" Value="100"/>
+                <Setter Property="Control.Foreground"  Value="White"/>
+                <Setter Property="Control.Background" Value="DarkTurquoise"/>
+                <Setter Property="Control.BorderThickness" Value="0"/>
+                <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+                <Setter Property="Control.Padding" Value="5"/>
+            </Style.Setters>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Duration="0:0:0.1"
+                                    Storyboard.TargetProperty="Width"
+                                    To="200"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Mouse.MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation
+                                    Duration="0:0:0:0.1"
+                                    Storyboard.TargetProperty="Width" To="100" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Mouse.MouseEnter">
+
+                </EventTrigger>
+
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+  <!--stiliiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-->
     <Grid>
 
         <Grid.RowDefinitions>
@@ -35,11 +111,16 @@
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
+                
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" Background="Gray">
 
-                <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" >
+         
+
+
+            <!--<StackPanel Grid.Column="1" Background="Gray">
+
+                --><!--<Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" >
                 </Image>
                 <TextBlock Name="UserNameSurnameTextBox" HorizontalAlignment="Center"  Margin="5"
                 VerticalAlignment="Top"
@@ -48,7 +129,7 @@
                 <TextBlock Name="UserEmailTextBox" HorizontalAlignment="Center"  Margin="5"
                 VerticalAlignment="Top"
                 FontSize="10"
-                Foreground="White"></TextBlock>
+                Foreground="White"></TextBlock>--><!--
 
                 <Button
                 HorizontalAlignment="Center"
@@ -62,10 +143,75 @@
                     Background="{x:Null}"
                     Kind="Menu" RenderTransformOrigin="0.547,-8.284" />
                 </Button>
-                <Button Content="1st" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click"></Button>
-                <Button Content="2st" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_1"></Button>
-                <Button Content="3st" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_2"></Button>
-                <Button Content="UserManagement" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_3"></Button>
+               
+
+            </StackPanel>-->
+
+                
+            <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0">
+                <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" >
+                </Image>
+                <TextBlock Name="UserNameSurnameTextBox" HorizontalAlignment="Center"  Margin="5"
+                VerticalAlignment="Top"
+                FontSize="12"
+                Foreground="White"></TextBlock>
+                <TextBlock Name="UserEmailTextBox" HorizontalAlignment="Center"  Margin="5"
+                VerticalAlignment="Top"
+                FontSize="10"
+                Foreground="White"></TextBlock>
+                
+                <TextBlock Text="☰" Foreground="White" HorizontalAlignment="Center" FontSize="20"></TextBlock>
+                <TextBlock></TextBlock>
+                
+                <!--<Button Content="1st"  Style="{StaticResource BigButton}" HorizontalAlignment="Left"  Background="{x:Null}" BorderBrush="{x:Null}" ></Button>
+                <Button Content="2st"  Style="{StaticResource BigButton}" HorizontalAlignment="Left"  Background="{x:Null}" BorderBrush="{x:Null}" ></Button>
+                <Button Content="3st"  Style="{StaticResource BigButton}" HorizontalAlignment="Left"  Background="{x:Null}" BorderBrush="{x:Null}" ></Button>
+                <Button Content="UserManagement"  Style="{StaticResource BigButton}" HorizontalAlignment="Left"  Background="{x:Null}" BorderBrush="{x:Null}" ></Button>-->
+
+                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click" >
+                    <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon
+                            Width="20"
+                            Height="20"
+                            Background="{x:Null}"
+                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-5,0,10,0"/>
+                        <TextBlock HorizontalAlignment="Left">Create test</TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_1">
+                    <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon
+                            Width="20"
+                            Height="20"
+                            Background="{x:Null}"
+                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-5,0,10,0"/>
+                        <TextBlock>2nd</TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_2" >
+                    <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                        <Ellipse Height="16" Width="16" Fill="#FFFDFDFD" Margin="-35,0,10,0"></Ellipse>
+                        <TextBlock>3rd</TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_3" >
+                    <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                        <Ellipse Height="16" Width="16" Fill="#FFFDFDFD" Margin="-32,0,10,0"  ></Ellipse>
+                        <TextBlock>User</TextBlock>
+                    </StackPanel>
+                </Button>
+
+                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                        <Ellipse Height="16" Width="16" Fill="#FFFDFDFD" Margin="-28,0,10,0"></Ellipse>
+                        <TextBlock>Settin</TextBlock>
+                    </StackPanel>
+                </Button>
+
+              
 
             </StackPanel>
 

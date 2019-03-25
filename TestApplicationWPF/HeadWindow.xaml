@@ -98,6 +98,7 @@
         <Grid Grid.Row="0" Background="#FF00AEFF" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                 <Button
+                 Click="HeadWndButtonDropdown_Click"
                 x:Name="HeadWndButtonDropdown"
                 
                 HorizontalAlignment="Right"

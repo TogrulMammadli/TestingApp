@@ -110,22 +110,23 @@ namespace TestApplicationWPF
         {
             if (IsFullscreen)
             {
-                this.WindowStyle = WindowStyle.SingleBorderWindow;
-                this.WindowState = lastWindowState;
-                WindowStyle = WindowStyle.None;
+                this.WindowStyle = WindowStyle.None;
+                this.WindowState = WindowState.Normal;
                 IsFullscreen = false;
 
             }
-            else
+            else 
             {
-                lastWindowState = this.WindowState;
-                this.WindowStyle = WindowStyle.None;
-                if (this.WindowState == WindowState.Maximized)
-                    this.WindowState = WindowState.Minimized;
                 this.WindowState = WindowState.Maximized;
                 IsFullscreen = true;
                 WindowStyle = WindowStyle.None;
             }
+        }
+
+        private void HeadWndButtonDropdown_Click(object sender, RoutedEventArgs e)
+        {
+                WindowStyle = WindowStyle.None;
+                WindowState = WindowState.Minimized;
         }
     }
 }

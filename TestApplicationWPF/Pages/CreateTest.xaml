@@ -9,10 +9,10 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="PageCreateTest"
     d:DesignHeight="560"
-    d:DesignWidth="1030"
+    d:DesignWidth="1050"
     mc:Ignorable="d">
 
-    <Grid Margin="30 0 0 0">
+    <Grid Margin="50 0 0 0">
         <!--<Grid
             Height="60"
             VerticalAlignment="Top"

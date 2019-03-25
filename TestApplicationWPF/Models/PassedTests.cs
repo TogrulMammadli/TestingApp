@@ -8,13 +8,13 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Models
 {
-  public  class PassedTests//soderjit blank vremanacala vrema konce
+  public  class Exams//soderjit blank vremanacala vrema konce
     {
-        public PassedTests()
+        public Exams()
         {
         }
 
-        public PassedTests(User user, TestBlank blank)
+        public Exams(User user, TestBlank blank)
         {
             User = user ?? throw new ArgumentNullException(nameof(user));
             Blank = blank ?? throw new ArgumentNullException(nameof(blank));

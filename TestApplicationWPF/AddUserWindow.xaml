@@ -1,0 +1,70 @@
+﻿<Window x:Class="TestApplicationWPF.AddUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:TestApplicationWPF"
+        mc:Ignorable="d"
+        Title="AddUserWindow" Height="500" Width="600" Background="AliceBlue">
+    <Grid>
+        <StackPanel>
+            <TextBox
+                Background="White"
+            Name="Name"
+        materialDesign:HintAssist.Hint="Enter Name" 
+            Height="30"
+            Width="200"
+            ></TextBox>
+            <TextBox Name="Surname"
+                Background="White"
+                        materialDesign:HintAssist.Hint="Enter Surname" 
+            Height="30"
+            Width="200"></TextBox>
+            <TextBox Name="Patronymic"
+                Background="White"
+                     
+                        materialDesign:HintAssist.Hint="Enter Patronymic" 
+            Height="30"
+            Width="200"></TextBox>
+            <TextBox Name="Login"
+                Background="White"
+                        materialDesign:HintAssist.Hint="Enter Login" 
+            Height="30"
+            Width="200"></TextBox>
+            <TextBox Name="Password"
+                Background="White"
+                        materialDesign:HintAssist.Hint="Enter password" 
+            Height="30"
+            Width="200"></TextBox>
+            <TextBox Name="Email"
+                Background="White"
+                      materialDesign:HintAssist.Hint="Enter Email" 
+            Height="30"
+            Width="200"></TextBox>
+            <StackPanel Orientation="Horizontal" Height="30" Width="250">
+                <ComboBox SelectedIndex="0" IsHitTestVisible="True" HorizontalContentAlignment="Center" IsReadOnly="True" Name="Operator"  Height="30" Width="70">
+                    <TextBlock>012</TextBlock>
+                    <TextBlock>050</TextBlock>
+                    <TextBlock>051</TextBlock>
+                    <TextBlock>055</TextBlock>
+                    <TextBlock>070</TextBlock>
+                    <TextBlock>077</TextBlock>
+                </ComboBox>
+                <TextBox Height="30" Width="180" MaxLength="7" Name="NumberTextBox" Background="White" FontSize="20" PreviewTextInput="NumberValidationTextBox"/>
+            </StackPanel>
+            <DatePicker Name="dataPicker" Height="30" IsHitTestVisible="False" Focusable="False">
+            </DatePicker>
+            <RadioButton  Name="Male" IsChecked="True">RadioMale</RadioButton>
+            <RadioButton  Name="Female">RadioFemale</RadioButton>
+            <Button VerticalAlignment="Bottom" Name="ImageBtn" Click="ImageBtn_Click">ChangeImage</Button>
+            <CheckBox Name="admin">AdminCheckbox</CheckBox>
+            <CheckBox Name="mentor">MentorCheckbox</CheckBox>
+            <CheckBox Name="student">StudentCheckbox</CheckBox>
+            <Button VerticalAlignment="Bottom" Name="Cancel" Click="Cancel_Click">cancel User</Button>
+
+        </StackPanel>
+        <Button VerticalAlignment="Bottom" Name="Add" Click="Add_Click">Add User</Button>
+
+    </Grid>
+</Window>

@@ -21,7 +21,6 @@ namespace TestApplicationWPF.Repository.UserRepository
                 {
                     c.Users.Add(user);
                     c.SaveChanges();
-
                     return true;
                 }
                 catch (Exception ex)
@@ -32,19 +31,24 @@ namespace TestApplicationWPF.Repository.UserRepository
             }
         }
 
-        public IEnumerable<User> GetAllUsers()
+        public  IEnumerable<User> GetAllUsers()
         {
-            using (var c = new TestContext())
-            {
-                return c.Users;
-            }
+            //IEnumerable<User> users;
+            //using (var c = new TestContext())
+            //{
+            //    users = c.Users.Include("AccessLevels");
+            //}
+            //return users;
+            IEnumerable<User> users;
+            users = new List<User> { GetUserByID(1) };
+            return users;
         }
 
         public User GetUserByEmail(string email)
         {
             using (var c = new TestContext())
             {
-                foreach (var temp in c.Users)
+                foreach (var temp in c.Users.Include("AccessLevels"))
                 {
                     if (temp.Email == email)
                     {
@@ -75,7 +79,7 @@ namespace TestApplicationWPF.Repository.UserRepository
         {
             using (var c = new TestContext())
             {
-                foreach (var temp in c.Users)
+                foreach (var temp in c.Users.Include("AccessLevels"))
                 {
                     if (temp.Login == login)
                     {
@@ -90,7 +94,7 @@ namespace TestApplicationWPF.Repository.UserRepository
         {
             using (var c = new TestContext())
             {
-                foreach (var test in c.Users)
+                foreach (var test in c.Users.Include("AccessLevels"))
                 {
                     if (test.Id == Id)
                     {

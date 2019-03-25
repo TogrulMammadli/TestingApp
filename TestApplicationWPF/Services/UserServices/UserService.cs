@@ -48,7 +48,6 @@ namespace TestApplicationWPF.Services.UserServices
 
         public User EmailValidation(string email)
         {
-
             var user = userRepository.GetUserByEmail(email);
             if (user != null)
             {
@@ -191,6 +190,13 @@ namespace TestApplicationWPF.Services.UserServices
                 std.Password = password;
                 context.SaveChanges();
             }
+        }
+        public byte[] ConvertImageToByte(string path){
+            Image image = Image.FromFile(path);
+            System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
+            image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+            byte[] b = memoryStream.ToArray();
+            return b;
         }
         public string GetAvatarImageFromDb(int UID)
         {

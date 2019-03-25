@@ -44,7 +44,7 @@ namespace TestApplicationWPF
 
             //var user = new User() { Name = "Togrul", Surname = "Mammadli", Patronymic = "Vuqar", PhoneNumber = "0503907667", Login = "admin", AccessLevels = new List<AccessLevel> { new AccessLevel() { Name = "Admin" } }, DateOfBirth = DateTime.Now, Email = "mamedlitogrul99@gmail.com", Password = "admin", Gender = Gender.Male };
             //UserRepository userRepository = new UserRepository();
-            ////userRepository.AddUser(user);
+            //userRepository.AddUser(user);
             //#region UpdateImageInDbTesting
 
             ////try

@@ -25,6 +25,7 @@ namespace TestApplicationWPF
     public partial class HeadWindow : Window
     {
         User User = new User();
+        string Imagepath = "";
         UserService userService = new UserService(new UserRepository());
         public HeadWindow(User user)
         {
@@ -33,7 +34,20 @@ namespace TestApplicationWPF
             //frame.NavigationService.Navigate(new PageCreateTest());
             if (user.İmage!=null)
             {
-            AvatarImage.Source = new BitmapImage(new Uri(userService.GetAvatarImageFromDb(user.Id)));
+                Task task = new Task(CC);
+                task.Start();
+                {
+                    task.ContinueWith((x) =>
+                    {
+                        if (task.IsCompleted)
+                        {
+                            this.Dispatcher.Invoke(() =>
+                            {
+                                this.Dispatcher.InvokeAsync(() => this.AvatarImage.Source = new BitmapImage(new Uri(Imagepath)));
+                            });
+                        }
+                    });
+                }
             }
             UserNameSurnameTextBox.Text = user.Name + "  " + user.Surname;
             UserEmailTextBox.Text = user.Email;
@@ -63,6 +77,16 @@ namespace TestApplicationWPF
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             frame.Content = new SettingPage();
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new UserManagement(User);
+        }
+
+        public void CC()
+        {
+            Imagepath = userService.GetAvatarImageFromDb(User.Id);
         }
     }
 }

@@ -3,7 +3,7 @@ namespace TestApplicationWPF.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CreatingDB : DbMigration
+    public partial class Createtable : DbMigration
     {
         public override void Up()
         {
@@ -66,34 +66,8 @@ namespace TestApplicationWPF.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Text = c.String(),
                         Image = c.Binary(),
-                        Question_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Questions", t => t.Question_Id)
-                .Index(t => t.Question_Id);
-            
-            CreateTable(
-                "dbo.Cources",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(maxLength: 30),
-                        duration = c.Time(nullable: false, precision: 7),
                     })
                 .PrimaryKey(t => t.Id);
-            
-            CreateTable(
-                "dbo.Groups",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(maxLength: 40),
-                        LearningTime = c.DateTime(nullable: false),
-                        cource_Id = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Cources", t => t.cource_Id)
-                .Index(t => t.cource_Id);
             
             CreateTable(
                 "dbo.Questions",
@@ -128,14 +102,34 @@ namespace TestApplicationWPF.Migrations
                         Id = c.Int(nullable: false, identity: true),
                         Text = c.String(),
                         Image = c.Binary(),
-                        Question_Id = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Questions", t => t.Question_Id)
-                .Index(t => t.Question_Id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.PassedTests",
+                "dbo.Cources",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(maxLength: 30),
+                        duration = c.Time(nullable: false, precision: 7),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Groups",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Name = c.String(maxLength: 40),
+                        LearningTime = c.DateTime(nullable: false),
+                        cource_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Cources", t => t.cource_Id)
+                .Index(t => t.cource_Id);
+            
+            CreateTable(
+                "dbo.Exams",
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
@@ -187,47 +181,79 @@ namespace TestApplicationWPF.Migrations
                 .Index(t => t.User_Id)
                 .Index(t => t.AccessLevel_Id);
             
+            CreateTable(
+                "dbo.QuestionCorrectAnswers",
+                c => new
+                    {
+                        Question_Id = c.Int(nullable: false),
+                        CorrectAnswer_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Question_Id, t.CorrectAnswer_Id })
+                .ForeignKey("dbo.Questions", t => t.Question_Id, cascadeDelete: true)
+                .ForeignKey("dbo.CorrectAnswers", t => t.CorrectAnswer_Id, cascadeDelete: true)
+                .Index(t => t.Question_Id)
+                .Index(t => t.CorrectAnswer_Id);
+            
+            CreateTable(
+                "dbo.WrongAnswerQuestions",
+                c => new
+                    {
+                        WrongAnswer_Id = c.Int(nullable: false),
+                        Question_Id = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.WrongAnswer_Id, t.Question_Id })
+                .ForeignKey("dbo.WrongAnswers", t => t.WrongAnswer_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Questions", t => t.Question_Id, cascadeDelete: true)
+                .Index(t => t.WrongAnswer_Id)
+                .Index(t => t.Question_Id);
+            
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.WantedCourceToStudies", "Cource_Id", "dbo.Cources");
-            DropForeignKey("dbo.PassedTests", "User_Id", "dbo.Users");
-            DropForeignKey("dbo.PassedTests", "Blank_Id", "dbo.TestBlanks");
+            DropForeignKey("dbo.Exams", "User_Id", "dbo.Users");
+            DropForeignKey("dbo.Exams", "Blank_Id", "dbo.TestBlanks");
             DropForeignKey("dbo.Questions", "TestBlank_Id", "dbo.TestBlanks");
-            DropForeignKey("dbo.WrongAnswers", "Question_Id", "dbo.Questions");
-            DropForeignKey("dbo.Questions", "subject_Id", "dbo.Subjects");
-            DropForeignKey("dbo.CorrectAnswers", "Question_Id", "dbo.Questions");
             DropForeignKey("dbo.Users", "Group_Id", "dbo.Groups");
             DropForeignKey("dbo.Groups", "cource_Id", "dbo.Cources");
+            DropForeignKey("dbo.WrongAnswerQuestions", "Question_Id", "dbo.Questions");
+            DropForeignKey("dbo.WrongAnswerQuestions", "WrongAnswer_Id", "dbo.WrongAnswers");
+            DropForeignKey("dbo.Questions", "subject_Id", "dbo.Subjects");
+            DropForeignKey("dbo.QuestionCorrectAnswers", "CorrectAnswer_Id", "dbo.CorrectAnswers");
+            DropForeignKey("dbo.QuestionCorrectAnswers", "Question_Id", "dbo.Questions");
             DropForeignKey("dbo.UserAccessLevels", "AccessLevel_Id", "dbo.AccessLevels");
             DropForeignKey("dbo.UserAccessLevels", "User_Id", "dbo.Users");
+            DropIndex("dbo.WrongAnswerQuestions", new[] { "Question_Id" });
+            DropIndex("dbo.WrongAnswerQuestions", new[] { "WrongAnswer_Id" });
+            DropIndex("dbo.QuestionCorrectAnswers", new[] { "CorrectAnswer_Id" });
+            DropIndex("dbo.QuestionCorrectAnswers", new[] { "Question_Id" });
             DropIndex("dbo.UserAccessLevels", new[] { "AccessLevel_Id" });
             DropIndex("dbo.UserAccessLevels", new[] { "User_Id" });
             DropIndex("dbo.WantedCourceToStudies", new[] { "Cource_Id" });
             DropIndex("dbo.TestBlanks", new[] { "Name" });
-            DropIndex("dbo.PassedTests", new[] { "User_Id" });
-            DropIndex("dbo.PassedTests", new[] { "Blank_Id" });
-            DropIndex("dbo.WrongAnswers", new[] { "Question_Id" });
+            DropIndex("dbo.Exams", new[] { "User_Id" });
+            DropIndex("dbo.Exams", new[] { "Blank_Id" });
+            DropIndex("dbo.Groups", new[] { "cource_Id" });
             DropIndex("dbo.Subjects", new[] { "Name" });
             DropIndex("dbo.Questions", new[] { "TestBlank_Id" });
             DropIndex("dbo.Questions", new[] { "subject_Id" });
-            DropIndex("dbo.Groups", new[] { "cource_Id" });
-            DropIndex("dbo.CorrectAnswers", new[] { "Question_Id" });
             DropIndex("dbo.Categories", new[] { "Name" });
             DropIndex("dbo.Users", new[] { "Group_Id" });
             DropIndex("dbo.Users", new[] { "Login" });
             DropIndex("dbo.Users", new[] { "Email" });
             DropIndex("dbo.AccessLevels", new[] { "Name" });
+            DropTable("dbo.WrongAnswerQuestions");
+            DropTable("dbo.QuestionCorrectAnswers");
             DropTable("dbo.UserAccessLevels");
             DropTable("dbo.WantedCourceToStudies");
             DropTable("dbo.TestBlanks");
-            DropTable("dbo.PassedTests");
+            DropTable("dbo.Exams");
+            DropTable("dbo.Groups");
+            DropTable("dbo.Cources");
             DropTable("dbo.WrongAnswers");
             DropTable("dbo.Subjects");
             DropTable("dbo.Questions");
-            DropTable("dbo.Groups");
-            DropTable("dbo.Cources");
             DropTable("dbo.CorrectAnswers");
             DropTable("dbo.Categories");
             DropTable("dbo.BestTimeForStudies");

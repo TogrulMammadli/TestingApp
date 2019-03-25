@@ -65,6 +65,8 @@
                 <Button Content="1st" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click"></Button>
                 <Button Content="2st" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_1"></Button>
                 <Button Content="3st" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_2"></Button>
+                <Button Content="UserManagement" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_3"></Button>
+
             </StackPanel>
 
             <Frame Grid.Column="1" x:Name="frame" Content="frame" NavigationUIVisibility="Hidden"/>

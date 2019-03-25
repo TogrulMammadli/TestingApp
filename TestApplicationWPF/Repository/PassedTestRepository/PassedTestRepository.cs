@@ -11,7 +11,7 @@ namespace TestApplicationWPF.Repository.PassedTestRepository
 {
     class PassedTestRepository : IPassedTestRepository
     {
-        public bool AddPassedTest(PassedTests question)
+        public bool AddPassedTest(Exams question)
         {
             using (var c = new TestContext())
             {
@@ -29,7 +29,7 @@ namespace TestApplicationWPF.Repository.PassedTestRepository
             }
         }
 
-        public IEnumerable<PassedTests> GetAllPassedTests()
+        public IEnumerable<Exams> GetAllPassedTests()
         {
             using (var c = new TestContext())
             {
@@ -37,7 +37,7 @@ namespace TestApplicationWPF.Repository.PassedTestRepository
             }
         }
 
-        public PassedTests GetPassedTestByID(int ID)
+        public Exams GetPassedTestByID(int ID)
         {
             using (var c = new TestContext())
             {
@@ -53,11 +53,11 @@ namespace TestApplicationWPF.Repository.PassedTestRepository
             }
         }
 
-        public ICollection<PassedTests> GetPassedTestsByUser(User user)
+        public ICollection<Exams> GetPassedTestsByUser(User user)
         {
             using (var c = new TestContext())
             {
-                List<PassedTests> passedTests = new List<PassedTests>();
+                List<Exams> passedTests = new List<Exams>();
                 foreach(var temp in c.PassedTests)
                 {
                     if(temp.User == user)

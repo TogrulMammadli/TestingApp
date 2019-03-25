@@ -19,7 +19,7 @@ namespace TestApplicationWPF.DataModel
         public DbSet<Category> Categories { get; set; }
         public DbSet<Cource> Cources { get; set; }
         public DbSet<Group> Groups { get; set; }
-        public DbSet<PassedTests> PassedTests { get; set; }
+        public DbSet<Exams> PassedTests { get; set; }
         public DbSet<Question> Questions { get; set; }
         public DbSet<Subject> Subjects { get; set; }
         public DbSet<TestBlank> TestBlanks { get; set; }

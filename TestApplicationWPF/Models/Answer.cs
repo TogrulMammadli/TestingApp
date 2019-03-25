@@ -31,6 +31,8 @@ namespace TestApplicationWPF.Models
         public CorrectAnswer(int id, string text, byte[] image) : base(id, text, image)
         {
         }
+        public virtual List<Question> Questions { get; set; }
+
     }
 
     public class WrongAnswer : Answer
@@ -38,5 +40,7 @@ namespace TestApplicationWPF.Models
         public WrongAnswer(int id, string text, byte[] image) : base(id, text, image)
         {
         }
+        public virtual List<Question> Questions { get; set; }
+
     }
 }

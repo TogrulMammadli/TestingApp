@@ -9,7 +9,7 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.CourceRepository
 {
-  public  class CourceRepository : ICourceRepository
+    public class CourceRepository : ICourceRepository
     {
         public bool AddCource(Cource cource)
         {
@@ -45,8 +45,7 @@ namespace TestApplicationWPF.Repository.CourceRepository
         {
             try
             {
-                TestContext.Instance.Cources.Remove(TestContext.Instance.Cources
-.Where(x => x.Id == Id).First());
+                TestContext.Instance.Cources.Remove(TestContext.Instance.Cources.Where(x => x.Id == Id).First());
                 TestContext.Instance.SaveChanges();
                 return true;
             }
@@ -69,6 +68,6 @@ namespace TestApplicationWPF.Repository.CourceRepository
                 return false;
             }
         }
-        
+
     }
 }

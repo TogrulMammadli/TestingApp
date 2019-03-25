@@ -9,120 +9,75 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.GroupsRepository
 {
-    class GroupRepository : IGroupRepository
+    public class GroupRepository : IGroupRepository
     {
         public bool AddGroup(Group group)
         {
-            //using (var c = new TestContext())
-            //{
-            //    try
-            //    {
-            //        c.Groups.Add(group);
-            //        c.SaveChanges();
-            //        return true;
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            //        return false;
-            //    }
-            //}
+            try
+            {
+            TestContext.Instance.Groups.Add(group);
+            TestContext.Instance.SaveChanges();
             return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
 
         public IEnumerable<Group> GetAllGroups()
         {
-            //using (var c = new TestContext())
-            //{
-            //    return c.Groups;
-            //}
-            return TestContext.Instance.Groups;
+           
+            return TestContext.Instance.Groups.ToList();
         }
 
         public Group GetGroupByID(int ID)
         {
-            //using (var c = new TestContext())
-            //{
-            //    foreach(var temp in c.Groups)
-            //    {
-            //        if(temp.Id == ID)
-            //        {
-            //            return temp;
-            //        }
-            //    }
-            //    MessageBox.Show("Не было найдено групп с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            //    return null;
-            //}
-            return new Group();
+            try
+            {
+                return TestContext.Instance.Groups.Where(x => x.Id == ID).First();
+            }
+            catch
+            {
+                return null;
+            }
         }
 
         public ICollection<Group> GetGroupsByCource(Cource cource)
         {
-            List<Group> groups = new List<Group>();
-            //using (var c = new TestContext())
-            //{
-            //    foreach(var temp in c.Groups)
-            //    {
-            //        if(temp.cource == cource)
-            //        {
-            //            groups.Add(temp);
-            //        }
-            //    }
-            //    if(groups.Count != 0)
-            //    {
-            //        return groups;
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Не было найдено групп с данным курсом!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            //        return null;
-            //    }
-            //}
-            return groups;
+            return TestContext.Instance.Groups.Where(x=>x.cource==cource).ToList();
         }
 
-        public ICollection<Group> GetGroupsByName(string name)
+        public Group GetGroupsByName(string name)
         {
-            List<Group> groups = new List<Group>();
-            //using (var c = new TestContext())
-            //{
-            //    foreach(var temp in groups)
-            //    {
-            //        if(temp.Name == name)
-            //        {
-            //            groups.Add(temp);
-            //        }
-            //    }
-            //    if(groups.Count != 0)
-            //    {
-            //        return groups;
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("Не было найдено группы с данным именем!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            //        return null;
-            //    }
-            //}
-            return groups;
+            return TestContext.Instance.Groups.Where(x => x.Name == name).First(); 
         }
-
+        public bool RemoveGroup(Group group)
+        {
+            try
+            {
+                TestContext.Instance.Groups.Remove(group);
+                TestContext.Instance.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return true;
+            }
+        }
         public bool RemoveGroupById(int Id)
         {
-            //using (var c = new TestContext())
-            //{
-            //    foreach (var test in c.Groups)
-            //    {
-            //        if (test.Id == Id)
-            //        {
-            //            c.Groups.Remove(test);
-            //        c.SaveChanges();
-            //            return true;
-            //        }
-            //    }
-            //    MessageBox.Show("Не было найдено группы с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            //    return false;
-            //}
-            return true;
+            try
+            {
+                TestContext.Instance.Groups.Remove(TestContext.Instance.Groups.First(x => x.Id == Id));
+                TestContext.Instance.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return true;
+            }
+
         }
 
        

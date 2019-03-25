@@ -159,8 +159,8 @@
     <Compile Include="Repository\CourceRepository\ICourceRepository.cs" />
     <Compile Include="Repository\GroupsRepository\GroupRepository.cs" />
     <Compile Include="Repository\GroupsRepository\IGroupRepository.cs" />
-    <Compile Include="Repository\PassedTestRepository\IPassedTestRepository.cs" />
-    <Compile Include="Repository\PassedTestRepository\PassedTestRepository.cs" />
+    <Compile Include="Repository\ExamRepository\IExamRepository.cs" />
+    <Compile Include="Repository\ExamRepository\ExamRepository.cs" />
     <Compile Include="Repository\QuestionsRepository\IQuestionRepository.cs" />
     <Compile Include="Repository\QuestionsRepository\QuestionRepository.cs" />
     <Compile Include="Repository\SubjectRepository\ISubjectRepository.cs" />

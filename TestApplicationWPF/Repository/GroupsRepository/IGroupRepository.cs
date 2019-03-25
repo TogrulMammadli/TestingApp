@@ -7,13 +7,14 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.GroupsRepository
 {
-    interface IGroupRepository
+  public  interface IGroupRepository
     {
-        IEnumerable<Group> GetAllGroups();
-        bool RemoveGroupById(int Id);
         bool AddGroup(Group group);
+        IEnumerable<Group> GetAllGroups();
         Group GetGroupByID(int ID);
-        ICollection<Group> GetGroupsByName(string name);
         ICollection<Group> GetGroupsByCource(Cource cource);
+        Group GetGroupsByName(string name);
+        bool RemoveGroup(Group group);
+        bool RemoveGroupById(int Id);
     }
 }

@@ -7,15 +7,15 @@ using System.Windows;
 using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 
-namespace TestApplicationWPF.Repository.SubjectRepository
+namespace TestApplicationWPF.Repository.PassedTestRepository
 {
-    class SubjectRepository : ISubjectRepository
+    class PassedTestRepository : IPassedTestRepository
     {
-        public bool AddSubject(Subject subject)
+        public bool AddPassedTest(Exams exam)
         {
             try
             {
-                TestContext.Instance.Subjects.Add(subject);
+                TestContext.Instance.PassedTests.Add(exam);
                 TestContext.Instance.SaveChanges();
                 return true;
             }
@@ -25,16 +25,17 @@ namespace TestApplicationWPF.Repository.SubjectRepository
             }
         }
 
-        public IEnumerable<Subject> GetAllSubjects()
+        public IEnumerable<Exams> GetAllPassedTests()
         {
-            return TestContext.Instance.Subjects.ToList();
+
+            return TestContext.Instance.PassedTests.ToList() ;
         }
 
-        public Subject GetSubjectByID(int ID)
+        public Exams GetPassedTestByID(int ID)
         {
             try
             {
-                return TestContext.Instance.Subjects.Where(x => x.Id == ID).First();
+                return TestContext.Instance.PassedTests.Where(x => x.Id == ID).First();
             }
             catch
             {
@@ -42,11 +43,11 @@ namespace TestApplicationWPF.Repository.SubjectRepository
             }
         }
 
-        public Subject GetSubjectByName(string name)
+        public ICollection<Exams> GetPassedTestsByUser(User user)
         {
             try
             {
-                return TestContext.Instance.Subjects.Where(x => x.Name == name).First();
+                return TestContext.Instance.PassedTests.Where(x => x.User == user).ToList();
             }
             catch (Exception)
             {
@@ -54,12 +55,11 @@ namespace TestApplicationWPF.Repository.SubjectRepository
             }
         }
 
-
-        public bool RemoveSubject(Subject subject)
+        public bool RemoveExam(Exams exams)
         {
             try
             {
-                TestContext.Instance.Subjects.Remove(subject);
+                TestContext.Instance.PassedTests.Remove(exams);
                 TestContext.Instance.SaveChanges();
                 return true;
             }
@@ -69,11 +69,11 @@ namespace TestApplicationWPF.Repository.SubjectRepository
             }
         }
 
-        public bool RemoveSubjectById(int Id)
+        public bool RemoveAccessLevelById(int Id)
         {
             try
             {
-                TestContext.Instance.Subjects.Remove(TestContext.Instance.Subjects.First(x => x.Id == Id));
+                TestContext.Instance.PassedTests.Remove(TestContext.Instance.PassedTests.First(x => x.Id == Id));
                 TestContext.Instance.SaveChanges();
                 return true;
             }

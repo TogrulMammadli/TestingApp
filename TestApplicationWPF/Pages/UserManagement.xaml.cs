@@ -75,6 +75,7 @@ namespace TestApplicationWPF.Pages
         private void Remove_Click(object sender, RoutedEventArgs e)
         {
             UserService.RemoveUser(((User)usersListBox.SelectedItems[0]));
+
         }
     }
 }

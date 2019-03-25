@@ -19,11 +19,8 @@ namespace TestApplicationWPF.ViewModels
         public UserManagementViewModel(IUserService userService)
         {
             this.userService = userService ?? throw new ArgumentNullException(nameof(userService));
-            Task.Run(() =>
-            {
-                this.users = new ObservableCollection<User>(this.userService.GetAllUsers());
-                this.OnPropertyChanged(nameof(Users));
-            });
+            this.users = new ObservableCollection<User>(this.userService.GetAllUsers());
+            this.OnPropertyChanged(nameof(Users));
         }
     }
 }

@@ -127,5 +127,11 @@ namespace TestApplicationWPF
                 WindowStyle = WindowStyle.None;
             }
         }
+
+        private void HeadWndButtonDropdown_Click(object sender, RoutedEventArgs e)
+        {
+                WindowStyle = WindowStyle.None;
+                WindowState = WindowState.Minimized;
+        }
     }
 }

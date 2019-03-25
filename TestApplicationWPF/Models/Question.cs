@@ -18,6 +18,9 @@ namespace TestApplicationWPF.Models
 
         public Question()
         {
+            this.WrongAnswers = new HashSet<WrongAnswer>();
+            this.CorrectAnswers = new HashSet<CorrectAnswer>();
+            this.TestBlanks = new HashSet<TestBlank>();
         }
 
         public Question(int ıd, string text, List<WrongAnswer> wrongAnswers, List<CorrectAnswer> correctAnswers, Complexity complexity, byte[] ımage, Subject subject)
@@ -34,12 +37,14 @@ namespace TestApplicationWPF.Models
         [Key]
         public int Id { get; set; }
         public string Text { get; set; }
-        public virtual List<WrongAnswer> WrongAnswers { get; set; }
-        public virtual List<CorrectAnswer> CorrectAnswers { get; set; }
+        public virtual ICollection<WrongAnswer> WrongAnswers { get; set; }
+        public virtual ICollection<CorrectAnswer> CorrectAnswers { get; set; }
+        public virtual ICollection<TestBlank> TestBlanks { get; set; }
         Complexity Complexity { get; set; }
         [MaxLength]
         public byte[] Image { get; set; }
         public Subject subject { get; set; }
+
     }
 
 

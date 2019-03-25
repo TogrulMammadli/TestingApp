@@ -19,14 +19,13 @@ namespace TestApplicationWPF.Models
         public string About { get; set; }
         public string Autor { get; set; }
         public TimeSpan DurationMin  { get; set; }
-        public List<Question> Questions { get; set; }
         bool Used=false;
+        public virtual ICollection<Question> Questions { get; set; }
 
         public TestBlank(int id, string name,TimeSpan durationMin, List<Question> questions, bool used)
         {
             Id = id;
             Name = name ?? throw new ArgumentNullException(nameof(name));
-         
             DurationMin = durationMin;
             this.Questions = questions ?? throw new ArgumentNullException(nameof(questions));
             Used = used;
@@ -34,8 +33,8 @@ namespace TestApplicationWPF.Models
 
         public TestBlank()
         {
+            this.Questions = new HashSet<Question>();
         }
     }
 
-    //metodi get different  staticstics that returns a percent of correct, false, po disciplinam, vsego itd
 }

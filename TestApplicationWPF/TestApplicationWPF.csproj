@@ -84,13 +84,9 @@
     <Compile Include="ForgotPasswordWindow3.xaml.cs">
       <DependentUpon>ForgotPasswordWindow3.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903251400575_CreateDb.cs" />
-    <Compile Include="Migrations\201903251400575_CreateDb.Designer.cs">
-      <DependentUpon>201903251400575_CreateDb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903251812121_SomeMigration.cs" />
-    <Compile Include="Migrations\201903251812121_SomeMigration.Designer.cs">
-      <DependentUpon>201903251812121_SomeMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201903251916244_First.cs" />
+    <Compile Include="Migrations\201903251916244_First.Designer.cs">
+      <DependentUpon>201903251916244_First.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BestTimeForStudy.cs" />
@@ -232,11 +228,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201903251400575_CreateDb.resx">
-      <DependentUpon>201903251400575_CreateDb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903251812121_SomeMigration.resx">
-      <DependentUpon>201903251812121_SomeMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903251916244_First.resx">
+      <DependentUpon>201903251916244_First.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

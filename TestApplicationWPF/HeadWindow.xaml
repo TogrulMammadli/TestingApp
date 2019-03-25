@@ -6,7 +6,7 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:TestApplicationWPF"
         mc:Ignorable="d"
-        Title="HeadWindow" Height="600" Width="1030" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Icons/mainicon.png" WindowStyle="None"
+        Title="HeadWindow" Height="590" Width="1030" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Icons/mainicon.png" WindowStyle="None"
         BorderBrush="#FF00AEFF" BorderThickness="1">
     <Window.Resources>
         <Style x:Key="BigPannel">
@@ -91,15 +91,43 @@
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="30"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Background="#FF00AEFF" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <Button
+                x:Name="HeadWndButtonDropdown"
+                
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" >
+                    <materialDesign:PackIcon
+                    Width="20"
+                    Height="20"
+                    Background="{x:Null}"
+                    Kind="WindowMinimize" VerticalAlignment="Bottom" Margin="0 10 0 0" />
+                </Button>
+                <Button
+                x:Name="HeadWndButtonMaximize"
                
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" >
+                    <materialDesign:PackIcon
+                    Width="20"
+                    Height="20"
+                    Background="{x:Null}"
+                    Kind="WindowMaximize" />
+                </Button>
                 <Button
                 x:Name="HeadWndButtonClose"
-                Margin="10"
+                
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
                 Background="{x:Null}"
@@ -111,6 +139,8 @@
                     Background="{x:Null}"
                     Kind="Close" />
                 </Button>
+                
+            </StackPanel>
         </Grid>
         <Grid Grid.Row="1">
             <!--<DockPanel>-->
@@ -156,7 +186,7 @@
             </StackPanel>-->
             <Frame Grid.Column="1" x:Name="frame" Content="frame" NavigationUIVisibility="Hidden" Margin="0 0 0 0"/>
 
-            <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0" MouseEnter="StackPanel_MouseEnter" MouseLeave="StackPanel_MouseLeave" >
+            <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0" MouseEnter="StackPanel_MouseEnter" MouseLeave="StackPanel_MouseLeave"  >
                 
                 <StackPanel Orientation="Horizontal"  Background="#2c3e50" Height="180">
                     <Grid x:Name="HamburgerMenuGrid">
@@ -187,21 +217,21 @@
                                  VerticalAlignment="Top"
                                  FontSize="10"
                                  Foreground="White" Margin="30 0 0 0"></TextBlock>
-                        <Button Width="70"
-                            Height="25"
-                            Background="{x:Null}"
-                           BorderBrush="{x:Null}"
-                            Click="Button_Click_3" Margin="15 5 0 0" HorizontalAlignment="Center">
-
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                                <materialDesign:PackIcon
-                                 Width="15"
-                                 Height="15"
-                                 Background="{x:Null}"
-                                 Kind="Edit" />
-                                <TextBlock FontSize="12" Text="edit"  Margin="2 0 0 0"></TextBlock>
-                            </StackPanel>
-
+                        <Button
+                               Height="35"
+                            Width="35"
+                             ToolTip="Edit"
+                            Margin="25 0 0 0"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             Background="{x:Null}"
+                             BorderBrush="{x:Null}"
+                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="Button_Click_3">
+                            <materialDesign:PackIcon
+                             Width="20"
+                             Height="20"
+                             Background="{x:Null}"
+                             Kind="Edit" />
                         </Button>
                         <!--<Button
                             Width="70"
@@ -287,8 +317,29 @@
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-39,0,10,0"/>
+                            Kind="Settings"  HorizontalAlignment="Left" Foreground="White" Margin="-39,0,10,0"/>
                         <TextBlock>Settings</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon
+                            Width="20"
+                            Height="20"
+                            Background="{x:Null}"
+                            Kind="Equaliser"  HorizontalAlignment="Left" Foreground="White" Margin="-39,0,10,0"/>
+                        <TextBlock>Logout</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Grid Height="150"></Grid>
+                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left">
+                    <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon
+                            Width="20"
+                            Height="20"
+                            Background="{x:Null}"
+                            Kind="Logout"  HorizontalAlignment="Left" Foreground="White" Margin="-39,0,10,0"/>
+                        <TextBlock>Logout</TextBlock>
                     </StackPanel>
                 </Button>
             </StackPanel>

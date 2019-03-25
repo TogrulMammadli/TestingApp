@@ -91,10 +91,10 @@ PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown">
                                     <ColumnDefinition ></ColumnDefinition>
                                     <ColumnDefinition  Width="150"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" HorizontalContentAlignment="Center">Name</Label>
-                                <Label Grid.Column="1" HorizontalContentAlignment="Center">Surname</Label>
-                                <Label Grid.Column="2" HorizontalContentAlignment="Center">Login</Label>
-                                <Label Grid.Column="3" HorizontalContentAlignment="Center">Email</Label>
+                                <Label Grid.Column="0" HorizontalContentAlignment="Left">Name</Label>
+                                <Label Grid.Column="1" HorizontalContentAlignment="Left">Surname</Label>
+                                <Label Grid.Column="2" HorizontalContentAlignment="Left">Login</Label>
+                                <Label Grid.Column="3" HorizontalContentAlignment="Left ">Email</Label>
 
                             </Grid>
                             <ItemsPresenter></ItemsPresenter>
@@ -118,15 +118,10 @@ PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown">
                             <StackPanel Grid.Column="4" Orientation="Horizontal" HorizontalAlignment="Stretch">
                                 <Button Name="Edit" Width="40" Margin="5" VerticalAlignment="Center" ToolTip="Edit" Click="Edit_Click">E</Button>
                                 <Button Name="View" Width="40" Margin="5"  VerticalAlignment="Center" Background="Green" ToolTip="View all info">V</Button>
-                                <Button Name="Remove" Width="40" Margin="5" VerticalAlignment="Center"  Background="DarkRed" ToolTip="Remove">R</Button>
+                                <Button Name="Remove" Width="40" Margin="5" VerticalAlignment="Center"  Background="DarkRed" ToolTip="Remove" Click="Remove_Click">R</Button>
                             </StackPanel>
                         </Grid>
-                        <!--<StackPanel Background="Transparent" Orientation="Horizontal" VerticalAlignment="Center" >
-                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <TextBlock Text="{Binding Name}" Margin="2" />
-                                <TextBlock Text="{Binding Surname}" Margin="2"/>
-                            </StackPanel>
-                        </StackPanel>-->
+                      
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

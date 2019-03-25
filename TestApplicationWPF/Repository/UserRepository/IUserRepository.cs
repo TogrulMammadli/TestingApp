@@ -15,5 +15,6 @@ namespace TestApplicationWPF.Repository.UserRepository
         User GetUserByLogin(string login);
         User GetUserByID(int ID);
         User GetUserByEmail(string email);
+        bool RemoveUser(User user);
     }
 }

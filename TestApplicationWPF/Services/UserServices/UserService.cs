@@ -184,14 +184,15 @@ namespace TestApplicationWPF.Services.UserServices
 
         public void UpdatePassword(int ID, string password)
         {
-            using (var context = new TestContext())
-            {
-                var std = context.Users.First(x => x.Id == ID);
-                std.Password = password;
-                context.SaveChanges();
-            }
+            //using (var context = new TestContext())
+            //{
+            //    var std = context.Users.First(x => x.Id == ID);
+            //    std.Password = password;
+            //    context.SaveChanges();
+            //}
         }
-        public byte[] ConvertImageToByte(string path){
+        public byte[] ConvertImageToByte(string path)
+        {
             Image image = Image.FromFile(path);
             System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
             image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
@@ -200,23 +201,23 @@ namespace TestApplicationWPF.Services.UserServices
         }
         public string GetAvatarImageFromDb(int UID)
         {
-            byte[] b;
-            using (var context = new TestContext())
-            {
-                b = context.Users.First(x => x.Id == UID).İmage;
-                if (b == null)
-                {
-                    return null;
-                }
-            }
-            Image image1;
-            using (var ms = new MemoryStream(b))
-            {
-                image1 = Image.FromStream(ms);
-            }
-           
+            //byte[] b;
+            //using (var context = new TestContext())
+            //{
+            //    b = context.Users.First(x => x.Id == UID).İmage;
+            //    if (b == null)
+            //    {
+            //        return null;
+            //    }
+            //}
+            //Image image1;
+            //using (var ms = new MemoryStream(b))
+            //{
+            //    image1 = Image.FromStream(ms);
+            //}
 
-            image1.Save(Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\Icons\\"+"UserAva", System.Drawing.Imaging.ImageFormat.Bmp);
+
+            //image1.Save(Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\Icons\\" + "UserAva", System.Drawing.Imaging.ImageFormat.Bmp);
             return Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\Icons\\" + "UserAva";
 
 
@@ -224,16 +225,16 @@ namespace TestApplicationWPF.Services.UserServices
 
         public void UpdateAvatarImage(int userId, string Path)
         {
-            Image image = Image.FromFile(Path);
-            System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
-            image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
-            byte[] b = memoryStream.ToArray();
-            using (var context = new TestContext())
-            {
-                var std = context.Users.First(x => x.Id == userId);
-                std.İmage = b;
-                context.SaveChanges();
-            }
+            //Image image = Image.FromFile(Path);
+            //System.IO.MemoryStream memoryStream = new System.IO.MemoryStream();
+            //image.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+            //byte[] b = memoryStream.ToArray();
+            //using (var context = new TestContext())
+            //{
+            //    var std = context.Users.First(x => x.Id == userId);
+            //    std.İmage = b;
+            //    context.SaveChanges();
+            //}
         }
 
         public string OpenFileGetPath()
@@ -248,6 +249,12 @@ namespace TestApplicationWPF.Services.UserServices
             }
             else return "Error";
         }
-      
+        public void RemoveUser(User user) {
+            userRepository.RemoveUser(user);
+        }
+        public void RemoveUserById(int Id)
+        {
+            userRepository.RemoveUserById(Id);
+        }
     }
 }

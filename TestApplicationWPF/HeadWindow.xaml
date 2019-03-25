@@ -13,8 +13,8 @@
             <!--Panel Style-->
             <Style.Setters>
                 <Setter Property="Control.Width" Value="30" />
-                <Setter Property="Control.Background" Value="Gray"/>
-                
+                <Setter Property="Control.Background" Value="#2c3e50"/>
+
 
             </Style.Setters>
             <Style.Triggers>
@@ -49,7 +49,7 @@
             <Style.Setters>
                 <Setter Property="Control.Width" Value="100"/>
                 <Setter Property="Control.Foreground"  Value="White"/>
-                <Setter Property="Control.Background" Value="Gray"/>
+                <Setter Property="Control.Background" Value="#2c3e50"/>
                 <Setter Property="Control.BorderThickness" Value="0"/>
                 <Setter Property="Control.HorizontalAlignment" Value="Center"/>
                 <Setter Property="Control.Padding" Value="5"/>
@@ -64,7 +64,7 @@
                                     Storyboard.TargetProperty="Width"
                                     To="210"
                                     />
-                                
+
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger.Actions>
@@ -87,7 +87,7 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-  <!--stiliiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-->
+    <!--stiliiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-->
     <Grid>
 
         <Grid.RowDefinitions>
@@ -96,8 +96,8 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Background="#FF00AEFF" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
-               
-                <Button
+
+            <Button
                 x:Name="HeadWndButtonClose"
                 Margin="10"
                 HorizontalAlignment="Right"
@@ -105,30 +105,31 @@
                 Background="{x:Null}"
                 BorderBrush="{x:Null}"
                 Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="HeadWndButtonClose_Click">
-                    <materialDesign:PackIcon
+                <materialDesign:PackIcon
                     Width="20"
                     Height="20"
                     Background="{x:Null}"
                     Kind="Close" />
-                </Button>
+            </Button>
         </Grid>
         <Grid Grid.Row="1">
             <!--<DockPanel>-->
-                
-           
-            
+
+
+
             <!--<Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>-->
 
-         
+
 
 
             <!--<StackPanel Grid.Column="1" Background="Gray">
 
-                --><!--<Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" >
+                -->
+            <!--<Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" >
                 </Image>
                 <TextBlock Name="UserNameSurnameTextBox" HorizontalAlignment="Center"  Margin="5"
                 VerticalAlignment="Top"
@@ -137,7 +138,8 @@
                 <TextBlock Name="UserEmailTextBox" HorizontalAlignment="Center"  Margin="5"
                 VerticalAlignment="Top"
                 FontSize="10"
-                Foreground="White"></TextBlock>--><!--
+                Foreground="White"></TextBlock>-->
+            <!--
 
                 <Button
                 HorizontalAlignment="Center"
@@ -157,21 +159,21 @@
             <Frame Grid.Column="1" x:Name="frame" Content="frame" NavigationUIVisibility="Hidden" Margin="0 0 0 0"/>
 
             <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0" MouseEnter="StackPanel_MouseEnter" MouseLeave="StackPanel_MouseLeave" >
-                <StackPanel Orientation="Horizontal" Background="">
+                <StackPanel Orientation="Horizontal" >
                     <Grid x:Name="HamburgerMenuGrid">
-                    <Button x:Name="BurgerMenu" Width="30"
+                        <Button x:Name="BurgerMenu" Width="30"
                 Margin="0 0 0 0"
                 
                 VerticalAlignment="Center"
                 Background="{x:Null}"
                 BorderBrush="{x:Null}"
                 Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
-                        <materialDesign:PackIcon
+                            <materialDesign:PackIcon
                     Width="20"
                     Height="20"
                     Background="{x:Null}"
                     Kind="Menu" />
-                    </Button>
+                        </Button>
                     </Grid>
                     <!--<TextBlock Text="☰" Foreground="White" HorizontalAlignment="Center" FontSize="20" Margin="5 50 0 0"></TextBlock>-->
                     <StackPanel Orientation="Vertical" Name="UserinfoStackpanel">
@@ -188,11 +190,11 @@
                                  Foreground="White" Margin="30 0 0 0"></TextBlock>
                     </StackPanel>
                 </StackPanel>
-               
-                
-               
+
+
+
                 <TextBlock></TextBlock>
-                
+
                 <!--<Button Content="1st"  Style="{StaticResource BigButton}" HorizontalAlignment="Left"  Background="{x:Null}" BorderBrush="{x:Null}" ></Button>
                 <Button Content="2st"  Style="{StaticResource BigButton}" HorizontalAlignment="Left"  Background="{x:Null}" BorderBrush="{x:Null}" ></Button>
                 <Button Content="3st"  Style="{StaticResource BigButton}" HorizontalAlignment="Left"  Background="{x:Null}" BorderBrush="{x:Null}" ></Button>
@@ -209,16 +211,16 @@
                     </StackPanel>
                 </Button>
                 <DockPanel HorizontalAlignment="Left">
-                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_1">
-                    <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
-                        <materialDesign:PackIcon
+                    <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_1">
+                        <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                            <materialDesign:PackIcon
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
                             Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-36,0,10,0"/>
-                        <TextBlock>2nd</TextBlock>
-                    </StackPanel>
-                </Button>
+                            <TextBlock>2nd</TextBlock>
+                        </StackPanel>
+                    </Button>
                 </DockPanel>
 
                 <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_2" >
@@ -255,7 +257,7 @@
                 </Button>
             </StackPanel>
 
-            
+
             <!--</DockPanel>-->
         </Grid>
 

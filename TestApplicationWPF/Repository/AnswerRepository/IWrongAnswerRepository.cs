@@ -8,6 +8,6 @@ namespace TestApplicationWPF.Repository.AnswerRepository
         IEnumerable<WrongAnswer> GetAllAnswers();
         bool RemoveAnsweryById(int Id);
         bool AddAnswer(WrongAnswer answer);
-        WrongAnswer GetAccessLevelByID(int ID);
+        WrongAnswer GeWrongAnswerByID(int ID);
     }
 }

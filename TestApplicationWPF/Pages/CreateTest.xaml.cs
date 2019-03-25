@@ -23,7 +23,7 @@ namespace TestApplicationWPF
     /// </summary>
     public partial class PageCreateTest : Page
     {
-        public TestService testService = new TestService(new TestBlankRepository());
+       // public TestService testService = new TestService(new TestBlankRepository());
         public List<Question> questions = new List<Question>();
         public PageCreateTest()
         {

@@ -9,84 +9,79 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.AccessLevelRepository
 {
-    
     public class AccessLevelRepository : IAccessLevelRepository
     {
         public bool AddAccessLevel(AccessLevel accessLevel)
         {
             try
             {
-                using (var c= new TestContext())
-                {
-                    c.AccessLevels.Add(accessLevel);
-                    c.SaveChanges();
-                    return true;
-                }
+                TestContext.Instance.AccessLevels.Add(accessLevel);
+                TestContext.Instance.SaveChanges();
+                return true;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                MessageBox.Show(e.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return false;
             }
+        }
 
+        public IEnumerable<AccessLevel> GetAllAccessLevels()
+        {
+            return TestContext.Instance.AccessLevels.Include("Users").ToList();
         }
 
         public AccessLevel GetAccessLevelByID(int ID)
         {
-            using (var c = new TestContext())
+            try
             {
-                foreach(var temp in c.AccessLevels)
-                {
-                    if(temp.Id == ID)
-                    {
-                        return temp;
-                    }
-                }
-                MessageBox.Show("Доступа с данным ID не было найдено!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return TestContext.Instance.AccessLevels.Where(x=>x.Id==ID).First();
+            }
+            catch
+            {
                 return null;
             }
         }
 
         public AccessLevel GetAccessLevelByName(string accessName)
         {
-            using (var c = new TestContext())
+            try
             {
-                foreach(var temp in c.AccessLevels)
-                {
-                    if(temp.Name == accessName)
-                    {
-                        return temp;
-                    }
-                }
-                MessageBox.Show("Доступа с данным именем не было найдено!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                return TestContext.Instance.AccessLevels.Where(x => x.Name == accessName).First();
+            }
+            catch (Exception)
+            {
                 return null;
             }
+
         }
 
-        public IEnumerable<AccessLevel> GetAllAccessLevels()
+        public bool RemoveAccessLevel(AccessLevel accessLevel)
         {
-            using (var c = new TestContext())
+            try
             {
-                return c.AccessLevels;
+                TestContext.Instance.AccessLevels.Remove(accessLevel);
+                TestContext.Instance.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return true;
             }
         }
 
         public bool RemoveAccessLevelById(int Id)
         {
-            using (var c = new TestContext())
+            try
             {
-                foreach(var test in c.AccessLevels)
-                {
-                    if(test.Id == Id)
-                    {
-                        c.AccessLevels.Remove(test);
-                        c.SaveChanges();
-                        return true;
-                    }
-                }
-                MessageBox.Show("Доступа с данным ID не было найдено!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                return false;
+                TestContext.Instance.AccessLevels.Remove(TestContext.Instance.AccessLevels.First(x=>x.Id==Id));
+                TestContext.Instance.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return true;
             }
         }
     }
 }
+

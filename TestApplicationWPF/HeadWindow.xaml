@@ -157,10 +157,11 @@
             <Frame Grid.Column="1" x:Name="frame" Content="frame" NavigationUIVisibility="Hidden" Margin="0 0 0 0"/>
 
             <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0" MouseEnter="StackPanel_MouseEnter" MouseLeave="StackPanel_MouseLeave" >
-                <StackPanel Orientation="Horizontal" >
+                
+                <StackPanel Orientation="Horizontal"  Background="#2c3e50" Height="180">
                     <Grid x:Name="HamburgerMenuGrid">
                     <Button x:Name="BurgerMenu" Width="30"
-                Margin="0 0 0 0"
+                Margin="10 0 0 0"
                 
                 VerticalAlignment="Center"
                 Background="{x:Null}"
@@ -174,11 +175,11 @@
                     </Button>
                     </Grid>
                     <!--<TextBlock Text="☰" Foreground="White" HorizontalAlignment="Center" FontSize="20" Margin="5 50 0 0"></TextBlock>-->
-                    <StackPanel Orientation="Vertical" Name="UserinfoStackpanel">
-                        <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" Margin="30 0 0 0" >
+                    <StackPanel Orientation="Vertical" Name="UserinfoStackpanel" Margin="10 20 0 0">
+                        <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" Margin="35 0 0 0" >
                         </Image>
 
-                        <TextBlock Margin="30 0 0 0" Name="UserNameSurnameTextBox" HorizontalAlignment="Center" 
+                        <TextBlock Margin="35 0 0 0" Name="UserNameSurnameTextBox" HorizontalAlignment="Center" 
                                  VerticalAlignment="Top"
                                  FontSize="12"
                                  Foreground="White"></TextBlock>
@@ -186,6 +187,43 @@
                                  VerticalAlignment="Top"
                                  FontSize="10"
                                  Foreground="White" Margin="30 0 0 0"></TextBlock>
+                        <Button Width="70"
+                            Height="25"
+                            Background="{x:Null}"
+                           BorderBrush="{x:Null}"
+                            Click="Button_Click_3" Margin="15 5 0 0" HorizontalAlignment="Center">
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                <materialDesign:PackIcon
+                                 Width="15"
+                                 Height="15"
+                                 Background="{x:Null}"
+                                 Kind="Edit" />
+                                <TextBlock FontSize="12" Text="edit"  Margin="2 0 0 0"></TextBlock>
+                            </StackPanel>
+
+                        </Button>
+                        <!--<Button
+                            Width="70"
+                            Margin="0 0 25 0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Center"
+                            Background="{x:Null}"
+                            BorderBrush="{x:Null}"
+                            Click="Button_Click_3"
+                            
+                            >
+                           
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon
+                                 Width="15"
+                                 Height="15"
+                                 Background="{x:Null}"
+                                 Kind="Edit" />
+                                <TextBlock FontSize="11" Text=" edit"></TextBlock>
+                            </StackPanel>
+
+                        </Button>-->
                     </StackPanel>
                 </StackPanel>
                
@@ -204,7 +242,7 @@
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-5,0,10,0"/>
+                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-27,0,15,0"/>
                         <TextBlock HorizontalAlignment="Left">Create test</TextBlock>
                     </StackPanel>
                 </Button>
@@ -215,7 +253,7 @@
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-36,0,10,0"/>
+                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-50,0,10,0"/>
                         <TextBlock>2nd</TextBlock>
                     </StackPanel>
                 </Button>
@@ -227,7 +265,7 @@
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-37,0,10,0"/>
+                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-51,0,10,0"/>
                         <TextBlock>3rd</TextBlock>
                     </StackPanel>
                 </Button>
@@ -238,7 +276,7 @@
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-32,0,10,0"/>
+                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-45,0,10,0"/>
                         <TextBlock>Users</TextBlock>
                     </StackPanel>
                 </Button>
@@ -249,7 +287,7 @@
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-20,0,10,0"/>
+                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-39,0,10,0"/>
                         <TextBlock>Settings</TextBlock>
                     </StackPanel>
                 </Button>

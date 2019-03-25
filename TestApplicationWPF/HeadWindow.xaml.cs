@@ -110,18 +110,13 @@ namespace TestApplicationWPF
         {
             if (IsFullscreen)
             {
-                this.WindowStyle = WindowStyle.SingleBorderWindow;
-                this.WindowState = lastWindowState;
-                WindowStyle = WindowStyle.None;
+                this.WindowStyle = WindowStyle.None;
+                this.WindowState = WindowState.Normal;
                 IsFullscreen = false;
 
             }
-            else
+            else if(!IsFullscreen)
             {
-                lastWindowState = this.WindowState;
-                this.WindowStyle = WindowStyle.None;
-                if (this.WindowState == WindowState.Maximized)
-                    this.WindowState = WindowState.Minimized;
                 this.WindowState = WindowState.Maximized;
                 IsFullscreen = true;
                 WindowStyle = WindowStyle.None;

@@ -13,7 +13,7 @@
             <!--Panel Style-->
             <Style.Setters>
                 <Setter Property="Control.Width" Value="30" />
-                <Setter Property="Control.Background" Value="Gray"/>
+                <Setter Property="Control.Background" Value="#34495e"/>
                 
 
             </Style.Setters>
@@ -49,7 +49,7 @@
             <Style.Setters>
                 <Setter Property="Control.Width" Value="100"/>
                 <Setter Property="Control.Foreground"  Value="White"/>
-                <Setter Property="Control.Background" Value="Gray"/>
+                <Setter Property="Control.Background" Value="#34495e"/>
                 <Setter Property="Control.BorderThickness" Value="0"/>
                 <Setter Property="Control.HorizontalAlignment" Value="Center"/>
                 <Setter Property="Control.Padding" Value="5"/>
@@ -157,7 +157,7 @@
             <Frame Grid.Column="1" x:Name="frame" Content="frame" NavigationUIVisibility="Hidden" Margin="0 0 0 0"/>
 
             <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0" MouseEnter="StackPanel_MouseEnter" MouseLeave="StackPanel_MouseLeave" >
-                <StackPanel Orientation="Horizontal" Background="">
+                <StackPanel Orientation="Horizontal" >
                     <Grid x:Name="HamburgerMenuGrid">
                     <Button x:Name="BurgerMenu" Width="30"
                 Margin="0 0 0 0"

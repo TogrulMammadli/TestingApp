@@ -115,7 +115,7 @@ namespace TestApplicationWPF
                 IsFullscreen = false;
 
             }
-            else if(!IsFullscreen)
+            else 
             {
                 this.WindowState = WindowState.Maximized;
                 IsFullscreen = true;

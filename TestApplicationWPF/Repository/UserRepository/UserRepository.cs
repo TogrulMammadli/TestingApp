@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -11,102 +12,68 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.UserRepository
 {
-    class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
         public bool AddUser(User user)
         {
-            using (var c = new TestContext())
+            try
             {
-                try
-                {
-                    c.Users.Add(user);
-                    c.SaveChanges();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return false;
-                }
+                TestContext.Instance.Users.Add(user);
+                TestContext.Instance.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
 
-        public  IEnumerable<User> GetAllUsers()
+        public IEnumerable<User> GetAllUsers()
         {
-            //IEnumerable<User> users;
-            //using (var c = new TestContext())
-            //{
-            //    users = c.Users.Include("AccessLevels");
-            //}
-            //return users;
-            IEnumerable<User> users;
-            users = new List<User> { GetUserByID(1) };
-            return users;
-        }
-
-        public User GetUserByEmail(string email)
-        {
-            using (var c = new TestContext())
-            {
-                foreach (var temp in c.Users.Include("AccessLevels"))
-                {
-                    if (temp.Email == email)
-                    {
-                        return temp;
-                    }
-                }
-                return null;
-            }
+            return TestContext.Instance.Users.Include("AccessLevels").ToList();
         }
 
         public User GetUserByID(int ID)
         {
-            using (var c = new TestContext())
-            {
-                foreach (var temp in c.Users.Include("AccessLevels"))
-                {
-                    if (temp.Id == ID)
-                    {
-                        return temp;
-                    }
-                }
-                MessageBox.Show("Не было найдено пользователя с данным ID!", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
-                return null;
-            }
+            return TestContext.Instance.Users.Include("AccessLevels").First(x => x.Id == ID);
+        }
+
+        public User GetUserByEmail(string email)
+        {
+            return TestContext.Instance.Users.Include("AccessLevels").First(x => x.Email == email);
         }
 
         public User GetUserByLogin(string login)
         {
-            using (var c = new TestContext())
+            return TestContext.Instance.Users.Include("AccessLevels").First(x => x.Login == login);
+        }
+
+        public bool RemoveUser(User user)
+        {
+            try
             {
-                foreach (var temp in c.Users.Include("AccessLevels"))
-                {
-                    if (temp.Login == login)
-                    {
-                        return temp;
-                    }
-                }
-                return null;
+                TestContext.Instance.Users.Remove(user);
+                TestContext.Instance.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
             }
         }
 
         public bool RemoveUserById(int Id)
         {
-            using (var c = new TestContext())
+            try
             {
-                foreach (var test in c.Users.Include("AccessLevels"))
-                {
-                    if (test.Id == Id)
-                    {
-                        c.Users.Remove(test);
-                        c.SaveChanges();
-                        return true;
-                    }
-                }
-                MessageBox.Show("Не было пользователя с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                TestContext.Instance.Users.Remove(TestContext.Instance.Users.Where(x => x.Id == Id).First());
+                TestContext.Instance.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
                 return false;
             }
         }
-       
     }
 }

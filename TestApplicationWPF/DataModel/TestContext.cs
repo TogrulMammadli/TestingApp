@@ -1,12 +1,35 @@
-    using System;
-    using System.Data.Entity;
-    using System.Linq;
-    using TestApplicationWPF.Models;
+using System;
+using System.Data.Entity;
+using System.Linq;
+using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.DataModel
 {
+
     public class TestContext : DbContext
     {
+        private static TestContext _singletone = null;
+        private static object o = new object();
+        public static TestContext Instance
+        {
+            get
+            {
+                if (_singletone == null)
+                {
+                    lock(o)
+                    {
+                        if (_singletone == null)
+                        {
+                            _singletone = new TestContext();
+                        }
+                    }
+                   
+                }
+                return _singletone;
+            }
+
+        }
+
         public TestContext()
             : base("name=TestContext")
         {
@@ -25,11 +48,12 @@ namespace TestApplicationWPF.DataModel
         public DbSet<TestBlank> TestBlanks { get; set; }
         public DbSet<BestTimeForStudy> bestTimeForStudies { get; set; }
         public DbSet<WantedCourceToStudy> wantedCourceToStudies { get; set; }
-      
 
-
-    
-
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+            TestContext._singletone = null;
+        }
 
     }
 }

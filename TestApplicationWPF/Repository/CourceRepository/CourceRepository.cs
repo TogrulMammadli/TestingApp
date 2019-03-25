@@ -9,90 +9,66 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.CourceRepository
 {
-    class CourceRepository : ICourceRepository
+  public  class CourceRepository : ICourceRepository
     {
         public bool AddCource(Cource cource)
         {
-            using (var c = new TestContext())
+            try
             {
-                try
-                {
-                    c.Cources.Add(cource);
-                    c.SaveChanges();
-                    return true;
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                    return false;
-                }
+                TestContext.Instance.Cources.Add(cource);
+                TestContext.Instance.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
             }
         }
 
         public IEnumerable<Cource> GetAllCources()
         {
-            using (var c = new TestContext())
-            {
-                return c.Cources;
-            }
+            return TestContext.Instance.Cources.ToList();
         }
 
         public Cource GetCourceByID(int ID)
         {
-            using (var c = new TestContext())
-            {
-                foreach(var temp in c.Cources)
-                {
-                    if(temp.Id == ID)
-                    {
-                        return temp;
-                    }
-                }
-                MessageBox.Show("Не было найдено курса с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                return null;
-            }
+            return TestContext.Instance.Cources.First(x => x.Id == ID);
+
         }
 
-        public ICollection<Cource> GetCourcesByName(string name)
+        public Cource GetCourcesByName(string name)
         {
-            List<Cource> cources = new List<Cource>();
-            using (var c = new TestContext())
-            {
-                foreach(var temp in c.Cources)
-                {
-                    if(temp.Name == name)
-                    {
-                        cources.Add(temp);
-                    }
-                }
-                if(cources.Count != 0)
-                {
-                    return cources;
-                }
-                else
-                {
-                    MessageBox.Show("Не было найдено курса с данным именем!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                    return null;
-                }
-            }
+            return TestContext.Instance.Cources.First(x => x.Name == name);
         }
 
         public bool RemoveCourceById(int Id)
         {
-            using (var c = new TestContext())
+            try
             {
-                foreach (var test in c.Cources)
-                {
-                    if (test.Id == Id)
-                    {
-                        c.Cources.Remove(test);
-                    c.SaveChanges();
-                        return true;
-                    }
-                }
-                MessageBox.Show("Не было найдено курса с данным ID!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                TestContext.Instance.Cources.Remove(TestContext.Instance.Cources
+.Where(x => x.Id == Id).First());
+                TestContext.Instance.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
                 return false;
             }
         }
+
+        public bool RemoveCource(Cource cource)
+        {
+            try
+            {
+                TestContext.Instance.Cources.Remove(cource);
+                TestContext.Instance.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        
     }
 }

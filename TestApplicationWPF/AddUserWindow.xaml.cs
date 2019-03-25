@@ -15,6 +15,7 @@ using System.Text.RegularExpressions;
 using TestApplicationWPF.Services.UserServices;
 using TestApplicationWPF.Repository.UserRepository;
 using TestApplicationWPF.Models;
+using TestApplicationWPF.Repository.AccessLevelRepository;
 
 namespace TestApplicationWPF
 {
@@ -28,7 +29,7 @@ namespace TestApplicationWPF
         public AddUserWindow()
         {
             InitializeComponent();
-            dataPicker.SelectedDate=DateTime.Now.Date;
+            dataPicker.SelectedDate = DateTime.Now.Date;
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
@@ -56,25 +57,42 @@ namespace TestApplicationWPF
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
+            AccessLevelRepository ac = new AccessLevelRepository();
             Gender gender = Gender.Male;
             List<AccessLevel> accessLevels = new List<AccessLevel>();
-            if (admin.IsChecked==true)
+            if (admin.IsChecked == true)
             {
-                accessLevels.Add(new AccessLevel() { Id=1,Name="Admin"});
+                accessLevels.Add(ac.GetAccessLevelByID(1));
             }
             if (mentor.IsChecked == true)
             {
-                accessLevels.Add(new AccessLevel() { Id = 2, Name = "Mentor" });
+                accessLevels.Add(ac.GetAccessLevelByID(2));
             }
             if (student.IsChecked == true)
             {
-                accessLevels.Add(new AccessLevel() { Id = 3, Name = "Student" });
+                accessLevels.Add(ac.GetAccessLevelByID(3));
             }
-            if (Female.IsChecked==true)
+            if (Female.IsChecked == true)
             {
                 gender = Gender.Female;
             }
-            var user = new User() { Name = Name.Text, Surname = Surname.Text, Patronymic = Patronymic.Text, PhoneNumber = Operator.Text+NumberTextBox.Text, Login = Login.Text, AccessLevels = new List<AccessLevel> { new AccessLevel() { Name = "Admin" } }, DateOfBirth =dataPicker.SelectedDate.Value, Email = "mamedlitogrul99@gmail.com", Password = Password.Text, Gender = Gender.Male };
+            var user = new User()
+            {
+                Id = -1,
+                Name = Name.Text,
+                Surname = Surname.Text,
+                Patronymic = Patronymic.Text,
+                PhoneNumber = Operator.Text + NumberTextBox.Text,
+                Login = Login.Text,
+                DateOfBirth = dataPicker.SelectedDate.Value,
+                Email =this.Email.Text,
+                Password = Password.Text,
+                Gender = Gender.Male
+            };
+            foreach (var item in accessLevels)
+            {
+                user.AccessLevels.Add(item);
+            }
             UserRepository userRepository = new UserRepository();
             userRepository.AddUser(user);
 

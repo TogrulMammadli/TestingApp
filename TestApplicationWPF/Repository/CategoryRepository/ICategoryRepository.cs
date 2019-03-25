@@ -7,12 +7,13 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.CategoryRepository
 {
-    interface ICategoryRepository
+    public interface ICategoryRepository
     {
-        IEnumerable<Category> GetAllCategories();
-        bool RemoveCategoryById(int Id);
         bool AddCategory(Category category);
-        Category GetCategoryByName(string categoryName);
+        IEnumerable<Category> GetAllCategories();
         Category GetCategoryByID(int ID);
+        Category GetCategoryByName(string categoryName);
+        bool RemoveCategory(Category category);
+        bool RemoveCategoryById(int Id);
     }
 }

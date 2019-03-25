@@ -88,5 +88,21 @@ namespace TestApplicationWPF
         {
             Imagepath = userService.GetAvatarImageFromDb(User.Id);
         }
+
+        private void StackPanel_MouseEnter(object sender, MouseEventArgs e)
+        {
+            BurgerMenu.Visibility = Visibility.Hidden;
+            HamburgerMenuGrid.Width = 0;
+
+            UserinfoStackpanel.Visibility = Visibility.Visible;
+
+        }
+
+        private void StackPanel_MouseLeave(object sender, MouseEventArgs e)
+        {
+            BurgerMenu.Visibility = Visibility.Visible;
+            HamburgerMenuGrid.Width = 30;
+            UserinfoStackpanel.Visibility = Visibility.Hidden;
+        }
     }
 }

@@ -13,7 +13,9 @@
             <!--Panel Style-->
             <Style.Setters>
                 <Setter Property="Control.Width" Value="30" />
-                <Setter Property="Control.Background" Value="DarkTurquoise"/>
+                <Setter Property="Control.Background" Value="Gray"/>
+                
+
             </Style.Setters>
             <Style.Triggers>
                 <EventTrigger RoutedEvent="Mouse.MouseEnter">
@@ -21,9 +23,9 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <DoubleAnimation
-                                    Duration="0:0:0.1"
+                                    Duration="0:0:0.3"
                                     Storyboard.TargetProperty="Width"
-                                    To="180"  />
+                                    To="210"  />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger.Actions>
@@ -33,7 +35,7 @@
                         <BeginStoryboard>
                             <Storyboard>
                                 <DoubleAnimation
-                                    Duration="0:0:0:0.1"
+                                    Duration="0:0:0:0.3"
                                     Storyboard.TargetProperty="Width" To="30"  />
                             </Storyboard>
                         </BeginStoryboard>
@@ -47,7 +49,7 @@
             <Style.Setters>
                 <Setter Property="Control.Width" Value="100"/>
                 <Setter Property="Control.Foreground"  Value="White"/>
-                <Setter Property="Control.Background" Value="DarkTurquoise"/>
+                <Setter Property="Control.Background" Value="Gray"/>
                 <Setter Property="Control.BorderThickness" Value="0"/>
                 <Setter Property="Control.HorizontalAlignment" Value="Center"/>
                 <Setter Property="Control.Padding" Value="5"/>
@@ -60,7 +62,9 @@
                                 <DoubleAnimation
                                     Duration="0:0:0.1"
                                     Storyboard.TargetProperty="Width"
-                                    To="200"/>
+                                    To="210"
+                                    />
+                                
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger.Actions>
@@ -109,11 +113,15 @@
                 </Button>
         </Grid>
         <Grid Grid.Row="1">
-            <Grid.ColumnDefinitions>
+            <!--<DockPanel>-->
+                
+           
+            
+            <!--<Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 
                 <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+            </Grid.ColumnDefinitions>-->
 
          
 
@@ -146,21 +154,43 @@
                
 
             </StackPanel>-->
+            <Frame Grid.Column="1" x:Name="frame" Content="frame" NavigationUIVisibility="Hidden" Margin="0 0 0 0"/>
 
+            <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0" MouseEnter="StackPanel_MouseEnter" MouseLeave="StackPanel_MouseLeave" >
+                <StackPanel Orientation="Horizontal" Background="">
+                    <Grid x:Name="HamburgerMenuGrid">
+                    <Button x:Name="BurgerMenu" Width="30"
+                Margin="0 0 0 0"
                 
-            <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0">
-                <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" >
-                </Image>
-                <TextBlock Name="UserNameSurnameTextBox" HorizontalAlignment="Center"  Margin="5"
-                VerticalAlignment="Top"
-                FontSize="12"
-                Foreground="White"></TextBlock>
-                <TextBlock Name="UserEmailTextBox" HorizontalAlignment="Center"  Margin="5"
-                VerticalAlignment="Top"
-                FontSize="10"
-                Foreground="White"></TextBlock>
+                VerticalAlignment="Center"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
+                        <materialDesign:PackIcon
+                    Width="20"
+                    Height="20"
+                    Background="{x:Null}"
+                    Kind="Menu" />
+                    </Button>
+                    </Grid>
+                    <!--<TextBlock Text="☰" Foreground="White" HorizontalAlignment="Center" FontSize="20" Margin="5 50 0 0"></TextBlock>-->
+                    <StackPanel Orientation="Vertical" Name="UserinfoStackpanel">
+                        <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" Margin="30 0 0 0" >
+                        </Image>
+
+                        <TextBlock Margin="30 0 0 0" Name="UserNameSurnameTextBox" HorizontalAlignment="Center" 
+                                 VerticalAlignment="Top"
+                                 FontSize="12"
+                                 Foreground="White"></TextBlock>
+                        <TextBlock Name="UserEmailTextBox" HorizontalAlignment="Center"
+                                 VerticalAlignment="Top"
+                                 FontSize="10"
+                                 Foreground="White" Margin="30 0 0 0"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+               
                 
-                <TextBlock Text="☰" Foreground="White" HorizontalAlignment="Center" FontSize="20"></TextBlock>
+               
                 <TextBlock></TextBlock>
                 
                 <!--<Button Content="1st"  Style="{StaticResource BigButton}" HorizontalAlignment="Left"  Background="{x:Null}" BorderBrush="{x:Null}" ></Button>
@@ -178,44 +208,55 @@
                         <TextBlock HorizontalAlignment="Left">Create test</TextBlock>
                     </StackPanel>
                 </Button>
-
+                <DockPanel HorizontalAlignment="Left">
                 <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_1">
                     <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
                         <materialDesign:PackIcon
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-5,0,10,0"/>
+                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-36,0,10,0"/>
                         <TextBlock>2nd</TextBlock>
                     </StackPanel>
                 </Button>
+                </DockPanel>
 
                 <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_2" >
                     <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
-                        <Ellipse Height="16" Width="16" Fill="#FFFDFDFD" Margin="-35,0,10,0"></Ellipse>
+                        <materialDesign:PackIcon
+                            Width="20"
+                            Height="20"
+                            Background="{x:Null}"
+                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-37,0,10,0"/>
                         <TextBlock>3rd</TextBlock>
                     </StackPanel>
                 </Button>
 
                 <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_3" >
                     <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
-                        <Ellipse Height="16" Width="16" Fill="#FFFDFDFD" Margin="-32,0,10,0"  ></Ellipse>
-                        <TextBlock>User</TextBlock>
+                        <materialDesign:PackIcon
+                            Width="20"
+                            Height="20"
+                            Background="{x:Null}"
+                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-32,0,10,0"/>
+                        <TextBlock>Users</TextBlock>
                     </StackPanel>
                 </Button>
 
                 <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
-                        <Ellipse Height="16" Width="16" Fill="#FFFDFDFD" Margin="-28,0,10,0"></Ellipse>
-                        <TextBlock>Settin</TextBlock>
+                        <materialDesign:PackIcon
+                            Width="20"
+                            Height="20"
+                            Background="{x:Null}"
+                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-20,0,10,0"/>
+                        <TextBlock>Settings</TextBlock>
                     </StackPanel>
                 </Button>
-
-              
-
             </StackPanel>
 
-            <Frame Grid.Column="1" x:Name="frame" Content="frame" NavigationUIVisibility="Hidden"/>
+            
+            <!--</DockPanel>-->
         </Grid>
 
     </Grid>

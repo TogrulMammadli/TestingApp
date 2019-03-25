@@ -4,11 +4,151 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TestApplicationWPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="560" d:DesignWidth="1000"
       Title="SettingPage" Background="White">
 
-    <Grid>
-        
+    <Grid Background="#ecf0f1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                <Ellipse Height="150" Width="160">
+                    <Ellipse.Fill>
+                        <ImageBrush ImageSource="/Icons/avatar.png">
+                        </ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Button x:Name="edit" Width="105" Height="40" Click="Edit_Click">
+                    <DockPanel>
+                        <materialDesign:PackIcon Kind="Pencil" Width="44" Height="26"/>
+                        <TextBlock Text=" Edit"  DockPanel.Dock="Right" VerticalAlignment="center"/>
+                    </DockPanel>
+                </Button>
+            </StackPanel>
+
+            <Rectangle Grid.Column="1"
+                              Height="300"
+                              Margin="35,0,35,0"
+                              VerticalAlignment="Center"
+                              Fill="White"
+                              RadiusX="21.333"
+                              RadiusY="21.333">
+                <Rectangle.Effect>
+                    <DropShadowEffect
+                                     BlurRadius="15"
+                                     Direction="0"
+                                     RenderingBias="Quality"
+                                     ShadowDepth="1"
+                                     Color="#FFBBBBBB" />
+                </Rectangle.Effect>
+            </Rectangle>
+
+
+            <TextBox
+                                x:Name="textboxname"
+                                Grid.Column="1"
+                                Width="850"
+                                 Margin="80,80,80,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto"
+                                materialDesign:HintAssist.Hint="Name"
+                                FontSize="18"
+                                MaxLength="25"/>
+
+            <TextBox
+                                x:Name="textboxage"
+                                PreviewTextInput="NumberValidationTextBox"
+                                Grid.Column="1"
+                                Width="850"
+                                 Margin="80,120,80,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto"
+                                materialDesign:HintAssist.Hint="Age"
+                                FontSize="18"
+                                MaxLength="2"/>
+
+            <TextBox
+                                x:Name="textboxphone"
+                                Grid.Column="1"
+                                Width="850"
+                                 Margin="80,160,80,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto"
+                                materialDesign:HintAssist.Hint="Phone"
+                                FontSize="18"
+                                MaxLength="18"/>
+
+            <TextBox
+                                x:Name="textboxemail"
+                                Grid.Column="1"
+                                Width="850"
+                                 Margin="80,200,80,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto"
+                                materialDesign:HintAssist.Hint="E-mail"
+                                FontSize="18"
+                                MaxLength="25"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Rectangle Grid.Column="1"
+                              Height="300"
+                              Margin="100,0,35,0"
+                              VerticalAlignment="Center"
+                              Fill="White"
+                              RadiusX="21.333"
+                              RadiusY="21.333">
+                <Rectangle.Effect>
+                    <DropShadowEffect
+                                     BlurRadius="15"
+                                     Direction="0"
+                                     RenderingBias="Quality"
+                                     ShadowDepth="1"
+                                     Color="#FFBBBBBB" />
+                </Rectangle.Effect>
+            </Rectangle>
+            
+            <TextBox
+                                x:Name="textboxpswd"
+                                Grid.Row="1"
+                                Width="700"
+                                 Margin="270,60,80,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto"
+                                materialDesign:HintAssist.Hint="Password"
+                                FontSize="18"
+                                MaxLength="25"/>
+
+            <TextBox
+                                x:Name="textboxconfrpswd"
+                                Grid.Row="1"
+                                Width="700"
+                                 Margin="270,110,80,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto"
+                                materialDesign:HintAssist.Hint="Confirm Password"
+                                FontSize="18"
+                                MaxLength="25"/>
+        </Grid>
+
     </Grid>
 </Page>

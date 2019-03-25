@@ -6,7 +6,7 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:TestApplicationWPF"
         mc:Ignorable="d"
-        Title="HeadWindow" Height="590" Width="1030" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="Icons/mainicon.png" WindowStyle="None"
+        Title="HeadWindow" Height="590" Width="1030" WindowStartupLocation="CenterScreen" ResizeMode="CanResize" Icon="Icons/mainicon.png" WindowStyle="None"
         BorderBrush="#FF00AEFF" BorderThickness="1">
     <Window.Resources>
         <Style x:Key="BigPannel">
@@ -113,7 +113,7 @@
                 </Button>
                 <Button
                 x:Name="HeadWndButtonMaximize"
-               
+                Click="HeadWndButtonMaximize_Click"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
                 Background="{x:Null}"

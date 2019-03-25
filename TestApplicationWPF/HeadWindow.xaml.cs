@@ -103,5 +103,29 @@ namespace TestApplicationWPF
             HamburgerMenuGrid.Width = 30;
             UserinfoStackpanel.Visibility = Visibility.Hidden;
         }
+
+        public bool IsFullscreen = false;
+        public WindowState lastWindowState;
+        private void HeadWndButtonMaximize_Click(object sender, RoutedEventArgs e)
+        {
+            if (IsFullscreen)
+            {
+                this.WindowStyle = WindowStyle.SingleBorderWindow;
+                this.WindowState = lastWindowState;
+                WindowStyle = WindowStyle.None;
+                IsFullscreen = false;
+
+            }
+            else
+            {
+                lastWindowState = this.WindowState;
+                this.WindowStyle = WindowStyle.None;
+                if (this.WindowState == WindowState.Maximized)
+                    this.WindowState = WindowState.Minimized;
+                this.WindowState = WindowState.Maximized;
+                IsFullscreen = true;
+                WindowStyle = WindowStyle.None;
+            }
+        }
     }
 }

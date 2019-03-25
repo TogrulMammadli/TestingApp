@@ -12,7 +12,7 @@
         <Style x:Key="BigPannel">
             <!--Panel Style-->
             <Style.Setters>
-                <Setter Property="Control.Width" Value="30" />
+                <Setter Property="Control.Width" Value="50" />
                 <Setter Property="Control.Background" Value="#34495e"/>
                 
 
@@ -36,7 +36,7 @@
                             <Storyboard>
                                 <DoubleAnimation
                                     Duration="0:0:0:0.3"
-                                    Storyboard.TargetProperty="Width" To="30"  />
+                                    Storyboard.TargetProperty="Width" To="50"  />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger.Actions>
@@ -47,7 +47,7 @@
         <Style x:Key="BigButton">
             <!--Button Style-->
             <Style.Setters>
-                <Setter Property="Control.Width" Value="100"/>
+                <Setter Property="Control.Width" Value="150"/>
                 <Setter Property="Control.Foreground"  Value="White"/>
                 <Setter Property="Control.Background" Value="#34495e"/>
                 <Setter Property="Control.BorderThickness" Value="0"/>
@@ -75,7 +75,7 @@
                             <Storyboard>
                                 <DoubleAnimation
                                     Duration="0:0:0:0.1"
-                                    Storyboard.TargetProperty="Width" To="100" />
+                                    Storyboard.TargetProperty="Width" To="150" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger.Actions>

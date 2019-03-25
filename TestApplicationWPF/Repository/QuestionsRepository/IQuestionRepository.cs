@@ -7,11 +7,12 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.QuestionsRepository
 {
-  public  interface IQuestionRepository
+    public interface IQuestionRepository
     {
-        IEnumerable<Question> GetAllQuestions();
-        bool RemoveQuestionById(int Id);
         bool AddQuestion(Question question);
+        IEnumerable<Question> GetAllQuestions();
         Question GetQuestionByID(int ID);
+        bool RemoveQuestionById(int Id);
+        bool RemoveQuestion(Question question);
     }
 }

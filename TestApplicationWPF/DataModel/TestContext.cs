@@ -16,14 +16,14 @@ namespace TestApplicationWPF.DataModel
             {
                 if (_singletone == null)
                 {
-                    lock(o)
+                    lock (o)
                     {
                         if (_singletone == null)
                         {
                             _singletone = new TestContext();
                         }
                     }
-                   
+
                 }
                 return _singletone;
             }
@@ -54,6 +54,9 @@ namespace TestApplicationWPF.DataModel
             base.Dispose(disposing);
             TestContext._singletone = null;
         }
-
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

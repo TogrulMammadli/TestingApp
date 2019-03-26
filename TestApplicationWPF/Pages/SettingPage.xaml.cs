@@ -53,16 +53,16 @@ namespace TestApplicationWPF.Pages
                     MessageBox.Show("Минимальная длина номера 10 цифр");
                     textboxphone.Clear();
                 }
+                else if (!Regex.IsMatch(textboxemail.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase) && textboxemail.Text != "")
+                {
+                    MessageBox.Show("Не правильный формат E-mail");
+                    textboxemail.Clear();
+                }
                 else if (textboxpswd.Text != textboxconfpswd.Text)
                 {
                     MessageBox.Show("Пароли не совпадают");
                     textboxpswd.Clear();
                     textboxconfpswd.Clear();
-                }
-                else if (!Regex.IsMatch(textboxemail.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase))
-                {
-                    MessageBox.Show("Не правильный формат E-mail");
-                    textboxemail.Clear();
                 }
 
             }

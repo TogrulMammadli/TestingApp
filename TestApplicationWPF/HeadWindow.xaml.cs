@@ -94,6 +94,7 @@ namespace TestApplicationWPF
             HamburgerMenuGrid.Width = 0;
 
             UserinfoStackpanel.Visibility = Visibility.Visible;
+            
 
         }
 

@@ -89,6 +89,15 @@
     </Window.Resources>
   <!--stiliiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-->
     <Grid>
+      
+
+            
+
+
+
+
+
+                <Grid>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -185,9 +194,10 @@
                
 
             </StackPanel>-->
-            <Frame Grid.Column="1" x:Name="frame" Content="frame" NavigationUIVisibility="Hidden" Margin="0 0 0 0"/>
-
-            <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0" MouseEnter="StackPanel_MouseEnter" MouseLeave="StackPanel_MouseLeave"  >
+            
+            <Frame Grid.Column="1" x:Name="frame" Content="frame" NavigationUIVisibility="Hidden" />
+                    
+                        <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0" MouseEnter="StackPanel_MouseEnter" MouseLeave="StackPanel_MouseLeave"  >
                 
                 <StackPanel Orientation="Horizontal"  Background="#2c3e50" Height="180">
                     <Grid x:Name="HamburgerMenuGrid">
@@ -332,7 +342,7 @@
                         <TextBlock>Logout</TextBlock>
                     </StackPanel>
                 </Button>
-                <Grid Height="150"></Grid>
+                <Grid Height="110"></Grid>
                 <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
                         <materialDesign:PackIcon
@@ -345,9 +355,14 @@
                 </Button>
             </StackPanel>
 
-            
-            <!--</DockPanel>-->
+                  
+
+                   
+                    <!--</DockPanel>-->
         </Grid>
 
+    </Grid>
+
+      
     </Grid>
 </Window>

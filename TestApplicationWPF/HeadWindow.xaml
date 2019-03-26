@@ -198,7 +198,7 @@
 
             </StackPanel>-->
             
-            <Frame Grid.Column="1" x:Name="frame" Content="Welcome  =)" HorizontalAlignment="Center" VerticalAlignment="Center" NavigationUIVisibility="Hidden"  />
+            <Frame Grid.Column="1" x:Name="frame" Content="Welcome  =)"  NavigationUIVisibility="Hidden"  />
                     
                         <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0" MouseEnter="StackPanel_MouseEnter" MouseLeave="StackPanel_MouseLeave"  >
                     <StackPanel.Effect>

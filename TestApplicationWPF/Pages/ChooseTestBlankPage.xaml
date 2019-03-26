@@ -3,12 +3,142 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      
       xmlns:local="clr-namespace:TestApplicationWPF.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="560" d:DesignWidth="1030"
       Title="ChooseTestBlankPage">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <Grid>
+            <WrapPanel>
+                <materialDesign:Card
+  Width="220">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+        Height="140" />
+                            <RowDefinition
+        Height="*" />
+                            <RowDefinition
+        Height="Auto" />
+                            <RowDefinition
+        Height="Auto" />
+                            <RowDefinition
+        Height="Auto" />
+                            <RowDefinition
+        Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Image
+      Height="140"
+      Stretch="UniformToFill" />
+                        <Button
+      Grid.Row="0"
+      Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+      HorizontalAlignment="Right"
+      VerticalAlignment="Bottom"
+      Margin="0 0 16 -20">
+                            <materialDesign:PackIcon
+        Kind="ShareVariant" />
+                        </Button>
+                        <StackPanel
+      Grid.Row="1"
+      Margin="8 24 8 4">
+                            <TextBlock
+        Style="{StaticResource MaterialDesignSubheadingTextBlock}"
+        Margin="0">
+      E.T. the Extra-Terrestrial
+                            </TextBlock>
+                            <Viewbox
+        Margin="0 4 0 8"
+        Height="16"
+        HorizontalAlignment="Left">
+                                <materialDesign:RatingBar
+          Value="3"
+          Orientation="Horizontal"
+          Foreground="Gold"
+          Margin="0" />
+                            </Viewbox>
+                            <TextBlock
+        Style="{StaticResource MaterialDesignBody1TextBlock}"
+        TextWrapping="Wrap"
+        VerticalAlignment="Center">
+      After a gentle alien becomes stranded on Earth, the being is discovered and befriended by a young boy named Elliott.
+                            </TextBlock>
+                        </StackPanel>
+                        <Separator
+      Grid.Row="2"
+      Style="{StaticResource MaterialDesignDarkSeparator}"
+      Margin="8 0 8 0" />
+                        <TextBlock
+      Grid.Row="3"
+      Margin="8 4 8 4"
+      Style="{StaticResource MaterialDesignBody2TextBlock}">
+    Tonight's availability
+                        </TextBlock>
+                        <Grid
+      Grid.Row="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition
+          Width="Auto" />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon
+        Grid.Column="0"
+        Kind="Clock"
+        VerticalAlignment="Center"
+        Margin="8 4 4 4" />
+                            <ListBox
+        Grid.Column="1"
+        Style="{StaticResource MaterialDesignToolToggleFlatListBox}"
+        SelectedIndex="0"
+        Margin="4 8 8 4">
+                                <ListBox.Resources>
+                                    <Style
+            TargetType="{x:Type ListBoxItem}"
+            BasedOn="{StaticResource MaterialDesignToolToggleListBoxItem}">
+                                        <Setter
+              Property="Padding"
+              Value="4 6 4 6" />
+                                    </Style>
+                                </ListBox.Resources>
+                                <ListBox.ToolTip>
+                                    <StackPanel>
+                                        <TextBlock
+              Text="MaterialDesignFlatToggleListBox" />
+                                        <TextBlock
+              Text="Exclusive selection" />
+                                        <TextBlock
+              Text="ListBoxAssist.IsToggle allows more natural toggle behaviour" />
+                                    </StackPanel>
+                                </ListBox.ToolTip>
+                                <ListBoxItem>
+                                    <TextBlock
+            Text="18:00" />
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <TextBlock
+            Text="19:00" />
+                                </ListBoxItem>
+                                <ListBoxItem>
+                                    <TextBlock
+            Text="22:00" />
+                                </ListBoxItem>
+                            </ListBox>
+                        </Grid>
+                        <StackPanel
+      Grid.Row="5">
+                            <Button
+        Style="{StaticResource MaterialDesignFlatButton}"
+        HorizontalAlignment="Left"
+        Margin="8 4 8 8">
+                                RESERVE
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+            </WrapPanel>
+        </Grid>
     </Grid>
 </Page>

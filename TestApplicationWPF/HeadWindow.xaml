@@ -312,7 +312,7 @@
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-51,0,10,0"/>
+                            Kind="GithubCircle"  HorizontalAlignment="Left" Foreground="White" Margin="-51,0,10,0"/>
                             <TextBlock>Pus</TextBlock>
                     </StackPanel>
                 </Button>

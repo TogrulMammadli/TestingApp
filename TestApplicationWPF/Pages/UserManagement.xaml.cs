@@ -30,6 +30,7 @@ namespace TestApplicationWPF.Pages
         public UserManagement(User user)
         {
             InitializeComponent();
+            
             var viewModel = new UserManagementViewModel(UserService);
             this.DataContext = viewModel;
         }

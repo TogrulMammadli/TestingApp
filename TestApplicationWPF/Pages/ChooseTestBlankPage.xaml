@@ -13,52 +13,51 @@
     <Grid Background="White">
         <Grid>
             <WrapPanel>
-                <materialDesign:Card
-  Width="220">
+                <materialDesign:Card Width="220">
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition
-        Height="140" />
+                                 Height="140" />
                             <RowDefinition
-        Height="*" />
+                                  Height="*" />
                             <RowDefinition
-        Height="Auto" />
+                                    Height="Auto" />
                             <RowDefinition
-        Height="Auto" />
+                                     Height="Auto" />
                             <RowDefinition
-        Height="Auto" />
+                                     Height="Auto" />
                             <RowDefinition
-        Height="Auto" />
+                                    Height="Auto" />
                         </Grid.RowDefinitions>
                         <Image
-      Height="140"
-      Stretch="UniformToFill" />
+                                 Height="140"
+                                 Stretch="UniformToFill" />
                         <Button
-      Grid.Row="0"
-      Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
-      HorizontalAlignment="Right"
-      VerticalAlignment="Bottom"
-      Margin="0 0 16 -20">
+                             Grid.Row="0"
+                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                             HorizontalAlignment="Right"
+                             VerticalAlignment="Bottom"
+                             Margin="0 0 16 -20">
                             <materialDesign:PackIcon
-        Kind="ShareVariant" />
+                        Kind="ShareVariant" />
                         </Button>
                         <StackPanel
-      Grid.Row="1"
-      Margin="8 24 8 4">
+                                 Grid.Row="1"
+                                 Margin="8 24 8 4">
                             <TextBlock
-        Style="{StaticResource MaterialDesignSubheadingTextBlock}"
-        Margin="0">
-      E.T. the Extra-Terrestrial
+                                     Style="{StaticResource MaterialDesignSubheadingTextBlock}"
+                                     Margin="0">
+                                   E.T. the Extra-Terrestrial
                             </TextBlock>
                             <Viewbox
-        Margin="0 4 0 8"
-        Height="16"
-        HorizontalAlignment="Left">
+                                 Margin="0 4 0 8"
+                                 Height="16"
+                                 HorizontalAlignment="Left">
                                 <materialDesign:RatingBar
-          Value="3"
-          Orientation="Horizontal"
-          Foreground="Gold"
-          Margin="0" />
+                                Value="3"
+                                Orientation="Horizontal"
+                                Foreground="Gold"
+                                Margin="0" />
                             </Viewbox>
                             <TextBlock
         Style="{StaticResource MaterialDesignBody1TextBlock}"

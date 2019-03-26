@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:TestApplicationWPF"
         mc:Ignorable="d"
         Title="HeadWindow" Height="590" Width="1030" WindowStartupLocation="CenterScreen" ResizeMode="CanResize" Icon="Icons/mainicon.png" WindowStyle="None"
-        BorderBrush="#FF00AEFF" BorderThickness="1">
+        BorderBrush="#FF00AEFF" Background="#ecf0f1" BorderThickness="1">
     <Window.Resources>
         <Style x:Key="BigPannel">
             <!--Panel Style-->

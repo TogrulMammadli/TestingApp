@@ -35,7 +35,7 @@ namespace TestApplicationWPF.Repository.GroupsRepository
         {
             try
             {
-                return TestContext.Instance.Groups.Where(x => x.Id == ID).First();
+                return TestContext.Instance.Groups.Where(x => x.Id == ID).DefaultIfEmpty().Single();
             }
             catch
             {
@@ -50,7 +50,7 @@ namespace TestApplicationWPF.Repository.GroupsRepository
 
         public Group GetGroupsByName(string name)
         {
-            return TestContext.Instance.Groups.Where(x => x.Name == name).First(); 
+            return TestContext.Instance.Groups.Where(x => x.Name == name).DefaultIfEmpty().Single(); 
         }
         public bool RemoveGroup(Group group)
         {

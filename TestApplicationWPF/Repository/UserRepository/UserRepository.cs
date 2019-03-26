@@ -35,17 +35,17 @@ namespace TestApplicationWPF.Repository.UserRepository
 
         public User GetUserByID(int ID)
         {
-            return TestContext.Instance.Users.Include("AccessLevels").Where(x => x.Id == ID).First();
+            return TestContext.Instance.Users.Include("AccessLevels").Where(x => x.Id == ID).DefaultIfEmpty().Single();
         }
 
         public User GetUserByEmail(string email)
         {
-            return TestContext.Instance.Users.Include("AccessLevels").Where(x => x.Email == email).First();
+            return TestContext.Instance.Users.Include("AccessLevels").Where(x => x.Email == email).DefaultIfEmpty().Single();
         }
 
         public User GetUserByLogin(string login)
         {
-            var user= TestContext.Instance.Users.Include("AccessLevels").Where(x => x.Login == login).First();
+            var user= TestContext.Instance.Users.Include("AccessLevels").Where(x => x.Login == login).DefaultIfEmpty().Single();
             return user;
         }
 

@@ -32,13 +32,13 @@ namespace TestApplicationWPF.Repository.CourceRepository
 
         public Cource GetCourceByID(int ID)
         {
-            return TestContext.Instance.Cources.Where(x => x.Id == ID).First();
+            return TestContext.Instance.Cources.Where(x => x.Id == ID).DefaultIfEmpty().Single();
 
         }
 
         public Cource GetCourcesByName(string name)
         {
-            return TestContext.Instance.Cources.Where(x => x.Name == name).First();
+            return TestContext.Instance.Cources.Where(x => x.Name == name).DefaultIfEmpty().Single();
         }
 
         public bool RemoveCourceById(int Id)

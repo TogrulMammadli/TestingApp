@@ -34,7 +34,7 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
         {
             try
             {
-                return TestContext.Instance.AccessLevels.Where(x=>x.Id==ID).First();
+                return TestContext.Instance.AccessLevels.Where(x=>x.Id==ID).DefaultIfEmpty().Single();
             }
             catch
             {
@@ -46,7 +46,7 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
         {
             try
             {
-                return TestContext.Instance.AccessLevels.Where(x => x.Name == accessName).First();
+                return TestContext.Instance.AccessLevels.Where(x => x.Name == accessName).DefaultIfEmpty().Single();
             }
             catch (Exception)
             {

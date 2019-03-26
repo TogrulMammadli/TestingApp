@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestApplicationWPF.Command;
 using TestApplicationWPF.Models;
 using TestApplicationWPF.Repository.UserRepository;
 using TestApplicationWPF.Services.UserServices;
@@ -23,6 +24,12 @@ namespace TestApplicationWPF.ViewModels
                 this.users = new ObservableCollection<User>(this.userService.GetAllUsers());
             this.OnPropertyChanged(nameof(Users));
             });
+        }
+
+        public void RemoveUser(User user)
+        {
+            userService.RemoveUser(user);
+            Users = new ObservableCollection<User>(this.userService.GetAllUsers());
         }
     }
 }

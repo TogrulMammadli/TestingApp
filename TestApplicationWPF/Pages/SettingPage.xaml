@@ -11,24 +11,24 @@
 
     <Grid Background="#ecf0f1">
         <Grid.RowDefinitions>
-            <RowDefinition Height="350"/>
+            <RowDefinition Height="335"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Column="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="320"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+            <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="40 0 0 0">
                 <Ellipse Height="150" Width="160">
                     <Ellipse.Fill>
                         <ImageBrush ImageSource="/Icons/avatar.png">
                         </ImageBrush>
                     </Ellipse.Fill>
                 </Ellipse>
-                <Button x:Name="edit" Width="105" Height="40" Click="Edit_Click">
+                <Button x:Name="edit" Width="120" Height="40" Click="Edit_Click" Margin="0 20 0 0">
                     <DockPanel>
-                        <materialDesign:PackIcon Kind="Pencil" Width="44" Height="26"/>
+                        <materialDesign:PackIcon Kind="Pencil" Width="45" Height="30"/>
                         <TextBlock Text=" Edit"  DockPanel.Dock="Right" VerticalAlignment="center"/>
                     </DockPanel>
                 </Button>
@@ -54,6 +54,7 @@
 
             <TextBox
                                 x:Name="textboxname"
+                                PreviewTextInput="Textboxname_PreviewTextInput"
                                 Grid.Column="1"
                                 Width="850"
                                  Margin="80,80,80,0"
@@ -67,7 +68,7 @@
 
             <TextBox
                                 x:Name="textboxage"
-                                PreviewTextInput="NumberValidationTextBox"
+                                PreviewTextInput="numbervalit"
                                 Grid.Column="1"
                                 Width="850"
                                  Margin="80,120,80,0"
@@ -81,6 +82,7 @@
 
             <TextBox
                                 x:Name="textboxphone"
+                                PreviewTextInput="numbervalit"
                                 Grid.Column="1"
                                 Width="850"
                                  Margin="80,160,80,0"
@@ -105,14 +107,17 @@
                                 FontSize="18"
                                 MaxLength="25"/>
         </Grid>
+
         <Grid Grid.Row="1">
-            <Rectangle Grid.Column="1"
-                              Height="300"
-                              Margin="100,0,35,0"
-                              VerticalAlignment="Center"
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="355"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Rectangle
+                              Height="auto"
                               Fill="White"
                               RadiusX="21.333"
-                              RadiusY="21.333">
+                              RadiusY="21.333" Grid.Column="1" Margin="0,0,35,30">
                 <Rectangle.Effect>
                     <DropShadowEffect
                                      BlurRadius="15"
@@ -122,33 +127,34 @@
                                      Color="#FFBBBBBB" />
                 </Rectangle.Effect>
             </Rectangle>
+            <StackPanel Grid.Row="1" Grid.Column="1" Width="auto"/>
+                <TextBox
+           x:Name="textboxpswd"
+           Grid.Column="1"
+           Grid.Row="1"
+           Width="850"
+           Margin="50,50,80,0"
+           HorizontalAlignment="Left"
+           VerticalAlignment="Top"
+           TextWrapping="Wrap"
+           VerticalScrollBarVisibility="Auto"
+           materialDesign:HintAssist.Hint="Password"
+           FontSize="18"
+           MaxLength="16"/>
             
             <TextBox
-                                x:Name="textboxpswd"
-                                Grid.Row="1"
-                                Width="700"
-                                 Margin="270,60,80,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                TextWrapping="Wrap"
-                                VerticalScrollBarVisibility="Auto"
-                                materialDesign:HintAssist.Hint="Password"
-                                FontSize="18"
-                                MaxLength="25"/>
-
-            <TextBox
-                                x:Name="textboxconfrpswd"
-                                Grid.Row="1"
-                                Width="700"
-                                 Margin="270,110,80,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                TextWrapping="Wrap"
-                                VerticalScrollBarVisibility="Auto"
-                                materialDesign:HintAssist.Hint="Confirm Password"
-                                FontSize="18"
-                                MaxLength="25"/>
+           x:Name="textboxconfpswd"
+           Grid.Column="1"
+           Grid.Row="1"
+           Width="850"
+           Margin="50,100,80,0"
+           HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+           TextWrapping="Wrap"
+           VerticalScrollBarVisibility="Auto"
+           materialDesign:HintAssist.Hint="Confirm Password"
+           FontSize="18"
+           MaxLength="16"/>
         </Grid>
-
     </Grid>
 </Page>

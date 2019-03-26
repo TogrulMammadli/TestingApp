@@ -105,6 +105,9 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Background="#FF00AEFF" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+                <Grid.Effect>
+                    <DropShadowEffect Opacity="0.5" Color="#FFB0B0B0" BlurRadius="15.2"/>
+                </Grid.Effect>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                 <Button
                  Click="HeadWndButtonDropdown_Click"
@@ -198,6 +201,9 @@
             <Frame Grid.Column="1" x:Name="frame" Content="frame" NavigationUIVisibility="Hidden" />
                     
                         <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0" MouseEnter="StackPanel_MouseEnter" MouseLeave="StackPanel_MouseLeave"  >
+                    <StackPanel.Effect>
+                        <DropShadowEffect Opacity="0.5" BlurRadius="26" Color="#FF6A6A6A"/>
+                    </StackPanel.Effect>
                 
                 <StackPanel Orientation="Horizontal"  Background="#2c3e50" Height="180">
                     <Grid x:Name="HamburgerMenuGrid">

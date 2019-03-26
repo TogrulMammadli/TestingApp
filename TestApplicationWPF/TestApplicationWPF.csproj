@@ -94,6 +94,9 @@
     <Compile Include="PagesStudent\TestNamesPage.xaml.cs">
       <DependentUpon>TestNamesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ChooseTestBlankPage.xaml.cs">
+      <DependentUpon>ChooseTestBlankPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CreateTest.xaml.cs">
       <DependentUpon>CreateTest.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -138,6 +141,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PagesStudent\TestNamesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ChooseTestBlankPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -12,17 +12,17 @@
     <Page.Resources >
         <Style TargetType="ListBoxItem" x:Name="style">
             <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="ListBoxItem">
-                    <Border Name="Border" Padding="2" SnapsToDevicePixels="true"
-PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown">
-                        <ContentPresenter />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-      </Style>
- </Page.Resources>
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border Name="Border" Padding="2" SnapsToDevicePixels="true"
+                              PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown">
+                            <ContentPresenter />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
     <Grid
         Background="AliceBlue">
         <DockPanel LastChildFill="True">
@@ -40,7 +40,7 @@ PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown">
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                    VerticalContentAlignment="Center" TextChanged="SearchTxtBox_TextChanged" ></TextBox>
-                
+
                 <!--<Button
                     Name="FilterButton"
                     Margin="7" Click="ButtonFilter_Click"
@@ -122,7 +122,7 @@ PreviewMouseLeftButtonDown="Border_PreviewMouseLeftButtonDown">
                                 <Button Name="Remove" Width="40" Margin="5" VerticalAlignment="Center"  Background="DarkRed" ToolTip="Remove" Click="Remove_Click">R</Button>
                             </StackPanel>
                         </Grid>
-                      
+
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

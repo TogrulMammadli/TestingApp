@@ -35,7 +35,7 @@ namespace TestApplicationWPF.Repository.PassedTestRepository
         {
             try
             {
-                return TestContext.Instance.PassedTests.Where(x => x.Id == ID).First();
+                return TestContext.Instance.PassedTests.Where(x => x.Id == ID).DefaultIfEmpty().Single();
             }
             catch
             {

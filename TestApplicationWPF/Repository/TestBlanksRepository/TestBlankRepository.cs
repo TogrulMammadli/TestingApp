@@ -35,7 +35,7 @@ namespace TestApplicationWPF.Repository.TestBlanksRepository
         {
             try
             {
-                return TestContext.Instance.TestBlanks.Where(x => x.Id == ID).First();
+                return TestContext.Instance.TestBlanks.Where(x => x.Id == ID).DefaultIfEmpty().Single();
             }
             catch
             {
@@ -47,7 +47,7 @@ namespace TestApplicationWPF.Repository.TestBlanksRepository
         {
             try
             {
-                return TestContext.Instance.TestBlanks.Where(x => x.Name == name).First();
+                return TestContext.Instance.TestBlanks.Where(x => x.Name == name).DefaultIfEmpty().Single();
             }
             catch (Exception)
             {

@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:TestApplicationWPF"
         mc:Ignorable="d"
         Title="HeadWindow" Height="590" Width="1030" WindowStartupLocation="CenterScreen" ResizeMode="CanResize" Icon="Icons/mainicon.png" WindowStyle="None"
-        BorderBrush="#FF00AEFF" BorderThickness="1">
+        BorderBrush="#FF00AEFF" Background="#ecf0f1" BorderThickness="1">
     <Window.Resources>
         <Style x:Key="BigPannel">
             <!--Panel Style-->
@@ -89,6 +89,15 @@
     </Window.Resources>
   <!--stiliiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-->
     <Grid>
+      
+
+            
+
+
+
+
+
+                <Grid>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -96,6 +105,9 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0" Background="#FF00AEFF" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+                <Grid.Effect>
+                    <DropShadowEffect Opacity="0.5" Color="#FFB0B0B0" BlurRadius="15.2"/>
+                </Grid.Effect>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                 <Button
                  Click="HeadWndButtonDropdown_Click"
@@ -185,9 +197,13 @@
                
 
             </StackPanel>-->
-            <Frame Grid.Column="1" x:Name="frame" Content="frame" NavigationUIVisibility="Hidden" Margin="0 0 0 0"/>
-
-            <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0" MouseEnter="StackPanel_MouseEnter" MouseLeave="StackPanel_MouseLeave"  >
+            
+            <Frame Grid.Column="1" x:Name="frame" Content="Welcome  =)"  NavigationUIVisibility="Hidden"  />
+                    
+                        <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0" MouseEnter="StackPanel_MouseEnter" MouseLeave="StackPanel_MouseLeave"  >
+                    <StackPanel.Effect>
+                        <DropShadowEffect Opacity="0.5" BlurRadius="26" Color="#FF6A6A6A"/>
+                    </StackPanel.Effect>
                 
                 <StackPanel Orientation="Horizontal"  Background="#2c3e50" Height="180">
                     <Grid x:Name="HamburgerMenuGrid">
@@ -284,20 +300,20 @@
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-50,0,10,0"/>
-                        <TextBlock>2nd</TextBlock>
+                            Kind="FileDocumentBoxes"  HorizontalAlignment="Left" Foreground="White" Margin="-20,0,15,0"/>
+                                <TextBlock>Begin exam</TextBlock>
                     </StackPanel>
                 </Button>
                 </DockPanel>
 
-                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_2" >
+                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" >
                     <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
                         <materialDesign:PackIcon
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-51,0,10,0"/>
-                        <TextBlock>3rd</TextBlock>
+                            Kind="GithubCircle"  HorizontalAlignment="Left" Foreground="White" Margin="-51,0,10,0"/>
+                            <TextBlock>Pus</TextBlock>
                     </StackPanel>
                 </Button>
 
@@ -307,12 +323,12 @@
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-45,0,10,0"/>
+                            Kind="UserS"  HorizontalAlignment="Left" Foreground="White" Margin="-45,0,10,0"/>
                         <TextBlock>Users</TextBlock>
                     </StackPanel>
                 </Button>
 
-                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left">
+                    <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_2" >
                     <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
                         <materialDesign:PackIcon
                             Width="20"
@@ -332,7 +348,7 @@
                         <TextBlock>Logout</TextBlock>
                     </StackPanel>
                 </Button>
-                <Grid Height="150"></Grid>
+                <Grid Height="110"></Grid>
                 <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
                         <materialDesign:PackIcon
@@ -345,9 +361,14 @@
                 </Button>
             </StackPanel>
 
-            
-            <!--</DockPanel>-->
+                  
+
+                   
+                    <!--</DockPanel>-->
         </Grid>
 
+    </Grid>
+
+      
     </Grid>
 </Window>

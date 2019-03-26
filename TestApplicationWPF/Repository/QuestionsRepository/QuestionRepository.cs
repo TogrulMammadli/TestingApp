@@ -32,7 +32,7 @@ namespace TestApplicationWPF.Repository.QuestionsRepository
 
         public Question GetQuestionByID(int ID)
         {
-            return TestContext.Instance.Questions.Include("CorrectAnswers").Include("WrongAnswers").Where(x => x.Id == ID).First();
+            return TestContext.Instance.Questions.Include("CorrectAnswers").Include("WrongAnswers").Where(x => x.Id == ID).DefaultIfEmpty().Single();
 
         }
 

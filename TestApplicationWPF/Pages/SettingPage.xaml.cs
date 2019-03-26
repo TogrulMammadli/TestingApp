@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -22,7 +23,7 @@ namespace TestApplicationWPF.Pages
             InitializeComponent();
         }
 
-        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+        private void numbervalit(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
@@ -32,19 +33,57 @@ namespace TestApplicationWPF.Pages
         {
             try
             {
-                if (int.Parse(textboxage.Text) <= 7)
+                if (textboxname.Text.Length <= 2 && textboxname.Text != "")
+                {
+                    MessageBox.Show("Имя не может быть меньше 3 букв");
+                    textboxname.Clear();
+                }
+                else if (textboxage.Text != "" && int.Parse(textboxage.Text) < 7)
                 {
                     MessageBox.Show("Возраст не должен быть меньше 7");
                     textboxage.Clear();
                 }
-
-                else if (int.Parse(textboxage.Text) >= 70)
+                else if (textboxage.Text != "" && int.Parse(textboxage.Text) > 70)
                 {
                     MessageBox.Show("Возраст не должен быть старше 70");
                     textboxage.Clear();
                 }
+                else if (textboxphone.Text != "" && textboxphone.Text.Length < 10)
+                {
+                    MessageBox.Show("Минимальная длина номера 10 цифр");
+                    textboxphone.Clear();
+                }
+                else if (!Regex.IsMatch(textboxemail.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase) && textboxemail.Text != "")
+                {
+                    MessageBox.Show("Не правильный формат E-mail");
+                    textboxemail.Clear();
+                }
+                else if (textboxpswd.Text != textboxconfpswd.Text)
+                {
+                    MessageBox.Show("Пароли не совпадают");
+                    textboxpswd.Clear();
+                    textboxconfpswd.Clear();
+                }
+
             }
-            catch (System.Exception){}
+            catch (Exception)
+            {
+                throw;
+            }
         }
+
+        private void Textboxname_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Regex.IsMatch(e.Text, "^[a-zA-Z]"))
+            {
+                Regex regex = new Regex("[^a-z]+");
+                e.Handled = regex.IsMatch(e.Text);
+            }
+            else
+            {
+                e.Handled = false;
+            }
+        }
+
     }
 }

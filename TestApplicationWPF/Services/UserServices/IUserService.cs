@@ -24,5 +24,7 @@ namespace TestApplicationWPF.Services.UserServices
         bool ChangeImage(byte[] İmage);
         bool AddNewAccessLevelTouser(AccessLevel accessLevel);
         bool RemoveAccessLevelfromUser(AccessLevel accessLevel);
+        void RemoveUser(User user);
+
     }
 }

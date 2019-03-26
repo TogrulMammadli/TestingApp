@@ -251,5 +251,10 @@ namespace TestApplicationWPF.Services.UserServices
         {
             userRepository.RemoveUserById(Id);
         }
+
+        public bool RemovUser(User user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

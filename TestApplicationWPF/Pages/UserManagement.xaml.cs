@@ -25,13 +25,11 @@ namespace TestApplicationWPF.Pages
     /// </summary>
     public partial class UserManagement : Page
     {
-        static UserRepository repository = new UserRepository();
-        UserService UserService = new UserService(repository);
+      
         public UserManagement(User user)
         {
             InitializeComponent();
-            
-            var viewModel = new UserManagementViewModel(UserService);
+            var viewModel = new UserManagementViewModel();
             this.DataContext = viewModel;
         }
 
@@ -72,7 +70,7 @@ namespace TestApplicationWPF.Pages
 
         private void Remove_Click(object sender, RoutedEventArgs e)
         {
-            UserService.RemoveUser(((User)usersListBox.SelectedItems[0]));
+            //UserService.RemoveUser(((User)usersListBox.SelectedItems[0]));
 
         }
     }

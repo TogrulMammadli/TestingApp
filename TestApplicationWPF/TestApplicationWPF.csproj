@@ -138,7 +138,9 @@
     <Compile Include="Services\TestServices\ITestService.cs" />
     <Compile Include="Services\UserServices\IUserService.cs" />
     <Compile Include="Services\UserServices\UserService.cs" />
-    <Compile Include="ViewModels\UserManagementViewModel.cs" />
+    <Compile Include="ViewModel\AddUser\AccessLevelKeyValue.cs" />
+    <Compile Include="ViewModel\AddUser\AddUserViewModel.cs" />
+    <Compile Include="ViewModel\UserManagementViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="AddUserWindow.xaml">
@@ -196,7 +198,6 @@
     <Compile Include="StudentWindow.xaml.cs">
       <DependentUpon>StudentWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -295,6 +296,8 @@
   <ItemGroup>
     <Resource Include="Icons\mainicon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Mesages\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

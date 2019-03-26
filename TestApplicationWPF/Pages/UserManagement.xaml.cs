@@ -30,6 +30,7 @@ namespace TestApplicationWPF.Pages
         public UserManagement(User user)
         {
             InitializeComponent();
+            
             var viewModel = new UserManagementViewModel(UserService);
             this.DataContext = viewModel;
         }
@@ -51,8 +52,6 @@ namespace TestApplicationWPF.Pages
         }
         private void SearchTxtBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(SearchTxtBox.Text))
-            {
                 if (this.usersListBox != null)
                 {
                     this.usersListBox.Items.Filter = new Predicate<object>((x) =>
@@ -63,7 +62,6 @@ namespace TestApplicationWPF.Pages
                         return fullname.Contains(searchText);
                     });
                 }
-            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

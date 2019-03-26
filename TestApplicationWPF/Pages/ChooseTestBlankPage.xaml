@@ -3,12 +3,381 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      
       xmlns:local="clr-namespace:TestApplicationWPF.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="560" d:DesignWidth="1030"
-      Title="ChooseTestBlankPage">
+      d:DesignHeight="560" d:DesignWidth="1050"
+      Title="ChooseTestBlankPage" Margin="50 0 0 0">
 
-    <Grid>
-        
+    <Grid Background="White">
+        <Grid >
+            <WrapPanel>
+                <materialDesign:Card Width="220" Margin="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                                 Height="50" />
+                            <RowDefinition
+                                  Height="*" />
+                            <RowDefinition
+                                    Height="Auto" />
+                            <RowDefinition
+                                     Height="Auto" />
+                            <RowDefinition
+                                     Height="Auto" />
+                            <RowDefinition
+                                    Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid Background="#673AB7"></Grid>
+                        <Button
+                             Grid.Row="0"
+                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                             HorizontalAlignment="Right"
+                             VerticalAlignment="Bottom"
+                             Margin="0 0 16 -20">
+                            <materialDesign:PackIcon
+                        Kind="Like" />
+                        </Button>
+                        <StackPanel
+                                 Grid.Row="1"
+                                 Margin="8 24 8 4">
+                            <TextBlock
+                                     Style="{StaticResource MaterialDesignSubheadingTextBlock}"
+                                     Margin="0">
+                                   Entering Test
+                            </TextBlock>
+                            <!--<Viewbox
+                                 Margin="0 4 0 8"
+                                 Height="16"
+                                 HorizontalAlignment="Left">
+                                <materialDesign:RatingBar
+                                Value="3"
+                                Orientation="Horizontal"
+                                Foreground="Gold"
+                                Margin="0" />
+                            </Viewbox>-->
+                            <Separator
+                                Height="16"
+                                  Grid.Row="2"
+                                  Style="{StaticResource MaterialDesignDarkSeparator}"
+                                  Margin="8 0 8 0" />
+                            <TextBlock
+                                  Style="{StaticResource MaterialDesignBody1TextBlock}"
+                                  TextWrapping="Wrap"
+                                  VerticalAlignment="Center">
+                                This Test check your basic knowledges, how much you were informed about IT tecnologics and how wide your worldview...
+                            </TextBlock>
+                        </StackPanel>
+                        <Separator
+                              Grid.Row="2"
+                              Style="{StaticResource MaterialDesignDarkSeparator}"
+                              Margin="8 0 8 0" />
+                        <StackPanel Orientation="Horizontal" Grid.Row="3" >
+                            <TextBlock Height="20"
+                                       Text="Availible                "
+                      Margin="8 4 8 4"
+                      Style="{StaticResource MaterialDesignBody2TextBlock}">
+                    
+                            </TextBlock >
+
+                            <materialDesign:PackIcon
+                                 Grid.Column="0"
+                                 Kind="Clock"
+                                 VerticalAlignment="Center"
+                                 Margin="8,12,0,12" />
+                            <ListBox
+                                Grid.Column="1"
+                                Style="{StaticResource MaterialDesignToolToggleFlatListBox}"
+                                SelectedIndex="0"
+                                Margin="4 7 8 4" >
+                                <ListBox.Resources>
+                                    <Style
+                                        TargetType="{x:Type ListBoxItem}"
+                                        BasedOn="{StaticResource MaterialDesignToolToggleListBoxItem}">
+                                        <Setter
+                                             Property="Padding"
+                                             Value="4 6 4 6" />
+                                    </Style>
+                                </ListBox.Resources>
+                                <ListBox.ToolTip>
+                                    <StackPanel>
+                                        <TextBlock
+                                             Text="MaterialDesignFlatToggleListBox" />
+                                        <TextBlock
+                                                Text="Exclusive selection" />
+                                        <TextBlock
+                                                 Text="ListBoxAssist.IsToggle allows more natural toggle behaviour" />
+                                    </StackPanel>
+                                </ListBox.ToolTip>
+                                <ListBoxItem>
+                                    <TextBlock
+                                        Text="01:00" />
+                                </ListBoxItem>
+                               
+                            </ListBox>
+
+                        </StackPanel>
+
+                       
+                        <StackPanel
+                                              Grid.Row="5">
+                            <Button
+                                     Style="{StaticResource MaterialDesignFlatButton}"
+                                     HorizontalAlignment="Center"
+                                     Margin="0">
+                                Start
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+
+
+
+
+
+                <materialDesign:Card Width="220" Margin="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                                 Height="50" />
+                            <RowDefinition
+                                  Height="*" />
+                            <RowDefinition
+                                    Height="Auto" />
+                            <RowDefinition
+                                     Height="Auto" />
+                            <RowDefinition
+                                     Height="Auto" />
+                            <RowDefinition
+                                    Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid Background="#673AB7"></Grid>
+                        <Button
+                             Grid.Row="0"
+                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                             HorizontalAlignment="Right"
+                             VerticalAlignment="Bottom"
+                             Margin="0 0 16 -20">
+                            <materialDesign:PackIcon
+                        Kind="Like" />
+                        </Button>
+                        <StackPanel
+                                 Grid.Row="1"
+                                 Margin="8 24 8 4">
+                            <TextBlock
+                                     Style="{StaticResource MaterialDesignSubheadingTextBlock}"
+                                     Margin="0">
+                                   Entering Test
+                            </TextBlock>
+                            <!--<Viewbox
+                                 Margin="0 4 0 8"
+                                 Height="16"
+                                 HorizontalAlignment="Left">
+                                <materialDesign:RatingBar
+                                Value="3"
+                                Orientation="Horizontal"
+                                Foreground="Gold"
+                                Margin="0" />
+                            </Viewbox>-->
+                            <Separator
+                                Height="16"
+                                  Grid.Row="2"
+                                  Style="{StaticResource MaterialDesignDarkSeparator}"
+                                  Margin="8 0 8 0" />
+                            <TextBlock
+                                  Style="{StaticResource MaterialDesignBody1TextBlock}"
+                                  TextWrapping="Wrap"
+                                  VerticalAlignment="Center">
+                                This Test check your basic knowledges, how much you were informed about IT tecnologics and how wide your worldview...
+                            </TextBlock>
+                        </StackPanel>
+                        <Separator
+                              Grid.Row="2"
+                              Style="{StaticResource MaterialDesignDarkSeparator}"
+                              Margin="8 0 8 0" />
+                        <StackPanel Orientation="Horizontal" Grid.Row="3" >
+                            <TextBlock Height="20"
+                                       Text="Availible                "
+                      Margin="8 4 8 4"
+                      Style="{StaticResource MaterialDesignBody2TextBlock}">
+
+                            </TextBlock >
+
+                            <materialDesign:PackIcon
+                                 Grid.Column="0"
+                                 Kind="Clock"
+                                 VerticalAlignment="Center"
+                                 Margin="8,12,0,12" />
+                            <ListBox
+                                Grid.Column="1"
+                                Style="{StaticResource MaterialDesignToolToggleFlatListBox}"
+                                SelectedIndex="0"
+                                Margin="4 7 8 4" >
+                                <ListBox.Resources>
+                                    <Style
+                                        TargetType="{x:Type ListBoxItem}"
+                                        BasedOn="{StaticResource MaterialDesignToolToggleListBoxItem}">
+                                        <Setter
+                                             Property="Padding"
+                                             Value="4 6 4 6" />
+                                    </Style>
+                                </ListBox.Resources>
+                                <ListBox.ToolTip>
+                                    <StackPanel>
+                                        <TextBlock
+                                             Text="MaterialDesignFlatToggleListBox" />
+                                        <TextBlock
+                                                Text="Exclusive selection" />
+                                        <TextBlock
+                                                 Text="ListBoxAssist.IsToggle allows more natural toggle behaviour" />
+                                    </StackPanel>
+                                </ListBox.ToolTip>
+                                <ListBoxItem>
+                                    <TextBlock
+                                        Text="01:00" />
+                                </ListBoxItem>
+
+                            </ListBox>
+
+                        </StackPanel>
+
+
+                        <StackPanel
+                                              Grid.Row="5">
+                            <Button
+                                     Style="{StaticResource MaterialDesignFlatButton}"
+                                     HorizontalAlignment="Center"
+                                     Margin="0">
+                                Start
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+
+
+                <Border BorderBrush="Purple" BorderThickness="1" Margin="10">
+                <materialDesign:Card Width="220"     materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                    
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition
+                                 Height="50" />
+                            <RowDefinition
+                                  Height="*" />
+                            <RowDefinition
+                                    Height="Auto" />
+                            <RowDefinition
+                                     Height="Auto" />
+                            <RowDefinition
+                                     Height="Auto" />
+                            <RowDefinition
+                                    Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid Background="#673AB7"></Grid>
+                        <Button
+                             Grid.Row="0"
+                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                             HorizontalAlignment="Right"
+                             VerticalAlignment="Bottom"
+                             Margin="0 0 16 -20">
+                            <materialDesign:PackIcon
+                        Kind="Like" />
+                        </Button>
+                        <StackPanel
+                                 Grid.Row="1"
+                                 Margin="8 24 8 4">
+                            <TextBlock
+                                     Style="{StaticResource MaterialDesignSubheadingTextBlock}"
+                                     Margin="0">
+                                   Entering Test
+                            </TextBlock>
+                            <!--<Viewbox
+                                 Margin="0 4 0 8"
+                                 Height="16"
+                                 HorizontalAlignment="Left">
+                                <materialDesign:RatingBar
+                                Value="3"
+                                Orientation="Horizontal"
+                                Foreground="Gold"
+                                Margin="0" />
+                            </Viewbox>-->
+                            <Separator
+                                Height="16"
+                                  Grid.Row="2"
+                                  Style="{StaticResource MaterialDesignDarkSeparator}"
+                                  Margin="8 0 8 0" />
+                            <TextBlock
+                                  Style="{StaticResource MaterialDesignBody1TextBlock}"
+                                  TextWrapping="Wrap"
+                                  VerticalAlignment="Center">
+                                This Test check your basic knowledges, how much you were informed about IT tecnologics and how wide your worldview...
+                            </TextBlock>
+                        </StackPanel>
+                        <Separator
+                              Grid.Row="2"
+                              Style="{StaticResource MaterialDesignDarkSeparator}"
+                              Margin="8 0 8 0" />
+                        <StackPanel Orientation="Horizontal" Grid.Row="3" >
+                            <TextBlock Height="20"
+                                       Text="Availible                "
+                      Margin="8 4 8 4"
+                      Style="{StaticResource MaterialDesignBody2TextBlock}">
+
+                            </TextBlock >
+
+                            <materialDesign:PackIcon
+                                 Grid.Column="0"
+                                 Kind="Clock"
+                                 VerticalAlignment="Center"
+                                 Margin="8,12,0,12" />
+                            <ListBox
+                                Grid.Column="1"
+                                Style="{StaticResource MaterialDesignToolToggleFlatListBox}"
+                                SelectedIndex="0"
+                                Margin="4 7 8 4" >
+                                <ListBox.Resources>
+                                    <Style
+                                        TargetType="{x:Type ListBoxItem}"
+                                        BasedOn="{StaticResource MaterialDesignToolToggleListBoxItem}">
+                                        <Setter
+                                             Property="Padding"
+                                             Value="4 6 4 6" />
+                                    </Style>
+                                </ListBox.Resources>
+                                <ListBox.ToolTip>
+                                    <StackPanel>
+                                        <TextBlock
+                                             Text="MaterialDesignFlatToggleListBox" />
+                                        <TextBlock
+                                                Text="Exclusive selection" />
+                                        <TextBlock
+                                                 Text="ListBoxAssist.IsToggle allows more natural toggle behaviour" />
+                                    </StackPanel>
+                                </ListBox.ToolTip>
+                                <ListBoxItem>
+                                    <TextBlock
+                                        Text="01:00" />
+                                </ListBoxItem>
+
+                            </ListBox>
+
+                        </StackPanel>
+
+
+                        <StackPanel
+                                              Grid.Row="5">
+                            <Button
+                                     Style="{StaticResource MaterialDesignFlatButton}"
+                                     HorizontalAlignment="Center"
+                                     Margin="0">
+                                Start
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                </materialDesign:Card>
+                </Border>
+            </WrapPanel>
+        </Grid>
     </Grid>
 </Page>

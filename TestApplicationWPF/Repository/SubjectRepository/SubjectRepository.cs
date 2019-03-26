@@ -73,7 +73,7 @@ namespace TestApplicationWPF.Repository.SubjectRepository
         {
             try
             {
-                TestContext.Instance.Subjects.Remove(TestContext.Instance.Subjects.First(x => x.Id == Id));
+                TestContext.Instance.Subjects.Remove(TestContext.Instance.Subjects.Where(x => x.Id == Id).First());
                 TestContext.Instance.SaveChanges();
                 return true;
             }

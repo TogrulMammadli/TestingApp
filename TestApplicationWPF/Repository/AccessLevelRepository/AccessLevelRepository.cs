@@ -73,7 +73,7 @@ namespace TestApplicationWPF.Repository.AccessLevelRepository
         {
             try
             {
-                TestContext.Instance.AccessLevels.Remove(TestContext.Instance.AccessLevels.First(x=>x.Id==Id));
+                TestContext.Instance.AccessLevels.Remove(TestContext.Instance.AccessLevels.Where(x=>x.Id==Id).First());
                 TestContext.Instance.SaveChanges();
                 return true;
             }

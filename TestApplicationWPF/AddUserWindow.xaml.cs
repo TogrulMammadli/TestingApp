@@ -62,40 +62,38 @@ namespace TestApplicationWPF
             List<AccessLevel> accessLevels = new List<AccessLevel>();
             if (admin.IsChecked == true)
             {
-                accessLevels.Add(ac.GetAccessLevelByID(1));
+                accessLevels.Add(ac.GetAccessLevelByName("Admin"));
             }
             if (mentor.IsChecked == true)
             {
-                accessLevels.Add(ac.GetAccessLevelByID(2));
+                accessLevels.Add(ac.GetAccessLevelByName("Mentor"));
             }
             if (student.IsChecked == true)
             {
-                accessLevels.Add(ac.GetAccessLevelByID(3));
+                accessLevels.Add(ac.GetAccessLevelByName("Student"));
             }
             if (Female.IsChecked == true)
             {
                 gender = Gender.Female;
             }
-            var user = new User()
-            {
-                Id = -1,
-                Name = Name.Text,
-                Surname = Surname.Text,
-                Patronymic = Patronymic.Text,
-                PhoneNumber = Operator.Text + NumberTextBox.Text,
-                Login = Login.Text,
-                DateOfBirth = dataPicker.SelectedDate.Value,
-                Email =this.Email.Text,
-                Password = Password.Text,
-                Gender = Gender.Male
-            };
+
+            user.Id = -1;
+            user.Name = Name.Text;
+            user.Surname = Surname.Text;
+            user.Patronymic = Patronymic.Text;
+            user.PhoneNumber = Operator.Text + NumberTextBox.Text;
+            user.Login = Login.Text;
+            user.DateOfBirth = dataPicker.SelectedDate.Value;
+            user.Email = this.Email.Text;
+            user.Password = Password.Text;
+            user.Gender = Gender.Male;
+
             foreach (var item in accessLevels)
             {
                 user.AccessLevels.Add(item);
             }
             UserRepository userRepository = new UserRepository();
             userRepository.AddUser(user);
-
             this.Close();
         }
 

@@ -71,7 +71,7 @@ namespace TestApplicationWPF.Repository.TestBlanksRepository
         {
             try
             {
-                TestContext.Instance.TestBlanks.Remove(TestContext.Instance.TestBlanks.First(x => x.Id == Id));
+                TestContext.Instance.TestBlanks.Remove(TestContext.Instance.TestBlanks.Where(x => x.Id == Id).First());
                 TestContext.Instance.SaveChanges();
                 return true;
             }

@@ -69,7 +69,7 @@ namespace TestApplicationWPF.Repository.GroupsRepository
         {
             try
             {
-                TestContext.Instance.Groups.Remove(TestContext.Instance.Groups.First(x => x.Id == Id));
+                TestContext.Instance.Groups.Remove(TestContext.Instance.Groups.Where(x => x.Id == Id).First());
                 TestContext.Instance.SaveChanges();
                 return true;
             }

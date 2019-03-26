@@ -33,12 +33,12 @@ namespace TestApplicationWPF.Repository.CategoryRepository
 
         public Category GetCategoryByID(int ID)
         {
-            return TestContext.Instance.Categories.First(x => x.Id == ID);
+            return TestContext.Instance.Categories.Where(x => x.Id == ID).First();
         }
 
         public Category GetCategoryByName(string categoryName)
         {
-            return TestContext.Instance.Categories.First(x => x.Name == categoryName);
+            return TestContext.Instance.Categories.Where(x => x.Name == categoryName).First();
         }
 
         public bool RemoveCategory(Category category)

@@ -21,6 +21,7 @@ using TestApplicationWPF.Repository.GroupsRepository;
 using TestApplicationWPF.Repository.CategoryRepository;
 using TestApplicationWPF.Repository.QuestionsRepository;
 using System.IO;
+using TestApplicationWPF.Repository.AccessLevelRepository;
 
 namespace TestApplicationWPF
 {
@@ -41,8 +42,8 @@ namespace TestApplicationWPF
             //var question = new Question(){Text="somethekst",subject=new Subject() {Name="testSubject" },Answers=new List<Answer>() { new   Answer() { Text = "dawwag" }, new Answer() { Text = "memew" } } };
             //QuestionRepository questionsss= new QuestionRepository();
             //questionsss.AddQuestion(question);
-
-            //var user = new User() { Name = "Togrul", Surname = "Mammadli", Patronymic = "Vuqar", PhoneNumber = "0503907667", Login = "admin", AccessLevels = new List<AccessLevel> { new AccessLevel() { Name = "Admin" } }, DateOfBirth = DateTime.Now, Email = "mamedlitogrul99@gmail.com", Password = "admin", Gender = Gender.Male };
+            //AccessLevelRepository accessLevelRepository = new AccessLevelRepository();
+            //var user = new User() { Name = "Togrul", Surname = "Mammadli", Patronymic = "Vuqar", PhoneNumber = "0503907667", Login = "admin", AccessLevels = new List<AccessLevel> { accessLevelRepository.GetAccessLevelByName("Admin") }, DateOfBirth = DateTime.Now, Email = "mamedlitogrul99@gmail.com", Password = "admin", Gender = Gender.Male };
             //UserRepository userRepository = new UserRepository();
             //userRepository.AddUser(user);
             //#region UpdateImageInDbTesting

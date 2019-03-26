@@ -271,6 +271,7 @@
                                     Width="100"
                                     HorizontalAlignment="Right"
                                     Content="Delete answer" Click="DeleteAnswerButton_Click"/>
+                                <Button x:Name="AddImageButton" Grid.Row="7" Margin="0,0,0,0" Width="200" HorizontalAlignment="Left" Content="Добавить рисунок" Click="AddImageButton_Click"></Button>
                                 <!--<RadioButton Grid.Row="7" GroupName="Language">Azerbaycan</RadioButton>
                                 <RadioButton Grid.Row="7" Margin="0,20,0,0" GroupName="Language">Russian</RadioButton>
                                 <RadioButton Grid.Row="7" Margin="50,20,0,0" GroupName="Language">English</RadioButton>-->
@@ -382,7 +383,7 @@
                                 Orientation="Horizontal">
                                 <RadioButton x:Name="RandomQuestionsRadioButton" Padding="5" GroupName="QuestionCount"/>
                                 <TextBlock Text="Random" />
-                                <TextBox x:Name="CountOfRandomQuestionsTextBox" Width="30" Margin="35,0,0,0" />
+                                <TextBox x:Name="CountOfRandomQuestionsTextBox" Width="30" Margin="35,0,0,0" PreviewTextInput="CountOfRandomQuestionsTextBox_PreviewTextInput"/>
                                 <TextBlock Margin="5,0,0,0" Text="questions" />
 
                             </StackPanel>
@@ -450,7 +451,7 @@
                                 Orientation="Horizontal">
                                 <RadioButton x:Name="LimitedTimeRadioButton" Padding="5" GroupName="LimitForTime" />
                                 <TextBlock Text="Limited" />
-                                <TextBox x:Name="MinutesForExamTimeTextBox" Width="30" Margin="35,0,0,0" />
+                                <TextBox x:Name="MinutesForExamTimeTextBox" Width="30" Margin="35,0,0,0" PreviewTextInput="MinutesForExamTimeTextBox_PreviewTextInput"/>
                                 <TextBlock Margin="5,0,0,0" Text="minutes" />
                                 <Button x:Name="SubmitButton" Margin="0,40,0,0" Click="SubmitButton_Click">Submit</Button>
                             </StackPanel>

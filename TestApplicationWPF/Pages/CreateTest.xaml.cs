@@ -13,7 +13,9 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestApplicationWPF.Models;
+using TestApplicationWPF.Repository.QuestionsRepository;
 using TestApplicationWPF.Repository.TestBlanksRepository;
+using TestApplicationWPF.Services.QuestionService;
 using TestApplicationWPF.Services.TestServices;
 
 namespace TestApplicationWPF
@@ -23,8 +25,10 @@ namespace TestApplicationWPF
     /// </summary>
     public partial class PageCreateTest : Page
     {
-       // public TestService testService = new TestService(new TestBlankRepository());
+        public TestService testService = new TestService(new TestBlankRepository());
+        public QuestionService questionService = new QuestionService(new QuestionRepository());
         public List<Question> questions = new List<Question>();
+        Question question = new Question();
         public PageCreateTest()
         {
             InitializeComponent();
@@ -52,20 +56,44 @@ namespace TestApplicationWPF
                 Emptys.Add("имя автора");
             }
 
-            if(Emptys.Count != 0)
+            if (Emptys.Count != 0)
             {
-                for(int i = 0;i<Emptys.Count;i++)
+                for (int i = 0; i < Emptys.Count; i++)
                 {
                     MessageBox.Show("У вас не описано следующее поле:" + Emptys[i], "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
             else
             {
-                if(UnlimitedTimeRadioButton.IsChecked == true)
+                if (UnlimitedTimeRadioButton.IsChecked == true)
                 {
-                   // testService.TestBlankRepository.AddTestBlank(new Models.TestBlank() {Name = NameTextBox.Text,About = AboutTextBox.Text,Autor = AuthorTextBox.Text,DurationMin = null, })
+                    TestBlank testBlank = new TestBlank();
+                    testBlank.About = AboutTextBox.Text;
+                    testBlank.Autor = AuthorTextBox.Text;
+                    testBlank.Id = -1;
+                    testBlank.Name = NameTextBox.Text;
+                    testService.CreateTestBlank(testBlank);
+
                 }
-                //testService.CreateTest(NameTextBox.Text,AboutTextBox.Text,AuthorTextBox.Text,new TimeSpan())
+                else
+                {
+                    int temp = Int32.Parse(MinutesForExamTimeTextBox.Text);
+                    if (temp > 0 && temp <= 1440)
+                    {
+                        TestBlank testBlank = new TestBlank();
+                        testBlank.About = AboutTextBox.Text;
+                        testBlank.Autor = AuthorTextBox.Text;
+                        testBlank.Id = -1;
+                        testBlank.DurationMin = new TimeSpan(0, temp, 0);
+                        testBlank.Name = NameTextBox.Text;
+                        //testBlank.Questions = 
+                        testService.CreateTestBlank(testBlank);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Или много или мало времени","Information",MessageBoxButton.OK,MessageBoxImage.Information);
+                    }
+                }
             }
         }
 
@@ -98,7 +126,10 @@ namespace TestApplicationWPF
         {
             if (AnswersListBox.Items.Count >= 2 && AnswersListBox.Items.Count <= 6)
             {
+                question.Id = -1;
+                //questions.Add();
                 QuestionListBox.Items.Add(QuestionAddTextBox.Text);
+
                 QuestionAddTextBox.Text = "";
                 AnswersListBox.Items.Clear();
             }
@@ -111,6 +142,33 @@ namespace TestApplicationWPF
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
             QuestionListBox.Items.Remove(QuestionListBox.SelectedItem);
+        }
+
+        private void MinutesForExamTimeTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !(Char.IsDigit(e.Text, 0));
+        }
+
+        private void AddImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string path = questionService.OpenFileGetPath();
+                if (path != "Error")
+                {
+                    Task.Factory.StartNew(() => { question.Image = questionService.ConvertImageToByte(path); });
+                }   
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                throw;
+            }
+        }
+
+        private void CountOfRandomQuestionsTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !(Char.IsDigit(e.Text, 0));
         }
     }
 }

@@ -7,7 +7,7 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Repository.SubjectRepository
 {
-    interface ISubjectRepository
+  public  interface ISubjectRepository
     {
         bool AddSubject(Subject subject);
         IEnumerable<Subject> GetAllSubjects();

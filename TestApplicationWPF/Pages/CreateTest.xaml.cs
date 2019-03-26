@@ -28,6 +28,7 @@ namespace TestApplicationWPF
         public TestService testService = new TestService(new TestBlankRepository());
         public QuestionService questionService = new QuestionService(new QuestionRepository());
         public List<Question> questions = new List<Question>();
+     static   Subject Subject = new Subject();
         Question question = new Question();
         public PageCreateTest()
         {
@@ -39,9 +40,14 @@ namespace TestApplicationWPF
             MediumRadioButton.IsChecked = true;
             UnlimitedTimeRadioButton.IsChecked = true;
         }
+       public  static void GetSubject(Subject subject)
+        {
+            Subject = subject;
 
+        }
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show(Subject.Name);
             List<string> Emptys = new List<string>();
             if(String.IsNullOrEmpty(NameTextBox.Text) == true || String.IsNullOrWhiteSpace(NameTextBox.Text) == true)
             {
@@ -127,11 +133,13 @@ namespace TestApplicationWPF
             if (AnswersListBox.Items.Count >= 2 && AnswersListBox.Items.Count <= 6)
             {
                 question.Id = -1;
+                //question.subject
                 //questions.Add();
                 QuestionListBox.Items.Add(QuestionAddTextBox.Text);
-
+                
                 QuestionAddTextBox.Text = "";
                 AnswersListBox.Items.Clear();
+                question = new Question();
             }
             else
             {
@@ -170,5 +178,13 @@ namespace TestApplicationWPF
         {
             e.Handled = !(Char.IsDigit(e.Text, 0));
         }
+
+        private void AddSubject_Click(object sender, RoutedEventArgs e)
+        {
+            AddSubject addSubject = new AddSubject();
+            addSubject.Show();
+
+        }
+    
     }
 }

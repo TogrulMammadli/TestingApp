@@ -272,6 +272,7 @@
                                     HorizontalAlignment="Right"
                                     Content="Delete answer" Click="DeleteAnswerButton_Click"/>
                                 <Button x:Name="AddImageButton" Grid.Row="7" Margin="0,0,0,0" Width="200" HorizontalAlignment="Left" Content="Добавить рисунок" Click="AddImageButton_Click"></Button>
+                                <Button x:Name="AddSubjectButton" Grid.Row="7" Width="100" Margin="250,0,0,0" Click="AddSubject_Click">Subject</Button>
                                 <!--<RadioButton Grid.Row="7" GroupName="Language">Azerbaycan</RadioButton>
                                 <RadioButton Grid.Row="7" Margin="0,20,0,0" GroupName="Language">Russian</RadioButton>
                                 <RadioButton Grid.Row="7" Margin="50,20,0,0" GroupName="Language">English</RadioButton>-->
@@ -461,5 +462,6 @@
                 </TabItem>
             </dragablz:TabablzControl>
         </Grid>
+        <Label Visibility="Hidden" Name="SubjectId" IsEnabled="False"></Label>
     </Grid>
 </Page>

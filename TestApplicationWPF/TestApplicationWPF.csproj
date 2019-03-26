@@ -197,7 +197,7 @@
       <DependentUpon>StudentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModel\BaseViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

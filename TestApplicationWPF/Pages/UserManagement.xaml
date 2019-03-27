@@ -72,6 +72,7 @@
                     Add User
                 </Button>
             </Grid>
+            
             <ListBox  Name="usersListBox" Width="{Binding ElementName=MyPage,Path=ActualWidth}"
                      Background="Coral"
                      ScrollViewer.VerticalScrollBarVisibility="Auto"
@@ -88,10 +89,10 @@
                                     <ColumnDefinition ></ColumnDefinition>
                                     <ColumnDefinition  Width="150"></ColumnDefinition>
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" HorizontalContentAlignment="Left">Name</Label>
-                                <Label Grid.Column="1" HorizontalContentAlignment="Left">Surname</Label>
-                                <Label Grid.Column="2" HorizontalContentAlignment="Left">Login</Label>
-                                <Label Grid.Column="3" HorizontalContentAlignment="Left ">Email</Label>
+                                <Label Grid.Column="0" HorizontalContentAlignment="Center">Name</Label>
+                                <Label Grid.Column="1" HorizontalContentAlignment="Center">Surname</Label>
+                                <Label Grid.Column="2" HorizontalContentAlignment="Center">Login</Label>
+                                <Label Grid.Column="3" HorizontalContentAlignment="Center">Email</Label>
                             </Grid>
                             <ItemsPresenter></ItemsPresenter>
                         </DockPanel>
@@ -105,16 +106,16 @@
                                 <ColumnDefinition Width="1*"></ColumnDefinition>
                                 <ColumnDefinition Width="1*"></ColumnDefinition>
                                 <ColumnDefinition Width="1*"></ColumnDefinition>
-                                <ColumnDefinition  ></ColumnDefinition>
+                                <ColumnDefinition   Width="150"></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding Name}" Margin="2" Grid.Column="0" />
-                            <TextBlock Text="{Binding Surname}" Margin="2" Grid.Column="1"/>
-                            <TextBlock Text="{Binding Login}" Margin="2" Grid.Column="2" />
-                            <TextBlock Text="{Binding Email}" Margin="2" Grid.Column="3"/>
-                            <StackPanel Grid.Column="4" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                            <TextBlock HorizontalAlignment="Center" Text="{Binding Name}"   Background="Bisque"   Grid.Column="0" />
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding Surname}"  Grid.Column="1"/>
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding Login}"  Background="Bisque"   Grid.Column="2" />
+                            <TextBlock  HorizontalAlignment="Center" Text="{Binding Email}"   Grid.Column="3"/>
+                            <StackPanel Grid.Column="4" Orientation="Horizontal" HorizontalAlignment="Right">
                                 <Button Name="Edit" Width="40" Margin="5" VerticalAlignment="Center" ToolTip="Edit" Click="Edit_Click">E</Button>
                                 <Button Name="View" Width="40" Margin="5"  VerticalAlignment="Center" Background="Green" ToolTip="View all info">V</Button>
-                                <Button Name="Remove" Width="40" Margin="5" VerticalAlignment="Center"  Background="DarkRed" ToolTip="Remove"   Command="{Binding RemoveUser}" >R</Button>
+                                <Button Name="Remove" Width="40" Margin="5" VerticalAlignment="Center"  Background="DarkRed" ToolTip="Remove" Click="Remove_Click" >R</Button>
                             </StackPanel>
                         </Grid>
                     </DataTemplate>

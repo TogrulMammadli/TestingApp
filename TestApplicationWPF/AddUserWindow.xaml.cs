@@ -18,6 +18,7 @@ using TestApplicationWPF.Models;
 using TestApplicationWPF.Repository.AccessLevelRepository;
 using TestApplicationWPF.ViewModel.AddUser;
 using TestApplicationWPF.Mesages;
+using GalaSoft.MvvmLight.Messaging;
 
 namespace TestApplicationWPF
 {
@@ -30,10 +31,11 @@ namespace TestApplicationWPF
         AddUserViewModel ViewModel;
         public AddUserWindow()
         {
-            InitializeComponent();
             ViewModel = new AddUserViewModel(new UserService(new UserRepository()));
+            InitializeComponent();
             this.DataContext = ViewModel;
             dataPicker.SelectedDate = DateTime.Now.Date;
+            Messenger.Default.Register<WindowMessages>(this, "AddUser", WindwowMessagesAction);
         }
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
@@ -54,6 +56,17 @@ namespace TestApplicationWPF
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void FemaleCheck(object sender, RoutedEventArgs e)
+        {
+            ViewModel.GenderCheck.Execute(Gender.Female);
+        }
+
+        private void MaleCheck(object sender, RoutedEventArgs e)
+        {
+            ViewModel.GenderCheck.Execute(Gender.Male);
+
         }
     }
 }

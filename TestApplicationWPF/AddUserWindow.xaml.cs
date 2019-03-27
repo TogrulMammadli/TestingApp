@@ -68,5 +68,15 @@ namespace TestApplicationWPF
             ViewModel.GenderCheck.Execute(Gender.Male);
 
         }
+
+        private void SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ViewModel.AddDate.Execute(((DateTime)dataPicker.SelectedDate));
+        }
+
+        private void NumberTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ViewModel.AddPhone.Execute(NumberTextBox.Text);
+        }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:TestApplicationWPF"
         mc:Ignorable="d"
-        Title="AddUserWindow" Height="500" Width="600" Background="AliceBlue">
+        Title="AddUserWindow" Height="600" Width="600" Background="AliceBlue">
     <Grid>
         <StackPanel>
             <TextBox
@@ -48,24 +48,24 @@
                       materialDesign:HintAssist.Hint="Enter Email" 
             Height="30"
             Width="200"></TextBox>
-            <TextBox Height="30" Width="200" MaxLength="10" Name="NumberTextBox" Background="White" FontSize="20" PreviewTextInput="NumberValidationTextBox" Text="{Binding Phone}"/>
-            <DatePicker Name="dataPicker" Height="30" IsHitTestVisible="False" Focusable="True" > </DatePicker>
+            <TextBox Height="30" Width="200" MaxLength="10" Name="NumberTextBox" Background="White" FontSize="20" PreviewTextInput="NumberValidationTextBox" TextChanged="NumberTextBox_TextChanged" />
+            <DatePicker Name="dataPicker" Height="30" Focusable="True" SelectedDateChanged="SelectedDateChanged" >
+                
+            </DatePicker>
             <RadioButton Checked="MaleCheck"  Name="Male" >RadioMale</RadioButton>
             <RadioButton Checked="FemaleCheck" Name="Female">RadioFemale</RadioButton>
             <Button VerticalAlignment="Bottom" Name="ImageBtn" Command="{Binding AddImage}" >ChangeImage</Button>
-            <ListBox Height="60"  ItemsSource="{Binding AccessKeyValues}">
+            <ListBox   ItemsSource="{Binding AccessKeyValues}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Margin="10" Orientation="Horizontal">
-                            <CheckBox Padding="10" Margin="5" Height="50" Content="{Binding Key}" IsChecked="{Binding Value}">   </CheckBox>
-                        </StackPanel>
+                            <CheckBox Padding="10" Margin="5" Height="30" VerticalContentAlignment="Center" Content="{Binding Key}" IsChecked="{Binding Value}">   </CheckBox>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-                <Button VerticalAlignment="Bottom" Name="Cancel" Click="Cancel_Click">cancel User</Button>
+                <Button VerticalAlignment="Bottom" Name="Cancel" Click="Cancel_Click">cancel </Button>
         </StackPanel>
         <Button VerticalAlignment="Bottom" 
                 Name="Add" 
-                Command="{Binding AddUser}">Add User</Button>
+                Command="{Binding AddUser}" >Add User</Button>
     </Grid>
 </Window>

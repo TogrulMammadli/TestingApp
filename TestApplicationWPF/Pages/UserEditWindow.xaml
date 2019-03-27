@@ -6,20 +6,111 @@
            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:TestApplicationWPF"
         mc:Ignorable="d"
-         Height="310" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" BorderBrush="#FF00AEFF" BorderThickness="1" WindowStyle="None" x:Name="ForgotPassWnd">
+         Height="310" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" BorderBrush="#FF00AEFF" BorderThickness="1" WindowStyle="None" x:Name="ForgotPassWnd" Background="#ecf0f1">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Name="Grid1" />
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0" Background="#FF00AEFF" >
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="400"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <StackPanel>
+                    <Ellipse Height="140" Width="140" Margin="0 20 0 0">
+                        <Ellipse.Effect>
+                            <DropShadowEffect Color="#FF7A7A7A" Opacity="0.5" BlurRadius="15"/>
+                        </Ellipse.Effect>
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="/Icons/avatar.png">
+                            </ImageBrush>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <Button x:Name="edit2" Width="80" Height="25"  Margin="0 20 0 0">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Pencil" Width="20" Height="20"/>
+                            <TextBlock Text=" edit"  DockPanel.Dock="Right" VerticalAlignment="center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <materialDesign:Card Background="White" Grid.Column="1" Margin="20" Height="200" VerticalAlignment="Top" UniformCornerRadius="8"
+                             materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                             materialDesign:ShadowAssist.ShadowEdges="All">
+                <Grid>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBox
+                        Margin="20 0 20 0"
+                        materialDesign:HintAssist.Hint="Name"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.7"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        FontSize="18" />
+                        <TextBox
+                        Margin="20 0 20 0"
+                        materialDesign:HintAssist.Hint="Surname"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.70"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        FontSize="18" />
+                        <TextBox
+                        Margin="20 0 20 0"
+                        materialDesign:HintAssist.Hint="Login"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.70"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        FontSize="18" />
+
+                        <TextBox
+                        Margin="20 0 20 0"
+                        materialDesign:HintAssist.Hint="Email"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.70"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        FontSize="18"/>
+                    </StackPanel>
+
+                </Grid>
+            </materialDesign:Card>
+            <Button Content="Ok" Grid.Column="1"  HorizontalAlignment="Left" Margin="198,236,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Margin="305,236,0,0" VerticalAlignment="Top" Width="75"/>
+        </Grid>
+
+       
+        <Grid Grid.Row="0" Background="#FF00AEFF" MouseLeftButtonDown="Grid_MouseLeftButtonDown_1"  >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button
                 
+                
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="Button_Click" >
+                    <materialDesign:PackIcon
+                    Width="20"
+                    Height="20"
+                    Background="{x:Null}"
+                    Kind="Close" />
+                </Button>
             </StackPanel>
+
+
+
+
+
+
         </Grid>
 
 
-        <Rectangle Grid.Row="1"
+        <!--<Rectangle Grid.Row="1"
             Height="180"
             Margin="22,0,23,66"
             VerticalAlignment="Bottom"
@@ -34,13 +125,7 @@
                     ShadowDepth="1"
                     Color="#FFBBBBBB" />
             </Rectangle.Effect>
-        </Rectangle>
-        <Grid Grid.Row="1"
-            Width="280"
-            Height="180"
-            Margin="22,0,23,66"
-            VerticalAlignment="Bottom">
-            <TextBlock Text="{Binding ElementName=User,Path=Email}"></TextBlock>
-        </Grid>
+        </Rectangle>-->
+        
     </Grid>
 </Window>

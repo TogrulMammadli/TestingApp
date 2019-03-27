@@ -27,13 +27,13 @@ namespace TestApplicationWPF
     /// </summary>
     public partial class AddUserWindow : Window
     {
-        UserService userService = new UserService(new UserRepository());
-        AddUserViewModel ViewModel;
+        public AddUserViewModel ViewModel;
         public AddUserWindow()
         {
-            ViewModel = new AddUserViewModel(new UserService(new UserRepository()));
             InitializeComponent();
+            ViewModel = new AddUserViewModel(new UserService(new UserRepository()));
             this.DataContext = ViewModel;
+            Male.IsChecked = true;
             dataPicker.SelectedDate = DateTime.Now.Date;
             Messenger.Default.Register<WindowMessages>(this, "AddUser", WindwowMessagesAction);
         }
@@ -60,13 +60,23 @@ namespace TestApplicationWPF
 
         private void FemaleCheck(object sender, RoutedEventArgs e)
         {
-            ViewModel.GenderCheck.Execute(Gender.Female);
+           ViewModel.GenderCheck.Execute(Gender.Female);
         }
 
         private void MaleCheck(object sender, RoutedEventArgs e)
         {
             ViewModel.GenderCheck.Execute(Gender.Male);
 
+        }
+
+        private void SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ViewModel.AddDate.Execute(((DateTime)dataPicker.SelectedDate));
+        }
+
+        private void NumberTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            ViewModel.AddPhone.Execute(NumberTextBox.Text);
         }
     }
 }

@@ -35,12 +35,12 @@
         <Grid ShowGridLines="True">
             <dragablz:TabablzControl
                 FontFamily="Segoe UI"
-                FontSize="12">
+                FontSize="12" >
                 <dragablz:TabablzControl.InterTabController>
                     <dragablz:InterTabController />
                 </dragablz:TabablzControl.InterTabController>
                 <!--TAB 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->
-                <TabItem Header="ABOUT" >
+                <TabItem Header="Test Blank ABOUT" >
                     <Grid>
                         <Grid >
                             <!--<Rectangle 

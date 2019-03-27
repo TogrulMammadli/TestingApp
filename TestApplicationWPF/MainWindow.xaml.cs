@@ -66,8 +66,8 @@ namespace TestApplicationWPF
             //#endregion
             //var b = userRepository.GetUserByID(1);
             //var a = 5;
-            StudentAnwser studentAnwser = new StudentAnwser();
-            studentAnwser.Answer = "otvet1|7767|otvet2";
+            //StudentAnwser studentAnwser = new StudentAnwser();
+            //studentAnwser.Answer = "otvet1|7767|otvet2";
 
 
 

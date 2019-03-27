@@ -348,7 +348,18 @@
                         <TextBlock>Logout</TextBlock>
                     </StackPanel>
                 </Button>
-                <Grid Height="110"></Grid>
+                    <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_6"  >
+                        <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                            <materialDesign:PackIcon
+                            Width="20"
+                            Height="20"
+                            Background="{x:Null}"
+                            Kind="Resistor"  HorizontalAlignment="Left" Foreground="White" Margin="-51,0,10,0"/>
+                            <TextBlock>Add Question</TextBlock>
+                        </StackPanel>
+                    </Button>
+
+                    <Grid Height="110"></Grid>
                 <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
                         <materialDesign:PackIcon

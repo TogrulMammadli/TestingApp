@@ -140,5 +140,10 @@ namespace TestApplicationWPF
         {
             frame.Content = new StatisticaPage();
         }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new StatisticaPage();
+        }
     }
 }

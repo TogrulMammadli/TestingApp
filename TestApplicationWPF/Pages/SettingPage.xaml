@@ -20,8 +20,12 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0" VerticalAlignment="Center" Margin="40 0 0 0">
-                <Ellipse Height="150" Width="160">
+                <Ellipse Height="160" Width="160">
+                    <Ellipse.Effect>
+                        <DropShadowEffect Color="#FF7A7A7A" Opacity="0.5" BlurRadius="15"/>
+                    </Ellipse.Effect>
                     <Ellipse.Fill>
+                        
                         <ImageBrush ImageSource="/Icons/avatar.png">
                         </ImageBrush>
                     </Ellipse.Fill>
@@ -33,6 +37,71 @@
                     </DockPanel>
                 </Button>
             </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <materialDesign:Card Background="White" Grid.Column="1" Margin="20" Height="200" VerticalAlignment="Top" UniformCornerRadius="8"
+                             materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                             materialDesign:ShadowAssist.ShadowEdges="All">
+                <Grid>
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBox
+                        Margin="20 0 20 0"
+                        materialDesign:HintAssist.Hint="Name"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.7"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        FontSize="18" />
+                        <TextBox
+                        Margin="20 0 20 0"
+                        materialDesign:HintAssist.Hint="Surname"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.70"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        FontSize="18" />
+                        <TextBox
+                        Margin="20 0 20 0"
+                        materialDesign:HintAssist.Hint="Login"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.70"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        FontSize="18" />
+
+                        <TextBox
+                        Margin="20 0 20 0"
+                        materialDesign:HintAssist.Hint="Email"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.70"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        FontSize="18"/>
+                    </StackPanel>
+
+                </Grid>
+            </materialDesign:Card>
+
+
+
 
             <Rectangle Grid.Column="1"
                               Height="300"
@@ -51,7 +120,22 @@
                 </Rectangle.Effect>
             </Rectangle>
 
-
+            <Grid Grid.Column="1" Background="Aqua" Opacity="0.3">
+                <materialDesign:Card Background="White" Grid.Column="1" Margin="20" Height="200" VerticalAlignment="Top" UniformCornerRadius="8"
+                             materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                             materialDesign:ShadowAssist.ShadowEdges="All">
+                    <Grid Margin="10">
+                        
+                        
+                        
+                    </Grid>
+                    
+                    
+                    
+                </materialDesign:Card>
+                
+                
+            </Grid>
             <TextBox
                                 x:Name="textboxname"
                                 PreviewTextInput="Textboxname_PreviewTextInput"
@@ -62,9 +146,13 @@
                                 VerticalAlignment="Top"
                                 TextWrapping="Wrap"
                                 VerticalScrollBarVisibility="Auto"
-                                materialDesign:HintAssist.Hint="Name"
-                                FontSize="18"
-                                MaxLength="25"/>
+                                MaxLength="25"
+                        materialDesign:HintAssist.Hint="Name"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.7"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        FontSize="18"/>
 
             <TextBox
                                 x:Name="textboxage"
@@ -78,7 +166,13 @@
                                 VerticalScrollBarVisibility="Auto"
                                 materialDesign:HintAssist.Hint="Age"
                                 FontSize="18"
-                                MaxLength="2"/>
+                                MaxLength="2"
+                 
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.7"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        />
 
             <TextBox
                                 x:Name="textboxphone"
@@ -92,7 +186,12 @@
                                 VerticalScrollBarVisibility="Auto"
                                 materialDesign:HintAssist.Hint="Phone"
                                 FontSize="18"
-                                MaxLength="18"/>
+                                MaxLength="18"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.7"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        />
 
             <TextBox
                                 x:Name="textboxemail"
@@ -105,9 +204,43 @@
                                 VerticalScrollBarVisibility="Auto"
                                 materialDesign:HintAssist.Hint="E-mail"
                                 FontSize="18"
-                                MaxLength="25"/>
+                                MaxLength="25"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.7"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        />
         </Grid>
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="355"/>
@@ -139,7 +272,12 @@
            VerticalScrollBarVisibility="Auto"
            materialDesign:HintAssist.Hint="Password"
            FontSize="18"
-           MaxLength="16"/>
+           MaxLength="16"
+                    materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.7"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        />
             
             <TextBox
            x:Name="textboxconfpswd"
@@ -153,7 +291,12 @@
            VerticalScrollBarVisibility="Auto"
            materialDesign:HintAssist.Hint="Confirm Password"
            FontSize="18"
-           MaxLength="16"/>
+           MaxLength="16"
+                materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.7"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        />
         </Grid>
     </Grid>
 </Page>

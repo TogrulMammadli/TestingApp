@@ -39,88 +39,6 @@
             </StackPanel>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!--<materialDesign:Card Background="White" Grid.Column="1" Margin="20" Height="200" VerticalAlignment="Top" UniformCornerRadius="8"
-                             materialDesign:ShadowAssist.ShadowDepth="Depth3"
-                             materialDesign:ShadowAssist.ShadowEdges="All">
-                <Grid>
-                    <StackPanel VerticalAlignment="Center">
-                        <TextBox
-                        Margin="20 0 20 0"
-                        materialDesign:HintAssist.Hint="Name"
-                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
-                        materialDesign:HintAssist.FloatingScale="0.7"
-                        Text=""
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        FontSize="18" />
-                        <TextBox
-                        Margin="20 0 20 0"
-                        materialDesign:HintAssist.Hint="Surname"
-                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
-                        materialDesign:HintAssist.FloatingScale="0.70"
-                        Text=""
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        FontSize="18" />
-                        <TextBox
-                        Margin="20 0 20 0"
-                        materialDesign:HintAssist.Hint="Login"
-                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
-                        materialDesign:HintAssist.FloatingScale="0.70"
-                        Text=""
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        FontSize="18" />
-
-                        <TextBox
-                        Margin="20 0 20 0"
-                        materialDesign:HintAssist.Hint="Email"
-                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
-                        materialDesign:HintAssist.FloatingScale="0.70"
-                        Text=""
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        FontSize="18"/>
-                    </StackPanel>
-
-                </Grid>
-            </materialDesign:Card>-->
-
-
-
-
-            <!--<Rectangle Grid.Column="1"
-                              Height="300"
-                              Margin="35,0,35,0"
-                              VerticalAlignment="Center"
-                              Fill="White"
-                              RadiusX="21.333"
-                              RadiusY="21.333">
-                <Rectangle.Effect>
-                    <DropShadowEffect
-                                     BlurRadius="15"
-                                     Direction="0"
-                                     RenderingBias="Quality"
-                                     ShadowDepth="1"
-                                     Color="#FFBBBBBB" />
-                </Rectangle.Effect>
-            </Rectangle>-->
-
-            
                 <materialDesign:Card Grid.Column="1" Background="White" Margin="20" Height="320" VerticalAlignment="center" UniformCornerRadius="8"
                              materialDesign:ShadowAssist.ShadowDepth="Depth3"
                              materialDesign:ShadowAssist.ShadowEdges="All"
@@ -145,9 +63,6 @@
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                         FontSize="18"/>
                         <TextBlock x:Name="TextBlockNameWarning" Text="" Foreground="Red"></TextBlock>
-
-
-
                         <TextBox
                                 x:Name="textboxage"
                                 PreviewTextInput="numbervalit"
@@ -169,6 +84,8 @@
                         />
                         <TextBlock x:Name="TextBlockAgeWarning" Text="" Foreground="Red"></TextBlock>
 
+                            
+                            
                         <TextBox
                                 x:Name="textboxphone"
                                 PreviewTextInput="numbervalit"
@@ -181,22 +98,21 @@
                                 VerticalScrollBarVisibility="Auto"
                                 materialDesign:HintAssist.Hint="Phone"
                                 FontSize="18"
-                                MaxLength="18"
                         materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
                         materialDesign:HintAssist.FloatingScale="0.7"
                         Text=""
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                         />
-                        <TextBlock x:Name="TextBlockPhoneWarning" Text="" Foreground="Red"></TextBlock>
-
+                        <TextBlock x:Name="Textboxphonewarning" Text="" Foreground="Red"></TextBlock>
+                            
                         <TextBox
                                 x:Name="textboxemail"
-                                Grid.Column="1"
+                            Grid.Column="1"
                                 Width="{Binding ElementName=materiaCardMy, Path=ActualWidth}"
                                  Margin="0 5 0 3"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top"
-                                TextWrapping="Wrap"
+
                                 VerticalScrollBarVisibility="Auto"
                                 materialDesign:HintAssist.Hint="E-mail"
                                 FontSize="18"
@@ -210,123 +126,9 @@
                     </StackPanel>
 
                     </Grid>
-                    
-                    
-                    
                 </materialDesign:Card>
-                
-                
-           
-            
-            
-         
-            <!--<TextBox
-                                x:Name="textboxname"
-                                PreviewTextInput="Textboxname_PreviewTextInput"
-                                Grid.Column="1"
-                                Width="850"
-                                 Margin="80,80,80,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                TextWrapping="Wrap"
-                                VerticalScrollBarVisibility="Auto"
-                                MaxLength="25"
-                        materialDesign:HintAssist.Hint="Name"
-                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
-                        materialDesign:HintAssist.FloatingScale="0.7"
-                        Text=""
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        FontSize="18"/>
-
-            <TextBox
-                                x:Name="textboxage"
-                                PreviewTextInput="numbervalit"
-                                Grid.Column="1"
-                                Width="850"
-                                 Margin="80,120,80,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                TextWrapping="Wrap"
-                                VerticalScrollBarVisibility="Auto"
-                                materialDesign:HintAssist.Hint="Age"
-                                FontSize="18"
-                                MaxLength="2"
-                 
-                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
-                        materialDesign:HintAssist.FloatingScale="0.7"
-                        Text=""
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        />
-
-            <TextBox
-                                x:Name="textboxphone"
-                                PreviewTextInput="numbervalit"
-                                Grid.Column="1"
-                                Width="850"
-                                 Margin="80,160,80,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                TextWrapping="Wrap"
-                                VerticalScrollBarVisibility="Auto"
-                                materialDesign:HintAssist.Hint="Phone"
-                                FontSize="18"
-                                MaxLength="18"
-                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
-                        materialDesign:HintAssist.FloatingScale="0.7"
-                        Text=""
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        />
-
-            <TextBox
-                                x:Name="textboxemail"
-                                Grid.Column="1"
-                                Width="850"
-                                 Margin="80,200,80,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top"
-                                TextWrapping="Wrap"
-                                VerticalScrollBarVisibility="Auto"
-                                materialDesign:HintAssist.Hint="E-mail"
-                                FontSize="18"
-                                MaxLength="25"
-                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
-                        materialDesign:HintAssist.FloatingScale="0.7"
-                        Text=""
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        />-->
-            
-            
         </Grid>
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="355"/>
@@ -346,12 +148,13 @@
                                      Color="#FFBBBBBB" />
                 </Rectangle.Effect>
             </Rectangle>
+            <StackPanel Grid.Column="1" Margin="0 20 0 10">
                 <TextBox
            x:Name="textboxpswd"
            Grid.Column="1"
            Grid.Row="1"
            Width="850"
-           Margin="50,50,80,0"
+           Margin="50,0,80,0"
            HorizontalAlignment="Left"
            VerticalAlignment="Top"
            TextWrapping="Wrap"
@@ -364,13 +167,13 @@
                         Text=""
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                         />
-            
-            <TextBox
+
+                <TextBox
            x:Name="textboxconfpswd"
            Grid.Column="1"
            Grid.Row="1"
            Width="850"
-           Margin="50,100,80,0"
+           Margin="50,0,80,0"
            HorizontalAlignment="Left"
                 VerticalAlignment="Top"
            TextWrapping="Wrap"
@@ -383,6 +186,9 @@
                         Text=""
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                         />
+                <TextBlock x:Name="TextBlockPswdWarning" Text="" Foreground="Red" Height="20" TextAlignment="Center"/>
+            </StackPanel>
         </Grid>
+            
     </Grid>
 </Page>

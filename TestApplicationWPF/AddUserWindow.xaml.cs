@@ -16,6 +16,8 @@ using TestApplicationWPF.Services.UserServices;
 using TestApplicationWPF.Repository.UserRepository;
 using TestApplicationWPF.Models;
 using TestApplicationWPF.Repository.AccessLevelRepository;
+using TestApplicationWPF.ViewModel.AddUser;
+using TestApplicationWPF.Mesages;
 
 namespace TestApplicationWPF
 {
@@ -25,10 +27,12 @@ namespace TestApplicationWPF
     public partial class AddUserWindow : Window
     {
         UserService userService = new UserService(new UserRepository());
-        User user = new User();
+        AddUserViewModel ViewModel;
         public AddUserWindow()
         {
             InitializeComponent();
+            ViewModel = new AddUserViewModel(new UserService(new UserRepository()));
+            this.DataContext = ViewModel;
             dataPicker.SelectedDate = DateTime.Now.Date;
         }
 
@@ -38,68 +42,17 @@ namespace TestApplicationWPF
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void ImageBtn_Click(object sender, RoutedEventArgs e)
+      
+        private void WindwowMessagesAction(WindowMessages obj)
         {
-            try
+            if (obj.MessageText.ToLower() == "close")
             {
-                string path = userService.OpenFileGetPath();
-                if (path != "Error")
-                {
-                    Task.Factory.StartNew(() => { user.İmage = userService.ConvertImageToByte(path); });
-                }
+                this.Close();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                throw;
-            }
-        }
-
-        private void Add_Click(object sender, RoutedEventArgs e)
-        {
-            AccessLevelRepository ac = new AccessLevelRepository();
-            Gender gender = Gender.Male;
-            List<AccessLevel> accessLevels = new List<AccessLevel>();
-            if (admin.IsChecked == true)
-            {
-                accessLevels.Add(ac.GetAccessLevelByName("Admin"));
-            }
-            if (mentor.IsChecked == true)
-            {
-                accessLevels.Add(ac.GetAccessLevelByName("Mentor"));
-            }
-            if (student.IsChecked == true)
-            {
-                accessLevels.Add(ac.GetAccessLevelByName("Student"));
-            }
-            if (Female.IsChecked == true)
-            {
-                gender = Gender.Female;
-            }
-
-            user.Id = -1;
-            user.Name = Name.Text;
-            user.Surname = Surname.Text;
-            user.Patronymic = Patronymic.Text;
-            user.PhoneNumber = Operator.Text + NumberTextBox.Text;
-            user.Login = Login.Text;
-            user.DateOfBirth = dataPicker.SelectedDate.Value;
-            user.Email = this.Email.Text;
-            user.Password = Password.Text;
-            user.Gender = Gender.Male;
-
-            foreach (var item in accessLevels)
-            {
-                user.AccessLevels.Add(item);
-            }
-            UserRepository userRepository = new UserRepository();
-            userRepository.AddUser(user);
-            this.Close();
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
-            user = new User();
             this.Close();
         }
     }

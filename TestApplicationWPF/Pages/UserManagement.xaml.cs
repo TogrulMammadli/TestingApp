@@ -25,14 +25,14 @@ namespace TestApplicationWPF.Pages
     /// </summary>
     public partial class UserManagement : Page
     {
-      
+        UserManagementViewModel ViewModel;
+
         public UserManagement(User user)
         {
             InitializeComponent();
-            var viewModel = new UserManagementViewModel();
-            this.DataContext = viewModel;
+            ViewModel = new UserManagementViewModel(new UserService(new  UserRepository()));
+            this.DataContext = ViewModel;
         }
-
 
         private void Border_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -48,6 +48,7 @@ namespace TestApplicationWPF.Pages
                 userEditWindow.Show();
             }
         }
+
         private void SearchTxtBox_TextChanged(object sender, TextChangedEventArgs e)
         {
                 if (this.usersListBox != null)
@@ -70,8 +71,7 @@ namespace TestApplicationWPF.Pages
 
         private void Remove_Click(object sender, RoutedEventArgs e)
         {
-            //UserService.RemoveUser(((User)usersListBox.SelectedItems[0]));
-
+            ViewModel.RemoveUser.Execute(usersListBox.SelectedItems[0]);
         }
     }
 }

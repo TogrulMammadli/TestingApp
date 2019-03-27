@@ -58,11 +58,23 @@ namespace TestApplicationWPF.Pages
                     MessageBox.Show("Не правильный формат E-mail");
                     textboxemail.Clear();
                 }
+                else if (textboxpswd.Text.Length < 8 && textboxconfpswd.Text.Length < 8)
+                {
+                    MessageBox.Show("Минимальная длина пароля 8 символов");
+                    textboxpswd.Clear();
+                    textboxconfpswd.Clear();
+                }
                 else if (textboxpswd.Text != textboxconfpswd.Text)
                 {
                     MessageBox.Show("Пароли не совпадают");
                     textboxpswd.Clear();
                     textboxconfpswd.Clear();
+                }
+                else
+                {
+                    /////////
+                    //////
+                    ///
                 }
 
             }

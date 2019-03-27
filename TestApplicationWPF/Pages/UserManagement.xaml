@@ -40,13 +40,11 @@
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                    VerticalContentAlignment="Center" TextChanged="SearchTxtBox_TextChanged" ></TextBox>
-
                 <!--<Button
                     Name="FilterButton"
                     Margin="7" Click="ButtonFilter_Click"
                     >Filter</Button>-->
             </StackPanel>
-
             <Grid
                 DockPanel.Dock="Bottom"
                 Height="40"
@@ -59,14 +57,12 @@
                     Users count:
                     </TextBlock>
                     <TextBlock 
-                     
                     Name="CountBox"
                     VerticalAlignment="Center"
                     FontSize="20"
                     Margin="10,0"
                     Text="{Binding  ElementName=usersListBox,Path=Items.Count}"
                     ></TextBlock>
-
                 </StackPanel>
                 <Button Height="30"
                         Width="80"
@@ -96,7 +92,6 @@
                                 <Label Grid.Column="1" HorizontalContentAlignment="Left">Surname</Label>
                                 <Label Grid.Column="2" HorizontalContentAlignment="Left">Login</Label>
                                 <Label Grid.Column="3" HorizontalContentAlignment="Left ">Email</Label>
-
                             </Grid>
                             <ItemsPresenter></ItemsPresenter>
                         </DockPanel>
@@ -119,10 +114,9 @@
                             <StackPanel Grid.Column="4" Orientation="Horizontal" HorizontalAlignment="Stretch">
                                 <Button Name="Edit" Width="40" Margin="5" VerticalAlignment="Center" ToolTip="Edit" Click="Edit_Click">E</Button>
                                 <Button Name="View" Width="40" Margin="5"  VerticalAlignment="Center" Background="Green" ToolTip="View all info">V</Button>
-                                <Button Name="Remove" Width="40" Margin="5" VerticalAlignment="Center"  Background="DarkRed" ToolTip="Remove" Click="Remove_Click">R</Button>
+                                <Button Name="Remove" Width="40" Margin="5" VerticalAlignment="Center"  Background="DarkRed" ToolTip="Remove"   Command="{Binding RemoveUser}" >R</Button>
                             </StackPanel>
                         </Grid>
-
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

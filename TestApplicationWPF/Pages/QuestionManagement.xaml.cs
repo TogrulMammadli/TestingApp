@@ -12,6 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestApplicationWPF.Models;
+using TestApplicationWPF.Repository.QuestionsRepository;
+using TestApplicationWPF.Services.QuestionService;
+using TestApplicationWPF.ViewModel;
 
 namespace TestApplicationWPF.Pages
 {
@@ -20,9 +24,36 @@ namespace TestApplicationWPF.Pages
     /// </summary>
     public partial class QuestionManagement : Page
     {
+     public   QuestionManagementViewModel viewModel;
         public QuestionManagement()
         {
+            viewModel = new QuestionManagementViewModel(new QuestionService(new QuestionRepository()));
             InitializeComponent();
+        }
+
+        private void Border_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Border border = sender as Border;
+            QuestionsListBox.SelectedItem = border.DataContext;
+        }
+
+        private void SearchTxtBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (this.QuestionsListBox != null)
+            {
+                this.QuestionsListBox.Items.Filter = new Predicate<object>((x) =>
+                {
+                    var temp = x as Question;
+                    string fullname =temp.Text;
+                    string searchText = this.SearchTxtBox.Text.ToUpper().Replace(" ", "");
+                    return fullname.Contains(searchText);
+                });
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -38,8 +38,8 @@ namespace TestApplicationWPF
         public PageCreateTest()
         {
             InitializeComponent();
-            var viewM = new AddTestViewModel(new QuestionService(new QuestionRepository()), new TestService(new TestBlankRepository()), new WrongAnswerService(new WrongAnswerRepository()), new CorrectAnswerService(new CorrectAnswerRepository()));
-            DataContext = viewM;
+          //  var viewM = new AddTestViewModel(new QuestionService(new QuestionRepository()), new TestService(new TestBlankRepository()), new WrongAnswerService(new WrongAnswerRepository()), new CorrectAnswerService(new CorrectAnswerRepository()));
+           // DataContext = viewM;
             TypeComboBox.Items.Add("Один ответ");
             TypeComboBox.Items.Add("Несколько ответов");
             TypeComboBox.SelectedIndex = 0;

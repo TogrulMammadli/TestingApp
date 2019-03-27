@@ -7,7 +7,7 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Services.QuestionService
 {
-    interface IQuestionService
+   public interface IQuestionService
     {
         bool AddQuestion(Question question);
         string OpenFileGetPath();

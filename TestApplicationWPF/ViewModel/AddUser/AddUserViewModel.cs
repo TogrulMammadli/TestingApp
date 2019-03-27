@@ -49,7 +49,6 @@ namespace TestApplicationWPF.ViewModel.AddUser
         {
             try
             {
-                string str = "";
                 foreach (var item in AccessKeyValues)
                 {
                     if (item.Value == true)
@@ -57,8 +56,6 @@ namespace TestApplicationWPF.ViewModel.AddUser
                         User.AccessLevels.Add(item.Key);
                     }
                 }
-                MessageBox.Show(str);
-                MessageBox.Show(User.DateOfBirth.ToString());
                 userService.AddUser(User);
             }
             catch (Exception ex)

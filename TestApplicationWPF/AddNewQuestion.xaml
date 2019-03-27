@@ -1,0 +1,38 @@
+﻿<Window x:Class="TestApplicationWPF.AddNewQuestion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:TestApplicationWPF"
+        mc:Ignorable="d"
+        Title="AddNewQuestion" Height="450" Width="800">
+    <Grid>
+        <!--<StackPanel>
+            <TextBox
+                Background="White"
+            Name="Text"
+        materialDesign:HintAssist.Hint="Enter question text" 
+            Height="30"
+            Width="200"
+                ></TextBox>
+          
+            <TextBlock>Complexity</TextBlock>
+            <RadioButton Checked="Low"  Name="Low" GroupName="Complexity" >Low </RadioButton>
+            <RadioButton Checked="Normal" Name="Normal" GroupName="Complexity">Normal</RadioButton>
+            <RadioButton Checked="Check"  Name="Hight" GroupName="Complexity">Hight</RadioButton>
+            <Button VerticalAlignment="Bottom" Name="ImageBtn">ChangeImage</Button>
+            --><!--<ListBox   ItemsSource="{Binding AccessKeyValues}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <CheckBox Padding="10" Margin="5" Height="30" VerticalContentAlignment="Center" Content="{Binding Key}" IsChecked="{Binding Value}"></CheckBox>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>--><!--
+            <Button VerticalAlignment="Bottom" Name="Cancel" Click="Cancel_Click">cancel</Button>
+        </StackPanel>
+        <Button VerticalAlignment="Bottom" 
+                Name="Add" 
+                 >Add Question</Button>-->
+    </Grid>
+</Window>

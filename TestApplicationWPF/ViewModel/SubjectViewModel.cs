@@ -24,4 +24,4 @@ namespace TestApplicationWPF.ViewModels
             this.OnPropertyChanged(nameof(Subjects));
         }
     }
-}
+}   

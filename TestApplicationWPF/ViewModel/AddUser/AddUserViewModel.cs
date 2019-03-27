@@ -18,13 +18,12 @@ namespace TestApplicationWPF.ViewModel.AddUser
     {
         private IUserService userService;
         public User User { get; set; } = new User();
-        public ObservableCollection<AccessLevelKeyValue> AccessKeyValues { get; set; }
-             = new ObservableCollection<AccessLevelKeyValue>() { new AccessLevelKeyValue { Key = new AccessLevel() { Id = -99, Name = "Admin" } } };
+        public ObservableCollection<AccessLevelKeyValue> AccessKeyValues { get; set; } = new ObservableCollection<AccessLevelKeyValue>();
 
 
         public AddUserViewModel(IUserService userService)
         {
-
+           // this.AccessKeyValues.Add(new AccessLevelKeyValue { Key = new AccessLevel() { Id = -99, Name = "Admin" } });
             this.userService = userService ?? throw new ArgumentNullException(nameof(userService));
 
         }

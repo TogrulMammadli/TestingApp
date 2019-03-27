@@ -124,7 +124,6 @@
     <Compile Include="HeadWindow.xaml.cs">
       <DependentUpon>HeadWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Pages\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
@@ -138,6 +137,10 @@
       <DependentUpon>UserManagement.xaml</DependentUpon>
     </Compile>
     <Compile Include="Repository\AnswerRepository\IWrongAnswerRepository.cs" />
+    <Compile Include="Services\AnswerService\CorrectAnswerService.cs" />
+    <Compile Include="Services\AnswerService\ICorrectAnswerService.cs" />
+    <Compile Include="Services\AnswerService\IWrongAnswerService.cs" />
+    <Compile Include="Services\AnswerService\WrongAnswerService.cs" />
     <Compile Include="Services\GroupServices\GroupService.cs" />
     <Compile Include="Services\GroupServices\IGroupService.cs" />
     <Compile Include="Services\QuestionService\IQuestionService.cs" />

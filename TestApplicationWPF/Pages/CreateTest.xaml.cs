@@ -13,9 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestApplicationWPF.Models;
+using TestApplicationWPF.Repository.AnswerRepository;
 using TestApplicationWPF.Repository.QuestionsRepository;
 using TestApplicationWPF.Repository.TestBlanksRepository;
 using TestApplicationWPF.Repository.UserRepository;
+using TestApplicationWPF.Services.AnswerService;
 using TestApplicationWPF.Services.QuestionService;
 using TestApplicationWPF.Services.TestServices;
 using TestApplicationWPF.Services.UserServices;
@@ -36,7 +38,7 @@ namespace TestApplicationWPF
         public PageCreateTest()
         {
             InitializeComponent();
-            var viewM = new AddTestViewModel(new QuestionService(new QuestionRepository()), new TestService(new TestBlankRepository()));
+            var viewM = new AddTestViewModel(new QuestionService(new QuestionRepository()), new TestService(new TestBlankRepository()), new WrongAnswerService(new WrongAnswerRepository()), new CorrectAnswerService(new CorrectAnswerRepository()));
             DataContext = viewM;
             TypeComboBox.Items.Add("Один ответ");
             TypeComboBox.Items.Add("Несколько ответов");

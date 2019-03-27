@@ -1,25 +1,20 @@
 ﻿using GalaSoft.MvvmLight.CommandWpf;
-using GalaSoft.MvvmLight.Messaging;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using TestApplicationWPF.Models;
-using TestApplicationWPF.Services.Answers;
 using TestApplicationWPF.Services.QuestionService;
 using TestApplicationWPF.Services.TestServices;
 using TestApplicationWPF.ViewModels;
 
 namespace TestApplicationWPF.ViewModel.AddQuestion
 {
-     class AddTestViewModel : BaseViewModel
+    class AddTestViewModel : BaseViewModel
     {
         private IQuestionService questionService;
         private ITestService testService;
-        private ICorrectAnswerService answerService;
+        //private ICorrectAnswerService answerService;
 
         public ObservableCollection<Question> Questions { get; set; } = new ObservableCollection<Question>() ;
         public ObservableCollection<TestBlank> testBlanks { get; set; } = new ObservableCollection<TestBlank>();
@@ -36,15 +31,15 @@ namespace TestApplicationWPF.ViewModel.AddQuestion
         private RelayCommand _addWrongAnswer;
         private RelayCommand _addCorrectAnswer;
 
-        public AddTestViewModel(IQuestionService questionService,ITestService testService,ICorrectAnswerService answerService)
+        public AddTestViewModel(IQuestionService questionService,ITestService testService)
         {
             this.questionService = questionService ?? throw new ArgumentNullException(nameof(questionService));
             this.testService = testService ?? throw new ArgumentNullException(nameof(testService));
-            this.answerService = answerService ?? throw new ArgumentNullException(nameof(answerService));
+            //this.answerService = answerService ?? throw new ArgumentNullException(nameof(answerService));
 
             Questions = new ObservableCollection<Question>(questionService.GetAllQuestions());//sdelaew takoyje dla ostolnix(test,answer)
             testBlanks = new ObservableCollection<TestBlank>(testService.GetAllTestBlanks());
-            wrongAnswers = new ObservableCollection<WrongAnswer>(answerService.)
+            //wrongAnswers = new ObservableCollection<WrongAnswer>(answerService.)
         }
 
 

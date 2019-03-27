@@ -42,7 +42,7 @@ namespace TestApplicationWPF
             //QuestionRepository questionsss= new QuestionRepository();
             //questionsss.AddQuestion(question);
             //AccessLevelRepository accessLevelRepository = new AccessLevelRepository();
-            //var user = new User() { Name = "Togrul", Surname = "Mammadli", Patronymic = "Vuqar", PhoneNumber = "0503907667", Login = "admin", AccessLevels = new List<AccessLevel> { accessLevelRepository.GetAccessLevelByName("Admin") }, DateOfBirth = DateTime.Now, Email = "mamedlitogrul99@gmail.com", Password = "admin", Gender = Gender.Male };
+            //var user = new User() { Name = "Murad", Surname = "Mammadov", Patronymic = "Gabil", PhoneNumber = "", Login = "murad", AccessLevels = new List<AccessLevel> { accessLevelRepository.GetAccessLevelByName("Admin") }, DateOfBirth = DateTime.Now, Email = "@gmail.com", Password = "murad", Gender = Gender.Male };
             //UserRepository userRepository = new UserRepository();
             //userRepository.AddUser(user);
             //#region UpdateImageInDbTesting
@@ -94,10 +94,7 @@ namespace TestApplicationWPF
                 TextBlockWarning.Text = "Please fill all fields";
                 return;
             }
-
-
             Task Log = new Task(Login);
-
             Log.Start();
             {
                 Log.ContinueWith((x) =>
@@ -116,19 +113,11 @@ namespace TestApplicationWPF
                             {
                                 TextBlockWarning.Text = "Wrong login or password";
                                 this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Hidden);
-
                             }
-
                         });
-
-
-
                     }
-
                 });
             }
-
-
         }
 
         private void ButtonForgotPassword_Click(object sender, RoutedEventArgs e)

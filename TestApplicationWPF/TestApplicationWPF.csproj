@@ -99,6 +99,8 @@
     <Compile Include="ForgotPasswordWindow3.xaml.cs">
       <DependentUpon>ForgotPasswordWindow3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mesages\NewUserMesenger.cs" />
+    <Compile Include="Mesages\WindowMessages.cs" />
     <Compile Include="Migrations\201903251916244_First.cs" />
     <Compile Include="Migrations\201903251916244_First.Designer.cs">
       <DependentUpon>201903251916244_First.cs</DependentUpon>
@@ -296,8 +298,6 @@
   <ItemGroup>
     <Resource Include="Icons\mainicon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mesages\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

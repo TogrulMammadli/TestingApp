@@ -30,5 +30,9 @@ namespace TestApplicationWPF.Models
 
         public virtual ICollection<User> users { get; set; }
 
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

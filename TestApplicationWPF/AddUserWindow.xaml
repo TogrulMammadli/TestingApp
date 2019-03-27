@@ -15,56 +15,57 @@
         materialDesign:HintAssist.Hint="Enter Name" 
             Height="30"
             Width="200"
-            ></TextBox>
+                Text="{Binding User.Name}"></TextBox>
             <TextBox Name="Surname"
                 Background="White"
                         materialDesign:HintAssist.Hint="Enter Surname" 
             Height="30"
-            Width="200"></TextBox>
+            Width="200"
+                     Text="{Binding User.Surname}"
+                     ></TextBox>
             <TextBox Name="Patronymic"
                 Background="White"
-                     
                         materialDesign:HintAssist.Hint="Enter Patronymic" 
             Height="30"
-            Width="200"></TextBox>
+            Width="200"
+                     Text="{Binding User.Patronymic}"
+                     ></TextBox>
             <TextBox Name="Login"
                 Background="White"
-                        materialDesign:HintAssist.Hint="Enter Login" 
+                        materialDesign:HintAssist.Hint="Enter Login"
+                     Text="{Binding User.Login}"
             Height="30"
             Width="200"></TextBox>
             <TextBox Name="Password"
                 Background="White"
                         materialDesign:HintAssist.Hint="Enter password" 
+                     Text="{Binding User.Password}"
             Height="30"
             Width="200"></TextBox>
             <TextBox Name="Email"
                 Background="White"
+                     Text="{Binding User.Email}"
                       materialDesign:HintAssist.Hint="Enter Email" 
             Height="30"
             Width="200"></TextBox>
-            <StackPanel Orientation="Horizontal" Height="30" Width="250">
-                <ComboBox SelectedIndex="0" IsHitTestVisible="True" HorizontalContentAlignment="Center" IsReadOnly="True" Name="Operator"  Height="30" Width="70">
-                    <TextBlock>012</TextBlock>
-                    <TextBlock>050</TextBlock>
-                    <TextBlock>051</TextBlock>
-                    <TextBlock>055</TextBlock>
-                    <TextBlock>070</TextBlock>
-                    <TextBlock>077</TextBlock>
-                </ComboBox>
-                <TextBox Height="30" Width="180" MaxLength="7" Name="NumberTextBox" Background="White" FontSize="20" PreviewTextInput="NumberValidationTextBox"/>
-            </StackPanel>
-            <DatePicker Name="dataPicker" Height="30" IsHitTestVisible="False" Focusable="False">
-            </DatePicker>
+            <TextBox Height="30" Width="200" MaxLength="10" Name="NumberTextBox" Background="White" FontSize="20" PreviewTextInput="NumberValidationTextBox" Text="{Binding Phone}"/>
+            <DatePicker Name="dataPicker" Height="30" IsHitTestVisible="False" Focusable="True" > </DatePicker>
             <RadioButton  Name="Male" IsChecked="True">RadioMale</RadioButton>
             <RadioButton  Name="Female">RadioFemale</RadioButton>
-            <Button VerticalAlignment="Bottom" Name="ImageBtn" Click="ImageBtn_Click">ChangeImage</Button>
-            <CheckBox Name="admin">AdminCheckbox</CheckBox>
-            <CheckBox Name="mentor">MentorCheckbox</CheckBox>
-            <CheckBox Name="student">StudentCheckbox</CheckBox>
-            <Button VerticalAlignment="Bottom" Name="Cancel" Click="Cancel_Click">cancel User</Button>
-
+            <Button VerticalAlignment="Bottom" Name="ImageBtn" Command="{Binding AddImage}" >ChangeImage</Button>
+            <ListBox Height="60"  ItemsSource="{Binding AccessLevelKeyValues}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Margin="10" Orientation="Horizontal">
+                            <CheckBox Padding="10" Margin="5" Height="50" Content="{Binding Key}" IsChecked="{Binding Value}">   </CheckBox>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+                <Button VerticalAlignment="Bottom" Name="Cancel" Click="Cancel_Click">cancel User</Button>
+            </ListBox>
         </StackPanel>
-        <Button VerticalAlignment="Bottom" Name="Add" Click="Add_Click">Add User</Button>
-
+        <Button VerticalAlignment="Bottom" 
+                Name="Add" 
+                Command="{Binding AddUser}">Add User</Button>
     </Grid>
 </Window>

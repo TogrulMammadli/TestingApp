@@ -104,9 +104,9 @@
     </Compile>
     <Compile Include="Mesages\NewUserMesenger.cs" />
     <Compile Include="Mesages\WindowMessages.cs" />
-    <Compile Include="Migrations\201903251916244_First.cs" />
-    <Compile Include="Migrations\201903251916244_First.Designer.cs">
-      <DependentUpon>201903251916244_First.cs</DependentUpon>
+    <Compile Include="Migrations\201903272043237_CreateDB.cs" />
+    <Compile Include="Migrations\201903272043237_CreateDB.Designer.cs">
+      <DependentUpon>201903272043237_CreateDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BestTimeForStudy.cs" />
@@ -280,8 +280,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201903251916244_First.resx">
-      <DependentUpon>201903251916244_First.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903272043237_CreateDB.resx">
+      <DependentUpon>201903272043237_CreateDB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -3,7 +3,7 @@ namespace TestApplicationWPF.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class First : DbMigration
+    public partial class CreateDB : DbMigration
     {
         public override void Up()
         {
@@ -155,6 +155,18 @@ namespace TestApplicationWPF.Migrations
                 .Index(t => t.User_Id);
             
             CreateTable(
+                "dbo.StudentAnwsers",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Answer = c.String(),
+                        Exams_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Exams", t => t.Exams_Id)
+                .Index(t => t.Exams_Id);
+            
+            CreateTable(
                 "dbo.WantedCourceToStudies",
                 c => new
                     {
@@ -223,6 +235,7 @@ namespace TestApplicationWPF.Migrations
         {
             DropForeignKey("dbo.WantedCourceToStudies", "Cource_Id", "dbo.Cources");
             DropForeignKey("dbo.Exams", "User_Id", "dbo.Users");
+            DropForeignKey("dbo.StudentAnwsers", "Exams_Id", "dbo.Exams");
             DropForeignKey("dbo.Exams", "Blank_Id", "dbo.TestBlanks");
             DropForeignKey("dbo.Users", "Group_Id", "dbo.Groups");
             DropForeignKey("dbo.Groups", "cource_Id", "dbo.Cources");
@@ -244,6 +257,7 @@ namespace TestApplicationWPF.Migrations
             DropIndex("dbo.UserAccessLevels", new[] { "AccessLevel_Id" });
             DropIndex("dbo.UserAccessLevels", new[] { "User_Id" });
             DropIndex("dbo.WantedCourceToStudies", new[] { "Cource_Id" });
+            DropIndex("dbo.StudentAnwsers", new[] { "Exams_Id" });
             DropIndex("dbo.Exams", new[] { "User_Id" });
             DropIndex("dbo.Exams", new[] { "Blank_Id" });
             DropIndex("dbo.Groups", new[] { "cource_Id" });
@@ -260,6 +274,7 @@ namespace TestApplicationWPF.Migrations
             DropTable("dbo.QuestionCorrectAnswers");
             DropTable("dbo.UserAccessLevels");
             DropTable("dbo.WantedCourceToStudies");
+            DropTable("dbo.StudentAnwsers");
             DropTable("dbo.Exams");
             DropTable("dbo.Groups");
             DropTable("dbo.Cources");

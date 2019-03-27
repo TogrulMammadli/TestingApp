@@ -53,4 +53,15 @@ namespace TestApplicationWPF.Models
         public virtual ICollection<Question> Questions { get; set; }
 
     }
+
+    public class StudentAnwser 
+    {
+        public StudentAnwser()
+        {
+        }
+        [Key]
+        public int Id { get; set; }
+        public string Answer { get; set; }
+
+    }
 }

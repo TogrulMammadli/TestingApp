@@ -39,9 +39,9 @@ namespace TestApplicationWPF
             //CategoryRepository categoryRepository = new CategoryRepository();
             //categoryRepository.AddCategory(category);
 
-            var question = new Question() { Text = "ParvizPidor", subject = new Subject() { Name = "MuradTojepidor" } ,CorrectAnswers=new List<CorrectAnswer>() { new CorrectAnswer() { Text="correct"}},WrongAnswers=new List<WrongAnswer> { new WrongAnswer() {Text="asd"} },TestBlanks=new List<TestBlank>() { new TestBlank() { Name = "asd" } } };
-            QuestionRepository questionsss = new QuestionRepository();
-            questionsss.AddQuestion(question);
+            //var question = new Question() { Text = "ParvizPidor", subject = new Subject() { Name = "MuradTojepidor" } ,CorrectAnswers=new List<CorrectAnswer>() { new CorrectAnswer() { Text="correct"}},WrongAnswers=new List<WrongAnswer> { new WrongAnswer() {Text="asd"} },TestBlanks=new List<TestBlank>() { new TestBlank() { Name = "asd" } } };
+            //QuestionRepository questionsss = new QuestionRepository();
+            //questionsss.AddQuestion(question);
 
             //AccessLevelRepository accessLevelRepository = new AccessLevelRepository();
             //var user = new User() { Name = "Murad", Surname = "Mammadov", Patronymic = "Gabil", PhoneNumber = "", Login = "murad", AccessLevels = new List<AccessLevel> { accessLevelRepository.GetAccessLevelByName("Admin") }, DateOfBirth = DateTime.Now, Email = "@gmail.com", Password = "murad", Gender = Gender.Male };
@@ -66,6 +66,10 @@ namespace TestApplicationWPF
             //#endregion
             //var b = userRepository.GetUserByID(1);
             //var a = 5;
+            StudentAnwser studentAnwser = new StudentAnwser();
+            studentAnwser.Answer = "otvet1|7767|otvet2";
+
+
 
         }
 

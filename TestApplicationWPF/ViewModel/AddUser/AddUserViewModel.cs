@@ -32,6 +32,7 @@ namespace TestApplicationWPF.ViewModel.AddUser
         private RelayCommand _addUser;
         public RelayCommand AddUser => _addUser ?? new RelayCommand(AddUserExexute, AddUserCanExecute);
 
+
         private bool AddUserCanExecute()
         {
             return this.User.Name?.Count() > 0;
@@ -51,7 +52,6 @@ namespace TestApplicationWPF.ViewModel.AddUser
                 }
                 MessageBox.Show(str);
                 MessageBox.Show(User.DateOfBirth.ToString());
-
                 userService.AddUser(User);
             }
             catch (Exception ex)
@@ -87,6 +87,20 @@ namespace TestApplicationWPF.ViewModel.AddUser
                     return;
                 }
             }
+
+        }
+
+        private RelayCommand<Gender> _genderCheck;
+        public RelayCommand<Gender> GenderCheck => _genderCheck ?? new RelayCommand<Gender>(CheckGender, CheckGenderCanExecute);
+
+        private bool CheckGenderCanExecute(Gender gender)
+        {
+            return true;
+        }
+
+        private void CheckGender(Gender gender)
+        {
+            User.Gender = gender;
 
         }
 

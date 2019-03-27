@@ -50,8 +50,8 @@
             Width="200"></TextBox>
             <TextBox Height="30" Width="200" MaxLength="10" Name="NumberTextBox" Background="White" FontSize="20" PreviewTextInput="NumberValidationTextBox" Text="{Binding Phone}"/>
             <DatePicker Name="dataPicker" Height="30" IsHitTestVisible="False" Focusable="True" > </DatePicker>
-            <RadioButton  Name="Male" IsChecked="True">RadioMale</RadioButton>
-            <RadioButton  Name="Female">RadioFemale</RadioButton>
+            <RadioButton Checked="MaleCheck"  Name="Male" IsChecked="True" >RadioMale</RadioButton>
+            <RadioButton Checked="FemaleCheck" Name="Female">RadioFemale</RadioButton>
             <Button VerticalAlignment="Bottom" Name="ImageBtn" Command="{Binding AddImage}" >ChangeImage</Button>
             <ListBox Height="60"  ItemsSource="{Binding AccessLevelKeyValues}">
                 <ListBox.ItemTemplate>

@@ -232,10 +232,10 @@
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Top"
                                     Text="Answers: " />
-                                <ListBox x:Name="AnswersListBox"
+                                <ListBox x:Name="AnswersListBox" ItemsSource="{Binding answers}"
                                     Grid.Row="5"
                                     Height="200"
-                                    Background="Coral">
+                                    Background="Coral" >
                                     <ListBox.ItemTemplate >
                                         <DataTemplate>
                                             <DockPanel LastChildFill="False" HorizontalAlignment="Right">
@@ -244,7 +244,8 @@
                                                     HorizontalAlignment="Left"
                                                     VerticalAlignment="Center"
                                                     DockPanel.Dock="Left"
-                                                    FontSize="28" />
+                                                    FontSize="28" 
+                                                    Text="{Binding Text}"/>
                                                 <CheckBox VerticalAlignment="Center" DockPanel.Dock="Right" />
                                                 <!--<Button
                                                     HorizontalAlignment="Right"

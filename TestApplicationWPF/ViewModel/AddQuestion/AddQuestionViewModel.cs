@@ -4,10 +4,8 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using TestApplicationWPF.Models;
-<<<<<<< HEAD
-=======
+
 using TestApplicationWPF.Services.AnswerService;
->>>>>>> aeac7fdb336d427f5d93cd71f266c09e5c1676aa
 using TestApplicationWPF.Services.QuestionService;
 using TestApplicationWPF.Services.TestServices;
 using TestApplicationWPF.ViewModels;
@@ -18,13 +16,9 @@ namespace TestApplicationWPF.ViewModel.AddQuestion
     {
         private IQuestionService questionService;
         private ITestService testService;
-<<<<<<< HEAD
-        //private ICorrectAnswerService answerService;
-=======
+        private ICorrectAnswerService answerService;
         private IWrongAnswerService wrongAnswerService;
         private ICorrectAnswerService correctAnswerService;
->>>>>>> aeac7fdb336d427f5d93cd71f266c09e5c1676aa
-
         public ObservableCollection<Question> Questions { get; set; } = new ObservableCollection<Question>();
         public ObservableCollection<TestBlank> testBlanks { get; set; } = new ObservableCollection<TestBlank>();
         public ObservableCollection<WrongAnswer> wrongAnswers { get; set; } = new ObservableCollection<WrongAnswer>();
@@ -41,8 +35,7 @@ namespace TestApplicationWPF.ViewModel.AddQuestion
         private RelayCommand _addWrongAnswer;
         private RelayCommand _addCorrectAnswer;
 
-<<<<<<< HEAD
-        public AddTestViewModel(IQuestionService questionService,ITestService testService)
+        public AddTestViewModel(IQuestionService questionService, ITestService testService)
         {
             this.questionService = questionService ?? throw new ArgumentNullException(nameof(questionService));
             this.testService = testService ?? throw new ArgumentNullException(nameof(testService));
@@ -51,7 +44,7 @@ namespace TestApplicationWPF.ViewModel.AddQuestion
             Questions = new ObservableCollection<Question>(questionService.GetAllQuestions());//sdelaew takoyje dla ostolnix(test,answer)
             testBlanks = new ObservableCollection<TestBlank>(testService.GetAllTestBlanks());
             //wrongAnswers = new ObservableCollection<WrongAnswer>(answerService.)
-=======
+        }
         public AddTestViewModel(IQuestionService questionService, ITestService testService, IWrongAnswerService wrongAnswerService, ICorrectAnswerService correctAnswerService)
         {
             this.questionService = questionService ?? throw new ArgumentNullException(nameof(questionService));
@@ -64,16 +57,15 @@ namespace TestApplicationWPF.ViewModel.AddQuestion
             wrongAnswers = new ObservableCollection<WrongAnswer>(wrongAnswerService.GetAllAnswers());
             correctAnswers = new ObservableCollection<CorrectAnswer>(correctAnswerService.GetAllAnswers());
 
-            foreach(var item in correctAnswerService.GetAllAnswers())
+            foreach (var item in correctAnswerService.GetAllAnswers())
             {
                 answers.Add(item);
             }
 
-            foreach(var item in wrongAnswerService.GetAllAnswers())
+            foreach (var item in wrongAnswerService.GetAllAnswers())
             {
                 answers.Add(item);
             }
->>>>>>> aeac7fdb336d427f5d93cd71f266c09e5c1676aa
         }
 
 
@@ -109,7 +101,7 @@ namespace TestApplicationWPF.ViewModel.AddQuestion
             {
                 correctAnswerService.AddCorrectAnswer(correctAnswer);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 return;

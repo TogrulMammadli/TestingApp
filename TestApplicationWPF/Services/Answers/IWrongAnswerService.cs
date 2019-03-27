@@ -7,7 +7,7 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Services.Answers
 {
-    interface ICorrectAnswerService
+    interface IWrongAnswerService
     {
         IEnumerable<WrongAnswer> GetAllAnswers();
     }

@@ -24,7 +24,8 @@ namespace TestApplicationWPF.ViewModels
         {
             this.service = service ?? throw new ArgumentNullException(nameof(service));
             Messenger.Default.Register<NewUserMesenger>(this, AddUserExexute);
-            Users = new ObservableCollection<User>(service.GetAllUsers());
+           
+                Users = new ObservableCollection<User>(service.GetAllUsers());
         }
 
         private RelayCommand<User> _removeUser;

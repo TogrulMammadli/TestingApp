@@ -121,7 +121,6 @@
     <Compile Include="HeadWindow.xaml.cs">
       <DependentUpon>HeadWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Pages\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>

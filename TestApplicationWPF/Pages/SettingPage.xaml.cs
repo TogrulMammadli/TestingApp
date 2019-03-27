@@ -33,29 +33,29 @@ namespace TestApplicationWPF.Pages
         {
             try
             {
-                if (textboxname.Text.Length <= 2 && textboxname.Text != "")
+                if (textboxname.Text.Length <= 1 && textboxname.Text != "")
                 {
-                    MessageBox.Show("Имя не может быть меньше 3 букв");
+                    TextBlockNameWarning.Text = "Name must be more letters!";                   
                     textboxname.Clear();
                 }
-                else if (textboxage.Text != "" && int.Parse(textboxage.Text) < 7)
+                else if (textboxage.Text == "" &&  int.Parse(textboxage.Text) < 7)
                 {
-                    MessageBox.Show("Возраст не должен быть меньше 7");
+                    TextBlockAgeWarning.Text = "User must be older than 7 years!";                     
                     textboxage.Clear();
                 }
-                else if (textboxage.Text != "" && int.Parse(textboxage.Text) > 70)
+                else if (int.Parse(textboxage.Text) > 70)
                 {
-                    MessageBox.Show("Возраст не должен быть старше 70");
+                    TextBlockAgeWarning.Text = "User must not be older than 70 years!";
                     textboxage.Clear();
                 }
                 else if (textboxphone.Text != "" && textboxphone.Text.Length < 10)
                 {
-                    MessageBox.Show("Минимальная длина номера 10 цифр");
+                    TextBlockPhoneWarning.Text = "Length must not be than 10 digits!";
                     textboxphone.Clear();
                 }
                 else if (!Regex.IsMatch(textboxemail.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase) && textboxemail.Text != "")
                 {
-                    MessageBox.Show("Не правильный формат E-mail");
+                    TextBlockEmailWarning.Text = "Wrong e-mail format!";
                     textboxemail.Clear();
                 }
                 else if (textboxpswd.Text.Length < 8 && textboxconfpswd.Text.Length < 8)

@@ -338,7 +338,7 @@
                         <TextBlock>Settings</TextBlock>
                     </StackPanel>
                 </Button>
-                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left">
+                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_5">
                     <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
                         <materialDesign:PackIcon
                             Width="20"

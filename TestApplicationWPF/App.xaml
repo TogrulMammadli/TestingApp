@@ -54,7 +54,7 @@
         <ResourceDictionary Source="pack://application:,,,/Dragablz;component/Themes/materialdesign.xaml">
         </ResourceDictionary>
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml">
-          <vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:TestApplicationWPF.ViewModel" />
+          <!--<vm:ViewModelLocator x:Key="Locator" d:IsDataSource="True" xmlns:vm="clr-namespace:TestApplicationWPF.ViewModel" />-->
         </ResourceDictionary>
       </ResourceDictionary.MergedDictionaries>
       <!-- tell Dragablz tab control to use the Material Design theme -->

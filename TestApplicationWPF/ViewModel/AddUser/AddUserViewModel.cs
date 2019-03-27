@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Mesages;
 using TestApplicationWPF.Models;
+using TestApplicationWPF.Repository.AccessLevelRepository;
 using TestApplicationWPF.Services.UserServices;
 using TestApplicationWPF.ViewModels;
 
@@ -16,14 +18,19 @@ namespace TestApplicationWPF.ViewModel.AddUser
 {
     public class AddUserViewModel : BaseViewModel
     {
+        private IAccessLevelRepository accessrepo;
         private IUserService userService;
         public User User { get; set; } = new User();
-        public ObservableCollection<AccessLevelKeyValue> AccessKeyValues { get; set; }
-             = new ObservableCollection<AccessLevelKeyValue>() { new AccessLevelKeyValue { Key = new AccessLevel() { Id = -99, Name = "Admin" } } };
+        public ObservableCollection<AccessLevelKeyValue> AccessKeyValues { get; set; } = new ObservableCollection<AccessLevelKeyValue>();
 
 
         public AddUserViewModel(IUserService userService)
         {
+
+            List<AccessLevel> accessLevels =new List<AccessLevel>(TestContext.Instance.AccessLevels.ToList());
+            this.AccessKeyValues.Add(new AccessLevelKeyValue() {Key= accessLevels.Where(x => x.Name == "Admin").DefaultIfEmpty().Single()});
+            this.AccessKeyValues.Add(new AccessLevelKeyValue() { Key = accessLevels.Where(x => x.Name == "Mentor").DefaultIfEmpty().Single() });
+            this.AccessKeyValues.Add(new AccessLevelKeyValue() { Key = accessLevels.Where(x => x.Name == "Student").DefaultIfEmpty().Single() });
 
             this.userService = userService ?? throw new ArgumentNullException(nameof(userService));
 
@@ -47,7 +54,7 @@ namespace TestApplicationWPF.ViewModel.AddUser
                 {
                     if (item.Value == true)
                     {
-                        str += item.ToString() + "\n";
+                        User.AccessLevels.Add(item.Key);
                     }
                 }
                 MessageBox.Show(str);
@@ -102,6 +109,32 @@ namespace TestApplicationWPF.ViewModel.AddUser
         {
             User.Gender = gender;
 
+        }
+
+        private RelayCommand<DateTime> _addDate;
+        public RelayCommand<DateTime> AddDate => _addDate ?? new RelayCommand<DateTime>(AddDateExecute, AddDateCanExecute);
+
+        private bool AddDateCanExecute(DateTime dateTime)
+        {
+            return true;
+        }
+
+        private void AddDateExecute(DateTime dateTime)
+        {
+            User.DateOfBirth = dateTime;
+        }
+
+        private RelayCommand<string> _addPhone;
+        public RelayCommand<string> AddPhone => _addPhone ?? new RelayCommand<string>(AddPhoneExecute, AddPhoneCanExecute);
+
+        private bool AddPhoneCanExecute(string Phone)
+        {
+            return true;
+        }
+
+        private void AddPhoneExecute(string Phone)
+        {
+            User.PhoneNumber = Phone;
         }
 
     }

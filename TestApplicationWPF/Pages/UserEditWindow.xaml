@@ -20,15 +20,21 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
                 <StackPanel>
-                    <Ellipse Height="140" Width="140" Margin="0 20 0 0">
-                        <Ellipse.Effect>
+                   
+                    <Ellipse Height="140" Width="140" Margin="0 20 0 0" Stroke="White" StrokeThickness="3">
+                        
+                            <Ellipse.Effect>
                             <DropShadowEffect Color="#FF7A7A7A" Opacity="0.5" BlurRadius="15"/>
                         </Ellipse.Effect>
                         <Ellipse.Fill>
-                            <ImageBrush ImageSource="/Icons/avatar.png">
+                           
+                            <ImageBrush ImageSource="/Icons/tre2.jpg">
                             </ImageBrush>
+                       
                         </Ellipse.Fill>
+                            
                     </Ellipse>
+                    
                     <Button x:Name="edit2" Width="80" Height="25"  Margin="0 20 0 0">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Pencil" Width="20" Height="20"/>

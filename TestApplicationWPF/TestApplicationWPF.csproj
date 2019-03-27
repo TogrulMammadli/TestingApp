@@ -349,5 +349,10 @@
   <ItemGroup>
     <Resource Include="Icons\mainicon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\tre.png" />
+    <Resource Include="Icons\tre2.jpg" />
+    <Resource Include="Icons\tre3.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

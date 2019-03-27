@@ -12,5 +12,6 @@ namespace TestApplicationWPF.Services.QuestionService
         bool AddQuestion(Question question);
         string OpenFileGetPath();
         byte[] ConvertImageToByte(string path);
+        IEnumerable<Question> GetAllQuestions();
     }
 }

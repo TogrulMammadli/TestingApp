@@ -38,9 +38,11 @@ namespace TestApplicationWPF
             //var category = new Category() { Name = "TogrulCategory" };
             //CategoryRepository categoryRepository = new CategoryRepository();
             //categoryRepository.AddCategory(category);
-            //var question = new Question(){Text="somethekst",subject=new Subject() {Name="testSubject" },Answers=new List<Answer>() { new   Answer() { Text = "dawwag" }, new Answer() { Text = "memew" } } };
-            //QuestionRepository questionsss= new QuestionRepository();
-            //questionsss.AddQuestion(question);
+
+            var question = new Question() { Text = "ParvizPidor", subject = new Subject() { Name = "MuradTojepidor" } ,CorrectAnswers=new List<CorrectAnswer>() { new CorrectAnswer() { Text="correct"}},WrongAnswers=new List<WrongAnswer> { new WrongAnswer() {Text="asd"} },TestBlanks=new List<TestBlank>() { new TestBlank() { Name = "asd" } } };
+            QuestionRepository questionsss = new QuestionRepository();
+            questionsss.AddQuestion(question);
+
             //AccessLevelRepository accessLevelRepository = new AccessLevelRepository();
             //var user = new User() { Name = "Togrul", Surname = "Mammadli", Patronymic = "Vuqar", PhoneNumber = "0503907667", Login = "admin", AccessLevels = new List<AccessLevel> { accessLevelRepository.GetAccessLevelByName("Admin") }, DateOfBirth = DateTime.Now, Email = "mamedlitogrul99@gmail.com", Password = "admin", Gender = Gender.Male };
             //UserRepository userRepository = new UserRepository();

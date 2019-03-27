@@ -33,6 +33,11 @@ namespace TestApplicationWPF.Services.QuestionService
             return b;
         }
 
+        public IEnumerable<Question> GetAllQuestions()
+        {
+         return   QuestionRepository.GetAllQuestions();
+        }
+
         public string OpenFileGetPath()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog()

@@ -299,26 +299,31 @@
                                                 Color="#FFBBBBBB" />
                                     </Rectangle.Effect>
                                 </Rectangle>
-                                <ListBox x:Name="QuestionListBox" Grid.Row="0"  Height="400" Width="260" >
+                                <ListBox Name="QuestionListBox" Grid.Row="0"  Height="400" Width="260" ItemsSource="{Binding Questions}" >
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <DockPanel LastChildFill="False">
+                                                <StackPanel>
                                                 <TextBlock
                                                     Margin="10,0"
+                                                    Height="20"
+                                                    Width="20"
                                                     HorizontalAlignment="Left"
                                                     VerticalAlignment="Center"
                                                     DockPanel.Dock="Left"
-                                                    FontSize="28" />
+                                                    FontSize="28" 
+                                                    Text="{Binding Text}"/>
 
                                                 <Button
                                                     HorizontalAlignment="Right"
-                                                    Content="Del"
-                                                    DockPanel.Dock="Right" />
+                                                   
+                                                    DockPanel.Dock="Right" 
+                                                    Content="{Binding Text}"/>
                                                 <Button
                                                     HorizontalAlignment="Right"
                                                     Content="Edit"
                                                     DockPanel.Dock="Right" />
-
+                                                </StackPanel>
                                             </DockPanel>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>

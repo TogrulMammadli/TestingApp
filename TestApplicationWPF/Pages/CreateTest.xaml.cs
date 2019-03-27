@@ -15,8 +15,11 @@ using System.Windows.Shapes;
 using TestApplicationWPF.Models;
 using TestApplicationWPF.Repository.QuestionsRepository;
 using TestApplicationWPF.Repository.TestBlanksRepository;
+using TestApplicationWPF.Repository.UserRepository;
 using TestApplicationWPF.Services.QuestionService;
 using TestApplicationWPF.Services.TestServices;
+using TestApplicationWPF.Services.UserServices;
+using TestApplicationWPF.ViewModel.AddQuestion;
 
 namespace TestApplicationWPF
 {
@@ -33,12 +36,16 @@ namespace TestApplicationWPF
         public PageCreateTest()
         {
             InitializeComponent();
+            var viewM = new AddTestViewModel(new QuestionService(new QuestionRepository()), new TestService(new TestBlankRepository()));
+            DataContext = viewM;
             TypeComboBox.Items.Add("Один ответ");
             TypeComboBox.Items.Add("Несколько ответов");
             TypeComboBox.SelectedIndex = 0;
             AllQuestionsRadioButton.IsChecked = true;
             MediumRadioButton.IsChecked = true;
             UnlimitedTimeRadioButton.IsChecked = true;
+
+          
         }
        public  static void GetSubject(Subject subject)
         {

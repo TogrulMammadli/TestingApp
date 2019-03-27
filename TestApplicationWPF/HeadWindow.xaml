@@ -306,14 +306,14 @@
                 </Button>
                 </DockPanel>
 
-                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" >
+                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_4"  >
                     <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
                         <materialDesign:PackIcon
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="GithubCircle"  HorizontalAlignment="Left" Foreground="White" Margin="-51,0,10,0"/>
-                            <TextBlock>Pus</TextBlock>
+                            Kind="Resistor"  HorizontalAlignment="Left" Foreground="White" Margin="-51,0,10,0"/>
+                            <TextBlock>Result</TextBlock>
                     </StackPanel>
                 </Button>
 

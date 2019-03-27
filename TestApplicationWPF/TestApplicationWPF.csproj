@@ -99,6 +99,8 @@
     <Compile Include="ForgotPasswordWindow3.xaml.cs">
       <DependentUpon>ForgotPasswordWindow3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mesages\NewUserMesenger.cs" />
+    <Compile Include="Mesages\WindowMessages.cs" />
     <Compile Include="Migrations\201903251916244_First.cs" />
     <Compile Include="Migrations\201903251916244_First.Designer.cs">
       <DependentUpon>201903251916244_First.cs</DependentUpon>
@@ -122,6 +124,9 @@
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Pages\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TestResult.xaml.cs">
+      <DependentUpon>TestResult.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\UserEditWindow.xaml.cs">
       <DependentUpon>UserEditWindow.xaml</DependentUpon>
@@ -216,6 +221,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\TestResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\UserEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -296,8 +305,6 @@
   <ItemGroup>
     <Resource Include="Icons\mainicon.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Mesages\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

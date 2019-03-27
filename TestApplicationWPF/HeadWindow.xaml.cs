@@ -130,5 +130,10 @@ namespace TestApplicationWPF
                 WindowStyle = WindowStyle.None;
                 WindowState = WindowState.Minimized;
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new TestResult();
+        }
     }
 }

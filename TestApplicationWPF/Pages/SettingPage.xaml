@@ -127,7 +127,6 @@
                                      Color="#FFBBBBBB" />
                 </Rectangle.Effect>
             </Rectangle>
-            <StackPanel Grid.Row="1" Grid.Column="1" Width="auto"/>
                 <TextBox
            x:Name="textboxpswd"
            Grid.Column="1"

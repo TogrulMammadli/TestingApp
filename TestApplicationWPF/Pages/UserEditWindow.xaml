@@ -6,7 +6,7 @@
            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:TestApplicationWPF"
         mc:Ignorable="d"
-         Height="310" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" BorderBrush="#FF00AEFF" BorderThickness="1" WindowStyle="None" x:Name="ForgotPassWnd" Background="#ecf0f1">
+         Height="310" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" BorderBrush="#3498db" BorderThickness="1" WindowStyle="None" x:Name="ForgotPassWnd" Background="#ecf0f1">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -28,7 +28,7 @@
                         </Ellipse.Effect>
                         <Ellipse.Fill>
                            
-                            <ImageBrush ImageSource="/Icons/tre2.jpg">
+                            <ImageBrush ImageSource="/Icons/tre2.png">
                             </ImageBrush>
                        
                         </Ellipse.Fill>
@@ -89,12 +89,10 @@
             <Button Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Margin="305,236,0,0" VerticalAlignment="Top" Width="75"/>
         </Grid>
 
-       
-        <Grid Grid.Row="0" Background="#FF00AEFF" MouseLeftButtonDown="Grid_MouseLeftButtonDown_1"  >
+
+        <Grid Grid.Row="0" Background="#3498db" MouseLeftButtonDown="Grid_MouseLeftButtonDown_1"  >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button
-                
-                
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
                 Background="{x:Null}"

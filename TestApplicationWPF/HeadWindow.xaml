@@ -223,10 +223,25 @@
                     </Grid>
                     <!--<TextBlock Text="☰" Foreground="White" HorizontalAlignment="Center" FontSize="20" Margin="5 50 0 0"></TextBlock>-->
                     <StackPanel Orientation="Vertical" Name="UserinfoStackpanel" Margin="10 20 0 0">
-                        <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" Margin="35 0 0 0" >
-                        </Image>
+                        
+                            <Ellipse
+                            Width="80"
+                            Height="80"
+                            Margin="35,0,0,0"
+                            Stroke="White"
+                            StrokeThickness="3">
+                                <Ellipse.Effect>
+                                    <DropShadowEffect
+                                    BlurRadius="15"
+                                    Opacity="0.5"
+                                    Color="#FF7A7A7A" />
+                                </Ellipse.Effect>
+                                <Ellipse.Fill>
+                                    <ImageBrush  ImageSource="/Icons/tre2.png" />
+                                </Ellipse.Fill>
+                            </Ellipse>
 
-                        <TextBlock Margin="35 0 0 0" Name="UserNameSurnameTextBox" HorizontalAlignment="Center" 
+                            <TextBlock Margin="35 0 0 0" Name="UserNameSurnameTextBox" HorizontalAlignment="Center" 
                                  VerticalAlignment="Top"
                                  FontSize="12"
                                  Foreground="White"></TextBlock>
@@ -250,7 +265,11 @@
                              Background="{x:Null}"
                              Kind="Edit" />
                         </Button>
-                        <!--<Button
+
+                            <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" Margin="35 0 0 0" >
+                            </Image>
+
+                            <!--<Button
                             Width="70"
                             Margin="0 0 25 0"
                             HorizontalAlignment="Right"
@@ -312,7 +331,7 @@
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="Resistor"  HorizontalAlignment="Left" Foreground="White" Margin="-51,0,10,0"/>
+                            Kind="Resistor"  HorizontalAlignment="Left" Foreground="White" Margin="-44,0,10,0"/>
                             <TextBlock>Result</TextBlock>
                     </StackPanel>
                 </Button>
@@ -344,7 +363,7 @@
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="Equaliser"  HorizontalAlignment="Left" Foreground="White" Margin="-39,0,10,0"/>
+                            Kind="Equaliser"  HorizontalAlignment="Left" Foreground="White" Margin="-40,0,10,0"/>
                         <TextBlock>Logout</TextBlock>
                     </StackPanel>
                 </Button>
@@ -354,7 +373,7 @@
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
-                            Kind="Resistor"  HorizontalAlignment="Left" Foreground="White" Margin="-51,0,10,0"/>
+                            Kind="Resistor"  HorizontalAlignment="Left" Foreground="White" Margin="7,0,30,0"/>
                             <TextBlock>Add Question</TextBlock>
                         </StackPanel>
                     </Button>

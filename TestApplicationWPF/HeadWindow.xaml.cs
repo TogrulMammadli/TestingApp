@@ -72,6 +72,7 @@ namespace TestApplicationWPF
         private void HeadWndButtonClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            Environment.Exit(0);
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -103,6 +104,7 @@ namespace TestApplicationWPF
         {
             try
             {
+                BurgerMenu.Visibility = Visibility.Visible;
                 this.Dispatcher.InvokeAsync(() => { UserinfoStackpanel.Visibility = Visibility.Visible; });
                 this.Dispatcher.InvokeAsync(() => { HamburgerMenuGrid.Width = 30; });
                 this.Dispatcher.InvokeAsync(() => { UserinfoStackpanel.Visibility = Visibility.Hidden; });       
@@ -118,24 +120,27 @@ namespace TestApplicationWPF
         public WindowState lastWindowState;
         private void HeadWndButtonMaximize_Click(object sender, RoutedEventArgs e)
         {
-            if (IsFullscreen)
+            if (this.WindowState == WindowState.Maximized)
             {
-                this.WindowStyle = WindowStyle.None;
+
+                //this.WindowStyle = WindowStyle.None;
+                HeadWndButtonMaximizeMaterial.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowMaximize;
                 this.WindowState = WindowState.Normal;
                 IsFullscreen = false;
 
             }
-            else 
+            else
             {
+                HeadWndButtonMaximizeMaterial.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowRestore;
                 this.WindowState = WindowState.Maximized;
-                IsFullscreen = true;
-                WindowStyle = WindowStyle.None;
+               // IsFullscreen = true;
+               // WindowStyle = WindowStyle.None;
             }
         }
 
         private void HeadWndButtonDropdown_Click(object sender, RoutedEventArgs e)
         {
-                WindowStyle = WindowStyle.None;
+                //.WindowStyle = WindowStyle.None;
                 WindowState = WindowState.Minimized;
         }
 

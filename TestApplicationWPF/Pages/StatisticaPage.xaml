@@ -13,7 +13,319 @@
     Background="White"
     mc:Ignorable="d">
 
+
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <!--Piroooog111111111111111111111111111111111111111-->
+            <Grid Grid.Row="0">
+
+                <materialDesign:Card
+                    Name="materiaCardMy"
+                    Grid.Column="1"
+                    Height="240"
+                    Margin="20"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth3"
+                    materialDesign:ShadowAssist.ShadowEdges="All"
+                    Background="White"
+                    UniformCornerRadius="8">
+                    <Grid Margin="10">
+                        <lvc:PieChart
+                            DataTooltip="{x:Null}"
+                            Hoverable="False"
+                            LegendLocation="Bottom">
+                            <lvc:PieChart.Series>
+                                <lvc:PieSeries
+                                    Title="Maria"
+                                    DataLabels="True"
+                                  
+                                    Values="3" />
+                                <lvc:PieSeries
+                                    Title="Charles"
+                                    DataLabels="True"
+                                    
+                                    Values="4" />
+                                <lvc:PieSeries
+                                    Title="Frida"
+                                    DataLabels="True"
+                                   
+                                    Values="6" />
+                                <lvc:PieSeries
+                                    Title="Frederic"
+                                    DataLabels="True"
+                                   
+                                    Values="2" />
+                            </lvc:PieChart.Series>
+                        </lvc:PieChart>
+                    </Grid>
+                </materialDesign:Card>
+            </Grid>
+            
+            <!--    333333333333333333333333333333333333333-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid
+                Grid.Column="0"
+                MaxHeight="350"
+                Margin="15,20,15,15">
+                    <Grid.Effect>
+                        <DropShadowEffect
+                        BlurRadius="15"
+                        Direction="-90"
+                        Opacity="0.525"
+                        RenderingBias="Quality"
+                        ShadowDepth="1" />
+                    </Grid.Effect>
+                    <Grid.OpacityMask>
+                        <VisualBrush Visual="{Binding ElementName=Border2}" />
+                    </Grid.OpacityMask>
+                    <Grid.Resources>
+                        <Style TargetType="lvc:ColumnSeries">
+                            <Setter Property="StrokeThickness" Value="0" />
+                            <Setter Property="Stroke" Value="White" />
+                            <Setter Property="Fill" Value="White" />
+                            <Setter Property="MaxColumnWidth" Value="5" />
+                        </Style>
+                        <Style TargetType="lvc:Axis">
+                            <Setter Property="FontSize" Value="12" />
+                            <Setter Property="Foreground" Value="#64FFFFFF" />
+                            <Style.Triggers>
+                                <Trigger Property="AxisOrientation" Value="Y">
+                                    <Setter Property="IsMerged" Value="True" />
+                                    <Setter Property="MaxValue" Value="10" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                        <Style TargetType="lvc:Separator">
+                            <Setter Property="StrokeThickness" Value="1" />
+                            <Setter Property="Stroke" Value="#4BFFFFFF" />
+                            <Style.Triggers>
+                                <Trigger Property="AxisOrientation" Value="X">
+                                    <Setter Property="IsEnabled" Value="False" />
+                                    <Setter Property="Step" Value="1" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Grid.Resources>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height=".50*" />
+                        <RowDefinition Height=".5*" />
+                    </Grid.RowDefinitions>
+                    <Border
+                    x:Name="Border2"
+                    Grid.Row="0"
+                    Grid.RowSpan="4"
+                    Background="White"
+                    CornerRadius="5" />
+                    <Border
+                    Grid.Row="0"
+                    Grid.RowSpan="3"
+                    Background="#EB5A13" />
+                    <TextBlock
+                    Grid.Row="0"
+                    Padding="10,10,0,5"
+                    FontSize="18"
+                    Foreground="White"
+                    TextAlignment="Center">
+                    Time Power
+                    </TextBlock>
+                    <TextBlock
+                    Grid.Row="1"
+                    Padding="0,0,0,20"
+                    Foreground="#59FFFFFF"
+                    TextAlignment="Center">
+                    2014.12.25
+                    </TextBlock>
+                    <Button
+                    Grid.Row="3"
+                    Width="40"
+                    Height="40"
+                    Margin="20,-20"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Panel.ZIndex="1">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Grid>
+                                    <Grid.Effect>
+                                        <DropShadowEffect
+                                        BlurRadius="15"
+                                        Direction="-90"
+                                        Opacity=".2"
+                                        RenderingBias="Quality"
+                                        ShadowDepth="1" />
+                                    </Grid.Effect>
+                                    <Ellipse
+                                    Fill="#CD2156"
+                                    Stroke="Black"
+                                    StrokeThickness="0" />
+                                    <Path
+                                    Width="20"
+                                    Height="20"
+                                    Data="F1 M 58,33.5001L 58,27L 49,19L 40,27.5001L 40,33.5001L 46,28.2097L 46,40.5C 46,46.299 41.299,51 35.5,51C 29.701,51 25,46.299 25,40.5C 25,34.8686 29.4332,30.2727 35,30.0117L 35,24.0074C 26.1186,24.2718 19,31.5546 19,40.5C 19,49.6127 26.3873,57 35.5,57C 44.6127,57 52,49.6127 52,40.5L 52,28.125L 58,33.5001 Z "
+                                    Fill="White"
+                                    Stretch="Fill" />
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Grid>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <lvc:CartesianChart
+                    Name="TimePowerChart"
+                    Grid.Row="2"
+                    Margin="10,0,10,20"
+                    DataTooltip="{x:Null}"
+                    Hoverable="False">
+                        <lvc:CartesianChart.Series>
+                            <lvc:ColumnSeries Values="5,9,8,6,1,5,7,3,6,3" />
+                        </lvc:CartesianChart.Series>
+                    </lvc:CartesianChart>
+                    <StackPanel
+                    Grid.Row="3"
+                    Margin="25,0"
+                    VerticalAlignment="Center">
+                        <TextBlock FontSize="13" Opacity=".4">
+                        The Last 12 hours average<LineBreak />
+                        Electricity Consumption</TextBlock>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock
+                            FontSize="40"
+                            Foreground="#303030"
+                            Text="20.45" />
+                            <TextBlock
+                            Margin="8,6"
+                            VerticalAlignment="Bottom"
+                            FontSize="18"
+                            Foreground="#303030">
+                            kWh
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+
+        </Grid>
+        <Grid Margin="53" Grid.Column="1">
+            <Grid MaxHeight="350" Margin="15,-60,15,15">
+                <Grid.Effect>
+                    <DropShadowEffect
+                                BlurRadius="15"
+                                Direction="-90"
+                                Opacity=".2"
+                                RenderingBias="Quality"
+                                ShadowDepth="1" />
+                </Grid.Effect>
+                <Grid.OpacityMask>
+                    <VisualBrush Visual="{Binding ElementName=Border1}" />
+                </Grid.OpacityMask>
+                <Grid.Resources>
+                    <Style TargetType="lvc:LineSeries">
+                        <Setter Property="StrokeThickness" Value="3" />
+                        <Setter Property="Stroke" Value="White" />
+                        <Setter Property="Fill" Value="#4EFFFFFF" />
+                        <Setter Property="PointGeometrySize" Value="0" />
+                        <Setter Property="LineSmoothness" Value="0" />
+                    </Style>
+                    <Style TargetType="lvc:Axis">
+                        <Setter Property="ShowLabels" Value="False" />
+                        <Setter Property="IsEnabled" Value="False" />
+                    </Style>
+                </Grid.Resources>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height=".50*" />
+                    <RowDefinition Height=".5*" />
+                </Grid.RowDefinitions>
+                <Border
+                            x:Name="Border1"
+                            Grid.Row="0"
+                            Grid.RowSpan="4"
+                            Background="White"
+                            CornerRadius="5" />
+                <Border
+                            Grid.Row="0"
+                            Grid.RowSpan="3"
+                            Background="#CE2156" />
+                <TextBlock
+                            Grid.Row="0"
+                            Padding="10,10,0,5"
+                            FontSize="18"
+                            Foreground="White"
+                            TextAlignment="Center">
+                            The Current Chart
+                </TextBlock>
+                <TextBlock
+                            Grid.Row="1"
+                            Padding="0,0,0,20"
+                            Foreground="#59FFFFFF"
+                            TextAlignment="Center">
+                            2014.12.25
+                </TextBlock>
+                <lvc:CartesianChart
+                            Grid.Row="2"
+                            Margin="0,42,0,0"
+                            DataTooltip="{x:Null}"
+                            Hoverable="False"
+                            Series="{Binding LastHourSeries}">
+                    <lvc:CartesianChart.AxisX>
+                        <!--  a small visual improvement, lets hide the first points (x = 0, x=1) to get better animations  -->
+                        <lvc:Axis MinValue="2" />
+                    </lvc:CartesianChart.AxisX>
+                </lvc:CartesianChart>
+                <StackPanel
+                            Grid.Row="3"
+                            Margin="25,0"
+                            VerticalAlignment="Center">
+                    <TextBlock FontSize="13" Opacity=".4">
+                                Total electricity Consumption<LineBreak />
+                                of Galaxy SOHO</TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+                                    FontSize="40"
+                                    Foreground="#303030"
+                                    Text="{Binding LastLecture, StringFormat={}{0:N1}}" />
+                        <TextBlock
+                                    Margin="8,6"
+                                    VerticalAlignment="Bottom"
+                                    FontSize="18"
+                                    Foreground="#303030">
+                                    kWh
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+
+
+
+
+    </Grid>
+    
+    
+    
+    
+    
+    
+    
+    
+    <!--<Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition />
@@ -23,19 +335,19 @@
                 <ColumnDefinition Name="Col00" />
                 <ColumnDefinition Name="Col01" />
             </Grid.ColumnDefinitions>
-
-            <Grid Name="grid00">
+--><!--11111111111111111111111111111111111-->
+            <!--<Grid>
 
                 <materialDesign:Card
                     Name="materiaCardMy"
                     Grid.Column="1"
-                    Height="{Binding ElementName=grid00, Path=ActualHeight}"
+                    Height="240"
                     Margin="20"
                     materialDesign:ShadowAssist.ShadowDepth="Depth3"
                     materialDesign:ShadowAssist.ShadowEdges="All"
                     Background="White"
                     UniformCornerRadius="8">
-                    <Grid Margin="35">
+                    <Grid Margin="10">
                         <lvc:PieChart
                             DataTooltip="{x:Null}"
                             Hoverable="False"
@@ -44,37 +356,30 @@
                                 <lvc:PieSeries
                                     Title="Maria"
                                     DataLabels="True"
-                                    LabelPoint="{Binding PointLabel}"
+                                  
                                     Values="3" />
                                 <lvc:PieSeries
                                     Title="Charles"
                                     DataLabels="True"
-                                    LabelPoint="{Binding PointLabel}"
+                                    
                                     Values="4" />
                                 <lvc:PieSeries
                                     Title="Frida"
                                     DataLabels="True"
-                                    LabelPoint="{Binding PointLabel}"
+                                   
                                     Values="6" />
                                 <lvc:PieSeries
                                     Title="Frederic"
                                     DataLabels="True"
-                                    LabelPoint="{Binding PointLabel}"
+                                   
                                     Values="2" />
                             </lvc:PieChart.Series>
                         </lvc:PieChart>
                     </Grid>
                 </materialDesign:Card>
-            </Grid>
-            <materialDesign:Card
-                Grid.Column="1"
-                Height="{Binding ElementName=grid00, Path=ActualHeight}"
-                Margin="20"
-                materialDesign:ShadowAssist.ShadowDepth="Depth3"
-                materialDesign:ShadowAssist.ShadowEdges="All"
-                Background="White"
-                UniformCornerRadius="8">
-                <Grid Margin="35">
+            </Grid>-->
+           <!-- 22222222222222222222222222222222222222222222222--><!--
+                <Grid Margin="53" Grid.Column="1">
                     <Grid MaxHeight="350" Margin="15,-60,15,15">
                         <Grid.Effect>
                             <DropShadowEffect
@@ -138,7 +443,7 @@
                             Hoverable="False"
                             Series="{Binding LastHourSeries}">
                             <lvc:CartesianChart.AxisX>
-                                <!--  a small visual improvement, lets hide the first points (x = 0, x=1) to get better animations  -->
+                                --><!--  a small visual improvement, lets hide the first points (x = 0, x=1) to get better animations  --><!--
                                 <lvc:Axis MinValue="2" />
                             </lvc:CartesianChart.AxisX>
                         </lvc:CartesianChart>
@@ -165,7 +470,8 @@
                         </StackPanel>
                     </Grid>
                 </Grid>
-            </materialDesign:Card>
+            
+          
         </Grid>
 
 
@@ -180,21 +486,21 @@
 
 
 
-
-        <Grid Grid.Row="1">
+--><!--33333333333333333333333333333333333333-->
+        <!--<Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid
-                Grid.Column="1"
+                Grid.Column="0"
                 MaxHeight="350"
                 Margin="15,20,15,15">
                 <Grid.Effect>
                     <DropShadowEffect
                         BlurRadius="15"
                         Direction="-90"
-                        Opacity=".2"
+                        Opacity="0.525"
                         RenderingBias="Quality"
                         ShadowDepth="1" />
                 </Grid.Effect>
@@ -326,7 +632,7 @@
                     </StackPanel>
                 </StackPanel>
             </Grid>
-        </Grid>
+        </Grid>--><!--
 
-    </Grid>
+    </Grid>-->
 </Page>

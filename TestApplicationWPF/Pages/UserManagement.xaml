@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:TestApplicationWPF.Pages"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
     Name="MyPage"
     Title="UserManagement"
     Margin="50,0,0,0"
@@ -46,7 +47,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     VerticalContentAlignment="Center"
-                    materialDesign:HintAssist.Hint="Enter name,surname,email or login for search.."
+                    materialDesign:HintAssist.Hint="Enter name, surname, email or login for search..."
                     Background="White"
                     FontSize="15"
                     TextChanged="SearchTxtBox_TextChanged" />
@@ -61,7 +62,7 @@
                 Background="#ecf0f1"
                 DockPanel.Dock="Bottom">
                 <StackPanel Orientation="Horizontal">
-                    <TextBlock VerticalAlignment="Center" FontSize="20">
+                    <TextBlock VerticalAlignment="Center" FontSize="20" Margin="30 0 0 0">
                         Users count:
                     </TextBlock>
                     <TextBlock
@@ -74,7 +75,7 @@
                 <Button
                     Width="80"
                     Height="30"
-                    Margin="5"
+                    Margin="5 0 20 0"
                     Padding="0"
                     HorizontalAlignment="Right"
                     Click="Button_Click">
@@ -92,9 +93,11 @@
                 <ListBox.Template>
                     <ControlTemplate>
                         <DockPanel Name="ListboxDoc" LastChildFill="True">
+                            <Border Height="30" DockPanel.Dock="Top" BorderBrush="#3498db" BorderThickness="2">
                             <Grid
                                 Height="30"
-                                Background="Orange"
+                                Background="LightGray"
+                                
                                 DockPanel.Dock="Top">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
@@ -103,11 +106,12 @@
                                     <ColumnDefinition />
                                     <ColumnDefinition Width="150" />
                                 </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" HorizontalContentAlignment="Center">Name</Label>
-                                <Label Grid.Column="1" HorizontalContentAlignment="Center">Surname</Label>
-                                <Label Grid.Column="2" HorizontalContentAlignment="Center">Login</Label>
-                                <Label Grid.Column="3" HorizontalContentAlignment="Center">Email</Label>
+                                    <Label Grid.Column="0" HorizontalContentAlignment="Center"  Foreground="#00558e" FontSize="15">Name</Label>
+                                    <Label Grid.Column="1" HorizontalContentAlignment="Center"  Foreground="#00558e" FontSize="15">Surname</Label>
+                                    <Label Grid.Column="2" HorizontalContentAlignment="Center" Foreground="#00558e" FontSize="15">Login</Label>
+                                    <Label Grid.Column="3" HorizontalContentAlignment="Center" Foreground="#00558e" FontSize="15">Email</Label>
                             </Grid>
+                            </Border>
                             <ItemsPresenter />
                         </DockPanel>
                     </ControlTemplate>
@@ -148,32 +152,45 @@
                                 HorizontalAlignment="Right"
                                 Orientation="Horizontal">
                                 <Button
-                                    Name="Edit"
-                                    Width="40"
-                                    Margin="5"
-                                    VerticalAlignment="Center"
-                                    Click="Edit_Click"
-                                    ToolTip="Edit">
-                                    E
+                                    Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                         Name="Edit"
+                                         Width="40"
+                                         Margin="5"
+                                         VerticalAlignment="Center"
+                                         Click="Edit_Click"
+                                         ToolTip="Edit">
+                                    <materialDesign:PackIcon
+                                         
+                                         Background="{x:Null}"
+                                         Kind="Edit" />
+                                    
                                 </Button>
                                 <Button
+                                    Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                                     Name="View"
                                     Width="40"
                                     Margin="5"
                                     VerticalAlignment="Center"
                                     Background="Green"
                                     ToolTip="View all info">
-                                    V
+                                    <materialDesign:PackIcon
+                                         
+                                         Background="{x:Null}"
+                                         Kind="Eye" />
                                 </Button>
                                 <Button
+                                    Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                                     Name="Remove"
                                     Width="40"
                                     Margin="5"
                                     VerticalAlignment="Center"
                                     Background="DarkRed"
                                     Click="Remove_Click"
-                                    ToolTip="Remove">
-                                    R
+                                    ToolTip="Delete">
+                                    <materialDesign:PackIcon
+                                       
+                                         Background="{x:Null}"
+                                         Kind="Delete" />
                                 </Button>
                             </StackPanel>
                         </Grid>

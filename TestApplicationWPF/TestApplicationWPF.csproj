@@ -118,6 +118,10 @@
     <Compile Include="Migrations\201903272043237_CreateDB.Designer.cs">
       <DependentUpon>201903272043237_CreateDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903280548308_Migration_ComplPublic.cs" />
+    <Compile Include="Migrations\201903280548308_Migration_ComplPublic.Designer.cs">
+      <DependentUpon>201903280548308_Migration_ComplPublic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BestTimeForStudy.cs" />
     <Compile Include="Models\WantedCourceToStudy.cs" />
@@ -315,6 +319,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201903272043237_CreateDB.resx">
       <DependentUpon>201903272043237_CreateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903280548308_Migration_ComplPublic.resx">
+      <DependentUpon>201903280548308_Migration_ComplPublic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

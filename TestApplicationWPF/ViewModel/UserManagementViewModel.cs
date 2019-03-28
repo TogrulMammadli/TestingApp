@@ -29,6 +29,7 @@ namespace TestApplicationWPF.ViewModels
         }
 
         private RelayCommand<User> _removeUser;
+
         public RelayCommand<User> RemoveUser => _removeUser ?? new RelayCommand<User>(RemoveUserExexute, RemoveCanExecute);
 
         private bool RemoveCanExecute(User user)

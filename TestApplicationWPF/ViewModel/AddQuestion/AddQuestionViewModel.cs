@@ -3,6 +3,7 @@ using GalaSoft.MvvmLight.Messaging;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows;
 using TestApplicationWPF.Mesages;
 using TestApplicationWPF.Models;
@@ -50,6 +51,45 @@ namespace TestApplicationWPF.ViewModel.AddQuestion
             Messenger.Default.Send<WindowMessages>(new WindowMessages("close"), "AddQuestion");
         }
 
+        private RelayCommand _addImage;
+        public RelayCommand AddImage => _addImage ?? new RelayCommand(AddImageExecute, AddImageCanExecute);
+
+        private bool AddImageCanExecute()
+        {
+            return true;
+        }
+
+        private void AddImageExecute()
+        {
+            string path = service.OpenFileGetPath();
+            if (path != "Error")
+            {
+                try
+                {
+                    Task.Factory.StartNew(() => { Question.Image = service.ConvertImageToByte(path); });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    return;
+                }
+            }
+
+        }
+
+        private RelayCommand<Complexity> _genderCheck;
+        public RelayCommand<Complexity> GenderCheck => _genderCheck ?? new RelayCommand<Complexity>(CheckComplexity, CheckComplexityCanExecute);
+
+        private bool CheckComplexityCanExecute(Complexity complexity)
+        {
+            return true;
+        }
+
+        private void CheckComplexity(Complexity complexity)
+        {
+            Question.Complexity = complexity;
+
+        }
 
     }
 }

@@ -24,9 +24,24 @@ namespace TestApplicationWPF
             InitializeComponent();
         }
 
-        //private void Cancel_Click(object sender, RoutedEventArgs e)
-        //{
+        private void Low_Checked(object sender, RoutedEventArgs e)
+        {
 
-        //}
+        }
+
+        private void Normal_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Hight_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

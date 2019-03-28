@@ -23,9 +23,7 @@ namespace TestApplicationWPF.ViewModel
         {
             this.questionService = questionService ?? throw new ArgumentNullException(nameof(questionService));
             Messenger.Default.Register<NewQuestionMessages>(this, AddQuestionsExexute);
-
             Questions = new ObservableCollection<Question>(questionService.GetAllQuestions());
-
         }
 
         private void AddQuestionsExexute(NewQuestionMessages message)

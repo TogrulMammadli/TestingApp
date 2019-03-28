@@ -11,15 +11,13 @@
     Height="630"
     Background="#ecf0f1"
     ResizeMode="NoResize"
-    mc:Ignorable="d" WindowStyle="None"
-    >
+    mc:Ignorable="d" WindowStyle="None">
 
-    
-    
-    
-    
-    
-    
+
+
+
+
+
     <Grid>
         <Grid>
             <Grid.RowDefinitions>
@@ -42,10 +40,9 @@
                     Kind="Close" />
                     </Button>
                 </StackPanel>
-
             </Grid>
-            
-            
+
+
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="400" />
@@ -228,6 +225,7 @@
                                     Width="100"
                                     Margin="0,5,0,0"
                                     materialDesign:HintAssist.Hint="Pick Date"
+                                      
                                     Focusable="True"
                                     FontSize="14"
                                     SelectedDateChanged="SelectedDateChanged"
@@ -257,13 +255,11 @@
                     Background="White"
                     UniformCornerRadius="8">
                         <Grid>
-                            <ListBox ItemsSource="{Binding AccessKeyValues}">
+                            <ListBox ItemsSource="{Binding AccessKeyValues}"  Name="UserWindowAdd">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <CheckBox
-                                        
                                         Margin="5"
-                                        
                                         VerticalContentAlignment="Center"
                                         Content="{Binding Key}"
                                         IsChecked="{Binding Value}"
@@ -287,6 +283,7 @@
                             Add user
                         </Button>
                         <Button
+                          Click="Cancel_Click"  
                         Name="Cancel"
                         Margin="0,0,20,0"
                         VerticalAlignment="Bottom"
@@ -300,7 +297,7 @@
 
             </Grid>
         </Grid>
-       
+
 
 
         <!--<Grid Grid.Row="1">

@@ -14,14 +14,13 @@
             Name="Text"
         materialDesign:HintAssist.Hint="Enter question text" 
             Height="30"
-            Width="200"
-                ></TextBox>
+            Width="200"></TextBox>
           
             <TextBlock>Complexity</TextBlock>
-            <RadioButton   Name="Low" GroupName="Complexity" >Low</RadioButton>    <!--Natig udalil Checked="Low", kidal exeption-->
-            <RadioButton  Name="Normal" GroupName="Complexity">Normal</RadioButton>     <!--Natig udalil Checked="Normal", kidal exeption-->
-            <RadioButton  Name="Hight" GroupName="Complexity">Hight</RadioButton> <!--Natig udalil cheked = ckeck, kidal exeption-->
-            <Button VerticalAlignment="Bottom" Name="ImageBtn">ChangeImage</Button>
+            <RadioButton   Name="Low" GroupName="Complexity" Checked="Low_Checked" >Low</RadioButton>    <!-- Natig udalil Checked="Low", kidal exeption-->
+            <RadioButton  Name="Normal" GroupName="Complexity" Checked="Normal_Checked">Normal</RadioButton>     <!-- Natig udalil Checked="Normal", kidal exeption-->
+            <RadioButton  Name="Hight" GroupName="Complexity" Checked="Hight_Checked">Hight</RadioButton > <!--Natig udalil cheked = ckeck, kidal exeption-->
+            <Button VerticalAlignment="Bottom" Name="ImageBtn"   Command="{Binding AddImage}">ChangeImage</Button>
             <ListBox   ItemsSource="{Binding AccessKeyValues}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
@@ -29,10 +28,9 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Button VerticalAlignment="Bottom" Name="Cancel">cancel</Button>  <!--Natig udalil Click =cancle_click, kidal exeption-->
+            <Button VerticalAlignment="Bottom" Name="Cancel" Click="Cancel_Click" >cancel</Button>  <!--Natig udalil Click =cancle_click, kidal exeption-->
         </StackPanel>
         <Button VerticalAlignment="Bottom" 
-                Name="Add" 
-                 >Add Question</Button>
+                Name="Add">Add Question</Button>
     </Grid>
 </Window>

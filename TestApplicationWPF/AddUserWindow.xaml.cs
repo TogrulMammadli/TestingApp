@@ -78,5 +78,7 @@ namespace TestApplicationWPF
         {
             ViewModel.AddPhone.Execute(NumberTextBox.Text);
         }
+
+      
     }
 }

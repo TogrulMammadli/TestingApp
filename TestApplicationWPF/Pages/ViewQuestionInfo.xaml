@@ -13,7 +13,6 @@
             <TextBox DockPanel.Dock="Top" Height="100" TextWrapping="Wrap" Name="Texttxtbx" Text="{Binding Question.Text}">
             </TextBox>
             <Label  DockPanel.Dock="Bottom"  HorizontalAlignment="Right"  Content="{Binding Question.Subject}" />
-
         </DockPanel>
         <StackPanel>
             <Label>CorrectAnswersListbox</Label>
@@ -31,10 +30,10 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Label>CorrectAnswersListbox</Label>
+            <Label>WrongAnswersListbox</Label>
             <ListBox Background="CadetBlue"
                      ItemsSource="{Binding WrongAnswers}">>
-                <!--CorrectAnswersListbox-->
+                <!--WrongAnswersListbox-->
                 <ListBox.ItemTemplate>
                     <DataTemplate >
                         <Grid Name="Element" Margin="0,2" >

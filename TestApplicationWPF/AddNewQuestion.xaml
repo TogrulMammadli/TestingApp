@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="AddNewQuestion" Height="450" Width="800">
     <Grid>
-        <!--<StackPanel>
+        <StackPanel>
             <TextBox
                 Background="White"
             Name="Text"
@@ -22,17 +22,17 @@
             <RadioButton Checked="Normal" Name="Normal" GroupName="Complexity">Normal</RadioButton>
             <RadioButton Checked="Check"  Name="Hight" GroupName="Complexity">Hight</RadioButton>
             <Button VerticalAlignment="Bottom" Name="ImageBtn">ChangeImage</Button>
-            --><!--<ListBox   ItemsSource="{Binding AccessKeyValues}">
+            <ListBox   ItemsSource="{Binding AccessKeyValues}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <CheckBox Padding="10" Margin="5" Height="30" VerticalContentAlignment="Center" Content="{Binding Key}" IsChecked="{Binding Value}"></CheckBox>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
-            </ListBox>--><!--
+            </ListBox>
             <Button VerticalAlignment="Bottom" Name="Cancel" Click="Cancel_Click">cancel</Button>
         </StackPanel>
         <Button VerticalAlignment="Bottom" 
                 Name="Add" 
-                 >Add Question</Button>-->
+                 >Add Question</Button>
     </Grid>
 </Window>

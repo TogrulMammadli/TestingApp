@@ -46,8 +46,8 @@ namespace TestApplicationWPF.ViewModel.AddQuestion
                 MessageBox.Show(ex.Message);
                 return;
             }
-            //Messenger.Default.Send(new NewQuestionMessages(Question));
-            //Messenger.Default.Send<WindowMessages>(new WindowMessages("close"), "AddQuestion");
+            Messenger.Default.Send(new NewQuestionMessages(Question));
+            Messenger.Default.Send<WindowMessages>(new WindowMessages("close"), "AddQuestion");
         }
 
 

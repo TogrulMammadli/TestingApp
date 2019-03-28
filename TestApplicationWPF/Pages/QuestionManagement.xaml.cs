@@ -69,5 +69,12 @@ namespace TestApplicationWPF.Pages
         {
             viewModel.RemoveUser.Execute(((Question)QuestionsListBox.SelectedItems[0]));
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddNewQuestion addNewQuestion = new AddNewQuestion();
+            addNewQuestion.Show();
+
+        }
     }
 }

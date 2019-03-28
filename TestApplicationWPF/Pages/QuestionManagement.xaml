@@ -66,8 +66,8 @@
                         Padding="0"
                         Margin="5"
                         HorizontalAlignment="Right" 
-                        Command="{Binding AddQuestion}">
-                    Add User
+                        Click="Button_Click">
+                    Add question
                 </Button>
             </Grid>
 

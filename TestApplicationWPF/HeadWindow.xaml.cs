@@ -101,9 +101,17 @@ namespace TestApplicationWPF
 
         private void StackPanel_MouseLeave(object sender, MouseEventArgs e)
         {
-            BurgerMenu.Visibility = Visibility.Visible;
-            HamburgerMenuGrid.Width = 30;
-            UserinfoStackpanel.Visibility = Visibility.Hidden;
+            try
+            {
+                this.Dispatcher.InvokeAsync(() => { UserinfoStackpanel.Visibility = Visibility.Visible; });
+                this.Dispatcher.InvokeAsync(() => { HamburgerMenuGrid.Width = 30; });
+                this.Dispatcher.InvokeAsync(() => { UserinfoStackpanel.Visibility = Visibility.Hidden; });       
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
 
         public bool IsFullscreen = false;

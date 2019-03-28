@@ -12,6 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestApplicationWPF.Repository.TestBlanksRepository;
+using TestApplicationWPF.Repository.UserRepository;
+using TestApplicationWPF.Services.TestServices;
+using TestApplicationWPF.Services.UserServices;
+using TestApplicationWPF.ViewModel.ExamSheduleVM;
 
 namespace TestApplicationWPF.Pages
 {
@@ -20,9 +25,14 @@ namespace TestApplicationWPF.Pages
     /// </summary>
     public partial class ExamShedule : Page
     {
+        ExamSheduleViewModel ViewModel;
+
         public ExamShedule()
         {
             InitializeComponent();
+            ViewModel = new ExamSheduleViewModel(new UserService(new UserRepository()),new TestService(new TestBlankRepository()));
+            this.DataContext = ViewModel;
         }
+
     }
 }

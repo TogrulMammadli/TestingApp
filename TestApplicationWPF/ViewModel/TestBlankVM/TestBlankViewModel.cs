@@ -232,6 +232,7 @@ namespace TestApplicationWPF.ViewModel.TestBlankVM
         {
          
             TestBlank.Questions = TestBlankQuestion;
+            TestBlank.original = true;
 
             try
             {

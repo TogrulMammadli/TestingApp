@@ -119,6 +119,14 @@
     <Compile Include="Migrations\201903280548308_Migration_ComplPublic.Designer.cs">
       <DependentUpon>201903280548308_Migration_ComplPublic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903282240079_addoriginality to testBlank.cs" />
+    <Compile Include="Migrations\201903282240079_addoriginality to testBlank.Designer.cs">
+      <DependentUpon>201903282240079_addoriginality to testBlank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903282245263_addBools to testBlank.cs" />
+    <Compile Include="Migrations\201903282245263_addBools to testBlank.Designer.cs">
+      <DependentUpon>201903282245263_addBools to testBlank.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BestTimeForStudy.cs" />
     <Compile Include="Models\WantedCourceToStudy.cs" />
@@ -174,8 +182,8 @@
     <Compile Include="Services\TestServices\ITestService.cs" />
     <Compile Include="Services\UserServices\IUserService.cs" />
     <Compile Include="Services\UserServices\UserService.cs" />
+    <Compile Include="ViewModel\ExamSheduleVM\ExamSheduleViewModel.cs" />
     <Compile Include="ViewModel\QuestionVM\AddQuestionViewModel.cs" />
-    <Compile Include="ViewModel\TestBlankVM\AddTestBlankViewModel.cs" />
     <Compile Include="ViewModel\TestBlankVM\TestBlankViewModel.cs" />
     <Compile Include="ViewModel\UserVM\AccessLevelKeyValue.cs" />
     <Compile Include="ViewModel\UserVM\AddUserViewModel.cs" />
@@ -320,6 +328,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201903280548308_Migration_ComplPublic.resx">
       <DependentUpon>201903280548308_Migration_ComplPublic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903282240079_addoriginality to testBlank.resx">
+      <DependentUpon>201903282240079_addoriginality to testBlank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903282245263_addBools to testBlank.resx">
+      <DependentUpon>201903282245263_addBools to testBlank.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

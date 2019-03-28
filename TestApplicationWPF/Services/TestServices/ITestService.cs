@@ -10,6 +10,9 @@ namespace TestApplicationWPF.Services.TestServices
   public  interface ITestService
     {
         IEnumerable<TestBlank> GetAllTestBlanks();
+        IEnumerable<TestBlank> GetAllOriginalBlanks();
+        IEnumerable<TestBlank> GetAllUsedBlanks();
         bool CreateTestBlank(TestBlank testBlank);
+
     }
 }

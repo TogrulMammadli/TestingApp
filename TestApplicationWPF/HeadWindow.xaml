@@ -378,7 +378,7 @@
                         </StackPanel>
                     </Button>
 
-                    <Grid Height="110"></Grid>
+                    <Grid Height="75"></Grid>
                 <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
                         <materialDesign:PackIcon

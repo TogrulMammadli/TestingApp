@@ -39,6 +39,7 @@
                 DockPanel.Dock="Top"
                 Orientation="Horizontal">
                 <TextBox
+                    
                     Name="SearchTxtBox"
                     MinWidth="600"
                     MinHeight="30"
@@ -86,31 +87,38 @@
             <ListBox
                 Name="usersListBox"
                 Width="{Binding ElementName=MyPage, Path=ActualWidth}"
-                Background="Coral"
+                HorizontalAlignment="Center"
+                
                 ItemsSource="{Binding Users}"
+                
                 ScrollViewer.HorizontalScrollBarVisibility="Auto"
                 ScrollViewer.VerticalScrollBarVisibility="Auto">
                 <ListBox.Template>
                     <ControlTemplate>
                         <DockPanel Name="ListboxDoc" LastChildFill="True">
-                            <Border Height="30" DockPanel.Dock="Top" BorderBrush="#3498db" BorderThickness="2">
+                            <Border Margin="5 10 5 10" Height="30" DockPanel.Dock="Top" BorderBrush="#006aaf" CornerRadius="5" BorderThickness="2" >
+                                <Border.Effect>
+                                    <DropShadowEffect Opacity="0.5" BlurRadius="15"></DropShadowEffect>
+                                </Border.Effect>
                             <Grid
                                 Height="30"
-                                Background="LightGray"
-                                
+                                Background="#006aaf"
+                                Margin="0 0 0 0"
                                 DockPanel.Dock="Top">
+
+                                   
                                    
                                     <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                    <ColumnDefinition Width="150" />
+                                    <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition  Width="1*"/>
+                                        <ColumnDefinition Width="1*" />
+                                        <ColumnDefinition Width="1*" />
                                 </Grid.ColumnDefinitions>
-                                    <Label Grid.Column="0" HorizontalContentAlignment="Center"  Foreground="#00558e" FontSize="15">Name</Label>
-                                    <Label Grid.Column="1" HorizontalContentAlignment="Center"  Foreground="#00558e" FontSize="15">Surname</Label>
-                                    <Label Grid.Column="2" HorizontalContentAlignment="Center" Foreground="#00558e" FontSize="15">Login</Label>
-                                    <Label Grid.Column="3" HorizontalContentAlignment="Center" Foreground="#00558e" FontSize="15">Email</Label>
+                                    <Label Grid.Column="0" HorizontalContentAlignment="Center"  Foreground="White" FontSize="15">Name</Label>
+                                    <Label Grid.Column="1" HorizontalContentAlignment="Center"  Foreground="White" FontSize="15">Surname</Label>
+                                    <Label Grid.Column="2" HorizontalContentAlignment="Center" Foreground="White" FontSize="15">Login</Label>
+                                    <Label Grid.Column="3" HorizontalContentAlignment="Center" Foreground="White" FontSize="15">Email</Label>
                             </Grid>
                             </Border>
                             <ItemsPresenter />
@@ -119,7 +127,16 @@
                 </ListBox.Template>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <Grid
+
+                        <materialDesign:Card 
+                          
+                    
+                    Margin="5 3 5 0"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                    materialDesign:ShadowAssist.ShadowEdges="Bottom"
+                    Background="White"
+                    UniformCornerRadius="5">
+                            <Grid
                             Name="Element"
                             Width="{Binding ElementName=MyPage, Path=ActualWidth}"
                             Margin="0,2">
@@ -128,35 +145,52 @@
                                 <ColumnDefinition Width="1*" />
                                 <ColumnDefinition Width="1*" />
                                 <ColumnDefinition Width="1*" />
-                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="1*" />
                             </Grid.ColumnDefinitions>
                             <TextBlock
+                                
                                 Grid.Column="0"
                                 HorizontalAlignment="Center"
-                                Background="Bisque"
+                                VerticalAlignment="Center"
                                 Text="{Binding Name}" />
                             <TextBlock
                                 Grid.Column="1"
                                 HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
                                 Text="{Binding Surname}" />
                             <TextBlock
                                 Grid.Column="2"
                                 HorizontalAlignment="Center"
-                                Background="Bisque"
+                                VerticalAlignment="Center"
                                 Text="{Binding Login}" />
                             <TextBlock
                                 Grid.Column="3"
                                 HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
                                 Text="{Binding Email}" />
-                            <StackPanel
+                            
+                            
+                            
+                            <StackPanel Margin=" 0 0 20 0"
                                 Grid.Column="4"
                                 HorizontalAlignment="Right"
-                                Orientation="Horizontal">
+                                Orientation="Horizontal"
+                                        VerticalAlignment="Center">
+                                
+                                <!--555555555555555555555555555555555555555-->
+                                
+
+
+                                <!--555555555555555555555555555555555555555-->
+                                
                                 <Button
                                     Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                                          Name="Edit"
                                          Width="40"
+                                        Height="40"
+                                    BorderBrush="{x:Null}"
                                          Margin="5"
+                                    Background="#f39c12"
                                          VerticalAlignment="Center"
                                          Click="Edit_Click"
                                          ToolTip="Edit">
@@ -170,12 +204,15 @@
                                     Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                                     Name="View"
                                     Width="40"
+                                        Height="40"
+                                    BorderBrush="{x:Null}"
                                     Margin="5"
                                     VerticalAlignment="Center"
-                                    Background="Green"
+                                    Background="#27ae60"
                                     ToolTip="View all info">
                                     <materialDesign:PackIcon
-                                         
+                                         Width="20"
+                                        Height="20"
                                          Background="{x:Null}"
                                          Kind="Eye" />
                                 </Button>
@@ -183,9 +220,11 @@
                                     Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                                     Name="Remove"
                                     Width="40"
+                                        Height="40"
+                                    BorderBrush="{x:Null}"
                                     Margin="5"
                                     VerticalAlignment="Center"
-                                    Background="DarkRed"
+                                    Background="#e74c3c"
                                     Click="Remove_Click"
                                     ToolTip="Delete">
                                     <materialDesign:PackIcon
@@ -194,7 +233,12 @@
                                          Kind="Delete" />
                                 </Button>
                             </StackPanel>
+                           
                         </Grid>
+                            
+                        </materialDesign:Card>
+                        
+                        
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

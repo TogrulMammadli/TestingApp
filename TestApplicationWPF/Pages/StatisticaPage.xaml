@@ -98,7 +98,7 @@
                     <Style.Triggers>
                         <Trigger Property="AxisOrientation" Value="Y">
                             <Setter Property="IsMerged" Value="True" />
-                            <Setter Property="MaxValue" Value="10" />
+                            <Setter Property="MaxValue" Value="12" />
                         </Trigger>
                     </Style.Triggers>
                 </Style>

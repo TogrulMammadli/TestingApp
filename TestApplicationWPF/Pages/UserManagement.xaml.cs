@@ -73,5 +73,10 @@ namespace TestApplicationWPF.Pages
         {
             ViewModel.RemoveUser.Execute(usersListBox.SelectedItems[0]);
         }
+
+        private void UsersListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

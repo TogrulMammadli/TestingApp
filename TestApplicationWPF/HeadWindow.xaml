@@ -250,7 +250,7 @@
                                  VerticalAlignment="Top"
                                  FontSize="10"
                                  Foreground="White" Margin="30 0 0 0"></TextBlock>
-                        <Button
+                            <Button
                                Height="35"
                             Width="35"
                              ToolTip="Edit"
@@ -260,12 +260,12 @@
                              Background="{x:Null}"
                              BorderBrush="{x:Null}"
                              Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="Button_Click_3">
-                            <materialDesign:PackIcon
+                                <materialDesign:PackIcon
                              Width="20"
                              Height="20"
                              Background="{x:Null}"
                              Kind="Edit" />
-                        </Button>
+                            </Button>
 
                             <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" Margin="35 50 0 0" >
                             </Image>
@@ -403,7 +403,17 @@
                             <TextBlock FontSize="15">Logout</TextBlock>
                     </StackPanel>
                 </Button>
-            </StackPanel>
+                    <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_8">
+                        <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                            <materialDesign:PackIcon
+                            Width="25"
+                            Height="25"
+                            Background="{x:Null}"
+                            Kind="Logout"  HorizontalAlignment="Left" Foreground="White" Margin="-39,0,10,0"/>
+                            <TextBlock FontSize="15">ExamShedule</TextBlock>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
 
                   
 

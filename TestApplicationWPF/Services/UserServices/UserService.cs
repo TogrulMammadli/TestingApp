@@ -252,9 +252,11 @@ namespace TestApplicationWPF.Services.UserServices
             userRepository.RemoveUserById(Id);
         }
 
-        public bool RemovUser(User user)
+      
+
+        public IEnumerable<User> GetAllStudents()
         {
-            throw new NotImplementedException();
+        return TestContext.Instance.Users.Where(x=>x.AccessLevels.Any(y=>y.Name=="Student")).ToList();
         }
     }
 }

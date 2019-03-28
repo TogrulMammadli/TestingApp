@@ -216,8 +216,8 @@
                 BorderBrush="{x:Null}"
                 Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
                         <materialDesign:PackIcon
-                    Width="20"
-                    Height="20"
+                    Width="25"
+                    Height="25"
                     Background="{x:Null}"
                     Kind="Menu" />
                     </Button>

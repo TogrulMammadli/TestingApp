@@ -152,6 +152,9 @@
     <Compile Include="Pages\UserManagement.xaml.cs">
       <DependentUpon>UserManagement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ViewQuestionInfo.xaml.cs">
+      <DependentUpon>ViewQuestionInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Repository\AnswerRepository\IWrongAnswerRepository.cs" />
     <Compile Include="Services\AnswerService\CorrectAnswerService.cs" />
     <Compile Include="Services\AnswerService\ICorrectAnswerService.cs" />
@@ -274,6 +277,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\UserManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ViewQuestionInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

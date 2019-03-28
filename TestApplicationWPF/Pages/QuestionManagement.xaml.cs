@@ -27,8 +27,9 @@ namespace TestApplicationWPF.Pages
      public   QuestionManagementViewModel viewModel;
         public QuestionManagement()
         {
-            viewModel = new QuestionManagementViewModel(new QuestionService(new QuestionRepository()));
             InitializeComponent();
+            viewModel = new QuestionManagementViewModel(new QuestionService(new QuestionRepository()));
+            this.DataContext = viewModel;
         }
 
         private void Border_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -51,8 +52,28 @@ namespace TestApplicationWPF.Pages
             }
         }
 
+       
+
+        private void Edit_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("EditPage");
+        }
+
+        private void View_Click(object sender, RoutedEventArgs e)
+        {
+            ViewQuestionInfo viewQuestionInfo = new ViewQuestionInfo(((Question)QuestionsListBox.SelectedItems[0]));
+            viewQuestionInfo.Show();
+        }
+
+        private void Remove_Click(object sender, RoutedEventArgs e)
+        {
+            viewModel.RemoveUser.Execute(((Question)QuestionsListBox.SelectedItems[0]));
+        }
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            AddNewQuestion addNewQuestion = new AddNewQuestion();
+            addNewQuestion.Show();
 
         }
     }

@@ -119,6 +119,8 @@ namespace TestApplicationWPF
                             {
                                 TextBlockWarning.Text = "Wrong login or password";
                                 this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Hidden);
+                                this.Dispatcher.InvokeAsync(() => this.ButtonLogin.IsEnabled = true);
+
                             }
                         });
                     }
@@ -137,7 +139,7 @@ namespace TestApplicationWPF
             this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Visible);
             this.Dispatcher.InvokeAsync(() => this.TextBoxUserName.BorderBrush = Brushes.Gray);
             this.Dispatcher.InvokeAsync(() => this.PassBoxPassword.BorderBrush = Brushes.Gray);
-
+            this.Dispatcher.InvokeAsync(() => this.ButtonLogin.IsEnabled = false);
             try
             {
                 user = userService.Login(this.Dispatcher.Invoke(() => TextBoxUserName.Text), this.Dispatcher.Invoke(() => PassBoxPassword.Password.ToString()));

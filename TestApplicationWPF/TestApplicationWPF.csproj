@@ -96,9 +96,6 @@
     <Compile Include="AddNewQuestion.xaml.cs">
       <DependentUpon>AddNewQuestion.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AddSubject.xaml.cs">
-      <DependentUpon>AddSubject.xaml</DependentUpon>
-    </Compile>
     <Compile Include="AddUserWindow.xaml.cs">
       <DependentUpon>AddUserWindow.xaml</DependentUpon>
     </Compile>
@@ -186,10 +183,6 @@
     <Page Include="AddNewQuestion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AddSubject.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="AddUserWindow.xaml">
       <SubType>Designer</SubType>

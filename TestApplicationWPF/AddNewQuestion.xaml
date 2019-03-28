@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:TestApplicationWPF"
         mc:Ignorable="d"
-        Title="AddNewQuestion" Height="450" Width="800">
+        Title="AddNewQuestion" Height="700" Width="800">
     <Grid>
         <StackPanel>
             <TextBox
@@ -14,23 +14,61 @@
             Name="Text"
         materialDesign:HintAssist.Hint="Enter question text" 
             Height="30"
-            Width="200"></TextBox>
-          
+            Width="200"
+                Text="{Binding Question.Text}"></TextBox>
+
             <TextBlock>Complexity</TextBlock>
-            <RadioButton   Name="Low" GroupName="Complexity" Checked="Low_Checked" >Low</RadioButton>    <!-- Natig udalil Checked="Low", kidal exeption-->
-            <RadioButton  Name="Normal" GroupName="Complexity" Checked="Normal_Checked">Normal</RadioButton>     <!-- Natig udalil Checked="Normal", kidal exeption-->
-            <RadioButton  Name="Hight" GroupName="Complexity" Checked="Hight_Checked">Hight</RadioButton > <!--Natig udalil cheked = ckeck, kidal exeption-->
+            <RadioButton   Name="Low" GroupName="Complexity" Checked="Low_Checked" >Low</RadioButton>
+            <!-- Natig udalil Checked="Low", kidal exeption-->
+            <RadioButton  Name="Normal" GroupName="Complexity" Checked="Normal_Checked">Normal</RadioButton>
+            <!-- Natig udalil Checked="Normal", kidal exeption-->
+            <RadioButton  Name="Hight" GroupName="Complexity" Checked="Hight_Checked">Hight</RadioButton >
+            <!--Natig udalil cheked = ckeck, kidal exeption-->
             <Button VerticalAlignment="Bottom" Name="ImageBtn"   Command="{Binding AddImage}">ChangeImage</Button>
-            <ListBox   ItemsSource="{Binding AccessKeyValues}">
+            <Label>CorrectAnswers</Label>
+            <ListBox  Name="WrongAnswersListBox" ItemsSource="{Binding CorrectAnswers}" Height="120">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <CheckBox Padding="10" Margin="5" Height="30" VerticalContentAlignment="Center" Content="{Binding Key}" IsChecked="{Binding Value}"></CheckBox>
+                        <StackPanel Name="CorrectStackPanel" Orientation="Horizontal" Height="40" Background="Aqua" Opacity="0.8">
+                            <TextBlock Name="CorrectText"  Margin="0"   Text="{Binding Text}"  Background="Coral" Opacity="0.3"></TextBlock>
+                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Button VerticalAlignment="Bottom" Name="Cancel" Click="Cancel_Click" >cancel</Button>  <!--Natig udalil Click =cancle_click, kidal exeption-->
+            <StackPanel Orientation="Horizontal">
+                <TextBox Name="CorrectAnswerText"  Height="50" Width="300"    materialDesign:HintAssist.Hint="CorrectAnswerText"/>
+                <Button Command="{Binding AddCorrectAnswer}" CommandParameter="{Binding ElementName=CorrectAnswerText,Path=Text}">PlusIcon</Button>
+            </StackPanel>
+
+            <Label>WrongAnswers</Label>
+            <ListBox  Name="CorrectAnswersListBox" ItemsSource="{Binding WrongAnswers}" Height="120" Background="Aqua" Opacity="0.8" >
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Name="WrongStackPanel" Orientation="Horizontal" Background="Coral" Opacity="0.8">
+                            <TextBlock Name="WrongText"   Text="{Binding Text}" Background="Red" Opacity="0.8" ></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <StackPanel Orientation="Horizontal" >
+                <TextBox Name="WrongAnswerText"  Height="50" Width="300"  materialDesign:HintAssist.Hint="WrongAnswerText"/>
+                <Button Command="{Binding AddWrongAnswer}" CommandParameter="{Binding ElementName=WrongAnswerText,Path=Text}">PlusIcon</Button>
+            </StackPanel>
+            <Button VerticalAlignment="Bottom" Name="Cancel" Click="Cancel_Click" >cancel</Button>
+            <!--Natig udalil Click =cancle_click, kidal exeption-->
+            <ComboBox Name="SubjectsBox" ItemsSource="{Binding Subjects}" SelectionChanged="SubjectsBox_SelectionChanged" >
+            </ComboBox>
+
+            <StackPanel Orientation="Horizontal"  >
+                <TextBox Name="SubjectName"  Height="50" Width="300"  materialDesign:HintAssist.Hint="SubjectName"/>
+                <Button Command="{Binding AddSubject}" CommandParameter="{Binding ElementName=SubjectName,Path=Text}">PlusIcon</Button>
+            </StackPanel>
         </StackPanel>
+
+
         <Button VerticalAlignment="Bottom" 
-                Name="Add">Add Question</Button>
+                Name="Add"
+                Command="{Binding AddQuestion}">
+            Add Question</Button>
     </Grid>
 </Window>

@@ -61,7 +61,6 @@ namespace TestApplicationWPF
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             frame.Content = new ChooseTestBlankPage();
-
         }
 
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)

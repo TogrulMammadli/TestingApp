@@ -188,12 +188,7 @@ namespace TestApplicationWPF
             e.Handled = !(Char.IsDigit(e.Text, 0));
         }
 
-        private void AddSubject_Click(object sender, RoutedEventArgs e)
-        {
-            AddSubject addSubject = new AddSubject();
-            addSubject.Show();
-
-        }
+     
 
        
     }

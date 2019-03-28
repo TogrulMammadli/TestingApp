@@ -18,14 +18,13 @@ namespace TestApplicationWPF.ViewModels
     {
         private IUserService service;
         public ObservableCollection<User> Users { get; set; } 
-        User user = new User();
+        User user  = new User();
 
         public UserManagementViewModel(IUserService service)
         {
             this.service = service ?? throw new ArgumentNullException(nameof(service));
             Messenger.Default.Register<NewUserMesenger>(this, AddUserExexute);
-           
-                Users = new ObservableCollection<User>(service.GetAllUsers());
+            Users = new ObservableCollection<User>(service.GetAllUsers());
         }
 
         private RelayCommand<User> _removeUser;

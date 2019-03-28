@@ -5,46 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TestApplicationWPF.Pages"
         mc:Ignorable="d"
-        Title="ViewQuestionInfo" Height="450" Width="800">
-    
-    
+        Title="ViewQuestionInfo" Height="700" Width="800">
+
+
     <Grid>
-        <DockPanel Background="AliceBlue">
-            <TextBox DockPanel.Dock="Top" Height="100" TextWrapping="Wrap" Name="Texttxtbx" Text="{Binding Question.Text}">
-            </TextBox>
-            <Label  DockPanel.Dock="Bottom"  HorizontalAlignment="Right"  Content="{Binding Question.Subject}" />
-        </DockPanel>
         <StackPanel>
-            <Label>CorrectAnswersListbox</Label>
-            <ListBox Background="CadetBlue"
-                     ItemsSource="{Binding Question.CorrectAnswers}">>
-                <!--CorrectAnswersListbox-->
-                <ListBox.ItemTemplate>
-                    <DataTemplate >
-                        <Grid Name="Element" Margin="0,2">
-                            <StackPanel Height="35" Orientation="Horizontal" HorizontalAlignment="Stretch">
-                                <TextBox Height="20" Text="{Binding Text}"> </TextBox>
-                                <Image  Height="20" Width="20"  Source="{Binding Image}"></Image>
-                            </StackPanel>
-                        </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-            <Label>WrongAnswersListbox</Label>
-            <ListBox Background="CadetBlue"
-                     ItemsSource="{Binding WrongAnswers}">>
-                <!--WrongAnswersListbox-->
-                <ListBox.ItemTemplate>
-                    <DataTemplate >
-                        <Grid Name="Element" Margin="0,2" >
-                            <StackPanel Height="35" Orientation="Horizontal" HorizontalAlignment="Stretch">
-                                <TextBox Height="20"  Text="{Binding Text}"></TextBox>
-                                <Image  Height="20" Width="20"  Source="{Binding Image}"> </Image>
-                            </StackPanel>
-                        </Grid>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+            <Label>QuestionText</Label>
+            <TextBlock Height="100" TextWrapping="Wrap" Name="Texttxtbx" Text="{Binding Question.Text}"></TextBlock>
+            <Label>QuestionSubject</Label>
+            <TextBlock Height="20" Name="SubjectBox"  DockPanel.Dock="Bottom"  HorizontalAlignment="Stretch"  Text="{Binding Question.subject}" />
+            <StackPanel>
+                <Label>CorrectAnswersListbox</Label>
+                <ListBox Background="Cornsilk"
+                     ItemsSource="{Binding Question.CorrectAnswers}" Height="90">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate >
+                                <StackPanel Height="35" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                    <TextBox Height="20" Text="{Binding Text}"></TextBox>
+                                    <Image  Height="20" Width="20"  Source="{Binding Image}"></Image>
+                                </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Label>WrongAnswersListbox</Label>
+                <ListBox Background="Cornsilk"
+                         Height="80"
+                     ItemsSource="{Binding Question.WrongAnswers}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate >
+                            <Grid Name="Element" Margin="0,2" >
+                                <StackPanel Height="35" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                    <TextBox Height="20"  Text="{Binding Text}"></TextBox>
+                                    <Image  Height="20" Width="20"  Source="{Binding Image}"></Image>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Label>Image</Label>
+                <Image Name="ImageBox" Height="200" Width="400">
+                    
+                </Image>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Window>

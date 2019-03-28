@@ -2,9 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 using TestApplicationWPF.Repository.QuestionsRepository;
 
@@ -65,6 +67,28 @@ namespace TestApplicationWPF.Services.QuestionService
                 return false;
 
             }
+        }
+
+      
+        public string GetAvatarImageFromDb(int UID)
+        {
+            byte[] b;
+
+            b = TestContext.Instance.Questions.Where(x => x.Id == UID).DefaultIfEmpty().Single().Image;
+            if (b == null)
+            {
+                return null;
+            }
+
+            Image image1;
+            using (var ms = new MemoryStream(b))
+            {
+                image1 = Image.FromStream(ms);
+            }
+            image1.Save(Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\Icons\\" + "QuestionImage", System.Drawing.Imaging.ImageFormat.Bmp);
+            return Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + "\\Icons\\" + "QuestionImage";
+
+
         }
     }
 }

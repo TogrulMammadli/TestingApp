@@ -43,7 +43,8 @@
                 <TabItem Header="Test Blank ABOUT" >
                     <Grid>
                         <!--<Grid >
-                            --><!--<Rectangle 
+                            -->
+                        <!--<Rectangle 
                    
                               Height="110"
                               Margin="55,0,55,380"
@@ -59,7 +60,8 @@
                                      ShadowDepth="1"
                                      Color="#FFBBBBBB" />
                                 </Rectangle.Effect>
-                            </Rectangle>--><!--
+                            </Rectangle>-->
+                        <!--
 
                         </Grid>-->
                         <Grid >
@@ -162,7 +164,7 @@
                                      Color="#FFBBBBBB" />
                                 </Rectangle.Effect>
                             </Rectangle>
-                            
+
                             <TextBox
                                 x:Name="AuthorTextBox"
                                 Grid.Row="3"
@@ -180,16 +182,13 @@
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                 FontSize="18"/>
                         </Grid>
-                        
+
                     </Grid>
 
                     <!--TAB 222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222-->
                 </TabItem>
-                <TabItem Header="QUESTIONS">
-
-
-                    <Grid ShowGridLines="True">
-
+                <TabItem Header="QUESTIONS" Name="QuestionTab">
+                    <!--<Grid ShowGridLines="True">
                         <Grid.RowDefinitions>
                             <RowDefinition />
                             <RowDefinition Height="30" />
@@ -262,14 +261,14 @@
                                                     FontSize="28" 
                                                     Text="{Binding Text}"/>
                                                 <CheckBox VerticalAlignment="Center" DockPanel.Dock="Right" />
-                                                <!--<Button
+                                                <Button
                                                     HorizontalAlignment="Right"
                                                     Content="Del"
                                                     DockPanel.Dock="Right" />
                                                 <Button
                                                     HorizontalAlignment="Right"
                                                     Content="Edit"
-                                                    DockPanel.Dock="Right" />-->
+                                                    DockPanel.Dock="Right" />
 
 
                                             </DockPanel>
@@ -289,9 +288,9 @@
                                     Content="Delete answer" Click="DeleteAnswerButton_Click"/>
                                 <Button x:Name="AddImageButton" Grid.Row="7" Margin="0,0,0,0" Width="200" HorizontalAlignment="Left" Content="Добавить рисунок" Click="AddImageButton_Click"></Button>
                                 <Button x:Name="AddSubjectButton" Grid.Row="7" Width="100" Margin="250,0,0,0" >Subject</Button>
-                                <!--<RadioButton Grid.Row="7" GroupName="Language">Azerbaycan</RadioButton>
+                                <RadioButton Grid.Row="7" GroupName="Language">Azerbaycan</RadioButton>
                                 <RadioButton Grid.Row="7" Margin="0,20,0,0" GroupName="Language">Russian</RadioButton>
-                                <RadioButton Grid.Row="7" Margin="50,20,0,0" GroupName="Language">English</RadioButton>-->
+                                <RadioButton Grid.Row="7" Margin="50,20,0,0" GroupName="Language">English</RadioButton>
                             </Grid>
                             <Grid Grid.Column="0">
                                 <Grid.RowDefinitions>
@@ -345,7 +344,6 @@
                                     </ListBox.ItemTemplate>
                                 </ListBox>
                                 
-                                <!--  zdes  -->
 
                                 <Button x:Name="AddQuestionButton"
                                     Grid.Row="1"
@@ -373,7 +371,28 @@
                             </Grid>
                         </Grid>
 
-                    </Grid>
+                    </Grid>-->
+                    <StackPanel Name="MainStack"   Orientation="Vertical">
+                        <StackPanel Orientation="Horizontal" Background="Brown" Height="{Binding ElementName=QuestionTab, Path=ActualHeight}">
+                            <StackPanel>
+                                <Label >TestBlankQuestions</Label>
+                                <ListBox>
+                                    
+                                </ListBox>
+                            </StackPanel>
+                            <StackPanel>
+                                
+                            </StackPanel>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Background="Red">
+                            <Grid Background="AliceBlue" Height="200">
+
+                            </Grid>
+                        </StackPanel>
+                    </StackPanel>
+
+
+
                     <!--TAB 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333-->
                 </TabItem>
                 <TabItem Header="SETTINGS">

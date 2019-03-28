@@ -171,15 +171,13 @@
     <Compile Include="Services\TestServices\ITestService.cs" />
     <Compile Include="Services\UserServices\IUserService.cs" />
     <Compile Include="Services\UserServices\UserService.cs" />
-    <Compile Include="ViewModel\AddQuestion\AddQuestionViewModel.cs" />
-    <Compile Include="ViewModel\AddTestBlankViewModel.cs" />
-    <Compile Include="ViewModel\AddUser\AccessLevelKeyValue.cs" />
-    <Compile Include="ViewModel\AddUser\AddUserViewModel.cs" />
-    <Compile Include="ViewModel\QuestionManagementViewModel.cs" />
-    <Compile Include="ViewModel\SubjectViewModel.cs" />
-    <Compile Include="ViewModel\UserManagementViewModel.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\QuestionVM\AddQuestionViewModel.cs" />
+    <Compile Include="ViewModel\TestBlankVM\AddTestBlankViewModel.cs" />
+    <Compile Include="ViewModel\TestBlankVM\TestBlankViewModel.cs" />
+    <Compile Include="ViewModel\UserVM\AccessLevelKeyValue.cs" />
+    <Compile Include="ViewModel\UserVM\AddUserViewModel.cs" />
+    <Compile Include="ViewModel\QuestionVM\QuestionManagementViewModel.cs" />
+    <Compile Include="ViewModel\UserVM\UserManagementViewModel.cs" />
     <Page Include="AddNewQuestion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

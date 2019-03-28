@@ -40,9 +40,9 @@ namespace TestApplicationWPF
             InitializeComponent();
           //  var viewM = new AddTestViewModel(new QuestionService(new QuestionRepository()), new TestService(new TestBlankRepository()), new WrongAnswerService(new WrongAnswerRepository()), new CorrectAnswerService(new CorrectAnswerRepository()));
            // DataContext = viewM;
-            TypeComboBox.Items.Add("Один ответ");
-            TypeComboBox.Items.Add("Несколько ответов");
-            TypeComboBox.SelectedIndex = 0;
+            //TypeComboBox.Items.Add("Один ответ");
+            //TypeComboBox.Items.Add("Несколько ответов");
+            //TypeComboBox.SelectedIndex = 0;
             AllQuestionsRadioButton.IsChecked = true;
             MediumRadioButton.IsChecked = true;
             UnlimitedTimeRadioButton.IsChecked = true;
@@ -114,51 +114,51 @@ namespace TestApplicationWPF
 
         private void AddAnswerButton_Click(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(QuestionAddTextBox.Text) == true || String.IsNullOrWhiteSpace(QuestionAddTextBox.Text) == true)
-            {
-                MessageBox.Show("Вы не описали свой вопрос!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else if (String.IsNullOrEmpty(AnswerAddTextBox.Text) == true || String.IsNullOrWhiteSpace(AnswerAddTextBox.Text) == true)
-            {
-                MessageBox.Show("Вы не описали свой ответ!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else if (AnswersListBox.Items.Count >= 6)
-            {
-                MessageBox.Show("У вас слишком много ответов!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else
-            {
-                AnswersListBox.Items.Add(AnswerAddTextBox.Text);
-            }
+            //if (String.IsNullOrEmpty(QuestionAddTextBox.Text) == true || String.IsNullOrWhiteSpace(QuestionAddTextBox.Text) == true)
+            //{
+            //    MessageBox.Show("Вы не описали свой вопрос!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            //}
+            //else if (String.IsNullOrEmpty(AnswerAddTextBox.Text) == true || String.IsNullOrWhiteSpace(AnswerAddTextBox.Text) == true)
+            //{
+            //    MessageBox.Show("Вы не описали свой ответ!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            //}
+            //else if (AnswersListBox.Items.Count >= 6)
+            //{
+            //    MessageBox.Show("У вас слишком много ответов!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            //}
+            //else
+            //{
+            //    AnswersListBox.Items.Add(AnswerAddTextBox.Text);
+            //}
         }
 
         private void DeleteAnswerButton_Click(object sender, RoutedEventArgs e)
         {
-            AnswersListBox.Items.Remove(AnswersListBox.SelectedItem);
+            //AnswersListBox.Items.Remove(AnswersListBox.SelectedItem);
         }
 
         private void AddQuestionButton_Click(object sender, RoutedEventArgs e)
         {
-            if (AnswersListBox.Items.Count >= 2 && AnswersListBox.Items.Count <= 6)
-            {
-                question.Id = -1;
-                //question.subject
-                //questions.Add();
-                QuestionListBox.Items.Add(QuestionAddTextBox.Text);
+            //if (AnswersListBox.Items.Count >= 2 && AnswersListBox.Items.Count <= 6)
+            //{
+            //    question.Id = -1;
+            //    //question.subject
+            //    //questions.Add();
+            //    QuestionListBox.Items.Add(QuestionAddTextBox.Text);
                 
-                QuestionAddTextBox.Text = "";
-                AnswersListBox.Items.Clear();
-                question = new Question();
-            }
-            else
-            {
-                MessageBox.Show("У вас слишком мало ответов!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
+            //    QuestionAddTextBox.Text = "";
+            //    AnswersListBox.Items.Clear();
+            //    question = new Question();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("У вас слишком мало ответов!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            //}
         }
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            QuestionListBox.Items.Remove(QuestionListBox.SelectedItem);
+            //QuestionListBox.Items.Remove(QuestionListBox.SelectedItem);
         }
 
         private void MinutesForExamTimeTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -188,8 +188,5 @@ namespace TestApplicationWPF
             e.Handled = !(Char.IsDigit(e.Text, 0));
         }
 
-     
-
-       
     }
 }

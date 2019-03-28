@@ -99,7 +99,8 @@
                                 Background="LightGray"
                                 
                                 DockPanel.Dock="Top">
-                                <Grid.ColumnDefinitions>
+                                   
+                                    <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
                                     <ColumnDefinition />
                                     <ColumnDefinition />

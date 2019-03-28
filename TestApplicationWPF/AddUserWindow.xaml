@@ -34,7 +34,7 @@
                 VerticalAlignment="Center"
                 Background="{x:Null}"
                 BorderBrush="{x:Null}"
-                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="Cancel_Click">
+                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
                         <materialDesign:PackIcon
                     Width="20"
                     Height="20"
@@ -290,7 +290,7 @@
                         Name="Cancel"
                         Margin="0,0,20,0"
                         VerticalAlignment="Bottom"
-                        Click="Cancel_Click">
+                       >
                             Cancel
                         </Button>
                     </StackPanel>

@@ -266,7 +266,7 @@
                              Kind="Edit" />
                         </Button>
 
-                            <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" Margin="35 0 0 0" >
+                            <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" Margin="35 50 0 0" >
                             </Image>
 
                             <!--<Button

@@ -18,9 +18,9 @@
                 ></TextBox>
           
             <TextBlock>Complexity</TextBlock>
-            <RadioButton Checked="Low"  Name="Low" GroupName="Complexity" >Low </RadioButton>
-            <RadioButton Checked="Normal" Name="Normal" GroupName="Complexity">Normal</RadioButton>
-            <RadioButton Checked="Check"  Name="Hight" GroupName="Complexity">Hight</RadioButton>
+            <RadioButton   Name="Low" GroupName="Complexity" >Low</RadioButton>    <!--Natig udalil Checked="Low", kidal exeption-->
+            <RadioButton  Name="Normal" GroupName="Complexity">Normal</RadioButton>     <!--Natig udalil Checked="Normal", kidal exeption-->
+            <RadioButton  Name="Hight" GroupName="Complexity">Hight</RadioButton> <!--Natig udalil cheked = ckeck, kidal exeption-->
             <Button VerticalAlignment="Bottom" Name="ImageBtn">ChangeImage</Button>
             <ListBox   ItemsSource="{Binding AccessKeyValues}">
                 <ListBox.ItemTemplate>
@@ -29,7 +29,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <Button VerticalAlignment="Bottom" Name="Cancel" Click="Cancel_Click">cancel</Button>
+            <Button VerticalAlignment="Bottom" Name="Cancel">cancel</Button>  <!--Natig udalil Click =cancle_click, kidal exeption-->
         </StackPanel>
         <Button VerticalAlignment="Bottom" 
                 Name="Add" 

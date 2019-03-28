@@ -378,6 +378,19 @@
                         </StackPanel>
                     </Button>
 
+
+
+                    <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_7"   >
+                        <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                            <materialDesign:PackIcon
+                            Width="20"
+                            Height="20"
+                            Background="{x:Null}"
+                            Kind="Resistor"  HorizontalAlignment="Left" Foreground="White" Margin="7,0,30,0"/>
+                            <TextBlock>Vremenno test</TextBlock>
+                        </StackPanel>
+                    </Button>
+
                     <Grid Height="75"></Grid>
                 <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left">
                     <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">

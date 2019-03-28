@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TestApplicationWPF.Models;
 using TestApplicationWPF.Pages;
+using TestApplicationWPF.PagesStudent;
 using TestApplicationWPF.Repository.UserRepository;
 using TestApplicationWPF.Services.UserServices;
 
@@ -151,6 +152,11 @@ namespace TestApplicationWPF
         private void Button_Click_6(object sender, RoutedEventArgs e)
         {
             frame.Content = new QuestionManagement();
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new TestNamesPage();
         }
     }
 }

@@ -136,7 +136,7 @@
                                 <Button
                                      Style="{StaticResource MaterialDesignFlatButton}"
                                      HorizontalAlignment="Center"
-                                     Margin="0">
+                                     Margin="0" >
                                     Start
                                 </Button>
                             </StackPanel>
@@ -1297,7 +1297,7 @@
                 </Border>
 
 
-
+            
 
 
 

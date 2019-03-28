@@ -24,5 +24,7 @@ namespace TestApplicationWPF.Pages
         {
             InitializeComponent();
         }
+
+     
     }
 }

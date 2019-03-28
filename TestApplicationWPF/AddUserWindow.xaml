@@ -11,7 +11,7 @@
     Height="630"
     Background="#ecf0f1"
     ResizeMode="NoResize"
-    mc:Ignorable="d" WindowStyle="None">
+    mc:Ignorable="d" WindowStyle="None" BorderBrush="#3498db" BorderThickness="1">
 
 
 
@@ -121,8 +121,8 @@
                                 <TextBox
                                 Name="Email"
                                 Margin="20,5,20,0"
+                                    materialDesign:HintAssist.Hint="Email"
                                 materialDesign:HintAssist.FloatingScale="0.7"
-                                materialDesign:HintAssist.Hint="Email"
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
                                 Background="White"
                                 FontSize="18"

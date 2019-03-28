@@ -6,8 +6,8 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:TestApplicationWPF"
         mc:Ignorable="d"
-        Title="HeadWindow" Height="590" Width="1030" WindowStartupLocation="CenterScreen" ResizeMode="CanResize" Icon="Icons/mainicon.png" WindowStyle="None"
-        BorderBrush="#FF00AEFF" Background="#ecf0f1" BorderThickness="1">
+        Title="HeadWindow" Height="590" Width="1030" WindowStartupLocation="CenterScreen" Icon="Icons/mainicon.png" WindowStyle="None"
+        BorderBrush="#3498db" Background="#ecf0f1" BorderThickness="1">
     <Window.Resources>
         <Style x:Key="BigPannel">
             <!--Panel Style-->
@@ -104,7 +104,7 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Background="#FF00AEFF" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+            <Grid Grid.Row="0" Background="#3498db" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
                 <Grid.Effect>
                     <DropShadowEffect Opacity="0.5" Color="#FFB0B0B0" BlurRadius="15.2"/>
                 </Grid.Effect>

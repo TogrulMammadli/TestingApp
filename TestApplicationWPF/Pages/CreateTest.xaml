@@ -42,8 +42,8 @@
                 <!--TAB 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->
                 <TabItem Header="Test Blank ABOUT" >
                     <Grid>
-                        <Grid >
-                            <!--<Rectangle 
+                        <!--<Grid >
+                            --><!--<Rectangle 
                    
                               Height="110"
                               Margin="55,0,55,380"
@@ -59,15 +59,15 @@
                                      ShadowDepth="1"
                                      Color="#FFBBBBBB" />
                                 </Rectangle.Effect>
-                            </Rectangle>-->
+                            </Rectangle>--><!--
 
-                        </Grid>
+                        </Grid>-->
                         <Grid >
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="5" />
-                                <RowDefinition Height="150" />
-                                <RowDefinition Height="220"/>
-                                <RowDefinition Height="130" />
+                                <RowDefinition Height="1.2*" />
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="1*" />
                             </Grid.RowDefinitions>
                             <Rectangle Grid.Row="1"
                               Height="110"
@@ -94,13 +94,18 @@
                             <TextBox
                                 x:Name="NameTextBox"
                                 Grid.Row="1"
-                                Width="850"
+                                Width="1850"
                                  Margin="80,23,80,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 TextWrapping="Wrap"
                                 VerticalScrollBarVisibility="Auto"
                                 materialDesign:HintAssist.Hint="Test name"
+                                materialDesign:HintAssist.FloatingScale="0.9"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                                Background="White"
+                               
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                 FontSize="18"/>
                             <!--<TextBlock
                                 Grid.Row="2"
@@ -128,13 +133,18 @@
                                
                                 x:Name="AboutTextBox"
                                 Grid.Row="2"
-                                 Width="850"
+                                 Width="1850"
                                  Margin="80,90,80,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 TextWrapping="Wrap"
                                 VerticalScrollBarVisibility="Auto"
                                 materialDesign:HintAssist.Hint="About test..."
+                                materialDesign:HintAssist.FloatingScale="0.9"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                                Background="White"
+                               
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                 FontSize="18" />
                             <Rectangle Grid.Row="3"
                               Height="100"
@@ -156,13 +166,18 @@
                             <TextBox
                                 x:Name="AuthorTextBox"
                                 Grid.Row="3"
-                                Width="850"
+                                Width="1850"
                                  Margin="80,16,80,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 TextWrapping="Wrap"
                                 VerticalScrollBarVisibility="Auto"
                                 materialDesign:HintAssist.Hint="Author"
+                                materialDesign:HintAssist.FloatingScale="0.9"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                                Background="White"
+                               
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                 FontSize="18"/>
                         </Grid>
                         

@@ -50,5 +50,21 @@ namespace TestApplicationWPF.Services.QuestionService
             }
             else return "Error";
         }
+
+       
+
+        public bool RemoveQuestion(Question question)
+        {
+            try
+            {
+                QuestionRepository.RemoveQuestion(question);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+
+            }
+        }
     }
 }

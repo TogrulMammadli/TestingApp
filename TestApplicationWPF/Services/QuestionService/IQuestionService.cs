@@ -13,5 +13,6 @@ namespace TestApplicationWPF.Services.QuestionService
         string OpenFileGetPath();
         byte[] ConvertImageToByte(string path);
         IEnumerable<Question> GetAllQuestions();
+        bool RemoveQuestion(Question question);
     }
 }

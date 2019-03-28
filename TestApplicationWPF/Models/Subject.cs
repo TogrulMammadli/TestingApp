@@ -24,5 +24,10 @@ namespace TestApplicationWPF.Models
         [MaxLength(50)]
         [Index(IsUnique = true)]
         public string Name { get; set; }
+
+        public override string ToString()
+        {
+            return this.Name;
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace TestApplicationWPF
             }
             if (CodeBox.Text.Contains(Code))
             {
-                ForgotPasswordWindow3 forgotPasswordWindow3 = new ForgotPasswordWindow3(User);
+                ForgotPasswordWindow3 forgotPasswordWindow3 = new ForgotPasswordWindow3(User,1);
                 forgotPasswordWindow3.Show();
                 this.Close();
             }

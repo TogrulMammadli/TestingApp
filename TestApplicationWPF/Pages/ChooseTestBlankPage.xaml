@@ -12,11 +12,13 @@
 
     <Grid Background="White">
         <Grid Margin="10" Width="{Binding ElementName=ChooseTestBlankPage, Path=Width}" Height="{Binding ElementName=ChooseTestBlankPage, Path=Height}">
-            <ScrollViewer Visibility="Visible">
-                <ListBox Name="ss" Height="0" ItemsSource="{Binding Exams}">
+            <ScrollViewer Name="ScViewer" Visibility="Visible">
+                <ListBox Name="ss" Height="{ Binding ElementName=ScViewer, Path=ActualHeight}" Width="{Binding ElementName=ScViewer ,Path=ActualWidth}" 
+                         ItemsSource="{Binding Exams}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <WrapPanel HorizontalAlignment="Center" >
+                            <WrapPanel  >
+                                <StackPanel>
                                 <Border BorderBrush="#673AB7" BorderThickness="1" CornerRadius="14" Margin="10">
                                     <Border.Effect>
                                         <DropShadowEffect Color="#FF707070" Opacity="0.5" BlurRadius="10"></DropShadowEffect>
@@ -45,7 +47,7 @@
                                                 </Button>
                                             </materialDesign:Badged>
                                             <StackPanel  Grid.Row="1"   Margin="8 24 8 4">
-                                                <TextBlock Style="{StaticResource MaterialDesignSubheadingTextBlock}" Text="{Binding Blank.Name}" Margin="0"></TextBlock>
+                                                <TextBlock Style="{StaticResource MaterialDesignSubheadingTextBlock}" Text="{Binding Blank.Name}" Margin="0" Height="10" Width="20"></TextBlock>
                                                 <Separator
                                                  Height="16"
                                                    Grid.Row="2"
@@ -101,6 +103,7 @@
                                         </Grid>
                                     </materialDesign:Card>
                                 </Border>
+                                </StackPanel>
                             </WrapPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>

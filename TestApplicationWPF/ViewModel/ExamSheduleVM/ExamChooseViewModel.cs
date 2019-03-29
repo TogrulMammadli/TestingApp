@@ -12,8 +12,9 @@ namespace TestApplicationWPF.ViewModel.ExamSheduleVM
 {
    public  class ExamChooseViewModel :BaseViewModel 
     {
-        ExamService examService;
-        ObservableCollection<Exams> Exams { get; set; }
+     public   ExamService examService=new ExamService();
+        public ObservableCollection<Exams> Exams { get; set; }
+
         public ExamChooseViewModel(ExamService examService,User user)
         {
             this.examService = examService ?? throw new ArgumentNullException(nameof(examService));

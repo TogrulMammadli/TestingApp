@@ -30,6 +30,7 @@ namespace TestApplicationWPF.Pages
             InitializeComponent();
             User = user;
             examChooseViewModel = new ExamChooseViewModel(new ExamService(),User);
+            this.DataContext = examChooseViewModel;
         }
     
         private void Button_Click_4(object sender, RoutedEventArgs e)

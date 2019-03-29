@@ -7,13 +7,13 @@
     xmlns:local="clr-namespace:TestApplicationWPF"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Name="CreatetestPage"
     Title="PageCreateTest"
     d:DesignHeight="560"
     d:DesignWidth="1050"
-    mc:Ignorable="d"
-    Name="CreatetestPage">
-   
-    <Grid Margin="50 0 0 0">
+    mc:Ignorable="d">
+
+    <Grid Margin="50,0,0,0">
         <!--<Grid
             Height="60"
             VerticalAlignment="Top"
@@ -34,20 +34,21 @@
             </Button>
         </Grid>-->
         <Grid ShowGridLines="True">
-            <dragablz:TabablzControl 
+            <dragablz:TabablzControl
                 Name="Drag"
+                Margin="0,0,0,0"
                 FontFamily="Segoe UI"
-                FontSize="12" Margin="0,0,0,0" >
+                FontSize="12">
                 <dragablz:TabablzControl.InterTabController>
                     <dragablz:InterTabController />
                 </dragablz:TabablzControl.InterTabController>
-                <!--TAB 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->
-                <TabItem Header="Test Blank ABOUT" >
+                <!--  TAB 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111  -->
+                <TabItem Header="Test Blank ABOUT">
                     <Grid>
                         <!--<Grid >
-                            -->
-                        <!--<Rectangle 
-                   
+                        -->
+                        <!--<Rectangle
+
                               Height="110"
                               Margin="55,0,55,380"
                               VerticalAlignment="Bottom"
@@ -66,27 +67,61 @@
                         <!--
 
                         </Grid>-->
-                        <Grid >
+                        <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="50" />
                                 <RowDefinition Height="200" />
-                                <RowDefinition Height="200"/>
+                                <RowDefinition Height="200" />
                                 <RowDefinition Height="200" />
                             </Grid.RowDefinitions>
-                            <Rectangle Grid.Row="1"
-                              Height="110"
-                              Margin="35,0,3,0"
-                              VerticalAlignment="Center"
-                              Fill="White"
-                              RadiusX="21.333"
-                              RadiusY="21.333">
+
+                            <Grid Grid.Row="0" Background="Aqua">
+                                <materialDesign:Card Margin="35 0 35 0" Background="White">
+                                    <StackPanel Orientation="Vertical">
+                                        <TextBox
+                                 x:Name="MinutesForExamTimeTextBox"
+                                Grid.Row="1"
+                                Width="1850"
+                                 Margin="80,23,80,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                
+                                
+                                materialDesign:HintAssist.Hint="Duration"
+                                materialDesign:HintAssist.FloatingScale="0.9"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                                LostFocus="NameTextBox_LostFocus"
+                                Background="White"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                                FontSize="18"/>
+                                    </StackPanel>
+                                </materialDesign:Card>
+                            </Grid>
+                            <TextBox
+                               
+                                Grid.Row="0"
+                                Width="100"
+                                Height="30"
+                                Margin="0,0,0,0"
+                                Background="Red"
+                                LostFocus="MinutesForExamTimeTextBox_LostFocus"
+                                PreviewTextInput="MinutesForExamTimeTextBox_PreviewTextInput" />
+
+                            <Rectangle
+                                Grid.Row="1"
+                                Height="110"
+                                Margin="35,0,35,0"
+                                VerticalAlignment="Center"
+                                Fill="White"
+                                RadiusX="10.333"
+                                RadiusY="10.333">
                                 <Rectangle.Effect>
                                     <DropShadowEffect
-                                     BlurRadius="15"
-                                     Direction="0"
-                                     RenderingBias="Quality"
-                                     ShadowDepth="1"
-                                     Color="#FFBBBBBB" />
+                                        BlurRadius="10"
+                                        Direction="0"
+                                        RenderingBias="Quality"
+                                        ShadowDepth="1"
+                                        Color="#FFBBBBBB" />
                                 </Rectangle.Effect>
                             </Rectangle>
                             <!--<TextBlock
@@ -99,71 +134,72 @@
                                 x:Name="NameTextBox"
                                 Grid.Row="1"
                                 Width="1850"
-                                 Margin="80,23,80,0"
+                                Margin="80,23,80,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
-                                TextWrapping="Wrap"
-                                VerticalScrollBarVisibility="Auto"
-                                materialDesign:HintAssist.Hint="Test name"
                                 materialDesign:HintAssist.FloatingScale="0.9"
+                                materialDesign:HintAssist.Hint="Test name"
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
-                                LostFocus="NameTextBox_LostFocus"
                                 Background="White"
+                                FontSize="18"
+                                LostFocus="NameTextBox_LostFocus"
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                FontSize="18"/>
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto" />
                             <!--<TextBlock
                                 Grid.Row="2"
                                 Margin="35,0,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Bottom"
                                 Text="About test: " />-->
-                            <Rectangle Grid.Row="2"
-                              Height="180"
-                              Margin="35,0,35,0"
-                              VerticalAlignment="Center"
-                              Fill="White"
-                              RadiusX="21.333"
-                              RadiusY="21.333">
+                            <Rectangle
+                                Grid.Row="2"
+                                Height="180"
+                                Margin="35,0,35,0"
+                                VerticalAlignment="Center"
+                                Fill="White"
+                                RadiusX="10.333"
+                                RadiusY="10.333">
                                 <Rectangle.Effect>
                                     <DropShadowEffect
-                                     BlurRadius="15"
-                                     Direction="0"
-                                     RenderingBias="Quality"
-                                     ShadowDepth="1"
-                                     Color="#FFBBBBBB" />
+                                        BlurRadius="10"
+                                        Direction="0"
+                                        RenderingBias="Quality"
+                                        ShadowDepth="1"
+                                        Color="#FFBBBBBB" />
                                 </Rectangle.Effect>
                             </Rectangle>
                             <TextBox
                                 x:Name="AboutTextBox"
                                 Grid.Row="2"
-                                 Width="1850"
-                                 Margin="80,90,80,0"
+                                Width="1850"
+                                Margin="80,90,80,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
-                                TextWrapping="Wrap"
-                                VerticalScrollBarVisibility="Auto"
-                                materialDesign:HintAssist.Hint="About test..."
                                 materialDesign:HintAssist.FloatingScale="0.9"
+                                materialDesign:HintAssist.Hint="About test..."
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
                                 Background="White"
+                                FontSize="18"
                                 LostFocus="AboutTextBox_LostFocus"
-                               
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                FontSize="18" />
-                            <Rectangle Grid.Row="3"
-                              Height="100"
-                              Margin="35,0,35,0"
-                              VerticalAlignment="Center"
-                              Fill="White"
-                              RadiusX="21.333"
-                              RadiusY="21.333">
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto" />
+                            <Rectangle
+                                Grid.Row="3"
+                                Height="100"
+                                Margin="35,0,35,0"
+                                VerticalAlignment="Center"
+                                Fill="White"
+                                RadiusX="10.333"
+                                RadiusY="10.333">
                                 <Rectangle.Effect>
                                     <DropShadowEffect
-                                     BlurRadius="15"
-                                     Direction="0"
-                                     RenderingBias="Quality"
-                                     ShadowDepth="1"
-                                     Color="#FFBBBBBB" />
+                                        BlurRadius="15"
+                                        Direction="0"
+                                        RenderingBias="Quality"
+                                        ShadowDepth="1"
+                                        Color="#FFBBBBBB" />
                                 </Rectangle.Effect>
                             </Rectangle>
 
@@ -171,25 +207,30 @@
                                 x:Name="AuthorTextBox"
                                 Grid.Row="3"
                                 Width="1850"
-                                LostFocus="AuthorTextBox_LostFocus"
-                                 Margin="80,16,80,0"
+                                Margin="80,16,80,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
-                                TextWrapping="Wrap"
-                                VerticalScrollBarVisibility="Auto"
-                                materialDesign:HintAssist.Hint="Author"
                                 materialDesign:HintAssist.FloatingScale="0.9"
+                                materialDesign:HintAssist.Hint="Author"
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
                                 Background="White"
+                                FontSize="18"
+                                LostFocus="AuthorTextBox_LostFocus"
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                FontSize="18"/>
-                                <TextBox Grid.Row="0" x:Name="MinutesForExamTimeTextBox" Width="100" Height="30"  Background="Red" Margin="0 0  0 0 " LostFocus="MinutesForExamTimeTextBox_LostFocus"  PreviewTextInput="MinutesForExamTimeTextBox_PreviewTextInput"/>
+                                TextWrapping="Wrap"
+                                VerticalScrollBarVisibility="Auto" />
                         </Grid>
                     </Grid>
 
-                    <!--TAB 222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222-->
+                    <!--  TAB 222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222  -->
                 </TabItem>
-                <TabItem Header="QUESTIONS" Name="QuestionTab">
+
+
+
+
+                <!--  TAB 22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222  -->
+
+                <TabItem Name="QuestionTab" Header="QUESTIONS">
                     <!--<Grid ShowGridLines="True">
                         <Grid.RowDefinitions>
                             <RowDefinition />
@@ -255,12 +296,12 @@
                                     <ListBox.ItemTemplate >
                                         <DataTemplate>
                                             <DockPanel LastChildFill="False" HorizontalAlignment="Right">
-                                                <TextBlock 
+                                                <TextBlock
                                                     Margin="10,0"
                                                     HorizontalAlignment="Left"
                                                     VerticalAlignment="Center"
                                                     DockPanel.Dock="Left"
-                                                    FontSize="28" 
+                                                    FontSize="28"
                                                     Text="{Binding Text}"/>
                                                 <CheckBox VerticalAlignment="Center" DockPanel.Dock="Right" />
                                                 <Button
@@ -328,13 +369,13 @@
                                                     HorizontalAlignment="Left"
                                                     VerticalAlignment="Center"
                                                     DockPanel.Dock="Left"
-                                                    FontSize="28" 
+                                                    FontSize="28"
                                                     Text="{Binding Text}"/>
 
                                                 <Button
                                                     HorizontalAlignment="Right"
-                                                   
-                                                    DockPanel.Dock="Right" 
+
+                                                    DockPanel.Dock="Right"
                                                     Content="{Binding Text}"/>
                                                 <Button
                                                     HorizontalAlignment="Right"
@@ -345,7 +386,7 @@
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
-                                
+
 
                                 <Button x:Name="AddQuestionButton"
                                     Grid.Row="1"
@@ -365,9 +406,9 @@
                                         Width="20"
                                         Height="20"
                                         Background="{x:Null}"
-                                        Kind="Delete" RenderTransformOrigin="0.547,-8.284" 
+                                        Kind="Delete" RenderTransformOrigin="0.547,-8.284"
                                         />
-                                    
+
                                 </Button>
 
                             </Grid>
@@ -375,127 +416,256 @@
 
                     </Grid>-->
 
-                    <ScrollViewer Height="{Binding ElementName=Drag, Path=ActualHeight}" VerticalScrollBarVisibility="Auto" >
-                    <!--делит окно на 2 поселедине-->
-                    <StackPanel Name="MainStack"   Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" CanVerticallyScroll="True">
-                        <StackPanel Orientation="Horizontal" Background="Brown"  HorizontalAlignment="Stretch">
-                            <StackPanel Width="500" Margin="0 0 50 0">
-                                <Label >TestBlankQuestions</Label>
-                                <ListBox Name="TestBlankQuestions"
-                                         Height="250"
-                                         ItemsSource="{Binding TestBlankQuestion}"
-                                         Background="AliceBlue">
+                    <ScrollViewer Height="{Binding ElementName=Drag, Path=ActualHeight}" VerticalScrollBarVisibility="Auto">
+                        <!--  делит окно на 2 поселедине  -->
+                        <StackPanel SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"
+                            Name="MainStack"
+                            HorizontalAlignment="Stretch"
+                            VerticalAlignment="Stretch"
+                            CanVerticallyScroll="True"
+                            Orientation="Vertical">
+
+                            <Grid Height="200" Background="Aqua" Opacity="0.5">
+                                
+                            </Grid>
+                            
+                            
+                            
+                            
+                            
+                            <StackPanel
+                                HorizontalAlignment="Stretch"
+                                Background="Brown"
+                                Orientation="Horizontal">
+                                <StackPanel Width="500" Margin="0,0,50,0">
+                                    <Label>TestBlankQuestions</Label>
+                                    <ListBox
+                                        Name="TestBlankQuestions"
+                                        Height="250"
+                                        Background="AliceBlue"
+                                        ItemsSource="{Binding TestBlankQuestion}">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock
+                                                        Name="QuestionText"
+                                                        Width="120"
+                                                        Height="80"
+                                                        Text="{Binding Text}"
+                                                        TextWrapping="Wrap" />
+                                                    <StackPanel Orientation="Horizontal">
+                                                        <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
+                                                        <Button
+                                                            Name="TestBlankQuestioView"
+                                                            Width="15"
+                                                            Height="15"
+                                                            Click="TestBlankQuestioView_Click">
+                                                            V
+                                                        </Button>
+                                                        <Button
+                                                            Name="TestBlankQuestioRemove"
+                                                            Width="15"
+                                                            Height="15"
+                                                            Click="TestBlankQuestioRemove_Click">
+                                                            R
+                                                        </Button>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+
+                                    <Button
+                                        x:Name="SubmitButton"
+                                        Margin="0,40,0,0"
+                                        Click="SubmitButton_Click">
+                                        Submit
+                                    </Button>
+
+                                </StackPanel>
+
+                                <StackPanel>
+
+                                    <Grid>
+                                        <StackPanel>
+                                            <TextBox
+                                                Name="Text"
+                                                Width="200"
+                                                Height="30"
+                                                materialDesign:HintAssist.Hint="Enter question text"
+                                                Background="White"
+                                                Text="{Binding Question.Text}" />
+                                            <TextBlock>Complexity</TextBlock>
+                                            <RadioButton
+                                                Name="Low"
+                                                Checked="Low_Checked"
+                                                GroupName="Complexity">
+                                                Low
+                                            </RadioButton>
+                                            <RadioButton
+                                                Name="Normal"
+                                                Checked="Normal_Checked"
+                                                GroupName="Complexity">
+                                                Normal
+                                            </RadioButton>
+                                            <RadioButton
+                                                Name="Hight"
+                                                Checked="Hight_Checked"
+                                                GroupName="Complexity">
+                                                Hight
+                                            </RadioButton>
+                                            <Button
+                                                Name="ImageBtn"
+                                                VerticalAlignment="Bottom"
+                                                Command="{Binding AddImage}">
+                                                ChangeImage
+                                            </Button>
+                                            <Label>CorrectAnswers</Label>
+                                            <ListBox
+                                                Name="WrongAnswersListBox"
+                                                Height="60"
+                                                ItemsSource="{Binding CorrectAnswers}">
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel
+                                                            Name="CorrectStackPanel"
+                                                            Height="40"
+                                                            Background="Aqua"
+                                                            Opacity="0.8"
+                                                            Orientation="Horizontal">
+                                                            <TextBlock
+                                                                Name="CorrectText"
+                                                                Margin="0"
+                                                                Background="Coral"
+                                                                Opacity="0.3"
+                                                                Text="{Binding Text}" />
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBox
+                                                    Name="CorrectAnswerText"
+                                                    Width="300"
+                                                    Height="50"
+                                                    materialDesign:HintAssist.Hint="CorrectAnswerText" />
+                                                <Button Command="{Binding AddCorrectAnswer}" CommandParameter="{Binding ElementName=CorrectAnswerText, Path=Text}">PlusIcon</Button>
+                                            </StackPanel>
+
+                                            <Label>WrongAnswers</Label>
+                                            <ListBox
+                                                Name="CorrectAnswersListBox"
+                                                Height="60"
+                                                Background="Aqua"
+                                                ItemsSource="{Binding WrongAnswers}"
+                                                Opacity="0.8">
+
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <StackPanel
+                                                            Name="WrongStackPanel"
+                                                            Background="Coral"
+                                                            Opacity="0.8"
+                                                            Orientation="Horizontal">
+                                                            <TextBlock
+                                                                Name="WrongText"
+                                                                Background="Red"
+                                                                Opacity="0.8"
+                                                                Text="{Binding Text}" />
+                                                        </StackPanel>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBox
+                                                    Name="WrongAnswerText"
+                                                    Width="300"
+                                                    Height="50"
+                                                    materialDesign:HintAssist.Hint="WrongAnswerText" />
+                                                <Button Command="{Binding AddWrongAnswer}" CommandParameter="{Binding ElementName=WrongAnswerText, Path=Text}">PlusIcon</Button>
+                                            </StackPanel>
+
+                                            <!--  Natig udalil Click =cancle_click, kidal exeption  -->
+                                            <ComboBox
+                                                Name="SubjectsBox"
+                                                ItemsSource="{Binding Subjects}"
+                                                SelectionChanged="SubjectsBox_SelectionChanged" />
+
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBox
+                                                    Name="SubjectName"
+                                                    Width="300"
+                                                    Height="50"
+                                                    materialDesign:HintAssist.Hint="SubjectName" />
+                                                <Button Command="{Binding AddSubject}" CommandParameter="{Binding ElementName=SubjectName, Path=Text}">PlusIcon</Button>
+                                            </StackPanel>
+                                        </StackPanel>
+
+
+                                        <Button
+                                            Name="Add"
+                                            VerticalAlignment="Bottom"
+                                            Command="{Binding AddQuestion}">
+                                            Add Question
+                                        </Button>
+                                    </Grid>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <StackPanel
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                Background="Red "
+                                Orientation="Vertical">
+                                <TextBox
+                                    Name="SearchTxtBox"
+                                    Height="30"
+                                    materialDesign:HintAssist.Hint="QuestionTextt to search enter zaebalo mena)"
+                                    Background="Wheat" />
+                                <ListBox
+                                    Name="AllQuestionsListBox"
+                                    Height="160"
+                                    ItemsSource="{Binding AllQuestions}">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
-                                                <TextBlock Name="QuestionText" Height="80" Width="120" TextWrapping="Wrap" Text="{Binding Text}"></TextBlock>
+                                                <TextBlock
+                                                    Name="QuestText"
+                                                    Width="400"
+                                                    Height="80"
+                                                    Text="{Binding Text}"
+                                                    TextWrapping="Wrap" />
+
                                                 <StackPanel Orientation="Horizontal">
-                                                    <!--NatikMojew sdelatVertikalnie knopki dla prikola-->
-                                                    <Button Name="TestBlankQuestioView" Height="15" Width="15" Click="TestBlankQuestioView_Click">V</Button>
-                                                    <Button Name="TestBlankQuestioRemove" Height="15" Width="15" Click="TestBlankQuestioRemove_Click">R</Button>
+                                                    <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
+                                                    <Button
+                                                        Name="AllQuestioView"
+                                                        Width="30"
+                                                        Height="30"
+                                                        Margin="22,0,0,0"
+                                                        Click="AllQuestioView_Click">
+                                                        View
+                                                    </Button>
+                                                    <Button
+                                                        Name="AllQuestioAdd"
+                                                        Width="30"
+                                                        Height="30"
+                                                        Margin="22,0,0,0"
+                                                        Click="AllQuestioAdd_Click">
+                                                        Add
+                                                    </Button>
                                                 </StackPanel>
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
-                                
-                                    <Button x:Name="SubmitButton" Margin="0,40,0,0" Click="SubmitButton_Click">Submit</Button>
-
-                                </StackPanel>
-                            
-                            <StackPanel   >
-
-                                <Grid>
-                                    <StackPanel>
-                                        <TextBox Background="White"
-                                                         Name="Text"        
-                                                 materialDesign:HintAssist.Hint="Enter question text" 
-                                                         Height="30"
-                                                         Width="200"
-                                                 Text="{Binding Question.Text}"></TextBox>
-                                        <TextBlock>Complexity</TextBlock>
-                                        <RadioButton   Name="Low" GroupName="Complexity" Checked="Low_Checked" >Low</RadioButton>
-                                        <RadioButton  Name="Normal" GroupName="Complexity" Checked="Normal_Checked">Normal</RadioButton>
-                                        <RadioButton  Name="Hight" GroupName="Complexity" Checked="Hight_Checked">Hight</RadioButton >
-                                        <Button VerticalAlignment="Bottom" Name="ImageBtn"   Command="{Binding AddImage}">ChangeImage</Button>
-                                        <Label>CorrectAnswers</Label>
-                                        <ListBox  Name="WrongAnswersListBox" ItemsSource="{Binding CorrectAnswers}" Height="60">
-                                            <ListBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <StackPanel Name="CorrectStackPanel" Orientation="Horizontal" Height="40" Background="Aqua" Opacity="0.8">
-                                                        <TextBlock Name="CorrectText"  Margin="0"   Text="{Binding Text}"  Background="Coral" Opacity="0.3"></TextBlock>
-                                                    </StackPanel>
-                                                </DataTemplate>
-                                            </ListBox.ItemTemplate>
-                                        </ListBox>
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBox Name="CorrectAnswerText"  Height="50" Width="300"    materialDesign:HintAssist.Hint="CorrectAnswerText"/>
-                                            <Button Command="{Binding AddCorrectAnswer}" CommandParameter="{Binding ElementName=CorrectAnswerText,Path=Text}">PlusIcon</Button>
-                                        </StackPanel>
-
-                                        <Label>WrongAnswers</Label>
-                                        <ListBox  Name="CorrectAnswersListBox" ItemsSource="{Binding WrongAnswers}" Height="60" Background="Aqua" Opacity="0.8" >
-                                                
-                                                <ListBox.ItemTemplate>
-                                                <DataTemplate>
-                                                    <StackPanel Name="WrongStackPanel" Orientation="Horizontal" Background="Coral" Opacity="0.8">
-                                                        <TextBlock Name="WrongText"   Text="{Binding Text}" Background="Red" Opacity="0.8" ></TextBlock>
-                                                    </StackPanel>
-                                                </DataTemplate>
-                                            </ListBox.ItemTemplate>
-                                        </ListBox>
-                                        <StackPanel Orientation="Horizontal" >
-                                            <TextBox Name="WrongAnswerText"  Height="50" Width="300"  materialDesign:HintAssist.Hint="WrongAnswerText"/>
-                                            <Button Command="{Binding AddWrongAnswer}" CommandParameter="{Binding ElementName=WrongAnswerText,Path=Text}">PlusIcon</Button>
-                                        </StackPanel>
-                                      
-                                        <!--Natig udalil Click =cancle_click, kidal exeption-->
-                                        <ComboBox Name="SubjectsBox" ItemsSource="{Binding Subjects}" SelectionChanged="SubjectsBox_SelectionChanged" >
-                                        </ComboBox>
-
-                                        <StackPanel Orientation="Horizontal"  >
-                                            <TextBox Name="SubjectName"  Height="50" Width="300"  materialDesign:HintAssist.Hint="SubjectName"/>
-                                            <Button Command="{Binding AddSubject}" CommandParameter="{Binding ElementName=SubjectName,Path=Text}">PlusIcon</Button>
-                                        </StackPanel>
-                                    </StackPanel>
-
-
-                                    <Button VerticalAlignment="Bottom" 
-                                                  Name="Add"
-                                                    Command="{Binding AddQuestion}">
-                                        Add Question</Button>
-                                </Grid>
                             </StackPanel>
-                        </StackPanel>
-                        
-                        <StackPanel Orientation="Vertical" Background="Red " VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <TextBox    Name="SearchTxtBox"  Height="30" Background="Wheat"
-                                      materialDesign:HintAssist.Hint="QuestionTextt to search enter zaebalo mena)">
-                            </TextBox>
-                            <ListBox Name="AllQuestionsListBox"
-                                     ItemsSource="{Binding AllQuestions}"
-                                     Height="160">
-                                <ListBox.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackPanel Orientation="Horizontal">
-                                                <TextBlock Name="QuestText" Height="80" Width="400" TextWrapping="Wrap" Text="{Binding Text}"></TextBlock>
 
-                                                <StackPanel Orientation="Horizontal">
-                                                <!--NatikMojew sdelatVertikalnie knopki dla prikola-->
-                                                <Button Name="AllQuestioView" Height="30" Width="30" Margin="22,0,0,0" Click="AllQuestioView_Click">View</Button>
-                                                <Button Name="AllQuestioAdd" Height="30" Width="30" Margin="22,0,0,0" Click="AllQuestioAdd_Click">Add</Button>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </ListBox.ItemTemplate>
-                            </ListBox>
                         </StackPanel>
-                    
-                    </StackPanel>
 
                     </ScrollViewer>
 
-                    <!--TAB 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333-->
+                    <!--  TAB 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333  -->
                 </TabItem>
                 <TabItem Header="SETTINGS">
                     <Grid ShowGridLines="True">
@@ -514,7 +684,10 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Bottom"
                                 Orientation="Horizontal">
-                                <RadioButton x:Name="AllQuestionsRadioButton" Padding="5" GroupName="QuestionCount"/>
+                                <RadioButton
+                                    x:Name="AllQuestionsRadioButton"
+                                    Padding="5"
+                                    GroupName="QuestionCount" />
                                 <TextBlock Text="All questions" />
 
                             </StackPanel>
@@ -524,9 +697,15 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Top"
                                 Orientation="Horizontal">
-                                <RadioButton x:Name="RandomQuestionsRadioButton" Padding="5" GroupName="QuestionCount"/>
+                                <RadioButton
+                                    x:Name="RandomQuestionsRadioButton"
+                                    Padding="5"
+                                    GroupName="QuestionCount" />
                                 <TextBlock Text="Random" />
-                                <TextBox x:Name="CountOfRandomQuestionsTextBox" Width="30" Margin="35,0,0,0"/>
+                                <TextBox
+                                    x:Name="CountOfRandomQuestionsTextBox"
+                                    Width="30"
+                                    Margin="35,0,0,0" />
                                 <TextBlock Margin="5,0,0,0" Text="questions" />
 
                             </StackPanel>
@@ -542,7 +721,10 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Bottom"
                                 Orientation="Horizontal">
-                                <RadioButton x:Name="HardRadioButton" Padding="5" GroupName="Difficult" />
+                                <RadioButton
+                                    x:Name="HardRadioButton"
+                                    Padding="5"
+                                    GroupName="Difficult" />
                                 <TextBlock Text="Hard" />
 
 
@@ -555,7 +737,10 @@
                                 Orientation="Horizontal">
 
 
-                                <RadioButton x:Name="MediumRadioButton" Padding="5" GroupName="Difficult"/>
+                                <RadioButton
+                                    x:Name="MediumRadioButton"
+                                    Padding="5"
+                                    GroupName="Difficult" />
                                 <TextBlock Text="Medium" />
 
 
@@ -567,7 +752,10 @@
                                 Orientation="Horizontal">
 
 
-                                <RadioButton x:Name="EasyRadioButton" Padding="5" GroupName="Difficult" />
+                                <RadioButton
+                                    x:Name="EasyRadioButton"
+                                    Padding="5"
+                                    GroupName="Difficult" />
                                 <TextBlock Text="Easy" />
 
                             </StackPanel>
@@ -582,7 +770,10 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Bottom"
                                 Orientation="Horizontal">
-                                <RadioButton x:Name="UnlimitedTimeRadioButton" Padding="5" GroupName="LimitForTime" />
+                                <RadioButton
+                                    x:Name="UnlimitedTimeRadioButton"
+                                    Padding="5"
+                                    GroupName="LimitForTime" />
                                 <TextBlock Text="Unlimited" />
 
                             </StackPanel>
@@ -592,9 +783,12 @@
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Top"
                                 Orientation="Horizontal">
-                                <RadioButton x:Name="LimitedTimeRadioButton" Padding="5" GroupName="LimitForTime" />
+                                <RadioButton
+                                    x:Name="LimitedTimeRadioButton"
+                                    Padding="5"
+                                    GroupName="LimitForTime" />
                                 <TextBlock Text="Limited" />
-                               
+
                             </StackPanel>
 
                         </Grid>
@@ -602,6 +796,9 @@
                 </TabItem>
             </dragablz:TabablzControl>
         </Grid>
-        <Label Visibility="Hidden" Name="SubjectId" IsEnabled="False"></Label>
+        <Label
+            Name="SubjectId"
+            IsEnabled="False"
+            Visibility="Hidden" />
     </Grid>
 </Page>

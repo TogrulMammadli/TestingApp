@@ -49,7 +49,7 @@ namespace TestApplicationWPF.Pages
                         {
                             this.Dispatcher.Invoke(() =>
                             {
-                                this.Dispatcher.InvokeAsync(() => this.ImageBox.Source = new BitmapImage(new Uri(Imagepath)));
+                               // this.Dispatcher.InvokeAsync(() => this.ImageBox.Source = new BitmapImage(new Uri(Imagepath)));
                             });
                         }
                     });
@@ -59,6 +59,16 @@ namespace TestApplicationWPF.Pages
         public void CC()
         {
             Imagepath = service.GetAvatarImageFromDb(Question.Id);
+        }
+
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
     

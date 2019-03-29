@@ -24,11 +24,16 @@ namespace TestApplicationWPF
     {
         User User = new User();
         UserService userService = new UserService(new UserRepository());
-
-        public ForgotPasswordWindow3(User user)
+        int Num = 1;
+        public ForgotPasswordWindow3(User user,int num)
         {
             InitializeComponent();
             this.User = user;
+             Num = num;
+            if (num==2)
+            {
+                PassRecov.Visibility = Visibility.Hidden;
+            }
         }
 
         private void ButtonOK_Click(object sender, RoutedEventArgs e)
@@ -58,10 +63,17 @@ namespace TestApplicationWPF
                             {
                                 if (User != null)
                                 {
+                                    if (Num==1)
+                                    {
                                     HeadWindow HeadWindow = new HeadWindow(User);
                                     HeadWindow.Show();
                                     Application.Current.MainWindow.Close();
                                     this.Close();
+                                    }
+                                    if (Num==2)
+                                    {
+                                        //Natig delay cto xocew
+                                    }
                                 }
                                 else
                                 {

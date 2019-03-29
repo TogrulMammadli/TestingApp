@@ -78,5 +78,10 @@ namespace TestApplicationWPF
         {
             ViewModel.AddPhone.Execute(NumberTextBox.Text);
         }
+
+        private void ImageBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

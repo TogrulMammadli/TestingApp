@@ -19,8 +19,9 @@ namespace TestApplicationWPF.Repository.TestBlanksRepository
                 TestContext.Instance.SaveChanges();
                 return true;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                MessageBox.Show(e.Message, "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 return false;
             }
         }
@@ -28,7 +29,6 @@ namespace TestApplicationWPF.Repository.TestBlanksRepository
         public IEnumerable<TestBlank> GetAllTestBlanks()
         {
             return TestContext.Instance.TestBlanks.ToList();
-
         }
 
         public TestBlank GetTestBlankByID(int ID)

@@ -28,6 +28,10 @@ namespace TestApplicationWPF.Models
 
     public class CorrectAnswer : Answer
     {
+        public CorrectAnswer()
+        {
+        }
+
         public CorrectAnswer(int id, string text, byte[] image) : base(id, text, image)
         {
             this.Questions = new HashSet<Question>();
@@ -38,11 +42,34 @@ namespace TestApplicationWPF.Models
 
     public class WrongAnswer : Answer
     {
+        public WrongAnswer()
+        {
+        }
+
         public WrongAnswer(int id, string text, byte[] image) : base(id, text, image)
         {
             this.Questions = new HashSet<Question>();
         }
         public virtual ICollection<Question> Questions { get; set; }
 
+    }
+
+    public class StudentAnwsers
+    {
+        public StudentAnwsers()
+        {
+        }
+        [Key]
+        public int Id { get; set; }
+        public List<Ans> Answers { get; set; }
+
+    }
+    public class Ans{
+
+        public int Id { get; set; }
+        public string An { get; set; }
+        public Ans()
+        {
+        }
     }
 }

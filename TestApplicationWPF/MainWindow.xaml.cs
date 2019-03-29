@@ -38,14 +38,16 @@ namespace TestApplicationWPF
             //var category = new Category() { Name = "TogrulCategory" };
             //CategoryRepository categoryRepository = new CategoryRepository();
             //categoryRepository.AddCategory(category);
-            //var question = new Question(){Text="somethekst",subject=new Subject() {Name="testSubject" },Answers=new List<Answer>() { new   Answer() { Text = "dawwag" }, new Answer() { Text = "memew" } } };
-            //QuestionRepository questionsss= new QuestionRepository();
+
+            //var question = new Question() { Text = "ParvizPidor", subject = new Subject() { Name = "MuradTojepidor" } ,CorrectAnswers=new List<CorrectAnswer>() { new CorrectAnswer() { Text="correct"}},WrongAnswers=new List<WrongAnswer> { new WrongAnswer() {Text="asd"} },TestBlanks=new List<TestBlank>() { new TestBlank() { Name = "asd" } } };
+            //QuestionRepository questionsss = new QuestionRepository();
             //questionsss.AddQuestion(question);
+
             //AccessLevelRepository accessLevelRepository = new AccessLevelRepository();
             //var user = new User() { Name = "Murad", Surname = "Mammadov", Patronymic = "Gabil", PhoneNumber = "", Login = "admin", AccessLevels = new List<AccessLevel> { accessLevelRepository.GetAccessLevelByName("Admin") }, DateOfBirth = DateTime.Now, Email = "@gmail.com", Password = "admin", Gender = Gender.Male };
             //UserRepository userRepository = new UserRepository();
             //userRepository.AddUser(user);
-            //#region UpdateImageInDbTesting
+            // #region UpdateImageInDbTesting
 
             ////try
             ////{
@@ -64,6 +66,10 @@ namespace TestApplicationWPF
             //#endregion
             //var b = userRepository.GetUserByID(1);
             //var a = 5;
+            //StudentAnwser studentAnwser = new StudentAnwser();
+            //studentAnwser.Answer = "otvet1|7767|otvet2";
+
+
 
         }
 
@@ -113,6 +119,8 @@ namespace TestApplicationWPF
                             {
                                 TextBlockWarning.Text = "Wrong login or password";
                                 this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Hidden);
+                                this.Dispatcher.InvokeAsync(() => this.ButtonLogin.IsEnabled = true);
+
                             }
                         });
                     }
@@ -131,7 +139,7 @@ namespace TestApplicationWPF
             this.Dispatcher.InvokeAsync(() => this.PrgrssBar.Visibility = Visibility.Visible);
             this.Dispatcher.InvokeAsync(() => this.TextBoxUserName.BorderBrush = Brushes.Gray);
             this.Dispatcher.InvokeAsync(() => this.PassBoxPassword.BorderBrush = Brushes.Gray);
-
+            this.Dispatcher.InvokeAsync(() => this.ButtonLogin.IsEnabled = false);
             try
             {
                 user = userService.Login(this.Dispatcher.Invoke(() => TextBoxUserName.Text), this.Dispatcher.Invoke(() => PassBoxPassword.Password.ToString()));

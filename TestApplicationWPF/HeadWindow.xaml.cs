@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TestApplicationWPF.Models;
 using TestApplicationWPF.Pages;
+using TestApplicationWPF.PagesStudent;
 using TestApplicationWPF.Repository.UserRepository;
 using TestApplicationWPF.Services.UserServices;
 
@@ -43,7 +44,7 @@ namespace TestApplicationWPF
                         {
                             this.Dispatcher.Invoke(() =>
                             {
-                                this.Dispatcher.InvokeAsync(() => this.AvatarImage.Source = new BitmapImage(new Uri(Imagepath)));
+                                this.Dispatcher.InvokeAsync(() => this.Image.ImageSource = new BitmapImage(new Uri(Imagepath)));
                             });
                         }
                     });
@@ -61,7 +62,6 @@ namespace TestApplicationWPF
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             frame.Content = new ChooseTestBlankPage();
-
         }
 
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -72,6 +72,7 @@ namespace TestApplicationWPF
         private void HeadWndButtonClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+            Environment.Exit(0);
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -101,33 +102,45 @@ namespace TestApplicationWPF
 
         private void StackPanel_MouseLeave(object sender, MouseEventArgs e)
         {
-            BurgerMenu.Visibility = Visibility.Visible;
-            HamburgerMenuGrid.Width = 30;
-            UserinfoStackpanel.Visibility = Visibility.Hidden;
+            try
+            {
+                BurgerMenu.Visibility = Visibility.Visible;
+                this.Dispatcher.InvokeAsync(() => { UserinfoStackpanel.Visibility = Visibility.Visible; });
+                this.Dispatcher.InvokeAsync(() => { HamburgerMenuGrid.Width = 30; });
+                this.Dispatcher.InvokeAsync(() => { UserinfoStackpanel.Visibility = Visibility.Hidden; });       
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
 
         public bool IsFullscreen = false;
         public WindowState lastWindowState;
         private void HeadWndButtonMaximize_Click(object sender, RoutedEventArgs e)
         {
-            if (IsFullscreen)
+            if (this.WindowState == WindowState.Maximized)
             {
-                this.WindowStyle = WindowStyle.None;
+
+                //this.WindowStyle = WindowStyle.None;
+                HeadWndButtonMaximizeMaterial.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowMaximize;
                 this.WindowState = WindowState.Normal;
                 IsFullscreen = false;
 
             }
-            else 
+            else
             {
+                HeadWndButtonMaximizeMaterial.Kind = MaterialDesignThemes.Wpf.PackIconKind.WindowRestore;
                 this.WindowState = WindowState.Maximized;
-                IsFullscreen = true;
-                WindowStyle = WindowStyle.None;
+               // IsFullscreen = true;
+               // WindowStyle = WindowStyle.None;
             }
         }
 
         private void HeadWndButtonDropdown_Click(object sender, RoutedEventArgs e)
         {
-                WindowStyle = WindowStyle.None;
+                //.WindowStyle = WindowStyle.None;
                 WindowState = WindowState.Minimized;
         }
 
@@ -139,6 +152,35 @@ namespace TestApplicationWPF
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
             frame.Content = new StatisticaPage();
+        }
+
+        private void Button_Click_6(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new QuestionManagement();
+        }
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new TestNamesPage();
+        }
+
+        private void PackIcon_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+             Imagepath = userService.GetAvatarImageFromDb(User.Id);
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new ExamShedule();
+
+        }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+           
+            MainWindow mainWindow2 = new MainWindow();
+            mainWindow2.Show();
+            this.Close();
         }
     }
 }

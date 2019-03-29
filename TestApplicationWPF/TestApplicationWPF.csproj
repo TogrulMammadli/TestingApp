@@ -93,6 +93,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddNewQuestion.xaml.cs">
+      <DependentUpon>AddNewQuestion.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddUserWindow.xaml.cs">
       <DependentUpon>AddUserWindow.xaml</DependentUpon>
     </Compile>
@@ -105,11 +108,12 @@
     <Compile Include="ForgotPasswordWindow3.xaml.cs">
       <DependentUpon>ForgotPasswordWindow3.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Mesages\NewQuestionMessages.cs" />
     <Compile Include="Mesages\NewUserMesenger.cs" />
     <Compile Include="Mesages\WindowMessages.cs" />
-    <Compile Include="Migrations\201903251916244_First.cs" />
-    <Compile Include="Migrations\201903251916244_First.Designer.cs">
-      <DependentUpon>201903251916244_First.cs</DependentUpon>
+    <Compile Include="Migrations\201903290121059_CreateDb.cs" />
+    <Compile Include="Migrations\201903290121059_CreateDb.Designer.cs">
+      <DependentUpon>201903290121059_CreateDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BestTimeForStudy.cs" />
@@ -127,6 +131,12 @@
     <Compile Include="HeadWindow.xaml.cs">
       <DependentUpon>HeadWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ExamShedule.xaml.cs">
+      <DependentUpon>ExamShedule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\QuestionManagement.xaml.cs">
+      <DependentUpon>QuestionManagement.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
     </Compile>
@@ -136,26 +146,46 @@
     <Compile Include="Pages\TestResult.xaml.cs">
       <DependentUpon>TestResult.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\UdalitVremenno.xaml.cs">
+      <DependentUpon>UdalitVremenno.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UserEditWindow.xaml.cs">
       <DependentUpon>UserEditWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\UserManagement.xaml.cs">
       <DependentUpon>UserManagement.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ViewQuestionInfo.xaml.cs">
+      <DependentUpon>ViewQuestionInfo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Repository\AnswerRepository\IWrongAnswerRepository.cs" />
+    <Compile Include="Services\AnswerService\CorrectAnswerService.cs" />
+    <Compile Include="Services\AnswerService\ICorrectAnswerService.cs" />
+    <Compile Include="Services\AnswerService\IWrongAnswerService.cs" />
+    <Compile Include="Services\AnswerService\WrongAnswerService.cs" />
+    <Compile Include="Services\ExamService\ExamService.cs" />
+    <Compile Include="Services\ExamService\IExamService.cs" />
     <Compile Include="Services\GroupServices\GroupService.cs" />
     <Compile Include="Services\GroupServices\IGroupService.cs" />
     <Compile Include="Services\QuestionService\IQuestionService.cs" />
     <Compile Include="Services\QuestionService\QuestionService.cs" />
+    <Compile Include="Services\SubjectService\ISubjectService.cs" />
+    <Compile Include="Services\SubjectService\SubjectService.cs" />
     <Compile Include="Services\TestServices\TestService.cs" />
     <Compile Include="Services\TestServices\ITestService.cs" />
     <Compile Include="Services\UserServices\IUserService.cs" />
     <Compile Include="Services\UserServices\UserService.cs" />
-    <Compile Include="ViewModel\AddUser\AccessLevelKeyValue.cs" />
-    <Compile Include="ViewModel\AddUser\AddUserViewModel.cs" />
-    <Compile Include="ViewModel\UserManagementViewModel.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="ViewModel\ExamSheduleVM\ExamSheduleViewModel.cs" />
+    <Compile Include="ViewModel\QuestionVM\AddQuestionViewModel.cs" />
+    <Compile Include="ViewModel\TestBlankVM\TestBlankViewModel.cs" />
+    <Compile Include="ViewModel\UserVM\AccessLevelKeyValue.cs" />
+    <Compile Include="ViewModel\UserVM\AddUserViewModel.cs" />
+    <Compile Include="ViewModel\QuestionVM\QuestionManagementViewModel.cs" />
+    <Compile Include="ViewModel\UserVM\UserManagementViewModel.cs" />
+    <Page Include="AddNewQuestion.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddUserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -208,9 +238,6 @@
     <Compile Include="Repository\TestBlanksRepository\TestBlankRepository.cs" />
     <Compile Include="Repository\UserRepository\IUserRepository.cs" />
     <Compile Include="Repository\UserRepository\UserRepository.cs" />
-    <Compile Include="StudentWindow.xaml.cs">
-      <DependentUpon>StudentWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -225,6 +252,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\ExamShedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\QuestionManagement.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\SettingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -237,6 +272,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\UdalitVremenno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\UserEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -245,7 +284,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StudentWindow.xaml">
+    <Page Include="Pages\ViewQuestionInfo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -274,8 +313,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201903251916244_First.resx">
-      <DependentUpon>201903251916244_First.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903290121059_CreateDb.resx">
+      <DependentUpon>201903290121059_CreateDb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -317,6 +356,14 @@
   <ItemGroup>
     <Resource Include="Icons\mainicon.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icons\tre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\tre2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\tre3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

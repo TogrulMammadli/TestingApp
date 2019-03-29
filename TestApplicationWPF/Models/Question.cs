@@ -40,7 +40,7 @@ namespace TestApplicationWPF.Models
         public virtual ICollection<WrongAnswer> WrongAnswers { get; set; }
         public virtual ICollection<CorrectAnswer> CorrectAnswers { get; set; }
         public virtual ICollection<TestBlank> TestBlanks { get; set; }
-        Complexity Complexity { get; set; }
+        public Complexity Complexity { get; set; }
         [MaxLength]
         public byte[] Image { get; set; }
         public Subject subject { get; set; }

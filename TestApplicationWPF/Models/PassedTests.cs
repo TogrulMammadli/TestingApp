@@ -25,6 +25,7 @@ namespace TestApplicationWPF.Models
         public TestBlank Blank { get; set; }
         public DateTime? BeginDate { get; set; }
         public DateTime? EndDate { get; set; }
-
+        public ICollection<StudentAnwsers> studentanswer { get; set; }  
+        
     }
 }

@@ -1,0 +1,182 @@
+﻿<Window x:Class="TestApplicationWPF.Pages.ViewQuestionInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        
+        xmlns:local="clr-namespace:TestApplicationWPF.Pages"
+        mc:Ignorable="d"
+        Title="ViewQuestionInfo" Height="625" MinHeight="630" MaxHeight="625" Width="800" Background="#ecf0f1" WindowStyle="None">
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#3498db" MouseLeftButtonDown="Grid_MouseLeftButtonDown"  >
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Background="{x:Null}"
+                BorderBrush="{x:Null}"
+                Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="Button_Click" >
+                    <materialDesign:PackIcon
+                    Width="20"
+                    Height="20"
+                    Background="{x:Null}"
+                    Kind="Close" />
+                </Button>
+            </StackPanel>
+        </Grid>
+        <StackPanel Grid.Row="1">
+            
+            <materialDesign:Card Background="White" Grid.Column="1" Margin="20 20 20 0" Padding="10" VerticalAlignment="Top" UniformCornerRadius="8"
+                             materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                             materialDesign:ShadowAssist.ShadowEdges="All">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    
+                        <StackPanel VerticalAlignment="Center" Grid.Column="0">
+                            <Label Foreground="Gray" Margin="20 0 20 0">Subject</Label>
+                            <TextBlock
+                           
+                        Margin="20 0 20 0"
+                        materialDesign:HintAssist.Hint="Content"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.7"
+                        FontSize="18"
+                        Name="SubjectBox"  DockPanel.Dock="Bottom"  HorizontalAlignment="Stretch"  Text="{Binding Question.subject}"/>
+
+                        </StackPanel>
+                    <Button Grid.Column="1" HorizontalAlignment="Center"
+                             Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                             ToolTip="MaterialDesignFloatingActionMiniButton">
+                        <materialDesign:PackIcon
+                                 Kind="QuestionMark"
+                                 Height="24"
+                                 Width="24" />
+                    </Button>
+
+
+
+
+                </Grid>
+            </materialDesign:Card>
+
+            <materialDesign:Card Background="White" Grid.Column="1" Margin="20 15 20 0" Padding="10" VerticalAlignment="Top" UniformCornerRadius="8"
+                             materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                             materialDesign:ShadowAssist.ShadowEdges="All">
+                <Grid>
+                    
+
+
+                    <StackPanel VerticalAlignment="Center" Grid.Column="0">
+                        <Label Foreground="Gray" Margin="20 0 20 0">Question</Label>
+                        <TextBlock
+                           Height="80" TextWrapping="Wrap" Name="Texttxtbx" Text="{Binding Question.Text}"
+                        Margin="20 0 20 0"
+                        materialDesign:HintAssist.Hint="Content"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.7"
+                        FontSize="18"
+                        DockPanel.Dock="Bottom"  HorizontalAlignment="Stretch"  />
+
+                    </StackPanel>
+                   
+
+
+
+
+                </Grid>
+            </materialDesign:Card>
+
+            <materialDesign:Card Background="White" Grid.Column="1" Margin="20 15 20 0" Padding="10" VerticalAlignment="Top" UniformCornerRadius="8"
+                             materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                             materialDesign:ShadowAssist.ShadowEdges="All">
+                <Grid>
+
+                    <StackPanel VerticalAlignment="Center" >
+                        <Label Foreground="Gray" Margin="20 0 20 0">Correct answers</Label>
+                        <ListBox  Margin="0 0 0 0" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     ItemsSource="{Binding Question.CorrectAnswers}" Height="90">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate >
+                                    <TextBlock Height="20" Text="{Binding Text}"></TextBlock>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                    </StackPanel>
+                </Grid>
+            </materialDesign:Card>
+
+            <materialDesign:Card Background="White" Grid.Column="1" Margin="20 15 20 0" Padding="10" VerticalAlignment="Top" UniformCornerRadius="8"
+                             materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                             materialDesign:ShadowAssist.ShadowEdges="All">
+                <Grid>
+
+                    <StackPanel VerticalAlignment="Center" >
+                        <Label Foreground="Gray" Margin="20 0 20 0">Wrong answers</Label>
+                        <ListBox  Margin="0 0 0 0" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                     ItemsSource="{Binding Question.WrongAnswers}" Height="90">
+                            <ListBox.ItemTemplate>
+                                <DataTemplate >
+                                    <TextBlock Height="20" Text="{Binding Text}"></TextBlock>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+
+                    </StackPanel>
+                </Grid>
+            </materialDesign:Card>
+            <Grid Margin="20 15 20 20">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Width="50" Content="Ok" Margin="0 0 0 0" Click="Button_Click"></Button>
+                   
+                </StackPanel>
+                
+            </Grid>
+
+            <!--<Label>QuestionSubject</Label>
+            <TextBlock Height="20" Name="SubjectBox"  DockPanel.Dock="Bottom"  HorizontalAlignment="Stretch"  Text="{Binding Question.subject}" />
+            <Label>QuestionText</Label>
+            <TextBlock Height="100" TextWrapping="Wrap" Name="Texttxtbx" Text="{Binding Question.Text}"></TextBlock>
+           
+           
+            
+            <StackPanel>
+                <Label>CorrectAnswersListbox</Label>
+                <ListBox Background="Cornsilk"
+                     ItemsSource="{Binding Question.CorrectAnswers}" Height="90">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate >
+                            <TextBlock Height="20" Text="{Binding Text}"></TextBlock>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Label>WrongAnswersListbox</Label>
+                <ListBox Background="Cornsilk"
+                         Height="80"
+                     ItemsSource="{Binding Question.WrongAnswers}">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate >
+                            <Grid Name="Element" Margin="0,2" >
+                                <StackPanel Height="35" Orientation="Horizontal" HorizontalAlignment="Stretch">
+                                    <TextBox Height="20"  Text="{Binding Text}"></TextBox>
+                                    <Image  Height="20" Width="20"  Source="{Binding Image}"></Image>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>-->
+        </StackPanel>
+    </Grid>
+</Window>

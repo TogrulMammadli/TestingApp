@@ -13,8 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestApplicationWPF.Models;
+using TestApplicationWPF.Pages;
+using TestApplicationWPF.Repository.AnswerRepository;
+using TestApplicationWPF.Repository.QuestionsRepository;
 using TestApplicationWPF.Repository.TestBlanksRepository;
+using TestApplicationWPF.Repository.UserRepository;
+using TestApplicationWPF.Services.AnswerService;
+using TestApplicationWPF.Services.QuestionService;
 using TestApplicationWPF.Services.TestServices;
+using TestApplicationWPF.Services.UserServices;
+using TestApplicationWPF.ViewModel.AddQuestion;
+using TestApplicationWPF.ViewModel.TestBlankVM;
 
 namespace TestApplicationWPF
 {
@@ -23,94 +32,99 @@ namespace TestApplicationWPF
     /// </summary>
     public partial class PageCreateTest : Page
     {
-       // public TestService testService = new TestService(new TestBlankRepository());
-        public List<Question> questions = new List<Question>();
+        TestBlankViewModel testBlankViewModel;
+        TestBlank TestBlk = new TestBlank();
         public PageCreateTest()
         {
             InitializeComponent();
-            TypeComboBox.Items.Add("Один ответ");
-            TypeComboBox.Items.Add("Несколько ответов");
-            TypeComboBox.SelectedIndex = 0;
             AllQuestionsRadioButton.IsChecked = true;
             MediumRadioButton.IsChecked = true;
             UnlimitedTimeRadioButton.IsChecked = true;
+
+            testBlankViewModel = new TestBlankViewModel(new TestService(new TestBlankRepository()), new QuestionService(new QuestionRepository()));
+            this.DataContext = testBlankViewModel;
+        }
+
+    
+        private void TestBlankQuestioRemove_Click(object sender, RoutedEventArgs e)
+        {
+            testBlankViewModel.RemoveQuestionFromTestBlank.Execute((Question)(((Button)sender).DataContext));
+        }
+
+        private void TestBlankQuestioView_Click(object sender, RoutedEventArgs e)
+        {
+            ViewQuestionInfo viewQuestionInfo = new ViewQuestionInfo((Question)(((Button)sender).DataContext));
+            viewQuestionInfo.ShowDialog();
+        }
+      
+        private void Low_Checked(object sender, RoutedEventArgs e)
+        {
+            testBlankViewModel.ComplexityCheck.Execute(Complexity.Low);
+        }
+
+        private void Normal_Checked(object sender, RoutedEventArgs e)
+        {
+            testBlankViewModel.ComplexityCheck.Execute(Complexity.Medium);
+
+        }
+
+        private void Hight_Checked(object sender, RoutedEventArgs e)
+        {
+            testBlankViewModel.ComplexityCheck.Execute(Complexity.Hight);
+        }
+
+        private void SubjectsBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            testBlankViewModel.ChooseSubject.Execute(SubjectsBox.SelectedItem.ToString());
+        }
+
+        private void MinutesForExamTimeTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+             e.Handled = !(Char.IsDigit(e.Text, 0));
+        }
+
+        private void AllQuestioView_Click(object sender, RoutedEventArgs e)
+        {
+            ViewQuestionInfo viewQuestionInfo = new ViewQuestionInfo((Question)(((Button)sender).DataContext));
+            viewQuestionInfo.ShowDialog();
+        }
+
+        private void AllQuestioAdd_Click(object sender, RoutedEventArgs e)
+        {
+            testBlankViewModel.AddQuestionToTestBlank.Execute((Question)(((Button)sender).DataContext));
         }
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            List<string> Emptys = new List<string>();
-            if(String.IsNullOrEmpty(NameTextBox.Text) == true || String.IsNullOrWhiteSpace(NameTextBox.Text) == true)
-            {
-                Emptys.Add("имя теста");
-            }
-            if(String.IsNullOrEmpty(AboutTextBox.Text) == true || String.IsNullOrWhiteSpace(AboutTextBox.Text) == true)
-            {
-                Emptys.Add("описание теста");
-            }
-            if (String.IsNullOrEmpty(AuthorTextBox.Text) == true || String.IsNullOrWhiteSpace(AuthorTextBox.Text) == true)
-            {
-                Emptys.Add("имя автора");
-            }
-
-            if(Emptys.Count != 0)
-            {
-                for(int i = 0;i<Emptys.Count;i++)
-                {
-                    MessageBox.Show("У вас не описано следующее поле:" + Emptys[i], "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-                }
-            }
-            else
-            {
-                if(UnlimitedTimeRadioButton.IsChecked == true)
-                {
-                   // testService.TestBlankRepository.AddTestBlank(new Models.TestBlank() {Name = NameTextBox.Text,About = AboutTextBox.Text,Autor = AuthorTextBox.Text,DurationMin = null, })
-                }
-                //testService.CreateTest(NameTextBox.Text,AboutTextBox.Text,AuthorTextBox.Text,new TimeSpan())
-            }
+            testBlankViewModel.TestBlank.About = TestBlk.About;
+            testBlankViewModel.TestBlank.Name = TestBlk.Name;
+            testBlankViewModel.TestBlank.DurationMin = TestBlk.DurationMin;
+            testBlankViewModel.TestBlank.Autor = TestBlk.Autor;
+            testBlankViewModel.AddTestBlank.Execute(true);
+            MessageBox.Show("Natig sdelay cto nibud pole najatiya cnopki ctobi bilo ponatno sozdalsa ili net" ,"Congratulations",MessageBoxButton.OK,MessageBoxImage.Information);
         }
 
-        private void AddAnswerButton_Click(object sender, RoutedEventArgs e)
+        private void NameTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (String.IsNullOrEmpty(QuestionAddTextBox.Text) == true || String.IsNullOrWhiteSpace(QuestionAddTextBox.Text) == true)
-            {
-                MessageBox.Show("Вы не описали свой вопрос!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else if (String.IsNullOrEmpty(AnswerAddTextBox.Text) == true || String.IsNullOrWhiteSpace(AnswerAddTextBox.Text) == true)
-            {
-                MessageBox.Show("Вы не описали свой ответ!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else if (AnswersListBox.Items.Count >= 6)
-            {
-                MessageBox.Show("У вас слишком много ответов!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            else
-            {
-                AnswersListBox.Items.Add(AnswerAddTextBox.Text);
-            }
+            TestBlk.Name= NameTextBox.Text;
         }
 
-        private void DeleteAnswerButton_Click(object sender, RoutedEventArgs e)
+        private void AboutTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            AnswersListBox.Items.Remove(AnswersListBox.SelectedItem);
+            TestBlk.About = AboutTextBox.Text;
         }
 
-        private void AddQuestionButton_Click(object sender, RoutedEventArgs e)
+        private void AuthorTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (AnswersListBox.Items.Count >= 2 && AnswersListBox.Items.Count <= 6)
-            {
-                QuestionListBox.Items.Add(QuestionAddTextBox.Text);
-                QuestionAddTextBox.Text = "";
-                AnswersListBox.Items.Clear();
-            }
-            else
-            {
-                MessageBox.Show("У вас слишком мало ответов!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
-            }
+
+            TestBlk.Autor = AuthorTextBox.Text;
+
         }
 
-        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        private void MinutesForExamTimeTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-            QuestionListBox.Items.Remove(QuestionListBox.SelectedItem);
+            TestBlk.DurationMin = new TimeSpan(0, Convert.ToInt32(MinutesForExamTimeTextBox.Text), 0);
+
         }
     }
 }

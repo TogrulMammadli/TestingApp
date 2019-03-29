@@ -14,26 +14,28 @@ namespace TestApplicationWPF.Models
         [Key]
         public int Id { get; set; }
         [MaxLength(50)]
-        [Index(IsUnique =true)]
         public string Name { get; set; }
         public string About { get; set; }
         public string Autor { get; set; }
         public TimeSpan DurationMin  { get; set; }
-        bool Used=false;
+        public Boolean Used { get; set; } = false;
+        public Boolean original { get; set; } = false;
         public virtual ICollection<Question> Questions { get; set; }
-
-        public TestBlank(int id, string name,TimeSpan durationMin, List<Question> questions, bool used)
-        {
-            Id = id;
-            Name = name ?? throw new ArgumentNullException(nameof(name));
-            DurationMin = durationMin;
-            this.Questions = questions ?? throw new ArgumentNullException(nameof(questions));
-            Used = used;
-        }
 
         public TestBlank()
         {
             this.Questions = new HashSet<Question>();
+        }
+
+        public TestBlank(int id, string name, string about, string autor, TimeSpan durationMin, bool used, bool original)
+        {
+            Id = id;
+            Name = name ?? throw new ArgumentNullException(nameof(name));
+            About = about ?? throw new ArgumentNullException(nameof(about));
+            Autor = autor ?? throw new ArgumentNullException(nameof(autor));
+            DurationMin = durationMin;
+            Used = used;
+            this.original = original;
         }
     }
 

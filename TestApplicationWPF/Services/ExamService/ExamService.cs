@@ -49,7 +49,7 @@ namespace TestApplicationWPF.Services.ExamService
 
         public IEnumerable<Exams> GetUserExams(User user)
         {
-            return TestContext.Instance.PassedTests.Where(x => x.User.Id == user.Id).ToList();
+            return TestContext.Instance.PassedTests.Include("Blank").Where(x => x.User.Id == user.Id).ToList();
         }
     }
 

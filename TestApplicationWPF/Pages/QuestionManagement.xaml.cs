@@ -62,7 +62,7 @@ namespace TestApplicationWPF.Pages
         private void View_Click(object sender, RoutedEventArgs e)
         {
             ViewQuestionInfo viewQuestionInfo = new ViewQuestionInfo(((Question)QuestionsListBox.SelectedItems[0]));
-            viewQuestionInfo.Show();
+            viewQuestionInfo.ShowDialog();
         }
 
         private void Remove_Click(object sender, RoutedEventArgs e)
@@ -73,18 +73,10 @@ namespace TestApplicationWPF.Pages
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddNewQuestion addNewQuestion = new AddNewQuestion();
-            addNewQuestion.Show();
+            addNewQuestion.ShowDialog();
 
         }
 
-        private void RemoveBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void EditQuestBtn_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+    
     }
 }

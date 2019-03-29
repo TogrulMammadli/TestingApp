@@ -96,10 +96,10 @@ namespace TestApplicationWPF
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
-            TestBlk.About = TestBlk.About;
-            TestBlk.Name = TestBlk.Name;
-            TestBlk.DurationMin = TestBlk.DurationMin;
-            TestBlk.Autor = TestBlk.Autor;
+            testBlankViewModel.TestBlank.About = TestBlk.About;
+            testBlankViewModel.TestBlank.Name = TestBlk.Name;
+            testBlankViewModel.TestBlank.DurationMin = TestBlk.DurationMin;
+            testBlankViewModel.TestBlank.Autor = TestBlk.Autor;
             testBlankViewModel.AddTestBlank.Execute(true);
             MessageBox.Show("Natig sdelay cto nibud pole najatiya cnopki ctobi bilo ponatno sozdalsa ili net" ,"Congratulations",MessageBoxButton.OK,MessageBoxImage.Information);
         }

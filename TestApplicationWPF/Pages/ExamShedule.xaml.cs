@@ -28,6 +28,7 @@ namespace TestApplicationWPF.Pages
     {
         ExamSheduleViewModel ViewModel;
 
+        
         public ExamShedule()
         {
             InitializeComponent();
@@ -69,14 +70,11 @@ namespace TestApplicationWPF.Pages
             e.Handled = !(Char.IsDigit(e.Text, 0));
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+   
         private void AddBttn_Click(object sender, RoutedEventArgs e)
         {
 
+            ViewModel.CreateExam.Execute(new DateTime(Convert.ToInt32(Year.Text), Convert.ToInt32(Month.Text), Convert.ToInt32(Date.Text), Convert.ToInt32(Hour.Text), Convert.ToInt32(Minute.Text),0));
         }
 
         private void ChooseTestBlank_Click(object sender, RoutedEventArgs e)

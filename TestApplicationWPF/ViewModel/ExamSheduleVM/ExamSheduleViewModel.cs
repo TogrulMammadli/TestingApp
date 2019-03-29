@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 using TestApplicationWPF.Services.TestServices;
 using TestApplicationWPF.Services.UserServices;
@@ -74,7 +75,87 @@ namespace TestApplicationWPF.ViewModel.ExamSheduleVM
             }
         }
 
+        private RelayCommand<DateTime> _createExam;
+        public RelayCommand<DateTime> CreateExam => _createExam ?? new RelayCommand<DateTime>(CreateExamExexute, CreateExamCanExecute);
+
+        private bool CreateExamCanExecute(DateTime dateTime)
+        {
+            return true;
+        }
+
+        private void CreateExamExexute(DateTime dateTime)
+        {
+            try
+            {
+                foreach (var user in ExamingUsers)
+                {
+                    foreach (var test in ExamingTestBlanks)
+                    {
+                        TestContext.Instance.PassedTests.Add(new Exams()
+                        {
+                            BeginDate = dateTime,
+                            User = user,
+                            Blank = test,
+                            
+                        });
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            MessageBox.Show("examCreated");
+        }
 
 
+        private RelayCommand<TestBlank> _removeTestBlank;
+        public RelayCommand<TestBlank> RemoveTestBlank => _removeTestBlank ?? new RelayCommand<TestBlank>(RemoveTestBlankExexute, RemoveTestBlankCanExecute);
+
+        private bool RemoveTestBlankCanExecute(TestBlank test)
+        {
+            return true;
+        }
+
+        private void RemoveTestBlankExexute(TestBlank test)
+        {
+            try
+            {
+                ExamingTestBlanks.Remove(test);
+                TestBlanks.Add(test);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+        }
+
+
+        private RelayCommand<User> _removeUser;
+        public RelayCommand<User> RemoveUser => _removeUser ?? new RelayCommand<User>(RemoveUserExexute, RemoveUserCanExecute);
+
+        private bool RemoveUserCanExecute(User user)
+        {
+            return true;
+        }
+
+        private void RemoveUserExexute(User user)
+        {
+            try
+            {
+                ExamingUsers.Remove(user);
+                Users.Add(user);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+
+        }
     }
 }

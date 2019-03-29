@@ -90,22 +90,15 @@
                                 materialDesign:HintAssist.Hint="Duration"
                                 materialDesign:HintAssist.FloatingScale="0.9"
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
-                                LostFocus="NameTextBox_LostFocus"
+                               LostFocus="MinutesForExamTimeTextBox_LostFocus"
+                                PreviewTextInput="MinutesForExamTimeTextBox_PreviewTextInput" 
                                 Background="White"
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                 FontSize="18"/>
                                     </StackPanel>
                                 </materialDesign:Card>
                             </Grid>
-                            <TextBox
-                               
-                                Grid.Row="0"
-                                Width="100"
-                                Height="30"
-                                Margin="0,0,0,0"
-                                Background="Red"
-                                LostFocus="MinutesForExamTimeTextBox_LostFocus"
-                                PreviewTextInput="MinutesForExamTimeTextBox_PreviewTextInput" />
+                          
 
                             <Rectangle
                                 Grid.Row="1"

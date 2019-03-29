@@ -178,6 +178,7 @@
     <Compile Include="Services\TestServices\ITestService.cs" />
     <Compile Include="Services\UserServices\IUserService.cs" />
     <Compile Include="Services\UserServices\UserService.cs" />
+    <Compile Include="ViewModel\ExamSheduleVM\ExamChooseViewModel.cs" />
     <Compile Include="ViewModel\ExamSheduleVM\ExamSheduleViewModel.cs" />
     <Compile Include="ViewModel\QuestionVM\AddQuestionViewModel.cs" />
     <Compile Include="ViewModel\TestBlankVM\TestBlankViewModel.cs" />

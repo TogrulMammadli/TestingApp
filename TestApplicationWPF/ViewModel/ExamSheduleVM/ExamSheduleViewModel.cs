@@ -91,12 +91,13 @@ namespace TestApplicationWPF.ViewModel.ExamSheduleVM
                 {
                     foreach (var test in ExamingTestBlanks)
                     {
+                        var endDate = dateTime.AddMinutes(test.DurationMin.TotalMinutes);
                         TestContext.Instance.PassedTests.Add(new Exams()
                         {
                             BeginDate = dateTime,
                             User = user,
                             Blank = test,
-                            
+                            EndDate = endDate
                         });
 
 

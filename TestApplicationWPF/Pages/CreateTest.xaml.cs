@@ -116,14 +116,16 @@ namespace TestApplicationWPF
 
         private void AuthorTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
-
-            TestBlk.Autor = AuthorTextBox.Text;
+                TestBlk.Autor = AuthorTextBox.Text;
 
         }
 
         private void MinutesForExamTimeTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
+            if (MinutesForExamTimeTextBox.Text.Length>0)
+            {
             TestBlk.DurationMin = new TimeSpan(0, Convert.ToInt32(MinutesForExamTimeTextBox.Text), 0);
+            }
 
         }
     }

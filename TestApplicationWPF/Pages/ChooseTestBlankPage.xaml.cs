@@ -25,46 +25,7 @@ namespace TestApplicationWPF.Pages
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (CountingBadge.Badge == null || Equals(CountingBadge.Badge, ""))
-                CountingBadge.Badge = 0;
-
-            var next = int.Parse(CountingBadge.Badge.ToString()) + 1;
-
-            CountingBadge.Badge = next < 99 ? (object)next : null;
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            if (CountingBadge2.Badge == null || Equals(CountingBadge2.Badge, ""))
-                CountingBadge2.Badge = 0;
-
-            var next = int.Parse(CountingBadge2.Badge.ToString()) + 1;
-
-            CountingBadge2.Badge = next < 99 ? (object)next : null;
-        }
-
-        private void Button_Click_2(object sender, RoutedEventArgs e)
-        {
-            if (CountingBadge3.Badge == null || Equals(CountingBadge3.Badge, ""))
-                CountingBadge3.Badge = 0;
-
-            var next = int.Parse(CountingBadge3.Badge.ToString()) + 1;
-
-            CountingBadge3.Badge = next < 99 ? (object)next : null;
-        }
-
-        private void Button_Click_3(object sender, RoutedEventArgs e)
-        {
-            if (CountingBadge4.Badge == null || Equals(CountingBadge4.Badge, ""))
-                CountingBadge4.Badge = 0;
-
-            var next = int.Parse(CountingBadge4.Badge.ToString()) + 1;
-
-            CountingBadge4.Badge = next < 99 ? (object)next : null;
-        }
-
+    
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
             if (CountingBadge5.Badge == null || Equals(CountingBadge5.Badge, ""))

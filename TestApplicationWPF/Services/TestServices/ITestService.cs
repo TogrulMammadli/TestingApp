@@ -7,9 +7,12 @@ using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Services.TestServices
 {
-    interface ITestService
+  public  interface ITestService
     {
         IEnumerable<TestBlank> GetAllTestBlanks();
+        IEnumerable<TestBlank> GetAllOriginalBlanks();
+        IEnumerable<TestBlank> GetAllUsedBlanks();
         bool CreateTestBlank(TestBlank testBlank);
+
     }
 }

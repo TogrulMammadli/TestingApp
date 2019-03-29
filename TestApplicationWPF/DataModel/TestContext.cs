@@ -49,6 +49,7 @@ namespace TestApplicationWPF.DataModel
         public DbSet<BestTimeForStudy> bestTimeForStudies { get; set; }
         public DbSet<WantedCourceToStudy> wantedCourceToStudies { get; set; }
 
+
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);

@@ -14,7 +14,7 @@
             <Style.Setters>
                 <Setter Property="Control.Width" Value="50" />
                 <Setter Property="Control.Background" Value="#34495e"/>
-                
+
 
             </Style.Setters>
             <Style.Triggers>
@@ -64,7 +64,7 @@
                                     Storyboard.TargetProperty="Width"
                                     To="210"
                                     />
-                                
+
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger.Actions>
@@ -87,29 +87,29 @@
             </Style.Triggers>
         </Style>
     </Window.Resources>
-  <!--stiliiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-->
+    <!--stiliiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-->
     <Grid>
-      
-
-            
 
 
 
 
 
-                <Grid>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
             <Grid Grid.Row="0" Background="#2980b9" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
                 <Grid.Effect>
                     <DropShadowEffect Opacity="0.5" Color="#FFB0B0B0" BlurRadius="15.2"/>
                 </Grid.Effect>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                <Button
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Button
                  Click="HeadWndButtonDropdown_Click"
                 x:Name="HeadWndButtonDropdown"
                 
@@ -118,13 +118,13 @@
                 Background="{x:Null}"
                 BorderBrush="{x:Null}"
                 Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" >
-                    <materialDesign:PackIcon
+                        <materialDesign:PackIcon
                     Width="20"
                     Height="20"
                     Background="{x:Null}"
                     Kind="WindowMinimize" VerticalAlignment="Bottom" Margin="0 10 0 0" />
-                </Button>
-                <Button
+                    </Button>
+                    <Button
                 x:Name="HeadWndButtonMaximize"
                 Click="HeadWndButtonMaximize_Click"
                 HorizontalAlignment="Right"
@@ -132,14 +132,14 @@
                 Background="{x:Null}"
                 BorderBrush="{x:Null}"
                 Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" >
-                    <materialDesign:PackIcon
+                        <materialDesign:PackIcon
                         Name="HeadWndButtonMaximizeMaterial"
                     Width="20"
                     Height="20"
                     Background="{x:Null}"
                     Kind="WindowMaximize" />
-                </Button>
-                <Button
+                    </Button>
+                    <Button
                 x:Name="HeadWndButtonClose"
                 
                 HorizontalAlignment="Right"
@@ -147,32 +147,33 @@
                 Background="{x:Null}"
                 BorderBrush="{x:Null}"
                 Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="HeadWndButtonClose_Click">
-                    <materialDesign:PackIcon
+                        <materialDesign:PackIcon
                     Width="20"
                     Height="20"
                     Background="{x:Null}"
                     Kind="Close" />
-                </Button>
-                
-            </StackPanel>
-        </Grid>
-        <Grid Grid.Row="1">
-            <!--<DockPanel>-->
-                
-           
-            
-            <!--<Grid.ColumnDefinitions>
+                    </Button>
+
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="1">
+                <!--<DockPanel>-->
+
+
+
+                <!--<Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>-->
 
-         
 
 
-            <!--<StackPanel Grid.Column="1" Background="Gray">
 
-                --><!--<Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" >
+                <!--<StackPanel Grid.Column="1" Background="Gray">
+
+                -->
+                <!--<Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" >
                 </Image>
                 <TextBlock Name="UserNameSurnameTextBox" HorizontalAlignment="Center"  Margin="5"
                 VerticalAlignment="Top"
@@ -181,7 +182,8 @@
                 <TextBlock Name="UserEmailTextBox" HorizontalAlignment="Center"  Margin="5"
                 VerticalAlignment="Top"
                 FontSize="10"
-                Foreground="White"></TextBlock>--><!--
+                Foreground="White"></TextBlock>-->
+                <!--
 
                 <Button
                 HorizontalAlignment="Center"
@@ -198,33 +200,33 @@
                
 
             </StackPanel>-->
-            
-            <Frame Grid.Column="1" x:Name="frame" Content="Welcome  =)"  NavigationUIVisibility="Hidden"  />
-                    
-                        <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0" MouseEnter="StackPanel_MouseEnter" MouseLeave="StackPanel_MouseLeave"  >
+
+                <Frame Grid.Column="1" x:Name="frame" Content="Welcome  =)"  NavigationUIVisibility="Hidden"  />
+
+                <StackPanel Style="{StaticResource BigPannel}" HorizontalAlignment="Left" Grid.Column="0" MouseEnter="StackPanel_MouseEnter" MouseLeave="StackPanel_MouseLeave"  >
                     <StackPanel.Effect>
                         <DropShadowEffect Opacity="0.5" BlurRadius="26" Color="#FF6A6A6A"/>
                     </StackPanel.Effect>
-                
-                <StackPanel Orientation="Horizontal"  Background="#2c3e50" Height="180">
-                    <Grid x:Name="HamburgerMenuGrid">
-                    <Button x:Name="BurgerMenu" Width="30"
+
+                    <StackPanel Orientation="Horizontal"  Background="#2c3e50" Height="180">
+                        <Grid x:Name="HamburgerMenuGrid">
+                            <Button x:Name="BurgerMenu" Width="30"
                 Margin="10 0 0 0"
                 
                 VerticalAlignment="Center"
                 Background="{x:Null}"
                 BorderBrush="{x:Null}"
                 Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}">
-                        <materialDesign:PackIcon
+                                <materialDesign:PackIcon
                     Width="25"
                     Height="25"
                     Background="{x:Null}"
                     Kind="Menu" />
-                    </Button>
-                    </Grid>
-                    <!--<TextBlock Text="☰" Foreground="White" HorizontalAlignment="Center" FontSize="20" Margin="5 50 0 0"></TextBlock>-->
-                    <StackPanel Orientation="Vertical" Name="UserinfoStackpanel" Margin="10 20 0 0">
-                        
+                            </Button>
+                        </Grid>
+                        <!--<TextBlock Text="☰" Foreground="White" HorizontalAlignment="Center" FontSize="20" Margin="5 50 0 0"></TextBlock>-->
+                        <StackPanel Orientation="Vertical" Name="UserinfoStackpanel" Margin="10 20 0 0">
+
                             <Ellipse
                             Width="80"
                             Height="80"
@@ -246,11 +248,11 @@
                                  VerticalAlignment="Top"
                                  FontSize="12"
                                  Foreground="White"></TextBlock>
-                        <TextBlock Name="UserEmailTextBox" HorizontalAlignment="Center"
+                            <TextBlock Name="UserEmailTextBox" HorizontalAlignment="Center"
                                  VerticalAlignment="Top"
                                  FontSize="10"
                                  Foreground="White" Margin="30 0 0 0"></TextBlock>
-                        <Button
+                            <Button
                                Height="35"
                             Width="35"
                              ToolTip="Edit"
@@ -259,13 +261,13 @@
                              VerticalAlignment="Center"
                              Background="{x:Null}"
                              BorderBrush="{x:Null}"
-                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="Button_Click_3">
-                            <materialDesign:PackIcon
+                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="Button_Click_8">
+                                <materialDesign:PackIcon
                              Width="20"
                              Height="20"
                              Background="{x:Null}"
                              Kind="Edit" />
-                        </Button>
+                            </Button>
 
                             <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" Margin="35 50 0 0" >
                             </Image>
@@ -291,42 +293,42 @@
                             </StackPanel>
 
                         </Button>-->
+                        </StackPanel>
                     </StackPanel>
-                </StackPanel>
-               
-                
-               
-                <TextBlock></TextBlock>
-                
-                <!--<Button Content="1st"  Style="{StaticResource BigButton}" HorizontalAlignment="Left"  Background="{x:Null}" BorderBrush="{x:Null}" ></Button>
+
+
+
+                    <TextBlock></TextBlock>
+
+                    <!--<Button Content="1st"  Style="{StaticResource BigButton}" HorizontalAlignment="Left"  Background="{x:Null}" BorderBrush="{x:Null}" ></Button>
                 <Button Content="2st"  Style="{StaticResource BigButton}" HorizontalAlignment="Left"  Background="{x:Null}" BorderBrush="{x:Null}" ></Button>
                 <Button Content="3st"  Style="{StaticResource BigButton}" HorizontalAlignment="Left"  Background="{x:Null}" BorderBrush="{x:Null}" ></Button>
                 <Button Content="UserManagement"  Style="{StaticResource BigButton}" HorizontalAlignment="Left"  Background="{x:Null}" BorderBrush="{x:Null}" ></Button>-->
 
-                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click" >
-                    <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
-                        <materialDesign:PackIcon
+                    <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click" >
+                        <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                            <materialDesign:PackIcon
                             Width="25"
                             Height="25"
                             Background="{x:Null}"
                             Kind="FileDocument"  HorizontalAlignment="Left" Foreground="White" Margin="-15,0,15,0"/>
-                        <TextBlock HorizontalAlignment="Left" FontSize="15">Create test</TextBlock>
-                    </StackPanel>
-                </Button>
-                <DockPanel HorizontalAlignment="Left">
-                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_1">
-                    <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
-                        <materialDesign:PackIcon
+                            <TextBlock HorizontalAlignment="Left" FontSize="15">Create test</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <DockPanel HorizontalAlignment="Left">
+                        <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_1">
+                            <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                                <materialDesign:PackIcon
                             Width="20"
                             Height="20"
                             Background="{x:Null}"
                             Kind="FileDocumentBoxes"  HorizontalAlignment="Left" Foreground="White" Margin="-10,0,15,0"/>
                                 <TextBlock FontSize="15">Begin exam</TextBlock>
-                    </StackPanel>
-                </Button>
-                </DockPanel>
+                            </StackPanel>
+                        </Button>
+                    </DockPanel>
 
-                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_4" Margin="0" >
+                    <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_4" Margin="0" >
                         <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left" >
                             <materialDesign:PackIcon
                             Width="25"
@@ -334,40 +336,40 @@
                             Background="{x:Null}"
                             Kind="Resistor"  HorizontalAlignment="Left" Foreground="White" Margin="-42 0 0 0"/>
                             <TextBlock FontSize="15" HorizontalAlignment="Left">Result</TextBlock>
-                    </StackPanel>
-                </Button>
+                        </StackPanel>
+                    </Button>
 
-                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_3" >
-                    <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
-                        <materialDesign:PackIcon
+                    <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_3" >
+                        <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                            <materialDesign:PackIcon
                             Width="25"
                             Height="25"
                             Background="{x:Null}"
                             Kind="UserS"  HorizontalAlignment="Left" Foreground="White" Margin="-45,0,10,0"/>
                             <TextBlock FontSize="15">Users</TextBlock>
-                    </StackPanel>
-                </Button>
+                        </StackPanel>
+                    </Button>
 
                     <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_2" >
-                    <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
-                        <materialDesign:PackIcon
+                        <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                            <materialDesign:PackIcon
                             Width="25"
                             Height="25"
                             Background="{x:Null}"
                             Kind="Settings"  HorizontalAlignment="Left" Foreground="White" Margin="-32,0,15,0"/>
                             <TextBlock FontSize="15">Settings</TextBlock>
-                    </StackPanel>
-                </Button>
-                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_5">
-                    <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
-                        <materialDesign:PackIcon
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_5">
+                        <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                            <materialDesign:PackIcon
                             Width="25"
                             Height="25"
                             Background="{x:Null}"
                             Kind="Signal"  HorizontalAlignment="Left" Foreground="White" Margin="-30,0,12,0"/>
                             <TextBlock FontSize="15">Statistics</TextBlock>
-                    </StackPanel>
-                </Button>
+                        </StackPanel>
+                    </Button>
                     <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_6"  >
                         <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
                             <materialDesign:PackIcon
@@ -393,26 +395,26 @@
                     </Button>
 
                     <Grid Height="75"></Grid>
-                <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left">
-                    <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
-                        <materialDesign:PackIcon
+                    <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left">
+                        <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
+                            <materialDesign:PackIcon
                             Width="25"
                             Height="25"
                             Background="{x:Null}"
                             Kind="Logout"  HorizontalAlignment="Left" Foreground="White" Margin="-39,0,10,0"/>
                             <TextBlock FontSize="15">Logout</TextBlock>
-                    </StackPanel>
-                </Button>
-            </StackPanel>
+                        </StackPanel>
+                    </Button>
 
-                  
+                </StackPanel>
 
-                   
-                    <!--</DockPanel>-->
+
+
+
+            </Grid>
+
         </Grid>
 
-    </Grid>
 
-      
     </Grid>
 </Window>

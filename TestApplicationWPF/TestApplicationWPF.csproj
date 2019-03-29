@@ -111,13 +111,9 @@
     <Compile Include="Mesages\NewQuestionMessages.cs" />
     <Compile Include="Mesages\NewUserMesenger.cs" />
     <Compile Include="Mesages\WindowMessages.cs" />
-    <Compile Include="Migrations\201903272043237_CreateDB.cs" />
-    <Compile Include="Migrations\201903272043237_CreateDB.Designer.cs">
-      <DependentUpon>201903272043237_CreateDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903280548308_Migration_ComplPublic.cs" />
-    <Compile Include="Migrations\201903280548308_Migration_ComplPublic.Designer.cs">
-      <DependentUpon>201903280548308_Migration_ComplPublic.cs</DependentUpon>
+    <Compile Include="Migrations\201903290121059_CreateDb.cs" />
+    <Compile Include="Migrations\201903290121059_CreateDb.Designer.cs">
+      <DependentUpon>201903290121059_CreateDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BestTimeForStudy.cs" />
@@ -134,6 +130,9 @@
     </Compile>
     <Compile Include="HeadWindow.xaml.cs">
       <DependentUpon>HeadWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ExamShedule.xaml.cs">
+      <DependentUpon>ExamShedule.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\QuestionManagement.xaml.cs">
       <DependentUpon>QuestionManagement.xaml</DependentUpon>
@@ -161,6 +160,8 @@
     <Compile Include="Services\AnswerService\ICorrectAnswerService.cs" />
     <Compile Include="Services\AnswerService\IWrongAnswerService.cs" />
     <Compile Include="Services\AnswerService\WrongAnswerService.cs" />
+    <Compile Include="Services\ExamService\ExamService.cs" />
+    <Compile Include="Services\ExamService\IExamService.cs" />
     <Compile Include="Services\GroupServices\GroupService.cs" />
     <Compile Include="Services\GroupServices\IGroupService.cs" />
     <Compile Include="Services\QuestionService\IQuestionService.cs" />
@@ -171,8 +172,8 @@
     <Compile Include="Services\TestServices\ITestService.cs" />
     <Compile Include="Services\UserServices\IUserService.cs" />
     <Compile Include="Services\UserServices\UserService.cs" />
+    <Compile Include="ViewModel\ExamSheduleVM\ExamSheduleViewModel.cs" />
     <Compile Include="ViewModel\QuestionVM\AddQuestionViewModel.cs" />
-    <Compile Include="ViewModel\TestBlankVM\AddTestBlankViewModel.cs" />
     <Compile Include="ViewModel\TestBlankVM\TestBlankViewModel.cs" />
     <Compile Include="ViewModel\UserVM\AccessLevelKeyValue.cs" />
     <Compile Include="ViewModel\UserVM\AddUserViewModel.cs" />
@@ -251,6 +252,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\ExamShedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\QuestionManagement.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -308,11 +313,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201903272043237_CreateDB.resx">
-      <DependentUpon>201903272043237_CreateDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903280548308_Migration_ComplPublic.resx">
-      <DependentUpon>201903280548308_Migration_ComplPublic.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903290121059_CreateDb.resx">
+      <DependentUpon>201903290121059_CreateDb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

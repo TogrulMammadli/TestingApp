@@ -10,6 +10,8 @@ namespace TestApplicationWPF.Services.UserServices
     public interface IUserService
     {
         IEnumerable<User> GetAllUsers();
+        IEnumerable<User> GetAllStudents();
+
         void SentNotfications();
         void SentEmailToUsers(List<User> toUsers, string Message);
         void AddUser(User user);

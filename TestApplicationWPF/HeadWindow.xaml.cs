@@ -163,5 +163,16 @@ namespace TestApplicationWPF
         {
             frame.Content = new TestNamesPage();
         }
+
+        private void PackIcon_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+             Imagepath = userService.GetAvatarImageFromDb(User.Id);
+        }
+
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new ExamShedule();
+
+        }
     }
 }

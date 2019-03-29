@@ -39,7 +39,6 @@ namespace TestApplicationWPF.Pages
             Border border = sender as Border;
             usersListBox.SelectedItem = border.DataContext;
         }
-
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
             if (usersListBox.SelectedItems.Count > 0)
@@ -48,7 +47,7 @@ namespace TestApplicationWPF.Pages
                 userEditWindow.Show();
             }
         }
-
+    
         private void SearchTxtBox_TextChanged(object sender, TextChangedEventArgs e)
         {
                 if (this.usersListBox != null)

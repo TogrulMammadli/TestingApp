@@ -261,7 +261,7 @@
                              VerticalAlignment="Center"
                              Background="{x:Null}"
                              BorderBrush="{x:Null}"
-                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="Button_Click_3">
+                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Click="Button_Click_8">
                                 <materialDesign:PackIcon
                              Width="20"
                              Height="20"

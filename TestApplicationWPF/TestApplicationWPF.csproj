@@ -111,21 +111,9 @@
     <Compile Include="Mesages\NewQuestionMessages.cs" />
     <Compile Include="Mesages\NewUserMesenger.cs" />
     <Compile Include="Mesages\WindowMessages.cs" />
-    <Compile Include="Migrations\201903272043237_CreateDB.cs" />
-    <Compile Include="Migrations\201903272043237_CreateDB.Designer.cs">
-      <DependentUpon>201903272043237_CreateDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903280548308_Migration_ComplPublic.cs" />
-    <Compile Include="Migrations\201903280548308_Migration_ComplPublic.Designer.cs">
-      <DependentUpon>201903280548308_Migration_ComplPublic.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903282240079_addoriginality to testBlank.cs" />
-    <Compile Include="Migrations\201903282240079_addoriginality to testBlank.Designer.cs">
-      <DependentUpon>201903282240079_addoriginality to testBlank.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201903282245263_addBools to testBlank.cs" />
-    <Compile Include="Migrations\201903282245263_addBools to testBlank.Designer.cs">
-      <DependentUpon>201903282245263_addBools to testBlank.cs</DependentUpon>
+    <Compile Include="Migrations\201903290121059_CreateDb.cs" />
+    <Compile Include="Migrations\201903290121059_CreateDb.Designer.cs">
+      <DependentUpon>201903290121059_CreateDb.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BestTimeForStudy.cs" />
@@ -172,6 +160,8 @@
     <Compile Include="Services\AnswerService\ICorrectAnswerService.cs" />
     <Compile Include="Services\AnswerService\IWrongAnswerService.cs" />
     <Compile Include="Services\AnswerService\WrongAnswerService.cs" />
+    <Compile Include="Services\ExamService\ExamService.cs" />
+    <Compile Include="Services\ExamService\IExamService.cs" />
     <Compile Include="Services\GroupServices\GroupService.cs" />
     <Compile Include="Services\GroupServices\IGroupService.cs" />
     <Compile Include="Services\QuestionService\IQuestionService.cs" />
@@ -323,17 +313,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201903272043237_CreateDB.resx">
-      <DependentUpon>201903272043237_CreateDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903280548308_Migration_ComplPublic.resx">
-      <DependentUpon>201903280548308_Migration_ComplPublic.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903282240079_addoriginality to testBlank.resx">
-      <DependentUpon>201903282240079_addoriginality to testBlank.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201903282245263_addBools to testBlank.resx">
-      <DependentUpon>201903282245263_addBools to testBlank.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903290121059_CreateDb.resx">
+      <DependentUpon>201903290121059_CreateDb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

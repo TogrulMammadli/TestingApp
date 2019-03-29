@@ -7,13 +7,13 @@ namespace TestApplicationWPF.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class addBoolstotestBlank : IMigrationMetadata
+    public sealed partial class CreateDb : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addBoolstotestBlank));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDb));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903282245263_addBools to testBlank"; }
+            get { return "201903290121059_CreateDb"; }
         }
         
         string IMigrationMetadata.Source

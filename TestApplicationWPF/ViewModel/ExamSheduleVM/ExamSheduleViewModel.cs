@@ -1,9 +1,11 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.CommandWpf;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using TestApplicationWPF.Models;
 using TestApplicationWPF.Services.TestServices;
 using TestApplicationWPF.Services.UserServices;
@@ -18,6 +20,7 @@ namespace TestApplicationWPF.ViewModel.ExamSheduleVM
 
         public ObservableCollection<User> Users { get; set; }
         public ObservableCollection<TestBlank> TestBlanks { get; set; }
+        public ObservableCollection<User> ExamingUsers { get; set; } = new ObservableCollection<User>();
 
         public ExamSheduleViewModel(IUserService userService, ITestService testBlankService)
         {
@@ -27,6 +30,30 @@ namespace TestApplicationWPF.ViewModel.ExamSheduleVM
             TestBlanks = new ObservableCollection<TestBlank>(testBlankService.GetAllOriginalBlanks());
         }
 
+        private RelayCommand<User> _AddUserToUserExam;
+
+        public RelayCommand<User> AddUserToExamUser => _AddUserToUserExam ?? new RelayCommand<User>(AddUserToExamUserExexute, AddUserToExamCanExecute);
+
+        private bool AddUserToExamCanExecute(User user)
+        {
+            return true;
+        }
+
+        private void AddUserToExamUserExexute(User user)
+        {
+            try
+            {
+                Users.Remove(user);
+                ExamingUsers.Add(user);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            Users.Remove(user);
+        }
+        
 
 
     }

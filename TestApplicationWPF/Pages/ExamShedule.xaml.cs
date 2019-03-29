@@ -32,7 +32,12 @@ namespace TestApplicationWPF.Pages
             InitializeComponent();
             ViewModel = new ExamSheduleViewModel(new UserService(new UserRepository()),new TestService(new TestBlankRepository()));
             this.DataContext = ViewModel;
+           
         }
 
+        private void AddStudentToExam_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

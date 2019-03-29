@@ -169,5 +169,10 @@ namespace TestApplicationWPF
              Imagepath = userService.GetAvatarImageFromDb(User.Id);
         }
 
-           }
+        private void Button_Click_8(object sender, RoutedEventArgs e)
+        {
+            frame.Content = new ExamShedule();
+
+        }
+    }
 }

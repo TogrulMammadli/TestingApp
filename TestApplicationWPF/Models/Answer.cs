@@ -54,14 +54,22 @@ namespace TestApplicationWPF.Models
 
     }
 
-    public class StudentAnwser 
+    public class StudentAnwsers
     {
-        public StudentAnwser()
+        public StudentAnwsers()
         {
         }
         [Key]
         public int Id { get; set; }
-        public string Answer { get; set; }
+        public List<Ans> Answers { get; set; }
 
+    }
+    public class Ans{
+
+        public int Id { get; set; }
+        public string An { get; set; }
+        public Ans()
+        {
+        }
     }
 }

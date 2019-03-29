@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestApplicationWPF.Models;
+using TestApplicationWPF.Services.ExamService;
+using TestApplicationWPF.ViewModel.ExamSheduleVM;
 
 namespace TestApplicationWPF.Pages
 {
@@ -20,20 +23,24 @@ namespace TestApplicationWPF.Pages
     /// </summary>
     public partial class ChooseTestBlankPage : Page
     {
-        public ChooseTestBlankPage()
+        ExamChooseViewModel examChooseViewModel;
+        User User = new User();
+        public ChooseTestBlankPage(User user)
         {
             InitializeComponent();
+            User = user;
+            examChooseViewModel = new ExamChooseViewModel(new ExamService(),User);
+            this.DataContext = examChooseViewModel;
         }
-
     
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            if (CountingBadge5.Badge == null || Equals(CountingBadge5.Badge, ""))
-                CountingBadge5.Badge = 0;
+            //if (CountingBadge5.Badge == null || Equals(CountingBadge5.Badge, ""))
+            //    CountingBadge5.Badge = 0;
 
-            var next = int.Parse(CountingBadge5.Badge.ToString()) + 1;
+            //var next = int.Parse(CountingBadge5.Badge.ToString()) + 1;
 
-            CountingBadge5.Badge = next < 99 ? (object)next : null;
+            //CountingBadge5.Badge = next < 99 ? (object)next : null;
         }
     }
 }

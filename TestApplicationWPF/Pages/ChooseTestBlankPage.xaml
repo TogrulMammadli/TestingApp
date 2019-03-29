@@ -12,103 +12,105 @@
 
     <Grid Background="White">
         <Grid Margin="10" Width="{Binding ElementName=ChooseTestBlankPage, Path=Width}" Height="{Binding ElementName=ChooseTestBlankPage, Path=Height}">
-            <ScrollViewer Visibility="Visible">
-                <ListBox Height="0">
+            <ScrollViewer Name="ScViewer" Visibility="Visible">
+                <ListBox Name="ss" Height="{ Binding ElementName=ScViewer, Path=ActualHeight}" Width="{Binding ElementName=ScViewer ,Path=ActualWidth}" 
+                         ItemsSource="{Binding Exams}">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <WrapPanel HorizontalAlignment="Center" >
+                            <WrapPanel  >
+                                <StackPanel>
+                                <Border BorderBrush="#673AB7" BorderThickness="1" CornerRadius="14" Margin="10">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="#FF707070" Opacity="0.5" BlurRadius="10"></DropShadowEffect>
+                                    </Border.Effect>
+                                    <materialDesign:Card Width="220"  UniformCornerRadius="12" materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                                        <Grid Background="White" >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition  Height="50" />
+                                                <RowDefinition Height="*" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition  Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition  Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid Background="#673AB7" >
+                                                <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Text="{Binding BeginDate,  StringFormat='yyyy-MM-dd'}"></TextBlock>
+                                            </Grid>
 
+                                            <materialDesign:Badged Name="CountingBadge5" Grid.Row="0" HorizontalAlignment="Right"   VerticalAlignment="Bottom"  Margin="0 0 16 -25">
+                                                <Button   Grid.Row="0"
+                                                          Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                                          HorizontalAlignment="Right"
+                                                          VerticalAlignment="Bottom"
+                                                          Margin="0 0 -5 5" Click="Button_Click_4">
+                                                    <materialDesign:PackIcon    Kind="Like" />
+                                                </Button>
+                                            </materialDesign:Badged>
+                                            <StackPanel  Grid.Row="1"   Margin="8 24 8 4">
+                                                <TextBlock Style="{StaticResource MaterialDesignSubheadingTextBlock}" Text="{Binding Blank.Name}" Margin="0" Height="10" Width="20"></TextBlock>
+                                                <Separator
+                                                 Height="16"
+                                                   Grid.Row="2"
+                                                   Style="{StaticResource MaterialDesignDarkSeparator}"
+                                                   Margin="8 0 8 0" />
+                                                <TextBlock
+                                                   Style="{StaticResource MaterialDesignBody1TextBlock}"
+                                                   TextWrapping="Wrap"
+                                                   VerticalAlignment="Center" Text="{Binding Blank.About}" >
+
+                                                </TextBlock>
+                                            </StackPanel>
+                                            <Separator
+                                                 Grid.Row="2"
+                                                 Style="{StaticResource MaterialDesignDarkSeparator}"
+                                                 Margin="8 0 8 0" />
+
+                                            <StackPanel  Grid.Row="3" >
+                                                <StackPanel Orientation="Horizontal">
+                                                    <materialDesign:PackIcon
+                                                         Grid.Column="0"
+                                                         Kind="Clock"
+                                                         VerticalAlignment="Center"
+                                                         Margin="8,12,0,12" />
+                                                    <TextBlock Height="20"
+                                                  Text="Begin:"
+                                                  Margin="8 4 8 4"
+                                                  Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                                    </TextBlock >
+
+                                                    <TextBlock Text="{Binding BeginDate,  StringFormat='HH:mm'}"></TextBlock>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <materialDesign:PackIcon     Grid.Column="0"
+                                                         Kind="Clock"
+                                                         VerticalAlignment="Center"
+                                                         Margin="8,12,0,12" />
+                                                    <TextBlock Height="20"
+                                                  Text="End:"
+                                                  Margin="8 4 8 4"
+                                                  Style="{StaticResource MaterialDesignBody2TextBlock}">
+                                                    </TextBlock >
+
+                                                </StackPanel>
+                                            </StackPanel>
+                                            <StackPanel
+                                              Grid.Row="5">
+                                                <Button
+                                                    Style="{StaticResource MaterialDesignFlatButton}"
+                                                    HorizontalAlignment="Center"
+                                                    Margin="0" >Start</Button>
+                                            </StackPanel>
+                                        </Grid>
+                                    </materialDesign:Card>
+                                </Border>
+                                </StackPanel>
                             </WrapPanel>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
             </ScrollViewer>
 
-            <Border BorderBrush="#673AB7" BorderThickness="1" CornerRadius="14" Margin="10">
-                <Border.Effect>
-                    <DropShadowEffect Color="#FF707070" Opacity="0.5" BlurRadius="10"></DropShadowEffect>
-                </Border.Effect>
-
-                <materialDesign:Card Width="220"  UniformCornerRadius="12" materialDesign:ShadowAssist.ShadowDepth="Depth2">
-                    <Grid Background="White" >
-                        <Grid.RowDefinitions>
-                            <RowDefinition  Height="50" />
-                            <RowDefinition Height="*" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition  Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition  Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid Background="#673AB7" >
-                            <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Text="{Binding BeginDate,  StringFormat='yyyy-MM-dd'}"></TextBlock>
-                        </Grid>
-
-                        <materialDesign:Badged x:Name="CountingBadge5" Grid.Row="0" HorizontalAlignment="Right"   VerticalAlignment="Bottom"  Margin="0 0 16 -25">
-                            <Button   Grid.Row="0"
-                                                          Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
-                                                          HorizontalAlignment="Right"
-                                                          VerticalAlignment="Bottom"
-                                                          Margin="0 0 -5 5" Click="Button_Click_4">
-                                <materialDesign:PackIcon    Kind="Like" />
-                            </Button>
-                        </materialDesign:Badged>
-                        <StackPanel  Grid.Row="1"   Margin="8 24 8 4">
-                            <TextBlock Style="{StaticResource MaterialDesignSubheadingTextBlock}"  Margin="0"> Entering Test</TextBlock>
-                            <Separator
-                                                 Height="16"
-                                                   Grid.Row="2"
-                                                   Style="{StaticResource MaterialDesignDarkSeparator}"
-                                                   Margin="8 0 8 0" />
-                            <TextBlock
-                                                   Style="{StaticResource MaterialDesignBody1TextBlock}"
-                                                   TextWrapping="Wrap"
-                                                   VerticalAlignment="Center" Text="{Binding Blank.About}" >
-                                                 This Test check your basic knowledges, how much you were informed about IT tecnologics and how wide your worldview...
-                            </TextBlock>
-                        </StackPanel>
-                        <Separator
-                                                 Grid.Row="2"
-                                                 Style="{StaticResource MaterialDesignDarkSeparator}"
-                                                 Margin="8 0 8 0" />
-
-                        <StackPanel  Grid.Row="3" >
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon
-                                                         Grid.Column="0"
-                                                         Kind="Clock"
-                                                         VerticalAlignment="Center"
-                                                         Margin="8,12,0,12" />
-                                <TextBlock Height="20"
-                                                  Text="Begin:"
-                                                  Margin="8 4 8 4"
-                                                  Style="{StaticResource MaterialDesignBody2TextBlock}">
-                                </TextBlock >
-
-                                <TextBlock Text="{Binding BeginDate,  StringFormat='HH:mm'}"> </TextBlock>
-                            </StackPanel>
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon     Grid.Column="0"
-                                                         Kind="Clock"
-                                                         VerticalAlignment="Center"
-                                                         Margin="8,12,0,12" />
-                                <TextBlock Height="20"
-                                                  Text="End:"
-                                                  Margin="8 4 8 4"
-                                                  Style="{StaticResource MaterialDesignBody2TextBlock}">
-                                </TextBlock >
-
-                            </StackPanel>
-                        </StackPanel>
-                        <StackPanel
-                                              Grid.Row="5">
-                            <Button
-                                                    Style="{StaticResource MaterialDesignFlatButton}"
-                                                    HorizontalAlignment="Center"
-                                                    Margin="0" >Start</Button>
-                        </StackPanel>
-                    </Grid>
-                </materialDesign:Card>
-            </Border>
+          
         </Grid>
     </Grid>
 </Page>

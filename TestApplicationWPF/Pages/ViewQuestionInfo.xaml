@@ -138,8 +138,8 @@
             </materialDesign:Card>
             <Grid Margin="20 15 20 20">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button Width="50" Content="Ok" Margin="0 0 20 0" Click="Button_Click"></Button>
-                    <Button Width="80" Content="Cancel" Click="Button_Click"></Button>
+                    <Button Width="50" Content="Ok" Margin="0 0 0 0" Click="Button_Click"></Button>
+                   
                 </StackPanel>
                 
             </Grid>

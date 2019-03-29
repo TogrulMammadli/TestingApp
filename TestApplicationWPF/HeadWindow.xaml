@@ -226,7 +226,9 @@
                         </Grid>
                         <!--<TextBlock Text="☰" Foreground="White" HorizontalAlignment="Center" FontSize="20" Margin="5 50 0 0"></TextBlock>-->
                         <StackPanel Orientation="Vertical" Name="UserinfoStackpanel" Margin="10 20 0 0">
+                            <!--<Image Width="80"  Height="80" Name="AvatarImage"  Source="Icons/avatar.png" Margin="35 50 0 0" >
 
+                            </Image>-->
                             <Ellipse
                             Width="80"
                             Height="80"
@@ -240,7 +242,7 @@
                                     Color="#FF7A7A7A" />
                                 </Ellipse.Effect>
                                 <Ellipse.Fill>
-                                    <ImageBrush  ImageSource="/Icons/tre2.png" />
+                                    <ImageBrush x:Name="Image" ImageSource="/Icons/tre2.png" />
                                 </Ellipse.Fill>
                             </Ellipse>
 
@@ -269,8 +271,7 @@
                              Kind="Edit" />
                             </Button>
 
-                            <Image Width="80" Height="80" Name="AvatarImage"  Source="Icons/avatar.png" Margin="35 50 0 0" >
-                            </Image>
+                         
 
                             <!--<Button
                             Width="70"

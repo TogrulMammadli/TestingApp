@@ -44,10 +44,10 @@ namespace TestApplicationWPF
             //questionsss.AddQuestion(question);
 
             //AccessLevelRepository accessLevelRepository = new AccessLevelRepository();
-            //var user = new User() { Name = "Murad", Surname = "Mammadov", PBatronymic = "Gabil", PhoneNumber = "", Login = "admin", AccessLevels = new List<AccessLevel> { accessLevelRepository.GetAccessLevelByName("Admin") }, DateOfBirth = DateTime.Now, Email = "@gmail.com", Password = "admin", Gender = Gender.Male };
+            //var user = new User() { Name = "Murad", Surname = "Mammadov", Patronymic = "Gabil", PhoneNumber = "", Login = "admin", AccessLevels = new List<AccessLevel> { accessLevelRepository.GetAccessLevelByName("Admin") }, DateOfBirth = DateTime.Now, Email = "@gmail.com", Password = "admin", Gender = Gender.Male };
             //UserRepository userRepository = new UserRepository();
             //userRepository.AddUser(user);
-           // #region UpdateImageInDbTesting
+            // #region UpdateImageInDbTesting
 
             ////try
             ////{

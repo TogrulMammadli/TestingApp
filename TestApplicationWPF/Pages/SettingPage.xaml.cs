@@ -46,6 +46,7 @@ namespace TestApplicationWPF.Pages
 
             if (textboxphone.Text != "" && textboxphone.Text.Length < 10) { Textboxphonewarning.Text = "Length must not be than 10 digits!"; }
             else { Textboxphonewarning.Text = ""; }
+
             if (!Regex.IsMatch(textboxemail.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase) && textboxemail.Text != "")
             {
                 TextBlockEmailWarning.Text = "Wrong e-mail format!";
@@ -54,6 +55,7 @@ namespace TestApplicationWPF.Pages
             else { TextBlockEmailWarning.Text = ""; }
             if (textboxpswd.Text != "" && textboxconfpswd.Text != "" && textboxpswd.Text != textboxconfpswd.Text) { TextBlockPswdWarning.Text = "Passwords do not match!"; }
             else { TextBlockPswdWarning.Text = ""; }
+
         }
 
         private void Textboxname_PreviewTextInput(object sender, TextCompositionEventArgs e)

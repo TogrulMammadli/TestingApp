@@ -40,6 +40,7 @@
 
 
             <materialDesign:Card Grid.Column="1" Background="White" Margin="20" Height="320" VerticalAlignment="center" UniformCornerRadius="8"
+
                              materialDesign:ShadowAssist.ShadowDepth="Depth3"
                              materialDesign:ShadowAssist.ShadowEdges="All"
                                      Name="materiaCardMy">
@@ -83,9 +84,6 @@
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                         />
                         <TextBlock x:Name="TextBlockAgeWarning" Text="" Foreground="Red"></TextBlock>
-
-
-
                         <TextBox
                                 x:Name="textboxphone"
                                 PreviewTextInput="numbervalit"
@@ -127,6 +125,7 @@
 
                 </Grid>
             </materialDesign:Card>
+
         </Grid>
 
         <Grid Grid.Row="1">
@@ -167,6 +166,7 @@
                         Text=""
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                         />
+
                 <TextBox
            x:Name="textboxconfpswd"
            Grid.Column="1"

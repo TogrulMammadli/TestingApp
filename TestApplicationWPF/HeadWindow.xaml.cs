@@ -44,7 +44,7 @@ namespace TestApplicationWPF
                         {
                             this.Dispatcher.Invoke(() =>
                             {
-                                this.Dispatcher.InvokeAsync(() => this.AvatarImage.Source = new BitmapImage(new Uri(Imagepath)));
+                                this.Dispatcher.InvokeAsync(() => this.Image.ImageSource = new BitmapImage(new Uri(Imagepath)));
                             });
                         }
                     });
@@ -174,5 +174,7 @@ namespace TestApplicationWPF
             frame.Content = new ExamShedule();
 
         }
+
+       
     }
 }

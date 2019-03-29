@@ -42,10 +42,21 @@
                                 </Grid.RowDefinitions>
                                 <Grid Background="#673AB7"></Grid>
 
+                             
+
                                 <materialDesign:Badged
                                 x:Name="CountingBadge" Grid.Row="0" HorizontalAlignment="Right"
                              VerticalAlignment="Bottom"
                              Margin="0 0 16 -25">
+                                    <Button
+                             Grid.Row="0"
+                             Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                             HorizontalAlignment="Right"
+                             VerticalAlignment="Bottom"
+                             Margin="0 0 -5 5" Click="Button_Click">
+                                        <materialDesign:PackIcon
+                        Kind="Like" />
+                                    </Button>
                                 </materialDesign:Badged>
                                 <StackPanel
                                  Grid.Row="1"

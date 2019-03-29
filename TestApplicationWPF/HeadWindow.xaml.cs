@@ -175,6 +175,12 @@ namespace TestApplicationWPF
 
         }
 
-       
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+           
+            MainWindow mainWindow2 = new MainWindow();
+            mainWindow2.Show();
+            this.Close();
+        }
     }
 }

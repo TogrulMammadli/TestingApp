@@ -12,7 +12,7 @@
          Name="CreatetestPage">
     <Grid>
 
-        <dockablz:Layout>
+        <!--<dockablz:Layout>
             <dragablz:TabablzControl BorderThickness="0"
                                  Margin="0,-1,0,1">
                 <dragablz:TabablzControl.InterTabController>
@@ -55,7 +55,7 @@
                 <dragablz:TabablzControl.InterTabController>
                     <dragablz:InterTabController />
                 </dragablz:TabablzControl.InterTabController>
-                  <!--TAB 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111-->  
+                  --><!--TAB 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111--><!--  
                 <TabItem Header="Test Blank ABOUT">
                     <Grid>
                         <Grid >
@@ -241,12 +241,12 @@
 
 
 
-                 <!--TAB 22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222-->  
+                 --><!--TAB 22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222--><!--  
 
                 <TabItem Name="QuestionTab" Header="QUESTIONS">
                    
 
-                    <ScrollViewer Height="{Binding ElementName=Drag, Path=ActualHeight}" VerticalScrollBarVisibility="Auto">
+                    --><!--<ScrollViewer Height="{Binding ElementName=Drag, Path=ActualHeight}" VerticalScrollBarVisibility="Auto">
                           делит окно на 2 поселедине  
                         <StackPanel SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"
                             Name="MainStack"
@@ -493,7 +493,7 @@
 
                         </StackPanel>
 
-                    </ScrollViewer>
+                    </ScrollViewer>--><!--
 
                       
                 </TabItem>
@@ -504,7 +504,7 @@
         <Label
             Name="SubjectId"
             IsEnabled="False"
-            Visibility="Hidden" />
+            Visibility="Hidden" />-->
 
     </Grid>
 </Window>

@@ -34,7 +34,6 @@ namespace TestApplicationWPF.Pages
             InitializeComponent();
             ViewModel = new ExamSheduleViewModel(new UserService(new UserRepository()),new TestService(new TestBlankRepository()));
             this.DataContext = ViewModel;
-           
         }
 
         private void AddStudentToExam_Click(object sender, RoutedEventArgs e)
@@ -80,6 +79,17 @@ namespace TestApplicationWPF.Pages
         private void ChooseTestBlank_Click(object sender, RoutedEventArgs e)
         {
             ViewModel.AddTestBlankToExam.Execute((TestBlank)(((Button)sender).DataContext));
+        }
+
+        private void RemoveStudentfromExam_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.RemoveUser.Execute((User)(((Button)sender).DataContext));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.RemoveTestBlank.Execute((TestBlank)(((Button)sender).DataContext));
+
         }
     }
 }

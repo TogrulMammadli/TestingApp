@@ -98,8 +98,11 @@ namespace TestApplicationWPF.ViewModel.ExamSheduleVM
                             Blank = test,
                             
                         });
+
+
                     }
                 }
+                TestContext.Instance.SaveChanges();
 
             }
             catch (Exception ex)

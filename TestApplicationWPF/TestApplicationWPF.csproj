@@ -146,6 +146,9 @@
     <Compile Include="Pages\TestResult.xaml.cs">
       <DependentUpon>TestResult.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\UdalitVremenno.xaml.cs">
+      <DependentUpon>UdalitVremenno.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UserEditWindow.xaml.cs">
       <DependentUpon>UserEditWindow.xaml</DependentUpon>
     </Compile>
@@ -266,6 +269,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\TestResult.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UdalitVremenno.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

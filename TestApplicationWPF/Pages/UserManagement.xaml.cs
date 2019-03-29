@@ -26,12 +26,13 @@ namespace TestApplicationWPF.Pages
     public partial class UserManagement : Page
     {
         UserManagementViewModel ViewModel;
-
+        User User = new User();
         public UserManagement(User user)
         {
             InitializeComponent();
             ViewModel = new UserManagementViewModel(new UserService(new  UserRepository()));
             this.DataContext = ViewModel;
+            User = user;
         }
 
         private void Border_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -77,5 +78,14 @@ namespace TestApplicationWPF.Pages
         {
 
         }
+
+        private void Remove_Loaded(object sender, RoutedEventArgs e)
+        {
+            if (((User)(((Button)(sender)).DataContext)).Id==User.Id)
+            {
+                ((Button)(sender)).IsEnabled = false;
+            }
+        }
+
     }
 }

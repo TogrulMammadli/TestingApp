@@ -19,16 +19,21 @@ namespace TestApplicationWPF.Services.ExamService
         public Result CheckExam(Exams exams)
         {
             Result result = new Result();
-            var i = 0;
+          
             foreach (var question in exams.Blank.Questions)
             {
+                var i=0;
                 bool validation = false;
                 if (question.CorrectAnswers.Count==exams.studentanswer.Count)
                 {
-                    foreach (var item in question.CorrectAnswers)
+                    foreach (var item in exams.studentanswer)
                     {
+                    //    if (question.CorrectAnswers.Contains(item.Answers[i]))
+                    //    {
 
+                    //    }
                     }
+                    
                 }
                 else
                 {

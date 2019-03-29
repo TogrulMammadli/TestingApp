@@ -6,11 +6,11 @@
       xmlns:local="clr-namespace:TestApplicationWPF.Pages"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="500" d:DesignWidth="800"
       Title="ExamShedule" Name="ExamShedulePage">
 
     <Grid Margin="50 0 0 0">
-        <StackPanel Orientation="Horizontal" >
+        <StackPanel Orientation="Horizontal"  >
             <StackPanel Orientation="Vertical" Background="ForestGreen">
                 <Label>Students</Label>
                 <ListBox Name="Allstudents" Height="200" Width="200" HorizontalAlignment="Left" ItemsSource="{Binding Users}" Background="LimeGreen">
@@ -28,7 +28,7 @@
                     </ListBox.ItemTemplate>
                 </ListBox>
                 <Label>StudentsThatMustBeExamined</Label>
-                <ListBox Name="ExaminationStudents" Height="200" Width="200" HorizontalAlignment="Left" ItemsSource="{Binding ExamingUsers}" Background="LimeGreen">
+                <ListBox Name="ExaminationStudents" Height="200" Width="200" HorizontalAlignment="Left" ItemsSource="{Binding ExamingUsers}" Background="Tomato">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
@@ -45,64 +45,92 @@
             </StackPanel>
             <StackPanel>
                 <Label>StudentsThatMustBeExamined</Label>
-                <ListBox Name="TestBlanks" Height="300" Width="600" HorizontalAlignment="Left" ItemsSource="{Binding TestBlanks}" Background="LimeGreen">
+                <ListBox Name="TestBlanks" Height="200" Width="600" HorizontalAlignment="Left" ItemsSource="{Binding TestBlanks}" Background="LightSteelBlue">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                                <WrapPanel Orientation="Horizontal">
-                                    <Border BorderBrush="#673AB7" BorderThickness="1" CornerRadius="14" Margin="10">
-                                        <Border.Effect>
-                                            <DropShadowEffect Color="#FF707070" Opacity="0.5" BlurRadius="10"></DropShadowEffect>
-                                        </Border.Effect>
-                                        <materialDesign:Card Width="220"  UniformCornerRadius="12" materialDesign:ShadowAssist.ShadowDepth="Depth2">
-                                            <Grid Background="White" >
-                                                <Grid.RowDefinitions>
-                                                    <RowDefinition  Height="50" />
-                                                    <RowDefinition  Height="*" />
-                                                    <RowDefinition  Height="Auto" />
-                                                    <RowDefinition  Height="Auto" />
-                                                    <RowDefinition  Height="Auto" />
-                                                    <RowDefinition  Height="Auto" />
-                                                </Grid.RowDefinitions>
-                                                <Grid Background="#673AB7"></Grid>
-                                                <materialDesign:Badged  x:Name="CountingBadge" Grid.Row="0" HorizontalAlignment="Right"  VerticalAlignment="Bottom"   Margin="0 0 16 -25"></materialDesign:Badged>
-                                                <StackPanel      Grid.Row="1" Margin="8 24 8 4">
-                                                    <TextBlock      Style="{StaticResource MaterialDesignSubheadingTextBlock}"   Text="{Binding Name}" Margin="0"></TextBlock>
-                                                    <Separator    Height="16"   Grid.Row="2"  Style="{StaticResource MaterialDesignDarkSeparator}"    Margin="8 0 8 0" />
-                                                <TextBlock  Style="{StaticResource MaterialDesignBody1TextBlock}" Text="{Binding About}"  TextWrapping="Wrap"   VerticalAlignment="Center" >
-                                                    </TextBlock>
-                                                </StackPanel>
-                                                <Separator   Grid.Row="2"   Style="{StaticResource MaterialDesignDarkSeparator}"  Margin="8 0 8 0" />
-                                                <StackPanel Orientation="Horizontal" Grid.Row="3" >
-                                                    <materialDesign:PackIcon  Grid.Column="0" Kind="Clock" VerticalAlignment="Center"  Margin="8,12,0,12" />
-                                                    <ListBox Grid.Column="1" Style="{StaticResource MaterialDesignToolToggleFlatListBox}"  SelectedIndex="0" Margin="4 7 8 4" >
-                                                        <ListBox.Resources>
-                                                            <Style  TargetType="{x:Type ListBoxItem}"  BasedOn="{StaticResource MaterialDesignToolToggleListBoxItem}">
-                                                                <Setter  Property="Padding"  Value="4 6 4 6" />
-                                                            </Style>
-                                                        </ListBox.Resources>
-                                                        <ListBox.ToolTip>
-                                                            <StackPanel>
-                                                                <TextBlock  Text="MaterialDesignFlatToggleListBox" />
-                                                                <TextBlock  Text="Exclusive selection" />
-                                                                <TextBlock  Text="ListBoxAssist.IsToggle allows more natural toggle behaviour" />
-                                                            </StackPanel>
-                                                        </ListBox.ToolTip>
-                                                        <ListBoxItem>
-                                                            <TextBlock  Text="01:00" />
-                                                        </ListBoxItem>
-                                                    </ListBox>
-                                                </StackPanel>
-                                                <StackPanel  Grid.Row="5">
-                                                    <Button   Style="{StaticResource MaterialDesignFlatButton}"   HorizontalAlignment="Center"      Margin="0" >Start</Button>
-                                                </StackPanel>
-                                            </Grid>
-                                        </materialDesign:Card>
-                                    </Border>
-                                </WrapPanel>
-                            </DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Height="30" Width="70" Name="TextBlankName" Text="{Binding Name}"> </TextBlock>
+                                <TextBlock Height="30" Width="70" Name="TextBlankAutor" Text="{Binding Autor}"></TextBlock>
+                                <TextBlock  Height="30" Width="70" Name="TextBlankAbout" Text="{Binding  About}"></TextBlock>
+                                <TextBlock  Height="30" Width="70" Name="TextBlankDuration" Text="{Binding Duration}"></TextBlock>
+                                <Button   Style="{StaticResource MaterialDesignFlatButton}" Name="ChooseTestBlank"  HorizontalAlignment="Center" Click="ChooseTestBlank_Click"  Margin="0">Choose</Button>
+                            </StackPanel>
+                        </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-            </StackPanel>
+                <ListBox Name="TestBlanksForExams" Height="200" Width="600" HorizontalAlignment="Left" ItemsSource="{Binding ExamingTestBlanks}" Background="Azure">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel Orientation="Horizontal">
+                                <Border BorderBrush="#673AB7" BorderThickness="1" CornerRadius="14" Margin="10">
+                                    <Border.Effect>
+                                        <DropShadowEffect Color="#FF707070" Opacity="0.5" BlurRadius="10"></DropShadowEffect>
+                                    </Border.Effect>
+                                    <materialDesign:Card Width="220"  UniformCornerRadius="12" materialDesign:ShadowAssist.ShadowDepth="Depth2">
+                                        <Grid Background="White" >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition  Height="50" />
+                                                <RowDefinition  Height="*" />
+                                                <RowDefinition  Height="Auto" />
+                                                <RowDefinition  Height="Auto" />
+                                                <RowDefinition  Height="Auto" />
+                                                <RowDefinition  Height="Auto" />
+                                            </Grid.RowDefinitions>
+                                            <Grid Background="#673AB7"></Grid>
+                                            <materialDesign:Badged  x:Name="CountingBadge" Grid.Row="0" HorizontalAlignment="Right"  VerticalAlignment="Bottom"   Margin="0 0 16 -25"></materialDesign:Badged>
+                                            <StackPanel      Grid.Row="1" Margin="8 24 8 4">
+                                                <TextBlock      Style="{StaticResource MaterialDesignSubheadingTextBlock}"   Text="{Binding Name}" Margin="0"></TextBlock>
+                                                <Separator    Height="16"   Grid.Row="2"  Style="{StaticResource MaterialDesignDarkSeparator}"    Margin="8 0 8 0" />
+                                                <TextBlock  Style="{StaticResource MaterialDesignBody1TextBlock}" Text="{Binding About}"  TextWrapping="Wrap"   VerticalAlignment="Center" >
+                                                </TextBlock>
+                                            </StackPanel>
+                                            <Separator   Grid.Row="2"   Style="{StaticResource MaterialDesignDarkSeparator}"  Margin="8 0 8 0" />
+                                            <StackPanel Orientation="Horizontal" Grid.Row="3" >
+                                                <materialDesign:PackIcon  Grid.Column="0" Kind="Clock" VerticalAlignment="Center"  Margin="8,12,0,12" />
+                                                <ListBox Grid.Column="1" Style="{StaticResource MaterialDesignToolToggleFlatListBox}"  SelectedIndex="0" Margin="4 7 8 4" >
+                                                    <ListBox.Resources>
+                                                        <Style  TargetType="{x:Type ListBoxItem}"  BasedOn="{StaticResource MaterialDesignToolToggleListBoxItem}">
+                                                            <Setter  Property="Padding"  Value="4 6 4 6" />
+                                                        </Style>
+                                                    </ListBox.Resources>
+                                                    <ListBox.ToolTip>
+                                                        <StackPanel>
+                                                            <TextBlock  Text="MaterialDesignFlatToggleListBox" />
+                                                            <TextBlock  Text="Exclusive selection" />
+                                                            <TextBlock  Text="ListBoxAssist.IsToggle allows more natural toggle behaviour" />
+                                                        </StackPanel>
+                                                    </ListBox.ToolTip>
+                                                    <ListBoxItem>
+                                                        <TextBlock  Text="01:00" />
+                                                    </ListBoxItem>
+                                                </ListBox>
+                                            </StackPanel>
+                                          
+                                        </Grid>
+                                    </materialDesign:Card>
+                                </Border>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                    <StackPanel Orientation="Horizontal" Width="250" Height="30" HorizontalAlignment="Left" >
+                        <TextBox Name="Date" Width="30" PreviewTextInput="Date_PreviewTextInput" Background="Wheat"   HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                    materialDesign:HintAssist.Hint="DD" ></TextBox>
+                        <Label>/</Label>
+                        <TextBox Name="Month" Width="30" PreviewTextInput="Month_PreviewTextInput" Background="Wheat" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                    materialDesign:HintAssist.Hint="MM"   ></TextBox>
+                        <Label>/</Label>
+                        <TextBox Name="Year"  Width="60" PreviewTextInput="Year_PreviewTextInput" Background="Wheat" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                    materialDesign:HintAssist.Hint="YYYY" ></TextBox>
+                        <Label Width="30"></Label>
+                        <TextBox Name="Hour"  Width="30" PreviewTextInput="Hour_PreviewTextInput" Background="Wheat" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                    materialDesign:HintAssist.Hint="MM"  ></TextBox>
+                        <Label>:</Label>
+                        <TextBox Name="Minute"  Width="30" PreviewTextInput="Minute_PreviewTextInput" Background="Wheat" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                    materialDesign:HintAssist.Hint="HH"  ></TextBox>
+                    </StackPanel>
+                </StackPanel>
         </StackPanel>
+        <Button Name="AddBttn" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="AddBttn_Click">CreateExam</Button>
     </Grid>
 </Page>

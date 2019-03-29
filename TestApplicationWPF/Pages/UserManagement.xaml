@@ -209,15 +209,18 @@
                                     Margin="5"
                                     VerticalAlignment="Center"
                                     Background="#27ae60"
-                                    ToolTip="View all info">
+                                    ToolTip="View all info"
+                                   >
                                     <materialDesign:PackIcon
                                          Width="20"
                                         Height="20"
                                          Background="{x:Null}"
                                          Kind="Eye" />
+                                    
                                 </Button>
                                 <Button
                                     Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                    
                                     Name="Remove"
                                     Width="40"
                                         Height="40"
@@ -226,6 +229,7 @@
                                     VerticalAlignment="Center"
                                     Background="#e74c3c"
                                     Click="Remove_Click"
+                                    Loaded="Remove_Loaded"
                                     ToolTip="Delete">
                                     <materialDesign:PackIcon
                                        

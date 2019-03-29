@@ -109,21 +109,19 @@
                             
                             
                             <StackPanel Grid.Column="4" Orientation="Horizontal" HorizontalAlignment="Right">
-                                <Button Name="Edit" Width="40" Margin="5" VerticalAlignment="Center" ToolTip="Edit" Click="Edit_Click">E</Button>
-                                <Button Name="View" Width="40" Margin="5"  VerticalAlignment="Center" Background="Green" Click="View_Click" >V</Button>
-                                <Button Name="Remove" Width="40" Margin="5" VerticalAlignment="Center"  Background="DarkRed" ToolTip="Remove" Click="Remove_Click" >R</Button>
-
+                              
 
                                 <Button
                                     Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                                          Name="EditQuestBtn"
+                                    
                                          Width="40"
                                         Height="40"
                                     BorderBrush="{x:Null}"
                                          Margin="5"
                                     Background="#f39c12"
                                          VerticalAlignment="Center"
-                                         Click="EditQuestBtn_Click"
+                                         Click="Edit_Click"
                                          ToolTip="Edit">
                                     <materialDesign:PackIcon
                                          
@@ -140,6 +138,7 @@
                                     Margin="5"
                                     VerticalAlignment="Center"
                                     Background="#27ae60"
+                                    Click="View_Click"
                                     ToolTip="View all info">
                                     <materialDesign:PackIcon
                                          Width="20"
@@ -156,7 +155,7 @@
                                     Margin="5"
                                     VerticalAlignment="Center"
                                     Background="#e74c3c"
-                                     
+                                     Click="Remove_Click" 
                                     ToolTip="Delete">
                                     <materialDesign:PackIcon
                                        

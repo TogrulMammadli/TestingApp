@@ -98,23 +98,30 @@
                 </ListBox.Template>
                 <ListBox.ItemTemplate>
                     <DataTemplate >
-                        
-                        <Grid Name="Element" Margin="0,2" Width="{Binding ElementName=MyPage,Path=ActualWidth}">
-                            <Grid.ColumnDefinitions >
-                                <ColumnDefinition Width="1*"></ColumnDefinition>
-                                <ColumnDefinition   Width="150"></ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Text}"   Grid.Column="0"/>
+                        <materialDesign:Card 
+                          
+                    
+                    Margin="5 3 5 0"
+                    materialDesign:ShadowAssist.ShadowDepth="Depth1"
+                    materialDesign:ShadowAssist.ShadowEdges="Bottom"
+                    Background="White"
+                    UniformCornerRadius="5">
+                            <Grid Name="Element" Margin="0,2" Width="{Binding ElementName=MyPage,Path=ActualWidth}">
+                                <Grid.ColumnDefinitions >
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition   Width="150"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding Text}"   Grid.Column="0"/>
 
-                            
-                            
-                            <StackPanel Grid.Column="4" Orientation="Horizontal" HorizontalAlignment="Right">
-                                <Button Name="Edit" Width="40" Margin="5" VerticalAlignment="Center" ToolTip="Edit" Click="Edit_Click">E</Button>
-                                <Button Name="View" Width="40" Margin="5"  VerticalAlignment="Center" Background="Green" Click="View_Click" >V</Button>
-                                <Button Name="Remove" Width="40" Margin="5" VerticalAlignment="Center"  Background="DarkRed" ToolTip="Remove" Click="Remove_Click" >R</Button>
 
 
-                                <Button
+                                <StackPanel Grid.Column="4" Orientation="Horizontal" HorizontalAlignment="Right">
+                                    <Button Name="Edit" Width="40" Margin="5" VerticalAlignment="Center" ToolTip="Edit" Click="Edit_Click">E</Button>
+                                    <Button Name="View" Width="40" Margin="5"  VerticalAlignment="Center" Background="Green" Click="View_Click" >V</Button>
+                                    <Button Name="Remove" Width="40" Margin="5" VerticalAlignment="Center"  Background="DarkRed" ToolTip="Remove" Click="Remove_Click" >R</Button>
+
+
+                                    <Button
                                     Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                                          Name="EditQuestBtn"
                                          Width="40"
@@ -125,13 +132,13 @@
                                          VerticalAlignment="Center"
                                          Click="EditQuestBtn_Click"
                                          ToolTip="Edit">
-                                    <materialDesign:PackIcon
+                                        <materialDesign:PackIcon
                                          
                                          Background="{x:Null}"
                                          Kind="Edit" />
 
-                                </Button>
-                                <Button
+                                    </Button>
+                                    <Button
                                     Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                                     Name="ViewBtnAggBtn"
                                     Width="40"
@@ -141,13 +148,13 @@
                                     VerticalAlignment="Center"
                                     Background="#27ae60"
                                     ToolTip="View all info">
-                                    <materialDesign:PackIcon
+                                        <materialDesign:PackIcon
                                          Width="20"
                                         Height="20"
                                          Background="{x:Null}"
                                          Kind="Eye" />
-                                </Button>
-                                <Button
+                                    </Button>
+                                    <Button
                                     Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                                     Name="RemoveBtn"
                                     Width="40"
@@ -158,21 +165,21 @@
                                     Background="#e74c3c"
                                      
                                     ToolTip="Delete">
-                                    <materialDesign:PackIcon
+                                        <materialDesign:PackIcon
                                        
                                          Background="{x:Null}"
                                          Kind="Delete" />
-                                </Button>
-                            </StackPanel>
-                            
+                                    </Button>
+                                </StackPanel>
 
 
 
 
 
 
-                        </Grid>
-                           
+
+                            </Grid>
+                        </materialDesign:Card>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

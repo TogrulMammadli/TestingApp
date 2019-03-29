@@ -6,7 +6,7 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:TestApplicationWPF"
         mc:Ignorable="d"
-        Title="HeadWindow" Height="590" Width="1030" WindowStartupLocation="CenterScreen" Icon="Icons/mainicon.png" WindowStyle="None"
+        Title="HeadWindow" Height="590" Width="1030" MinHeight="680" MinWidth="900" WindowStartupLocation="CenterScreen" Icon="Icons/mainicon.png" WindowStyle="None"
         BorderBrush="#3498db" Background="#ecf0f1" BorderThickness="1">
     <Window.Resources>
         <Style x:Key="BigPannel">

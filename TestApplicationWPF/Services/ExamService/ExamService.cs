@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestApplicationWPF.DataModel;
 using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Services.ExamService
@@ -11,7 +13,7 @@ namespace TestApplicationWPF.Services.ExamService
     {
         public int CorrectsNumber { get; set; }
         public int WrongsNumber { get; set; }
-        public int UnAnswered{ get; set; }
+        public int UnAnswered { get; set; }
     };
 
     public class ExamService : IExamService
@@ -19,21 +21,21 @@ namespace TestApplicationWPF.Services.ExamService
         public Result CheckExam(Exams exams)
         {
             Result result = new Result();
-          
+
             foreach (var question in exams.Blank.Questions)
             {
-                var i=0;
+                var i = 0;
                 bool validation = false;
-                if (question.CorrectAnswers.Count==exams.studentanswer.Count)
+                if (question.CorrectAnswers.Count == exams.studentanswer.Count)
                 {
                     foreach (var item in exams.studentanswer)
                     {
-                    //    if (question.CorrectAnswers.Contains(item.Answers[i]))
-                    //    {
+                        //if (question.CorrectAnswers.Contains(item.Answers))
+                        //{
 
-                    //    }
+                        //}
                     }
-                    
+
                 }
                 else
                 {
@@ -42,7 +44,15 @@ namespace TestApplicationWPF.Services.ExamService
                 ++i;
             }
             return result;
+
         }
-        
+
+        public IEnumerable<Exams> GetUserExams(User user)
+        {
+            return TestContext.Instance.PassedTests.Where(x => x.User == user).ToList();
+        }
     }
+
+
 }
+

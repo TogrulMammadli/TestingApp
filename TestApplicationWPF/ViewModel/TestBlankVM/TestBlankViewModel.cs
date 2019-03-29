@@ -95,7 +95,7 @@ namespace TestApplicationWPF.ViewModel.TestBlankVM
                 Question.CorrectAnswers = CorrectAnswers;
                 Question.WrongAnswers = WrongAnswers;
                 Questionservice.AddQuestion(Question);
-                AllQuestions.Add(Question);
+                TestContext.Instance.Questions.Add(Question);
                 TestBlankQuestion.Add(Question);
             }
             catch (Exception ex)

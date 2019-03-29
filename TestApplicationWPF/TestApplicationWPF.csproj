@@ -131,6 +131,9 @@
     <Compile Include="HeadWindow.xaml.cs">
       <DependentUpon>HeadWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CreateTestBlank.xaml.cs">
+      <DependentUpon>CreateTestBlank.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ExamShedule.xaml.cs">
       <DependentUpon>ExamShedule.xaml</DependentUpon>
     </Compile>
@@ -252,6 +255,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\CreateTestBlank.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ExamShedule.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

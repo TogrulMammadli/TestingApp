@@ -6,7 +6,7 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:TestApplicationWPF"
         mc:Ignorable="d"
-        Title="HeadWindow" Height="590" Width="1030" WindowStartupLocation="CenterScreen" Icon="Icons/mainicon.png" WindowStyle="None"
+        Title="HeadWindow" Height="590" Width="1030" MinHeight="680" MinWidth="900" WindowStartupLocation="CenterScreen" Icon="Icons/mainicon.png" WindowStyle="None"
         BorderBrush="#3498db" Background="#ecf0f1" BorderThickness="1">
     <Window.Resources>
         <Style x:Key="BigPannel">
@@ -396,7 +396,7 @@
                     </Button>
 
                     <Grid Height="75"></Grid>
-                    <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left">
+                    <Button Style="{StaticResource BigButton}" HorizontalAlignment="Left" Click="Button_Click_9">
                         <StackPanel Orientation="Horizontal" Margin="2" HorizontalAlignment="Left">
                             <materialDesign:PackIcon
                             Width="25"

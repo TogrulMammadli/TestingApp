@@ -19,10 +19,26 @@
                     <dragablz:InterTabController />
                 </dragablz:TabablzControl.InterTabController>
                 <TabItem Header="ABOUT BLANK">
-                    <Grid>
-                        <Grid >
 
-                            <Rectangle
+
+                    
+                    
+                    <Grid>
+                        <ScrollViewer >
+                            <StackPanel>
+                                <Grid>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+
+                                    </Grid.RowDefinitions>
+                                </Grid>
+                                <Grid >
+
+                                    <Rectangle
 
                               Height="110"
                               Margin="55,0,55,380"
@@ -30,30 +46,30 @@
                               Fill="White"
                               RadiusX="21.333"
                               RadiusY="21.333">
-                                <Rectangle.Effect>
-                                    <DropShadowEffect
+                                        <Rectangle.Effect>
+                                            <DropShadowEffect
                                      BlurRadius="15"
                                      Direction="0"
                                      RenderingBias="Quality"
                                      ShadowDepth="1"
                                      Color="#FFBBBBBB" />
-                                </Rectangle.Effect>
-                            </Rectangle>
+                                        </Rectangle.Effect>
+                                    </Rectangle>
 
 
-                        </Grid>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="200" />
-                                <RowDefinition Height="200" />
-                                <RowDefinition Height="200" />
-                            </Grid.RowDefinitions>
+                                </Grid>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50" />
+                                        <RowDefinition Height="200" />
+                                        <RowDefinition Height="200" />
+                                        <RowDefinition Height="200" />
+                                    </Grid.RowDefinitions>
 
-                            <Grid Grid.Row="0" Background="Aqua">
-                                <materialDesign:Card Margin="35 0 35 0" Background="White">
-                                    <StackPanel Orientation="Vertical">
-                                        <TextBox
+                                    <Grid Grid.Row="0" Background="Aqua">
+                                        <materialDesign:Card Margin="35 0 35 0" Background="White">
+                                            <StackPanel Orientation="Vertical">
+                                                <TextBox
                                  x:Name="MinutesForExamTimeTextBox"
                                 Grid.Row="1"
                                 Width="1850"
@@ -69,10 +85,10 @@
                                 Background="White"
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                 FontSize="18"/>
-                                    </StackPanel>
-                                </materialDesign:Card>
-                            </Grid>
-                            <TextBox
+                                            </StackPanel>
+                                        </materialDesign:Card>
+                                    </Grid>
+                                    <TextBox
                                
                                 Grid.Row="0"
                                 Width="100"
@@ -82,7 +98,7 @@
                                 LostFocus="MinutesForExamTimeTextBox_LostFocus"
                                 PreviewTextInput="MinutesForExamTimeTextBox_PreviewTextInput" />
 
-                            <Rectangle
+                                    <Rectangle
                                 Grid.Row="1"
                                 Height="110"
                                 Margin="35,0,35,0"
@@ -90,22 +106,22 @@
                                 Fill="White"
                                 RadiusX="10.333"
                                 RadiusY="10.333">
-                                <Rectangle.Effect>
-                                    <DropShadowEffect
+                                        <Rectangle.Effect>
+                                            <DropShadowEffect
                                         BlurRadius="10"
                                         Direction="0"
                                         RenderingBias="Quality"
                                         ShadowDepth="1"
                                         Color="#FFBBBBBB" />
-                                </Rectangle.Effect>
-                            </Rectangle>
-                            <TextBlock
+                                        </Rectangle.Effect>
+                                    </Rectangle>
+                                    <TextBlock
                                 Grid.Row="1"
                                 Margin="70,40,70,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 Text="Test name: " />
-                            <TextBox
+                                    <TextBox
                                 x:Name="NameTextBox"
                                 Grid.Row="1"
                                 Width="1850"
@@ -121,13 +137,13 @@
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                 TextWrapping="Wrap"
                                 VerticalScrollBarVisibility="Auto" />
-                            <TextBlock
+                                    <TextBlock
                                 Grid.Row="2"
                                 Margin="35,0,0,0"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Bottom"
                                 Text="About test: " />
-                            <Rectangle
+                                    <Rectangle
                                 Grid.Row="2"
                                 Height="180"
                                 Margin="35,0,35,0"
@@ -135,16 +151,16 @@
                                 Fill="White"
                                 RadiusX="10.333"
                                 RadiusY="10.333">
-                                <Rectangle.Effect>
-                                    <DropShadowEffect
+                                        <Rectangle.Effect>
+                                            <DropShadowEffect
                                         BlurRadius="10"
                                         Direction="0"
                                         RenderingBias="Quality"
                                         ShadowDepth="1"
                                         Color="#FFBBBBBB" />
-                                </Rectangle.Effect>
-                            </Rectangle>
-                            <TextBox
+                                        </Rectangle.Effect>
+                                    </Rectangle>
+                                    <TextBox
                                 x:Name="AboutTextBox"
                                 Grid.Row="2"
                                 Width="1850"
@@ -160,7 +176,7 @@
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                 TextWrapping="Wrap"
                                 VerticalScrollBarVisibility="Auto" />
-                            <Rectangle
+                                    <Rectangle
                                 Grid.Row="3"
                                 Height="100"
                                 Margin="35,0,35,0"
@@ -168,17 +184,17 @@
                                 Fill="White"
                                 RadiusX="10.333"
                                 RadiusY="10.333">
-                                <Rectangle.Effect>
-                                    <DropShadowEffect
+                                        <Rectangle.Effect>
+                                            <DropShadowEffect
                                         BlurRadius="15"
                                         Direction="0"
                                         RenderingBias="Quality"
                                         ShadowDepth="1"
                                         Color="#FFBBBBBB" />
-                                </Rectangle.Effect>
-                            </Rectangle>
+                                        </Rectangle.Effect>
+                                    </Rectangle>
 
-                            <TextBox
+                                    <TextBox
                                 x:Name="AuthorTextBox"
                                 Grid.Row="3"
                                 Width="1850"
@@ -194,13 +210,34 @@
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                                 TextWrapping="Wrap"
                                 VerticalScrollBarVisibility="Auto" />
-                        </Grid>
+                                </Grid>
+                            </StackPanel>
+                        </ScrollViewer>
+                        
+                       
                     </Grid>
 
 
 
                   
                 </TabItem>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 <TabItem Header="CREATING BLANK">
                     <ScrollViewer Height="{Binding ElementName=Drag, Path=ActualHeight}" VerticalScrollBarVisibility="Auto">
                         <!--делит окно на 2 поселедине-->

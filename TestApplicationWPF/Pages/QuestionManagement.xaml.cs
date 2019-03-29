@@ -76,5 +76,15 @@ namespace TestApplicationWPF.Pages
             addNewQuestion.Show();
 
         }
+
+        private void RemoveBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void EditQuestBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

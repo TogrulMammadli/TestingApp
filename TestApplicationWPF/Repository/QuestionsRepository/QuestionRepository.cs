@@ -27,13 +27,12 @@ namespace TestApplicationWPF.Repository.QuestionsRepository
 
         public IEnumerable<Question> GetAllQuestions()
         {
-            return TestContext.Instance.Questions.Include("CorrectAnswers").Include("WrongAnswers").ToList();
+            return TestContext.Instance.Questions.Include("CorrectAnswers").Include("WrongAnswers").Include("subject").ToList();
         }
 
         public Question GetQuestionByID(int ID)
         {
-            return TestContext.Instance.Questions.Include("CorrectAnswers").Include("WrongAnswers").Where(x => x.Id == ID).DefaultIfEmpty().Single();
-
+            return TestContext.Instance.Questions.Include("CorrectAnswers").Include("WrongAnswers").Include("subject").Where(x => x.Id == ID).DefaultIfEmpty().Single();
         }
 
         public bool RemoveQuestionById(int Id)

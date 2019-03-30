@@ -16,13 +16,21 @@
     mc:Ignorable="d">
     <Grid>
 
-        <!--<Grid Grid.Column="0">
-            <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth2" UniformCornerRadius="10">
+      
 
+        <!--<Grid Grid.Row="1" Margin="10 0 0 0" x:Name="r1">
+            <materialDesign:Card  Height="{Binding ElementName=r1, Path=ActualHeight}" Width="{Binding ElementName=r1, Path=ActualWidth}" materialDesign:ShadowAssist.ShadowDepth="Depth2" UniformCornerRadius="10">
+                <StackPanel Background="Aqua" Margin="10" 
+                               Orientation="Horizontal"
+                                Width="{Binding ElementName=r1, Path=ActualWidth}"
+                                            Height="{Binding ElementName=r1, Path=ActualHeight}">
+
+
+
+
+                </StackPanel>
             </materialDesign:Card>
         </Grid>-->
-
-
 
 
 
@@ -610,18 +618,18 @@
                 </TabItem>
                 <TabItem Header="CREAT QUESTIONS">
                     <Grid>
-                        <Grid ShowGridLines="True">
+                        <Grid >
                             <Grid.RowDefinitions>
-                                <RowDefinition />
+                                <RowDefinition Height="1.6*" />
 
-                                <RowDefinition />
-                                <RowDefinition/>
-                                <RowDefinition/>
+                                <RowDefinition Height="1.5*" />
+                                <RowDefinition Height="1.5*"/>
+                                
                                 <RowDefinition Height="50"/>
                             </Grid.RowDefinitions>
 
 
-                            <Grid Grid.Row="0" Margin="20" ShowGridLines="True">
+                            <Grid Grid.Row="0" Margin="20" >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
@@ -634,21 +642,57 @@
                                 Width="{Binding ElementName=gr0, Path=ActualWidth}"
                                             Height="{Binding ElementName=gr0, Path=ActualHeight}"
                                 
-                                materialDesign:HintAssist.Hint="Enter question text"
+                                materialDesign:HintAssist.Hint="Enter question text.."
+                                            
                                 Background="White"
                                 Text="{Binding Question.Text}" />
                                     </materialDesign:Card>
                                 </Grid>
                                 <Grid Grid.Column="1" Margin="10 0 0 0" x:Name="gr1">
                                     <materialDesign:Card  Height="{Binding ElementName=gr1, Path=ActualHeight}" Width="{Binding ElementName=gr1, Path=ActualWidth}" materialDesign:ShadowAssist.ShadowDepth="Depth2" UniformCornerRadius="10">
-                                        <StackPanel Background="Aqua" Margin="10" 
+                                        <StackPanel  Margin="10" 
                                Orientation="Horizontal"
                                 Width="{Binding ElementName=gr0, Path=ActualWidth}"
                                             Height="{Binding ElementName=gr0, Path=ActualHeight}">
 
-                                            <StackPanel Background="Coral" Orientation="Vertical"></StackPanel>
+                                            <StackPanel Width="250"  Orientation="Vertical">
+                                                <ComboBox
+                                Width="150"
+                                Name="SubjectsBox"
+                                ItemsSource="{Binding Subjects}"
+                                SelectionChanged="SubjectsBox_SelectionChanged" />
 
-                                            <StackPanel></StackPanel>
+                                                <StackPanel Orientation="Vertical">
+                                                    <TextBox
+                                    Name="SubjectName"
+                                    Width="150"
+                                    Height="50"
+                                    materialDesign:HintAssist.Hint="SubjectName" />
+                                                    <Button Width="100" Command="{Binding AddSubject}" CommandParameter="{Binding ElementName=SubjectName, Path=Text}">PlusIcon</Button>
+                                                </StackPanel>
+                                            </StackPanel>
+
+                                            <StackPanel Orientation="Vertical" >
+                                                <TextBlock>Complexity</TextBlock>
+                                                <RadioButton
+                                Name="Low"
+                                Checked="Low_Checked"
+                                GroupName="Complexity">
+                                                    Low
+                                                </RadioButton>
+                                                <RadioButton
+                                Name="Normal"
+                                Checked="Normal_Checked"
+                                GroupName="Complexity">
+                                                    Normal
+                                                </RadioButton>
+                                                <RadioButton
+                                Name="Hight"
+                                Checked="Hight_Checked"
+                                GroupName="Complexity">
+                                                    Hight
+                                                </RadioButton>
+                                            </StackPanel>
                                         </StackPanel>
                                     </materialDesign:Card>
                                 </Grid>
@@ -657,7 +701,131 @@
                             
                             
                             
+                            <Grid Grid.Row="1" Margin="20 5 20 5" x:Name="r1">
+                                <materialDesign:Card  Height="{Binding ElementName=r1, Path=ActualHeight}" Width="{Binding ElementName=r1, Path=ActualWidth}" materialDesign:ShadowAssist.ShadowDepth="Depth2" UniformCornerRadius="10">
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <StackPanel>
+                                                <Label FontSize="18">CorrectAnswers</Label>
+                                                <ListBox 
+                                Name="CorrectAnswersListBox"
+                               Margin="5"
+                                Height="90"
+                                ItemsSource="{Binding CorrectAnswers}">
+                                                    <ListBox.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <StackPanel
+                                            Name="CorrectStackPanel"
+                                            Height="40"
+                                            
+                                            
+                                            Orientation="Horizontal">
+                                                                <TextBlock
+                                                Name="CorrectText"
+                                                Margin="0"
+                                                
+                                                
+                                                Text="{Binding Text}" />
+                                                            </StackPanel>
+                                                        </DataTemplate>
+                                                    </ListBox.ItemTemplate>
+                                                </ListBox>
+                                            </StackPanel>
+                                        </Grid>
+
+                                        
+                                            <Grid Grid.Column="1">
+
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBox
+                                    Name="CorrectAnswerText"
+                                    Width="300"
+                                    Height="50"
+                                    materialDesign:HintAssist.Hint="CorrectAnswerText" />
+                                                <Button Command="{Binding AddCorrectAnswer}" CommandParameter="{Binding ElementName=CorrectAnswerText, Path=Text}">PlusIcon</Button>
+                                            </StackPanel>
+
+                                        </Grid>
+                                     </Grid>
+                                   
+                                    
+                                   
+
+                                    
+                                </materialDesign:Card>
+                            </Grid>
+
+
                             
+                            
+                            <Grid Grid.Row="2" Margin="20 5 20 5" x:Name="r2">
+                                <materialDesign:Card  Height="{Binding ElementName=r1, Path=ActualHeight}" Width="{Binding ElementName=r2, Path=ActualWidth}" materialDesign:ShadowAssist.ShadowDepth="Depth2" UniformCornerRadius="10">
+                                   
+
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid Grid.Column="0">
+                                                <StackPanel>
+                                                    
+                                                <Label FontSize="18">WrongAnswers</Label>
+                                                <ListBox
+                              
+                                 Name="WrongAnswersListBox"
+                                Height="90"
+                               Margin="5"
+                                ItemsSource="{Binding WrongAnswers}"
+                                >
+
+                                                    <ListBox.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <StackPanel
+                                            Name="WrongStackPanel"
+                                           
+                                            Orientation="Horizontal">
+                                                                <TextBlock
+                                                Name="WrongText"
+                                                
+                                               
+                                                Text="{Binding Text}" />
+                                                            </StackPanel>
+                                                        </DataTemplate>
+                                                    </ListBox.ItemTemplate>
+                                                </ListBox>
+                                            </StackPanel>
+                                            </Grid>
+
+                                            
+                                            <Grid Grid.Column="1">
+
+                                                <StackPanel Orientation="Horizontal">
+                                                <TextBox
+                                    Name="WrongAnswerText"
+                                    Width="300"
+                                    Height="50"
+                                    materialDesign:HintAssist.Hint="WrongAnswerText" />
+                                                <Button Command="{Binding AddWrongAnswer}" CommandParameter="{Binding ElementName=WrongAnswerText, Path=Text}">PlusIcon</Button>
+                                            </StackPanel>
+
+                                            </Grid>
+                                        </Grid>
+
+
+
+
+
+                                    </materialDesign:Card>
+                               
+                            </Grid>
+
+
                             <Button Grid.Row="3"
                                     HorizontalAlignment="Center"
                             Name="Add"
@@ -677,7 +845,7 @@
                                 materialDesign:HintAssist.Hint="Enter question text"
                                 Background="White"
                                 Text="{Binding Question.Text}" />-->
-                            <TextBlock>Complexity</TextBlock>
+                            <!--<TextBlock>Complexity</TextBlock>
                             <RadioButton
                                 Name="Low"
                                 Checked="Low_Checked"
@@ -695,7 +863,7 @@
                                 Checked="Hight_Checked"
                                 GroupName="Complexity">
                                 Hight
-                            </RadioButton>
+                            </RadioButton>-->
                             <!--<Button
                                 
                                 Name="ImageBtn"
@@ -703,9 +871,10 @@
                                 Command="{Binding AddImage}">
                                 ChangeImage 
                             </Button>-->
-                            <Label>CorrectAnswers</Label>
+                            <!--<Label>CorrectAnswers</Label>
                             <ListBox
-                                Name="WrongAnswersListBox"
+                                Name="CorrectAnswersListBox"
+                               
                                 Height="60"
                                 ItemsSource="{Binding CorrectAnswers}">
                                 <ListBox.ItemTemplate>
@@ -733,11 +902,12 @@
                                     Height="50"
                                     materialDesign:HintAssist.Hint="CorrectAnswerText" />
                                 <Button Command="{Binding AddCorrectAnswer}" CommandParameter="{Binding ElementName=CorrectAnswerText, Path=Text}">PlusIcon</Button>
-                            </StackPanel>
+                            </StackPanel>-->
 
-                            <Label>WrongAnswers</Label>
+                            <!--<Label>WrongAnswers</Label>
                             <ListBox
-                                Name="CorrectAnswersListBox"
+                              
+                                 Name="WrongAnswersListBox"
                                 Height="60"
                                 Background="Aqua"
                                 ItemsSource="{Binding WrongAnswers}"
@@ -758,30 +928,31 @@
                                         </StackPanel>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
-                            </ListBox>
-                            <StackPanel Orientation="Horizontal">
+                            </ListBox>-->
+                            <!--<StackPanel Orientation="Horizontal">
                                 <TextBox
                                     Name="WrongAnswerText"
                                     Width="300"
                                     Height="50"
                                     materialDesign:HintAssist.Hint="WrongAnswerText" />
                                 <Button Command="{Binding AddWrongAnswer}" CommandParameter="{Binding ElementName=WrongAnswerText, Path=Text}">PlusIcon</Button>
-                            </StackPanel>
+                            </StackPanel>-->
 
                             <!--  Natig udalil Click =cancle_click, kidal exeption  -->
-                            <ComboBox
+                            <!--<ComboBox
+                                Width="150"
                                 Name="SubjectsBox"
                                 ItemsSource="{Binding Subjects}"
                                 SelectionChanged="SubjectsBox_SelectionChanged" />
 
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Vertical">
                                 <TextBox
                                     Name="SubjectName"
-                                    Width="300"
+                                    Width="150"
                                     Height="50"
                                     materialDesign:HintAssist.Hint="SubjectName" />
-                                <Button Command="{Binding AddSubject}" CommandParameter="{Binding ElementName=SubjectName, Path=Text}">PlusIcon</Button>
-                            </StackPanel>
+                                <Button Width="100" Command="{Binding AddSubject}" CommandParameter="{Binding ElementName=SubjectName, Path=Text}">PlusIcon</Button>
+                            </StackPanel>-->
                         </StackPanel>
 
 

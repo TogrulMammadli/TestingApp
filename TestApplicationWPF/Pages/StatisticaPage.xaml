@@ -42,26 +42,22 @@
                             Hoverable="False"
                             LegendLocation="Bottom">
                         <lvc:PieChart.Series>
+                           
                             <lvc:PieSeries
-                                    Title="Maria"
-                                    DataLabels="True"
-                                  
-                                    Values="3" />
-                            <lvc:PieSeries
-                                    Title="Charles"
-                                    DataLabels="True"
+                                    Title="TRUE ANSWERS"
+                                    
                                     
                                     Values="4" />
                             <lvc:PieSeries
-                                    Title="Frida"
-                                    DataLabels="True"
-                                   
-                                    Values="6" />
-                            <lvc:PieSeries
-                                    Title="Frederic"
-                                    DataLabels="True"
+                                    Title="FALSE ANSWER"
+                                    
                                    
                                     Values="2" />
+                            <lvc:PieSeries
+                                    Title="NO ANSWERS"
+                                   
+                                   
+                                    Values="1" />
                         </lvc:PieChart.Series>
                     </lvc:PieChart>
                 </Grid>
@@ -90,10 +86,10 @@
                     <Setter Property="StrokeThickness" Value="0" />
                     <Setter Property="Stroke" Value="White" />
                     <Setter Property="Fill" Value="White" />
-                    <Setter Property="MaxColumnWidth" Value="5" />
+                    <Setter Property="MaxColumnWidth" Value="15" />
                 </Style>
                 <Style TargetType="lvc:Axis">
-                    <Setter Property="FontSize" Value="12" />
+                    <Setter Property="FontSize" Value="18" />
                     <Setter Property="Foreground" Value="#64FFFFFF" />
                     <Style.Triggers>
                         <Trigger Property="AxisOrientation" Value="Y">
@@ -142,7 +138,7 @@
                     Padding="0,0,0,20"
                     Foreground="#59FFFFFF"
                     TextAlignment="Center">
-                    2014.12.25
+                    2019.30.03
             </TextBlock>
             <!--<Button
                     Grid.Row="3"
@@ -192,19 +188,19 @@
                     Grid.Row="3"
                     Margin="25,0 0 40 "
                     VerticalAlignment="Bottom">
-                <TextBlock FontSize="13" Opacity=".4" >
-                        The Last 12 hours average<LineBreak />
-                        Electricity Consumption</TextBlock>
+                <TextBlock FontSize="20" Opacity=".9" >
+                        The Last mounth hours average<LineBreak />
+                       Mark</TextBlock>
                 <StackPanel Orientation="Horizontal" >
                     <TextBlock
-                            FontSize="40"
+                            FontSize="50"
                             Foreground="#303030"
-                            Text="20.45" />
+                            Text="9" />
                     <TextBlock
                             Margin="8,6"
                             VerticalAlignment="Bottom"
                             FontSize="18"
-                            Foreground="#303030"><Run Text="kWh"/></TextBlock>
+                            Foreground="#303030"><Run Text=""/></TextBlock>
                 </StackPanel>
             </StackPanel>
         </Grid>

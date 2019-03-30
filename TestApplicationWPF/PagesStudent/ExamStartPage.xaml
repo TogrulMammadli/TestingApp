@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="560" d:DesignWidth="1050"
       Title="ExamStartPage"  Background="Wheat"  Margin="50 0 0 0">
-    
+
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -28,60 +28,42 @@
                     Color="#FFBBBBBB" />
             </Rectangle.Effect>
         </Rectangle>
-            <ListBox Height="180" Background="AliceBlue">
+
+        <StackPanel>
+            <TextBlock Name="QuestionText" Height="200" Width="700" Background="IndianRed"  Text="{Binding Text}"></TextBlock>
+
+
+            <ListBox Height="180" Name="AnswerList" Background="AliceBlue" ItemsSource="{Binding Answers}">
                 <ListBox.ItemTemplate >
                     <DataTemplate>
-                        <DockPanel LastChildFill="False" HorizontalAlignment="Right">
-                          
-                            
-                            <!--<Button
-                                                    HorizontalAlignment="Right"
-                                                    Content="Del"
-                                                    DockPanel.Dock="Right" />
-                                                <Button
-                                                    HorizontalAlignment="Right"
-                                                    Content="Edit"
-                                                    DockPanel.Dock="Right" />-->
-
-
-                        </DockPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox Name="AnswerCheck" Content="{Binding Text}" Checked="AnswerCheck_Checked" Unchecked="AnswerCheck_Unchecked"></CheckBox>
+                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-        <TextBlock DockPanel.Dock="Top" Height="300" Width="400" Background="IndianRed" Text="{Binding CurrentQuestion}"
-                                                    Margin="10,0"
-                                                    HorizontalAlignment="Left"
-                                                    VerticalAlignment="Center"
-                                                    FontSize="24" />
+        </StackPanel>
+
         <Grid Grid.Row="1">
-            <!--<WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Button Content="1" Margin="15"></Button>
-                <Button Content="2" Margin="15"></Button>
-                <Button Content="3" Margin="15"></Button>
-                <Button Content="4" Margin="15"></Button>
-                <Button Content="5" Margin="15"></Button>
-                <Button Content="6" Margin="15"></Button>
-                <Button Content="7" Margin="15"></Button>
-                <Button Content="8" Margin="15"></Button>
-                <Button Content="9" Margin="15"></Button>
-                <Button Content="10" Margin="15"></Button>
-                <Button Content="11" Margin="15"></Button>
-                <Button Content="12" Margin="15"></Button>
-            </WrapPanel>-->
-          
-            <ListBox Name="ButtonsList"
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+
+            </Grid.RowDefinitions>
+                <ListBox Name="ButtonsList"  Grid.Row="0"
                      ItemsSource="{Binding Exam.Blank.Questions}">
-                <ListBox.ItemsPanel>
-                    <ItemsPanelTemplate >
-                        <WrapPanel Background="AntiqueWhite" HorizontalAlignment="Center" VerticalAlignment="Top" ></WrapPanel>
-                    </ItemsPanelTemplate>
-                </ListBox.ItemsPanel>
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <Button Name="QuestionButton" Width="40" Height="40" Initialized="QuestionButton_Loaded" ></Button>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate >
+                            <WrapPanel Background="AntiqueWhite" HorizontalAlignment="Center" VerticalAlignment="Top" ></WrapPanel>
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Button Name="QuestionButton" Width="40" Height="40" Click="QuestionButton_Click" Initialized="QuestionButton_Loaded" ></Button>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+                <Button Grid.Row="1" Name="SubmitButton" Width="80" HorizontalAlignment="Right" Margin="10" VerticalAlignment="Bottom" Click="SubmitButton_Click">Submit</Button>
         </Grid>
 
 

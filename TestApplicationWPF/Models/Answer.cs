@@ -71,5 +71,10 @@ namespace TestApplicationWPF.Models
         public Ans()
         {
         }
+
+        public override string ToString()
+        {
+            return An;
+        }
     }
 }

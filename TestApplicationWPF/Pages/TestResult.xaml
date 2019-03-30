@@ -9,20 +9,14 @@
       Title="TestResult">
 
     <Grid Background="#ecf0f1">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="200"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <ListBox x:Name="listboxtestresult" Grid.Column="0" Width="780" Background="White">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Margin="5">
-                            <TextBlock/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>
-        </Grid>
+
+        <StackPanel>
+            <Label>Correct</Label>
+            <TextBox Name="Correct" ></TextBox>
+            <Label>False</Label>
+            <TextBox Name="Wrong" ></TextBox>
+            <Label>NotAnswered</Label>
+            <TextBox Name="NotAnswer"></TextBox>
+        </StackPanel>
     </Grid>
 </Page>

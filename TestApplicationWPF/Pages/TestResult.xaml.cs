@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestApplicationWPF.Models;
+using TestApplicationWPF.Services.ExamService;
 
 namespace TestApplicationWPF.Pages
 {
@@ -20,9 +22,14 @@ namespace TestApplicationWPF.Pages
     /// </summary>
     public partial class TestResult : Page
     {
-        public TestResult()
+        ExamService examService = new ExamService();
+        public TestResult(Exams exams)
         {
             InitializeComponent();
+            Result result = examService.CheckExam(exams);
+            Correct.Text = result.CorrectsNumber.ToString();
+            NotAnswer.Text = result.UnAnswered.ToString();
+            Wrong.Text = result.WrongsNumber.ToString();
         }
     }
 }

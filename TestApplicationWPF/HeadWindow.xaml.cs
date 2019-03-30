@@ -156,7 +156,7 @@ namespace TestApplicationWPF
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            frame.Content = new TestResult();
+        //    frame.Content = new TestResult();
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)

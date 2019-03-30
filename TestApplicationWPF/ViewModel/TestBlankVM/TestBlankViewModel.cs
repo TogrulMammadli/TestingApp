@@ -85,7 +85,7 @@ namespace TestApplicationWPF.ViewModel.TestBlankVM
 
         private bool AddQuestionCanExecute()
         {
-            return Question.Text?.Count() > 0;
+            return true;
         }
 
         private void AddQuestionExexute()
@@ -95,8 +95,8 @@ namespace TestApplicationWPF.ViewModel.TestBlankVM
                 Question.CorrectAnswers = CorrectAnswers;
                 Question.WrongAnswers = WrongAnswers;
                 Questionservice.AddQuestion(Question);
-                TestContext.Instance.Questions.Add(Question);
                 TestBlankQuestion.Add(Question);
+                Question = new Question();
             }
             catch (Exception ex)
             {

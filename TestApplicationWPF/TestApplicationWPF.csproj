@@ -118,8 +118,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BestTimeForStudy.cs" />
     <Compile Include="Models\WantedCourceToStudy.cs" />
-    <Compile Include="PagesStudent\TestNamesPage.xaml.cs">
-      <DependentUpon>TestNamesPage.xaml</DependentUpon>
+    <Compile Include="PagesStudent\ExamStartPage.xaml.cs">
+      <DependentUpon>ExamStartPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ChooseTestBlankPage.xaml.cs">
       <DependentUpon>ChooseTestBlankPage.xaml</DependentUpon>
@@ -180,6 +180,7 @@
     <Compile Include="Services\UserServices\UserService.cs" />
     <Compile Include="ViewModel\ExamSheduleVM\ExamChooseViewModel.cs" />
     <Compile Include="ViewModel\ExamSheduleVM\ExamSheduleViewModel.cs" />
+    <Compile Include="ViewModel\ExamSheduleVM\ExamStartViewModel.cs" />
     <Compile Include="ViewModel\QuestionVM\AddQuestionViewModel.cs" />
     <Compile Include="ViewModel\TestBlankVM\TestBlankViewModel.cs" />
     <Compile Include="ViewModel\UserVM\AccessLevelKeyValue.cs" />
@@ -206,7 +207,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PagesStudent\TestNamesPage.xaml">
+    <Page Include="PagesStudent\ExamStartPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

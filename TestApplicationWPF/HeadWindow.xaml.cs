@@ -28,10 +28,13 @@ namespace TestApplicationWPF
         User User = new User();
         string Imagepath = "";
         UserService userService = new UserService(new UserRepository());
+        private static Frame myFrame;
+
         public HeadWindow(User user)
         {
             InitializeComponent();
             User=user;
+            myFrame = frame;
             //frame.NavigationService.Navigate(new PageCreateTest());
             if (user.İmage!=null)
             {
@@ -53,10 +56,15 @@ namespace TestApplicationWPF
             UserNameSurnameTextBox.Text = user.Name + "  " + user.Surname;
             UserEmailTextBox.Text = user.Email;
         }
+        public static void ChangePage(Page page)
+        {
+            myFrame.Content = page;
+        }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            frame.Content = new PageCreateTest();
+            this.frame.Content = new PageCreateTest();
             CreateTestBlank createTestBlankWnd = new CreateTestBlank();
             createTestBlankWnd.Show();
         }
@@ -163,7 +171,7 @@ namespace TestApplicationWPF
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-            frame.Content = new TestNamesPage();
+          //  frame.Content = new ExamStartPage();
         }
 
         private void PackIcon_MouseDoubleClick(object sender, MouseButtonEventArgs e)

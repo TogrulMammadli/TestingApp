@@ -16,6 +16,17 @@
     mc:Ignorable="d">
     <Grid>
 
+        <!--<Grid Grid.Column="0">
+            <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth2" UniformCornerRadius="10">
+
+            </materialDesign:Card>
+        </Grid>-->
+
+
+
+
+
+
         <dockablz:Layout>
             <dragablz:TabablzControl
                 Name="Drag"
@@ -599,14 +610,73 @@
                 </TabItem>
                 <TabItem Header="CREAT QUESTIONS">
                     <Grid>
+                        <Grid ShowGridLines="True">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+
+                                <RowDefinition />
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition Height="50"/>
+                            </Grid.RowDefinitions>
+
+
+                            <Grid Grid.Row="0" Margin="20" ShowGridLines="True">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid Grid.Column="0" x:Name="gr0" Margin="0 0 10 0">
+                                <materialDesign:Card Height="{Binding ElementName=gr0, Path=ActualHeight}" Width="{Binding ElementName=gr0, Path=ActualWidth}" materialDesign:ShadowAssist.ShadowDepth="Depth2" UniformCornerRadius="10">
+                                        <TextBox
+                                Name="Text" Padding="10 0 0 5"
+                                Width="{Binding ElementName=gr0, Path=ActualWidth}"
+                                            Height="{Binding ElementName=gr0, Path=ActualHeight}"
+                                
+                                materialDesign:HintAssist.Hint="Enter question text"
+                                Background="White"
+                                Text="{Binding Question.Text}" />
+                                    </materialDesign:Card>
+                                </Grid>
+                                <Grid Grid.Column="1" Margin="10 0 0 0" x:Name="gr1">
+                                    <materialDesign:Card  Height="{Binding ElementName=gr1, Path=ActualHeight}" Width="{Binding ElementName=gr1, Path=ActualWidth}" materialDesign:ShadowAssist.ShadowDepth="Depth2" UniformCornerRadius="10">
+                                        <StackPanel Background="Aqua" Margin="10" 
+                               Orientation="Horizontal"
+                                Width="{Binding ElementName=gr0, Path=ActualWidth}"
+                                            Height="{Binding ElementName=gr0, Path=ActualHeight}">
+
+                                            <StackPanel Background="Coral" Orientation="Vertical"></StackPanel>
+
+                                            <StackPanel></StackPanel>
+                                        </StackPanel>
+                                    </materialDesign:Card>
+                                </Grid>
+                            </Grid>
+                            
+                            
+                            
+                            
+                            
+                            <Button Grid.Row="3"
+                                    HorizontalAlignment="Center"
+                            Name="Add"
+                            VerticalAlignment="Center"
+                            Command="{Binding AddQuestion}">
+                                Add question
+                            </Button>
+                        </Grid>
+                        
+                        
+                        
                         <StackPanel>
-                            <TextBox
+                            <!--<TextBox
                                 Name="Text"
                                 Width="200"
                                 Height="30"
                                 materialDesign:HintAssist.Hint="Enter question text"
                                 Background="White"
-                                Text="{Binding Question.Text}" />
+                                Text="{Binding Question.Text}" />-->
                             <TextBlock>Complexity</TextBlock>
                             <RadioButton
                                 Name="Low"
@@ -626,12 +696,13 @@
                                 GroupName="Complexity">
                                 Hight
                             </RadioButton>
-                            <Button
+                            <!--<Button
+                                
                                 Name="ImageBtn"
                                 VerticalAlignment="Bottom"
                                 Command="{Binding AddImage}">
-                                ChangeImage
-                            </Button>
+                                ChangeImage 
+                            </Button>-->
                             <Label>CorrectAnswers</Label>
                             <ListBox
                                 Name="WrongAnswersListBox"
@@ -714,12 +785,12 @@
                         </StackPanel>
 
 
-                        <Button
+                        <!--<Button
                             Name="Add"
                             VerticalAlignment="Bottom"
                             Command="{Binding AddQuestion}">
                             Add Question
-                        </Button>
+                        </Button>-->
                     </Grid>
                 </TabItem>
             </dragablz:TabablzControl>

@@ -101,7 +101,6 @@ namespace TestApplicationWPF
             testBlankViewModel.TestBlank.DurationMin = TestBlk.DurationMin;
             testBlankViewModel.TestBlank.Autor = TestBlk.Autor;
             testBlankViewModel.AddTestBlank.Execute(true);
-            MessageBox.Show("Natig sdelay cto nibud pole najatiya cnopki ctobi bilo ponatno sozdalsa ili net" ,"Congratulations",MessageBoxButton.OK,MessageBoxImage.Information);
         }
 
         private void NameTextBox_LostFocus(object sender, RoutedEventArgs e)

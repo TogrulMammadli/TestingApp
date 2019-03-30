@@ -120,7 +120,9 @@
                         Text=""
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                         />
+                        
                         <TextBlock x:Name="TextBlockEmailWarning" Text="" Foreground="Red"></TextBlock>
+                        
                     </StackPanel>
 
                 </Grid>
@@ -148,46 +150,12 @@
                 </Rectangle.Effect>
             </Rectangle>
             <StackPanel Grid.Column="1" Margin="0 20 0 10">
-                <TextBox
-           x:Name="textboxpswd"
-           Grid.Column="1"
-           Grid.Row="1"
-           Width="850"
-           Margin="50,0,80,0"
-           HorizontalAlignment="Left"
-           VerticalAlignment="Top"
-           TextWrapping="Wrap"
-           VerticalScrollBarVisibility="Auto"
-           materialDesign:HintAssist.Hint="Password"
-           FontSize="18"
-           MaxLength="16"
-                    materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
-                        materialDesign:HintAssist.FloatingScale="0.7"
-                        Text=""
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        />
-
-                <TextBox
-           x:Name="textboxconfpswd"
-           Grid.Column="1"
-           Grid.Row="1"
-           Width="850"
-           Margin="50,0,80,0"
-           HorizontalAlignment="Left"
-                VerticalAlignment="Top"
-           TextWrapping="Wrap"
-           VerticalScrollBarVisibility="Auto"
-           materialDesign:HintAssist.Hint="Confirm Password"
-           FontSize="18"
-           MaxLength="16"
-                materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
-                        materialDesign:HintAssist.FloatingScale="0.7"
-                        Text=""
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        />
                 <TextBlock x:Name="TextBlockPswdWarning" Text="" Foreground="Red" Height="20" TextAlignment="Center"/>
+                
             </StackPanel>
         </Grid>
 
+    <Button Grid.Row="1" Height="50" FontSize="20" Width="200" Content="ConfirmPassword" HorizontalAlignment="Left" Margin="50" VerticalAlignment="Bottom" Click="Button_Click"/>
     </Grid>
+
 </Page>

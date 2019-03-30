@@ -25,9 +25,10 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid Grid.Row="0"
-            Background="#3498db"  >
+            Background="#3498db" MouseLeftButtonDown="Grid_MouseLeftButtonDown"  >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                     <Button
+                        Click="Cancel_Click"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
                 Background="{x:Null}"
@@ -153,6 +154,7 @@
                         <StackPanel Grid.Row="0" VerticalAlignment="Center">
 
                             <Ellipse
+                              
                             Width="140"
                             Height="140"
                             Margin="0,20,0,0"
@@ -164,8 +166,8 @@
                                     Opacity="0.5"
                                     Color="#FF7A7A7A" />
                                 </Ellipse.Effect>
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/Icons/tre2.png" />
+                                <Ellipse.Fill >
+                                    <ImageBrush    x:Name="AvatarImage"  ImageSource="/Icons/tre2.png" />
                                 </Ellipse.Fill>
                             </Ellipse>
 
@@ -174,7 +176,7 @@
                             Width="80"
                             Height="25"
                             Margin="0,20,0,0"
-                            Command="{Binding AddImage}">
+                            Click="ImageBtn_Click">
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon
                                     Width="20"

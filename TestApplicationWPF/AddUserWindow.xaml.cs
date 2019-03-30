@@ -19,6 +19,7 @@ using TestApplicationWPF.Repository.AccessLevelRepository;
 using TestApplicationWPF.ViewModel.AddUser;
 using TestApplicationWPF.Mesages;
 using GalaSoft.MvvmLight.Messaging;
+using TestApplicationWPF.DataModel;
 
 namespace TestApplicationWPF
 {
@@ -28,6 +29,7 @@ namespace TestApplicationWPF
     public partial class AddUserWindow : Window
     {
         public AddUserViewModel ViewModel;
+        string Imagepath = "";
         public AddUserWindow()
         {
             InitializeComponent();
@@ -81,7 +83,37 @@ namespace TestApplicationWPF
 
         private void ImageBtn_Click(object sender, RoutedEventArgs e)
         {
+            UserService userService = new UserService(new UserRepository());
 
+
+            Task task = new Task(CC);
+                task.Start();
+                {
+                    task.ContinueWith((x) =>
+                    {
+                        if (task.IsCompleted)
+                        {
+                            this.Dispatcher.Invoke(() =>
+                            {
+                                this.Dispatcher.InvokeAsync(() => this.AvatarImage.ImageSource = new BitmapImage(new Uri(Imagepath)));
+                                TestContext.Instance.Users.Where(y => y.Id == ViewModel.User.Id).DefaultIfEmpty().First().İmage = userService.ConvertImageToByte(Imagepath);
+                            });
+                        }
+                    });
+                }
+            
+        }
+
+        public void CC()
+        {
+            UserService userService = new UserService(new UserRepository());
+            Imagepath = userService.OpenFileGetPath();
+          
+        }
+
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }

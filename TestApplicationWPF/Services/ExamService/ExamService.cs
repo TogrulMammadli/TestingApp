@@ -11,9 +11,9 @@ namespace TestApplicationWPF.Services.ExamService
 {
     public class Result
     {
-        public int CorrectsNumber { get; set; }
-        public int WrongsNumber { get; set; }
-        public int UnAnswered { get; set; }
+        public int CorrectsNumber { get; set; } = 0;
+        public int WrongsNumber { get; set; } = 0;
+        public int UnAnswered { get; set; } = 0;
     };
 
     public class ExamService : IExamService

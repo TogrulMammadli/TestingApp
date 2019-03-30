@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:TestApplicationWPF.PagesStudent"
       mc:Ignorable="d" 
       d:DesignHeight="560" d:DesignWidth="1050"
-      Title="ExamStartPage"  Background="Wheat"  Margin="50 0 0 0">
+      Title="ExamStartPage"  Background="Wheat"  Margin="50 0 0 0" MouseDown="Page_MouseDown">
 
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
@@ -29,10 +29,8 @@
             </Rectangle.Effect>
         </Rectangle>
 
-        <StackPanel>
+        <StackPanel >
             <TextBlock Name="QuestionText" Height="200" Width="700" Background="IndianRed"  Text="{Binding Text}"></TextBlock>
-
-
             <ListBox Height="180" Name="AnswerList" Background="AliceBlue" ItemsSource="{Binding Answers}">
                 <ListBox.ItemTemplate >
                     <DataTemplate>

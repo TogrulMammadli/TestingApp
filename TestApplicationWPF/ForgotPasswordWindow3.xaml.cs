@@ -72,7 +72,7 @@ namespace TestApplicationWPF
                                     }
                                     if (Num==2)
                                     {
-                                        //Natig delay cto xocew
+                                        this.Close();
                                     }
                                 }
                                 else

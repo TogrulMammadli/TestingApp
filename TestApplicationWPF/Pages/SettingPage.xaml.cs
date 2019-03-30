@@ -15,14 +15,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TestApplicationWPF.Models;
 
 namespace TestApplicationWPF.Pages
 {
     public partial class SettingPage : Page
     {
-        public SettingPage()
+        User User = new User();
+        public SettingPage(User user)
         {
             InitializeComponent();
+            textboxname.Text = user.Name + " "+ user.Surname+ " "+user.Patronymic;
+            textboxemail.Text = user.Email;
+            
         }
 
         private void numbervalit(object sender, TextCompositionEventArgs e)
@@ -51,11 +56,6 @@ namespace TestApplicationWPF.Pages
             {
                 TextBlockEmailWarning.Text = "Wrong e-mail format!";
             }
-
-            else { TextBlockEmailWarning.Text = ""; }
-            if (textboxpswd.Text != "" && textboxconfpswd.Text != "" && textboxpswd.Text != textboxconfpswd.Text) { TextBlockPswdWarning.Text = "Passwords do not match!"; }
-            else { TextBlockPswdWarning.Text = ""; }
-
         }
 
         private void Textboxname_PreviewTextInput(object sender, TextCompositionEventArgs e)
@@ -71,5 +71,10 @@ namespace TestApplicationWPF.Pages
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            ForgotPasswordWindow3 forgotPasswordWindow3 = new ForgotPasswordWindow3(User,2);
+            forgotPasswordWindow3.Show();
+        }
     }
 }

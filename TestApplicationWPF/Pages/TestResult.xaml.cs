@@ -23,12 +23,13 @@ namespace TestApplicationWPF.Pages
     public partial class TestResult : Page
     {
         ExamService examService = new ExamService();
-        public TestResult(Exams exams)
+        public TestResult(Result result,Exams exams)
         {
             InitializeComponent();
-            Result result = examService.CheckExam(exams);
+            //  Result result = examService.CheckExam(exams);
+
             Correct.Text = result.CorrectsNumber.ToString();
-            NotAnswer.Text = result.UnAnswered.ToString();
+            NotAnswer.Text =( exams.Blank.Questions.Count-(result.CorrectsNumber+result.WrongsNumber)).ToString();
             Wrong.Text = result.WrongsNumber.ToString();
         }
     }

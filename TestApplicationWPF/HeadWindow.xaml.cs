@@ -87,7 +87,7 @@ namespace TestApplicationWPF
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            frame.Content = new SettingPage();
+            frame.Content = new SettingPage(User);
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)

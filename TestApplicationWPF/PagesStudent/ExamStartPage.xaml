@@ -1,13 +1,13 @@
-﻿<Page x:Class="TestApplicationWPF.PagesStudent.TestNamesPage"
+﻿<Page x:Class="TestApplicationWPF.PagesStudent.ExamStartPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:TestApplicationWPF.PagesStudent"
       mc:Ignorable="d" 
-      d:DesignHeight="560" d:DesignWidth="1050" Margin="50 0 0 0"
-      Title="TestNamesPage" Background="Wheat">
-
+      d:DesignHeight="560" d:DesignWidth="1050"
+      Title="ExamStartPage"  Background="Wheat"  Margin="50 0 0 0">
+    
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -28,21 +28,12 @@
                     Color="#FFBBBBBB" />
             </Rectangle.Effect>
         </Rectangle>
-        <StackPanel Background="#ecf0f1" Grid.Row="0" Height="400" Width="920" VerticalAlignment="Center" Margin="0" >
-            
-            <TextBlock  Height="180" Width="0" VerticalAlignment="Top" Margin="5" Background="Coral"></TextBlock>
-
-            <ListBox Height="180" Background="AliceBlue"> <!--Ne gotovo ewe-->
+            <ListBox Height="180" Background="AliceBlue">
                 <ListBox.ItemTemplate >
                     <DataTemplate>
                         <DockPanel LastChildFill="False" HorizontalAlignment="Right">
-                            <TextBlock 
-                                                    Margin="10,0"
-                                                    HorizontalAlignment="Left"
-                                                    VerticalAlignment="Center"
-                                                    DockPanel.Dock="Left"
-                                                    FontSize="28" />
-                            <CheckBox VerticalAlignment="Center" DockPanel.Dock="Right" />
+                          
+                            
                             <!--<Button
                                                     HorizontalAlignment="Right"
                                                     Content="Del"
@@ -57,10 +48,13 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-        </StackPanel>
-        
+        <TextBlock DockPanel.Dock="Top" Height="300" Width="400" Background="IndianRed" Text="{Binding CurrentQuestion}"
+                                                    Margin="10,0"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Center"
+                                                    FontSize="24" />
         <Grid Grid.Row="1">
-            <WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <!--<WrapPanel VerticalAlignment="Center" HorizontalAlignment="Center">
                 <Button Content="1" Margin="15"></Button>
                 <Button Content="2" Margin="15"></Button>
                 <Button Content="3" Margin="15"></Button>
@@ -73,10 +67,23 @@
                 <Button Content="10" Margin="15"></Button>
                 <Button Content="11" Margin="15"></Button>
                 <Button Content="12" Margin="15"></Button>
-
-            </WrapPanel>
+            </WrapPanel>-->
+          
+            <ListBox Name="ButtonsList"
+                     ItemsSource="{Binding Exam.Blank.Questions}">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate >
+                        <WrapPanel Background="AntiqueWhite" HorizontalAlignment="Center" VerticalAlignment="Top" ></WrapPanel>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Button Name="QuestionButton" Width="40" Height="40" Initialized="QuestionButton_Loaded" ></Button>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </Grid>
-            
-       
+
+
     </Grid>
 </Page>

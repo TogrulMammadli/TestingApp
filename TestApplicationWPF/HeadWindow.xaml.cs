@@ -56,9 +56,9 @@ namespace TestApplicationWPF
             UserNameSurnameTextBox.Text = user.Name + "  " + user.Surname;
             UserEmailTextBox.Text = user.Email;
         }
-        public static void ChangePage(string newUri, UriKind uriKind)
+        public static void ChangePage(Page page)
         {
-            myFrame.Navigate(new Uri(newUri, uriKind));
+            myFrame.Content = page;
         }
 
 
@@ -171,7 +171,7 @@ namespace TestApplicationWPF
 
         private void Button_Click_7(object sender, RoutedEventArgs e)
         {
-            frame.Content = new TestNamesPage();
+          //  frame.Content = new ExamStartPage();
         }
 
         private void PackIcon_MouseDoubleClick(object sender, MouseButtonEventArgs e)

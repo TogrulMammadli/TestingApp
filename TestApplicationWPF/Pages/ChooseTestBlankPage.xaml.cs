@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TestApplicationWPF.Models;
+using TestApplicationWPF.PagesStudent;
 using TestApplicationWPF.Services.ExamService;
 using TestApplicationWPF.ViewModel.ExamSheduleVM;
 
@@ -85,7 +86,7 @@ namespace TestApplicationWPF.Pages
 
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
-            HeadWindow.ChangePage("./PagesStudent/TestNamesPage.xaml", UriKind.Relative);  
+            HeadWindow.ChangePage(new ExamStartPage(((Exams)(((Button)sender).DataContext))));  
         }
     }
 }

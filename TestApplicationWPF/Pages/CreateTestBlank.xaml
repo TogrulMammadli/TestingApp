@@ -11,12 +11,16 @@
     Name="CreatetestPage"
     Title="CreateTestBlank"
     Width="1000"
-    Height="560"
+    Height="1200"
+    Background="#ecf0f1"
     mc:Ignorable="d">
     <Grid>
 
         <dockablz:Layout>
-            <dragablz:TabablzControl Margin="0,-1,0,1" BorderThickness="0" Name="Drag">
+            <dragablz:TabablzControl
+                Name="Drag"
+                Margin="0,-1,0,1"
+                BorderThickness="0">
                 <dragablz:TabablzControl.InterTabController>
                     <dragablz:InterTabController />
                 </dragablz:TabablzControl.InterTabController>
@@ -48,32 +52,36 @@
                         </Grid>-->
                         <Grid>
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="50" />
-                                <RowDefinition Height="200" />
-                                <RowDefinition Height="200" />
-                                <RowDefinition Height="200" />
+                                <RowDefinition Height="80" />
+
+                                <RowDefinition Height="120" />
+                                <RowDefinition Height="190" />
+                                <RowDefinition Height="120" />
+
                             </Grid.RowDefinitions>
 
-                            <Grid Grid.Row="0" Background="Aqua">
-                                <materialDesign:Card Margin="35 0 35 0" Background="White">
+                            <Grid Grid.Row="0">
+                                <materialDesign:Card
+                                    Height="60"
+                                    Margin="35,10,35,0"
+                                    VerticalAlignment="Center"
+                                    Background="White"
+                                    UniformCornerRadius="10">
                                     <StackPanel Orientation="Vertical">
                                         <TextBox
-                                 x:Name="MinutesForExamTimeTextBox"
-                                Grid.Row="1"
-                                Width="1850"
-                                 Margin="80,23,80,0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center"
-                                
-                                
-                                materialDesign:HintAssist.Hint="Duration"
-                                materialDesign:HintAssist.FloatingScale="0.9"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
-                               LostFocus="MinutesForExamTimeTextBox_LostFocus"
-                                PreviewTextInput="MinutesForExamTimeTextBox_PreviewTextInput" 
-                                Background="White"
-                                Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                                FontSize="18"/>
+                                            x:Name="MinutesForExamTimeTextBox"
+                                            Width="1850"
+                                            Margin="45,0,45,0"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            materialDesign:HintAssist.FloatingScale="0.9"
+                                            materialDesign:HintAssist.Hint="Duration"
+                                            materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                                            Background="White"
+                                            FontSize="18"
+                                            LostFocus="MinutesForExamTimeTextBox_LostFocus"
+                                            PreviewTextInput="MinutesForExamTimeTextBox_PreviewTextInput"
+                                            Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                                     </StackPanel>
                                 </materialDesign:Card>
                             </Grid>
@@ -217,28 +225,197 @@
 
 
 
-                <TabItem  Name="QuestionTab" Header="CREATING BLANK">
+                <TabItem Name="QuestionTab" Header="CREATING BLANK">
 
                     <ScrollViewer Height="{Binding ElementName=Drag, Path=ActualHeight}" VerticalScrollBarVisibility="Auto">
                         <!--  делит окно на 2 поселедине  -->
-                        <StackPanel SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"
+                        <StackPanel
                             Name="MainStack"
                             HorizontalAlignment="Stretch"
                             VerticalAlignment="Stretch"
                             CanVerticallyScroll="True"
-                            Orientation="Vertical">
+                            Orientation="Vertical"
+                            SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical">
 
-                            <Grid Height="200" Background="Aqua" Opacity="0.5">
+                            <Grid
+                                Height="600"
+                                Opacity="1"
+                                ShowGridLines="True">
 
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid
+                                    x:Name="gridC1"
+                                    Grid.Column="1"
+                                    Margin="10,20,20,20">
+                                    <materialDesign:Card Height="{Binding ElementName=gridC1, Path=ActualHeight}" UniformCornerRadius="10">
+                                        <StackPanel
+                                            HorizontalAlignment="Stretch"
+                                            VerticalAlignment="Stretch"
+                                            Orientation="Vertical">
+                                            <materialDesign:Card Name="mca" VerticalAlignment="Center">
+                                                <TextBox
+                                                    Name="SearchTxtBox"
+                                                    Height="30"
+                                                    materialDesign:HintAssist.Hint="    Enter question text to search.."
+                                                    Background="White"
+                                                    BorderBrush="Gray"
+                                                    BorderThickness="1"
+                                                    Foreground="Gray" />
+                                            </materialDesign:Card>
+                                            <ListBox
+                                                Name="AllQuestionsListBox"
+                                                Height="520"
+                                                HorizontalAlignment="Center"
+                                                VerticalAlignment="Center"
+                                                ItemsSource="{Binding AllQuestions}"
+                                                ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                                                <ListBox.ItemTemplate>
+                                                    <DataTemplate>
+                                                        <materialDesign:Card
+                                                            Width="400"
+                                                            Margin="5,3,5,0"
+                                                            VerticalAlignment="Center"
+                                                            materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                                            materialDesign:ShadowAssist.ShadowEdges="All"
+                                                            Background="White"
+                                                            UniformCornerRadius="5">
+                                                            <Grid VerticalAlignment="Center">
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="1*" />
+                                                                    <ColumnDefinition Width="100" />
+                                                                </Grid.ColumnDefinitions>
+                                                                <TextBlock
+                                                                    Name="QuestText"
+                                                                    Grid.Column="0"
+                                                                    Height="50"
+                                                                    Margin="20,0,0,0"
+                                                                    VerticalAlignment="Center"
+                                                                    Text="{Binding Text}"
+                                                                    TextWrapping="Wrap" />
+
+                                                                <StackPanel
+                                                                    Grid.Column="1"
+                                                                    VerticalAlignment="Center"
+                                                                    Orientation="Horizontal">
+
+                                                                    <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
+
+                                                                    <Button
+                                                                        Name="AllQuestioView"
+                                                                        Width="30"
+                                                                        Height="30"
+                                                                        Margin="10,0,10,0"
+                                                                        Background="#27ae60"
+                                                                        BorderBrush="{x:Null}"
+                                                                        Click="AllQuestioView_Click"
+                                                                        Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                                                        ToolTip="View all info">
+                                                                        <materialDesign:PackIcon
+                                                                            Width="20"
+                                                                            Height="20"
+                                                                            Background="{x:Null}"
+                                                                            Kind="Eye" />
+                                                                    </Button>
+                                                                    <Button
+                                                                        Name="AllQuestioAdd"
+                                                                        Width="30"
+                                                                        Height="30"
+                                                                        Margin="10,0,10,0"
+                                                                        Background="#f39c12"
+                                                                        BorderBrush="{x:Null}"
+                                                                        Click="AllQuestioAdd_Click"
+                                                                        Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                                                        ToolTip="Add">
+                                                                        <materialDesign:PackIcon
+                                                                            Width="20"
+                                                                            Height="20"
+                                                                            Background="{x:Null}"
+                                                                            Kind="Add" />
+                                                                    </Button>
+                                                                </StackPanel>
+                                                            </Grid>
+                                                        </materialDesign:Card>
+                                                    </DataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                        </StackPanel>
+                                    </materialDesign:Card>
+                                </Grid>
+
+
+                                <Grid Grid.Column="0" Margin="10,20,20,20">
+                                    <materialDesign:Card Height="{Binding ElementName=gridC1, Path=ActualHeight}" UniformCornerRadius="10">
+
+                                        <StackPanel
+                                            HorizontalAlignment="Stretch"
+                                            Background="Yellow"
+                                            Orientation="Horizontal">
+                                            <StackPanel Width="500" Margin="0,0,50,0">
+                                                <Label>TestBlankQuestions</Label>
+                                                <ListBox
+                                                    Name="TestBlankQuestions"
+                                                    Height="250"
+                                                    Background="AliceBlue"
+                                                    ItemsSource="{Binding TestBlankQuestion}">
+                                                    <ListBox.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <StackPanel Orientation="Horizontal">
+                                                                <TextBlock
+                                                                    Name="QuestionText"
+                                                                    Width="120"
+                                                                    Height="80"
+                                                                    Text="{Binding Text}"
+                                                                    TextWrapping="Wrap" />
+                                                                <StackPanel Orientation="Horizontal">
+                                                                    <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
+                                                                    <Button
+                                                                        Name="TestBlankQuestioView"
+                                                                        Width="15"
+                                                                        Height="15"
+                                                                        Click="TestBlankQuestioView_Click">
+                                                                        V
+                                                                    </Button>
+                                                                    <Button
+                                                                        Name="TestBlankQuestioRemove"
+                                                                        Width="15"
+                                                                        Height="15"
+                                                                        Click="TestBlankQuestioRemove_Click">
+                                                                        R
+                                                                    </Button>
+                                                                </StackPanel>
+                                                            </StackPanel>
+                                                        </DataTemplate>
+                                                    </ListBox.ItemTemplate>
+                                                </ListBox>
+
+                                                <Button
+                                                    x:Name="SubmitButton"
+                                                    Margin="0,40,0,0"
+                                                    Click="SubmitButton_Click">
+                                                    Submit
+                                                </Button>
+
+                                            </StackPanel>
+
+                                            <StackPanel />
+                                        </StackPanel>
+
+
+                                    </materialDesign:Card>
+
+                                </Grid>
                             </Grid>
 
 
 
 
 
-                            <StackPanel
+                            <!--<StackPanel
                                 HorizontalAlignment="Stretch"
-                                Background="Brown"
+                                Background="Yellow"
                                 Orientation="Horizontal">
                                 <StackPanel Width="500" Margin="0,0,50,0">
                                     <Label>TestBlankQuestions</Label>
@@ -257,7 +434,9 @@
                                                         Text="{Binding Text}"
                                                         TextWrapping="Wrap" />
                                                     <StackPanel Orientation="Horizontal">
-                                                        <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
+                            -->
+                            <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
+                            <!--
                                                         <Button
                                                             Name="TestBlankQuestioView"
                                                             Width="15"
@@ -287,13 +466,10 @@
 
                                 </StackPanel>
 
-                                <StackPanel>
+                                <StackPanel />
+                            </StackPanel>-->
 
-                                  
-                                </StackPanel>
-                            </StackPanel>
-
-                            <StackPanel
+                            <!--<StackPanel
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Stretch"
                                 Background="Red "
@@ -305,7 +481,7 @@
                                     Background="Wheat" />
                                 <ListBox
                                     Name="AllQuestionsListBox"
-                                    Height="160"
+                                    Height="70"
                                     ItemsSource="{Binding AllQuestions}">
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
@@ -318,7 +494,11 @@
                                                     TextWrapping="Wrap" />
 
                                                 <StackPanel Orientation="Horizontal">
-                                                    <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
+
+                            -->
+                            <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
+                            <!--
+
                                                     <Button
                                                         Name="AllQuestioView"
                                                         Width="30"
@@ -340,7 +520,7 @@
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>
                                 </ListBox>
-                            </StackPanel>
+                            </StackPanel>-->
 
                         </StackPanel>
 
@@ -353,123 +533,123 @@
                     <Grid>
                         <StackPanel>
                             <TextBox
-                                                Name="Text"
-                                                Width="200"
-                                                Height="30"
-                                                materialDesign:HintAssist.Hint="Enter question text"
-                                                Background="White"
-                                                Text="{Binding Question.Text}" />
+                                Name="Text"
+                                Width="200"
+                                Height="30"
+                                materialDesign:HintAssist.Hint="Enter question text"
+                                Background="White"
+                                Text="{Binding Question.Text}" />
                             <TextBlock>Complexity</TextBlock>
                             <RadioButton
-                                                Name="Low"
-                                                Checked="Low_Checked"
-                                                GroupName="Complexity">
+                                Name="Low"
+                                Checked="Low_Checked"
+                                GroupName="Complexity">
                                 Low
                             </RadioButton>
                             <RadioButton
-                                                Name="Normal"
-                                                Checked="Normal_Checked"
-                                                GroupName="Complexity">
+                                Name="Normal"
+                                Checked="Normal_Checked"
+                                GroupName="Complexity">
                                 Normal
                             </RadioButton>
                             <RadioButton
-                                                Name="Hight"
-                                                Checked="Hight_Checked"
-                                                GroupName="Complexity">
+                                Name="Hight"
+                                Checked="Hight_Checked"
+                                GroupName="Complexity">
                                 Hight
                             </RadioButton>
                             <Button
-                                                Name="ImageBtn"
-                                                VerticalAlignment="Bottom"
-                                                Command="{Binding AddImage}">
+                                Name="ImageBtn"
+                                VerticalAlignment="Bottom"
+                                Command="{Binding AddImage}">
                                 ChangeImage
                             </Button>
                             <Label>CorrectAnswers</Label>
                             <ListBox
-                                                Name="WrongAnswersListBox"
-                                                Height="60"
-                                                ItemsSource="{Binding CorrectAnswers}">
+                                Name="WrongAnswersListBox"
+                                Height="60"
+                                ItemsSource="{Binding CorrectAnswers}">
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel
-                                                            Name="CorrectStackPanel"
-                                                            Height="40"
-                                                            Background="Aqua"
-                                                            Opacity="0.8"
-                                                            Orientation="Horizontal">
+                                            Name="CorrectStackPanel"
+                                            Height="40"
+                                            Background="Aqua"
+                                            Opacity="0.8"
+                                            Orientation="Horizontal">
                                             <TextBlock
-                                                                Name="CorrectText"
-                                                                Margin="0"
-                                                                Background="Coral"
-                                                                Opacity="0.3"
-                                                                Text="{Binding Text}" />
+                                                Name="CorrectText"
+                                                Margin="0"
+                                                Background="Coral"
+                                                Opacity="0.3"
+                                                Text="{Binding Text}" />
                                         </StackPanel>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
                             </ListBox>
                             <StackPanel Orientation="Horizontal">
                                 <TextBox
-                                                    Name="CorrectAnswerText"
-                                                    Width="300"
-                                                    Height="50"
-                                                    materialDesign:HintAssist.Hint="CorrectAnswerText" />
+                                    Name="CorrectAnswerText"
+                                    Width="300"
+                                    Height="50"
+                                    materialDesign:HintAssist.Hint="CorrectAnswerText" />
                                 <Button Command="{Binding AddCorrectAnswer}" CommandParameter="{Binding ElementName=CorrectAnswerText, Path=Text}">PlusIcon</Button>
                             </StackPanel>
 
                             <Label>WrongAnswers</Label>
                             <ListBox
-                                                Name="CorrectAnswersListBox"
-                                                Height="60"
-                                                Background="Aqua"
-                                                ItemsSource="{Binding WrongAnswers}"
-                                                Opacity="0.8">
+                                Name="CorrectAnswersListBox"
+                                Height="60"
+                                Background="Aqua"
+                                ItemsSource="{Binding WrongAnswers}"
+                                Opacity="0.8">
 
                                 <ListBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel
-                                                            Name="WrongStackPanel"
-                                                            Background="Coral"
-                                                            Opacity="0.8"
-                                                            Orientation="Horizontal">
+                                            Name="WrongStackPanel"
+                                            Background="Coral"
+                                            Opacity="0.8"
+                                            Orientation="Horizontal">
                                             <TextBlock
-                                                                Name="WrongText"
-                                                                Background="Red"
-                                                                Opacity="0.8"
-                                                                Text="{Binding Text}" />
+                                                Name="WrongText"
+                                                Background="Red"
+                                                Opacity="0.8"
+                                                Text="{Binding Text}" />
                                         </StackPanel>
                                     </DataTemplate>
                                 </ListBox.ItemTemplate>
                             </ListBox>
                             <StackPanel Orientation="Horizontal">
                                 <TextBox
-                                                    Name="WrongAnswerText"
-                                                    Width="300"
-                                                    Height="50"
-                                                    materialDesign:HintAssist.Hint="WrongAnswerText" />
+                                    Name="WrongAnswerText"
+                                    Width="300"
+                                    Height="50"
+                                    materialDesign:HintAssist.Hint="WrongAnswerText" />
                                 <Button Command="{Binding AddWrongAnswer}" CommandParameter="{Binding ElementName=WrongAnswerText, Path=Text}">PlusIcon</Button>
                             </StackPanel>
 
                             <!--  Natig udalil Click =cancle_click, kidal exeption  -->
                             <ComboBox
-                                                Name="SubjectsBox"
-                                                ItemsSource="{Binding Subjects}"
-                                                SelectionChanged="SubjectsBox_SelectionChanged" />
+                                Name="SubjectsBox"
+                                ItemsSource="{Binding Subjects}"
+                                SelectionChanged="SubjectsBox_SelectionChanged" />
 
                             <StackPanel Orientation="Horizontal">
                                 <TextBox
-                                                    Name="SubjectName"
-                                                    Width="300"
-                                                    Height="50"
-                                                    materialDesign:HintAssist.Hint="SubjectName" />
+                                    Name="SubjectName"
+                                    Width="300"
+                                    Height="50"
+                                    materialDesign:HintAssist.Hint="SubjectName" />
                                 <Button Command="{Binding AddSubject}" CommandParameter="{Binding ElementName=SubjectName, Path=Text}">PlusIcon</Button>
                             </StackPanel>
                         </StackPanel>
 
 
                         <Button
-                                            Name="Add"
-                                            VerticalAlignment="Bottom"
-                                            Command="{Binding AddQuestion}">
+                            Name="Add"
+                            VerticalAlignment="Bottom"
+                            Command="{Binding AddQuestion}">
                             Add Question
                         </Button>
                     </Grid>

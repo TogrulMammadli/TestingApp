@@ -64,7 +64,7 @@ namespace TestApplicationWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            this.frame.Content = new PageCreateTest();
+           
             CreateTestBlank createTestBlankWnd = new CreateTestBlank();
             createTestBlankWnd.Show();
         }

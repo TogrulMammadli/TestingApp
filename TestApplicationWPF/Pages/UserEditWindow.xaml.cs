@@ -21,7 +21,7 @@ namespace TestApplicationWPF.Pages
     public partial class UserEditWindow : Window
     {
         User User = new User();
-        public SettingPage( User user)
+        public UserEditWindow( User user)
         {
             InitializeComponent();
             this.User = user;

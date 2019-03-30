@@ -25,8 +25,7 @@
                         <DropShadowEffect Color="#FF7A7A7A" Opacity="0.5" BlurRadius="15"/>
                     </Ellipse.Effect>
                     <Ellipse.Fill>
-
-                        <ImageBrush ImageSource="/Icons/avatar.png">
+                        <ImageBrush  x:Name="Imageavatar" ImageSource="/Icons/tre.png">
                         </ImageBrush>
                     </Ellipse.Fill>
                 </Ellipse>
@@ -65,7 +64,7 @@
                         FontSize="18"/>
                         <TextBlock x:Name="TextBlockNameWarning" Text="" Foreground="Red"></TextBlock>
                         <TextBox
-                                x:Name="textboxage"
+                                x:Name="surnameboxage"
                                 PreviewTextInput="numbervalit"
                                 Grid.Column="1"
                                 Width="{Binding ElementName=materiaCardMy, Path=ActualWidth}"
@@ -74,7 +73,7 @@
                                 VerticalAlignment="Top"
                                 TextWrapping="Wrap"
                                 VerticalScrollBarVisibility="Auto"
-                                materialDesign:HintAssist.Hint="Age"
+                                materialDesign:HintAssist.Hint="Surname"
                                 FontSize="18"
                                 MaxLength="2"
                  
@@ -85,7 +84,7 @@
                         />
                         <TextBlock x:Name="TextBlockAgeWarning" Text="" Foreground="Red"></TextBlock>
                         <TextBox
-                                x:Name="textboxphone"
+                                x:Name="textboxfather"
                                 PreviewTextInput="numbervalit"
                                 Grid.Column="1"
                                 Width="{Binding ElementName=materiaCardMy, Path=ActualWidth}"
@@ -94,7 +93,7 @@
                                 VerticalAlignment="Top"
                                 TextWrapping="Wrap"
                                 VerticalScrollBarVisibility="Auto"
-                                materialDesign:HintAssist.Hint="Phone"
+                                materialDesign:HintAssist.Hint="Patronymic"
                                 FontSize="18"
                         materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
                         materialDesign:HintAssist.FloatingScale="0.7"
@@ -104,7 +103,7 @@
                         <TextBlock x:Name="Textboxphonewarning" Text="" Foreground="Red"></TextBlock>
 
                         <TextBox
-                                x:Name="textboxemail"
+                                x:Name="DateOfBirthBox"
                             Grid.Column="1"
                                 Width="{Binding ElementName=materiaCardMy, Path=ActualWidth}"
                                  Margin="0 5 0 3"
@@ -112,7 +111,7 @@
                                 VerticalAlignment="Top"
 
                                 VerticalScrollBarVisibility="Auto"
-                                materialDesign:HintAssist.Hint="E-mail"
+                                materialDesign:HintAssist.Hint="Birth"
                                 FontSize="18"
                                 MaxLength="25"
                         materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
@@ -120,9 +119,9 @@
                         Text=""
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                         />
-                        
+
                         <TextBlock x:Name="TextBlockEmailWarning" Text="" Foreground="Red"></TextBlock>
-                        
+
                     </StackPanel>
 
                 </Grid>
@@ -150,12 +149,40 @@
                 </Rectangle.Effect>
             </Rectangle>
             <StackPanel Grid.Column="1" Margin="0 20 0 10">
-                <TextBlock x:Name="TextBlockPswdWarning" Text="" Foreground="Red" Height="20" TextAlignment="Center"/>
-                
+                <TextBox
+                                x:Name="sss"
+                                Width="580"
+                                Margin="10,5,0,3"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                VerticalScrollBarVisibility="Auto"
+                                materialDesign:HintAssist.Hint="  E-mail"
+                                FontSize="18"
+                                MaxLength="25"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.7"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        />
+                <TextBox
+                                x:Name="sss2"
+                                Width="580"
+                                Margin="10,5,0,3"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top"
+                                VerticalScrollBarVisibility="Auto"
+                                materialDesign:HintAssist.Hint="  Phone"
+                                FontSize="18"
+                                MaxLength="25"
+                        materialDesign:TextFieldAssist.TextBoxViewMargin="1 0 1 0"
+                        materialDesign:HintAssist.FloatingScale="0.7"
+                        Text=""
+                        Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                        />
             </StackPanel>
         </Grid>
 
-    <Button Grid.Row="1" Height="50" FontSize="20" Width="200" Content="ConfirmPassword" HorizontalAlignment="Left" Margin="50" VerticalAlignment="Bottom" Click="Button_Click"/>
+        <Button Grid.Row="1" Height="50" FontSize="20" Width="200" Content="ConfirmPassword" HorizontalAlignment="Left" Margin="50" VerticalAlignment="Bottom" Click="Button_Click"/>
     </Grid>
 
 </Page>

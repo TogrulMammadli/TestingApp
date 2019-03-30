@@ -25,9 +25,13 @@ namespace TestApplicationWPF.Pages
         public SettingPage(User user)
         {
             InitializeComponent();
-            textboxname.Text = user.Name + " "+ user.Surname+ " "+user.Patronymic;
-            textboxemail.Text = user.Email;
-            
+            textboxname.Text = user.Name;
+           surnameboxage.Text= user.Surname;
+           
+            sss.Text = user.Email;
+            sss2.Text = user.PhoneNumber;
+            textboxfather.Text = user.Patronymic;
+            DateOfBirthBox.Text = user.DateOfBirth.ToString();
         }
 
         private void numbervalit(object sender, TextCompositionEventArgs e)
@@ -43,16 +47,15 @@ namespace TestApplicationWPF.Pages
                 if (textboxname.Text.Length < 2 && textboxname.Text != "") { TextBlockNameWarning.Text = "Name must be more letters!"; }
                 else { TextBlockNameWarning.Text = ""; }
 
-                if (int.Parse(textboxage.Text) < 7 && textboxage.Text != "") { TextBlockAgeWarning.Text = "User must be older than 7 years!"; }
-                else if (int.Parse(textboxage.Text) > 70 && textboxage.Text != "") { TextBlockAgeWarning.Text = "User must not be older than 70 years!"; }
-                else { TextBlockAgeWarning.Text = ""; }
+                //if (int.Parse(textboxage.Text) < 7 && textboxage.Text != "") { TextBlockAgeWarning.Text = "User must be older than 7 years!"; }
+                //else if (int.Parse(textboxage.Text) > 70 && textboxage.Text != "") { TextBlockAgeWarning.Text = "User must not be older than 70 years!"; }
+                //else { TextBlockAgeWarning.Text = ""; }
             }
             catch (Exception) { }
 
-            if (textboxphone.Text != "" && textboxphone.Text.Length < 10) { Textboxphonewarning.Text = "Length must not be than 10 digits!"; }
-            else { Textboxphonewarning.Text = ""; }
+            //if (textboxphone.Text != "" && textboxphone.Text.Length < 10) { Textboxphonewarning.Text = "Length must not be than 10 digits!"; }
 
-            if (!Regex.IsMatch(textboxemail.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase) && textboxemail.Text != "")
+            if (!Regex.IsMatch(sss.Text, @"\A(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)\Z", RegexOptions.IgnoreCase) && sss.Text != "")
             {
                 TextBlockEmailWarning.Text = "Wrong e-mail format!";
             }

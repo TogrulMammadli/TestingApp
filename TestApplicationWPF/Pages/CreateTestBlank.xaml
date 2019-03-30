@@ -11,7 +11,7 @@
     Name="CreatetestPage"
     Title="CreateTestBlank"
     Width="1000"
-    Height="1200"
+    Height="600"
     Background="#ecf0f1"
     mc:Ignorable="d">
     <Grid>
@@ -227,50 +227,167 @@
 
                 <TabItem Name="QuestionTab" Header="CREATING BLANK">
 
-                    <ScrollViewer Height="{Binding ElementName=Drag, Path=ActualHeight}" VerticalScrollBarVisibility="Auto">
-                        <!--  делит окно на 2 поселедине  -->
-                        <StackPanel
-                            Name="MainStack"
-                            HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch"
-                            CanVerticallyScroll="True"
-                            Orientation="Vertical"
-                            SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical">
+                    <Grid Name="MainStack" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition Height="50" />
+                        </Grid.RowDefinitions>
+
+                        <Grid
+                            Grid.Row="0"
+                            
+                            Opacity="1"
+                            >
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid
+                                x:Name="gridC1"
+                                Grid.Column="1"
+                                Margin="10,20,20,0">
+                                <materialDesign:Card Height="{Binding ElementName=gridC1, Path=ActualHeight}" UniformCornerRadius="10">
+                                    <StackPanel
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        Background="AliceBlue"
+                                        Orientation="Vertical">
+                                        <Grid VerticalAlignment="Center">
+                                            <materialDesign:Card VerticalAlignment="Center" Background="#446cb3">
+                                                <TextBlock
+                                                    Height="30"
+                                                    Margin="20,10,0,0"
+                                                    HorizontalAlignment="Left"
+                                                    VerticalAlignment="Center"
+                                                    FontSize="18"
+                                                    Foreground="White">
+                                                    Data base questions
+                                                </TextBlock>
+                                            </materialDesign:Card>
+                                        </Grid>
+                                        <materialDesign:Card Name="mca" VerticalAlignment="Center">
+                                            <TextBox
+                                                Name="SearchTxtBox"
+                                                Height="30"
+                                                materialDesign:HintAssist.Hint="    Enter question text to search.."
+                                                Background="White"
+                                                BorderBrush="Gray"
+                                                BorderThickness="1"
+                                                Foreground="Gray" />
+                                        </materialDesign:Card>
+                                        <ListBox
+                                            Name="AllQuestionsListBox"
+                                            Height="520"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            ItemsSource="{Binding AllQuestions}"
+                                            ScrollViewer.VerticalScrollBarVisibility="Hidden">
+                                            <ListBox.ItemTemplate>
+                                                <DataTemplate>
+                                                    <materialDesign:Card
+                                                        Width="400"
+                                                        Margin="5,3,5,0"
+                                                        VerticalAlignment="Center"
+                                                        materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                                                        materialDesign:ShadowAssist.ShadowEdges="All"
+                                                        Background="White"
+                                                        UniformCornerRadius="5">
+                                                        <Grid VerticalAlignment="Center">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="1*" />
+                                                                <ColumnDefinition Width="100" />
+                                                            </Grid.ColumnDefinitions>
+                                                            <TextBlock
+                                                                Name="QuestText"
+                                                                Grid.Column="0"
+                                                                Height="50"
+                                                                Margin="20,0,0,10"
+                                                                VerticalAlignment="Center"
+                                                                Text="{Binding Text}"
+                                                                TextWrapping="Wrap" />
+
+                                                            <StackPanel
+                                                                Grid.Column="1"
+                                                                VerticalAlignment="Center"
+                                                                Orientation="Horizontal">
+
+                                                                <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
+
+                                                                <Button
+                                                                    Name="AllQuestioView"
+                                                                    Width="30"
+                                                                    Height="30"
+                                                                    Margin="10,0,10,0"
+                                                                    Background="#27ae60"
+                                                                    BorderBrush="{x:Null}"
+                                                                    Click="AllQuestioView_Click"
+                                                                    Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                                                    ToolTip="View all info">
+                                                                    <materialDesign:PackIcon
+                                                                        Width="20"
+                                                                        Height="20"
+                                                                        Background="{x:Null}"
+                                                                        Kind="Eye" />
+                                                                </Button>
+                                                                <Button
+                                                                    Name="AllQuestioAdd"
+                                                                    Width="30"
+                                                                    Height="30"
+                                                                    Margin="10,0,10,0"
+                                                                    Background="#f39c12"
+                                                                    BorderBrush="{x:Null}"
+                                                                    Click="AllQuestioAdd_Click"
+                                                                    Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
+                                                                    ToolTip="Add">
+                                                                    <materialDesign:PackIcon
+                                                                        Width="20"
+                                                                        Height="20"
+                                                                        Background="{x:Null}"
+                                                                        Kind="Add" />
+                                                                </Button>
+                                                            </StackPanel>
+                                                        </Grid>
+                                                    </materialDesign:Card>
+                                                </DataTemplate>
+                                            </ListBox.ItemTemplate>
+                                        </ListBox>
+                                    </StackPanel>
+                                </materialDesign:Card>
+                            </Grid>
+
 
                             <Grid
-                                Height="600"
-                                Opacity="1"
-                                ShowGridLines="True">
+                                x:Name="gridC0"
+                                Grid.Column="0"
+                                Margin="20,20,10,0">
+                                <materialDesign:Card Height="{Binding ElementName=gridC0, Path=ActualHeight}" UniformCornerRadius="10">
 
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                </Grid.ColumnDefinitions>
-                                <Grid
-                                    x:Name="gridC1"
-                                    Grid.Column="1"
-                                    Margin="10,20,20,20">
-                                    <materialDesign:Card Height="{Binding ElementName=gridC1, Path=ActualHeight}" UniformCornerRadius="10">
-                                        <StackPanel
-                                            HorizontalAlignment="Stretch"
-                                            VerticalAlignment="Stretch"
-                                            Orientation="Vertical">
-                                            <materialDesign:Card Name="mca" VerticalAlignment="Center">
-                                                <TextBox
-                                                    Name="SearchTxtBox"
-                                                    Height="30"
-                                                    materialDesign:HintAssist.Hint="    Enter question text to search.."
-                                                    Background="White"
-                                                    BorderBrush="Gray"
-                                                    BorderThickness="1"
-                                                    Foreground="Gray" />
-                                            </materialDesign:Card>
+                                    <StackPanel
+                                        HorizontalAlignment="Stretch"
+                                        VerticalAlignment="Stretch"
+                                        Background="AliceBlue"
+                                        Orientation="Horizontal">
+                                        <StackPanel Width="500" Margin="0,0,0,0">
+                                            <Grid VerticalAlignment="Stretch">
+                                                <materialDesign:Card VerticalAlignment="Stretch" Background="#446cb3">
+                                                    <TextBlock
+                                                        Height="30"
+                                                        Margin="40,10,0,0"
+                                                        HorizontalAlignment="Left"
+                                                        VerticalAlignment="Center"
+                                                        FontSize="18"
+                                                        Foreground="White">
+                                                        Test blank questions
+                                                    </TextBlock>
+                                                </materialDesign:Card>
+                                            </Grid>
                                             <ListBox
-                                                Name="AllQuestionsListBox"
-                                                Height="520"
-                                                HorizontalAlignment="Center"
-                                                VerticalAlignment="Center"
-                                                ItemsSource="{Binding AllQuestions}"
+                                                Name="TestBlankQuestions"
+                                                Height="500"
+                                                HorizontalAlignment="Stretch"
+                                                VerticalAlignment="Stretch"
+                                                ItemsSource="{Binding TestBlankQuestion}"
                                                 ScrollViewer.VerticalScrollBarVisibility="Hidden">
                                                 <ListBox.ItemTemplate>
                                                     <DataTemplate>
@@ -288,29 +405,25 @@
                                                                     <ColumnDefinition Width="100" />
                                                                 </Grid.ColumnDefinitions>
                                                                 <TextBlock
-                                                                    Name="QuestText"
+                                                                    Name="QuestionText"
                                                                     Grid.Column="0"
                                                                     Height="50"
-                                                                    Margin="20,0,0,0"
                                                                     VerticalAlignment="Center"
                                                                     Text="{Binding Text}"
                                                                     TextWrapping="Wrap" />
-
                                                                 <StackPanel
                                                                     Grid.Column="1"
                                                                     VerticalAlignment="Center"
                                                                     Orientation="Horizontal">
-
                                                                     <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
-
                                                                     <Button
-                                                                        Name="AllQuestioView"
+                                                                        Name="TestBlankQuestioView"
                                                                         Width="30"
                                                                         Height="30"
                                                                         Margin="10,0,10,0"
                                                                         Background="#27ae60"
                                                                         BorderBrush="{x:Null}"
-                                                                        Click="AllQuestioView_Click"
+                                                                        Click="TestBlankQuestioView_Click"
                                                                         Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
                                                                         ToolTip="View all info">
                                                                         <materialDesign:PackIcon
@@ -318,22 +431,24 @@
                                                                             Height="20"
                                                                             Background="{x:Null}"
                                                                             Kind="Eye" />
+
                                                                     </Button>
                                                                     <Button
-                                                                        Name="AllQuestioAdd"
+                                                                        Name="TestBlankQuestioRemove"
                                                                         Width="30"
                                                                         Height="30"
                                                                         Margin="10,0,10,0"
-                                                                        Background="#f39c12"
+                                                                        Background="#e74c3c"
                                                                         BorderBrush="{x:Null}"
-                                                                        Click="AllQuestioAdd_Click"
+                                                                        Click="TestBlankQuestioRemove_Click"
                                                                         Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}"
-                                                                        ToolTip="Add">
+                                                                        ToolTip="View all info">
                                                                         <materialDesign:PackIcon
                                                                             Width="20"
                                                                             Height="20"
                                                                             Background="{x:Null}"
-                                                                            Kind="Add" />
+                                                                            Kind="Remove" />
+
                                                                     </Button>
                                                                 </StackPanel>
                                                             </Grid>
@@ -341,79 +456,32 @@
                                                     </DataTemplate>
                                                 </ListBox.ItemTemplate>
                                             </ListBox>
-                                        </StackPanel>
-                                    </materialDesign:Card>
-                                </Grid>
 
-
-                                <Grid Grid.Column="0" Margin="10,20,20,20">
-                                    <materialDesign:Card Height="{Binding ElementName=gridC1, Path=ActualHeight}" UniformCornerRadius="10">
-
-                                        <StackPanel
-                                            HorizontalAlignment="Stretch"
-                                            Background="Yellow"
-                                            Orientation="Horizontal">
-                                            <StackPanel Width="500" Margin="0,0,50,0">
-                                                <Label>TestBlankQuestions</Label>
-                                                <ListBox
-                                                    Name="TestBlankQuestions"
-                                                    Height="250"
-                                                    Background="AliceBlue"
-                                                    ItemsSource="{Binding TestBlankQuestion}">
-                                                    <ListBox.ItemTemplate>
-                                                        <DataTemplate>
-                                                            <StackPanel Orientation="Horizontal">
-                                                                <TextBlock
-                                                                    Name="QuestionText"
-                                                                    Width="120"
-                                                                    Height="80"
-                                                                    Text="{Binding Text}"
-                                                                    TextWrapping="Wrap" />
-                                                                <StackPanel Orientation="Horizontal">
-                                                                    <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
-                                                                    <Button
-                                                                        Name="TestBlankQuestioView"
-                                                                        Width="15"
-                                                                        Height="15"
-                                                                        Click="TestBlankQuestioView_Click">
-                                                                        V
-                                                                    </Button>
-                                                                    <Button
-                                                                        Name="TestBlankQuestioRemove"
-                                                                        Width="15"
-                                                                        Height="15"
-                                                                        Click="TestBlankQuestioRemove_Click">
-                                                                        R
-                                                                    </Button>
-                                                                </StackPanel>
-                                                            </StackPanel>
-                                                        </DataTemplate>
-                                                    </ListBox.ItemTemplate>
-                                                </ListBox>
-
-                                                <Button
-                                                    x:Name="SubmitButton"
-                                                    Margin="0,40,0,0"
-                                                    Click="SubmitButton_Click">
-                                                    Submit
-                                                </Button>
-
-                                            </StackPanel>
-
-                                            <StackPanel />
                                         </StackPanel>
 
+                                        <StackPanel />
+                                    </StackPanel>
 
-                                    </materialDesign:Card>
 
-                                </Grid>
+                                </materialDesign:Card>
+
                             </Grid>
+                        </Grid>
+                        <Button
+                            x:Name="SubmitButton"
+                            Grid.Row="1"
+                            Width="100"
+                            Margin="25,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Click="SubmitButton_Click">
+                            Submit
+                        </Button>
 
 
 
 
-
-                            <!--<StackPanel
+                        <!--<StackPanel
                                 HorizontalAlignment="Stretch"
                                 Background="Yellow"
                                 Orientation="Horizontal">
@@ -434,9 +502,9 @@
                                                         Text="{Binding Text}"
                                                         TextWrapping="Wrap" />
                                                     <StackPanel Orientation="Horizontal">
-                            -->
-                            <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
-                            <!--
+                        -->
+                        <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
+                        <!--
                                                         <Button
                                                             Name="TestBlankQuestioView"
                                                             Width="15"
@@ -469,7 +537,7 @@
                                 <StackPanel />
                             </StackPanel>-->
 
-                            <!--<StackPanel
+                        <!--<StackPanel
                                 HorizontalAlignment="Stretch"
                                 VerticalAlignment="Stretch"
                                 Background="Red "
@@ -495,9 +563,9 @@
 
                                                 <StackPanel Orientation="Horizontal">
 
-                            -->
-                            <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
-                            <!--
+                        -->
+                        <!--  NatikMojew sdelatVertikalnie knopki dla prikola  -->
+                        <!--
 
                                                     <Button
                                                         Name="AllQuestioView"
@@ -522,9 +590,9 @@
                                 </ListBox>
                             </StackPanel>-->
 
-                        </StackPanel>
+                    </Grid>
 
-                    </ScrollViewer>
+
 
 
 

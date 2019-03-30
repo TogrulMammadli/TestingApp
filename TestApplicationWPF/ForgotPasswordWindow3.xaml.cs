@@ -106,9 +106,18 @@ namespace TestApplicationWPF
 
         private void ButtonCancel_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow MainWindow = new MainWindow();
-            MainWindow.Show();
-            this.Close();
+            if (Num==1)
+            {
+                MainWindow MainWindow = new MainWindow();
+                MainWindow.Show();
+                this.Close();
+            }
+            else
+            {
+                this.Close();
+
+            }
+
         }
         private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
